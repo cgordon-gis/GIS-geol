@@ -21,4 +21,10 @@ When you have completed this section of the workbook you should be able to:
 
 As a GIS specialist you have been asked by the Field Studies Council to produce a geological map of the area around the Malham Tarn National Nature Reserve (NNR).
 
-For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to basic navigation and functions. In future sessions you’ll be preparing the data and setting up the basics for yourself.
+For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to basic navigation and functions. In future sessions you'll be preparing the data and setting up the basics for yourself.
+
+For now go to [Minerva](https://minerva.leeds.ac.uk) and download the files.
+
+Here is a pretty picture of Rhoscolyn.
+
+![Rhoscolyn view](images/Rhoscolyn.png)
