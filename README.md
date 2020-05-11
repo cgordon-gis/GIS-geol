@@ -1,3 +1,8 @@
+# GIS for geologists
+
+Web page at https://cgordon-gis.github.io/GIS-geol/
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/cgordon-gis/GIS-geol/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
