@@ -25,4 +25,8 @@ For this first exercise I have created a basic geological map of Malham Tarn so 
 
 ## Obtaining and opening the sample map
 
+Start by going to [Minerva](https://minerva.leeds.ac.uk/) and downloading the file.
+
 The sample map is based on...
+
+![The basic digitised map](images/BasicDigitisedMap.png)
