@@ -23,10 +23,3 @@ As a GIS specialist you have been asked by the Field Studies Council to produce 
 
 For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to basic navigation and functions. In future sessions you’ll be preparing the data and setting up the basics for yourself.
 
-## Obtaining and opening the sample map
-
-Start by going to [Minerva](https://minerva.leeds.ac.uk/) and downloading the file.
-
-The sample map is based on...
-
-![The basic digitised map](images/BasicDigitisedMap.png)
