@@ -21,13 +21,14 @@
 
 	    <p class="view"><a href="https://github.com/cgordon-gis/GIS-geol">View the Project on GitHub <small>cgordon-gis/GIS-geol</small></a></p>
 
-	    </div>
+	    {% include toc.html html=content %}
+
+      </div>
 
 	 </header>
 
 	 <section>  
-	    <!-- {{ content }} -->
-	    {% include toc.html html=content %}
+	    {{ content }}
 	 </section>
 
 	 <footer>
@@ -35,7 +36,7 @@
 	    <p><small>This project is maintained by <a href="https://github.com/cgordon-gis">Clare Gordon</a></small></p>
 	    <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 	 </footer>
-      </div>
-      <script src="javascripts/scale.fix.js"></script>
+	 </div>
+	 <script src="javascripts/scale.fix.js"></script>
    </body>
 </html>
