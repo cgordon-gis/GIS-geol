@@ -10,12 +10,12 @@ body {
    font-weight:300;
 }
 
-h1 {   font: 30px 'Noto Sans', Arial, sans-serif;   outline: none;}
-h2 {   font: 28px 'Noto Sans', Arial, sans-serif;   outline: none;}
-h3 {   font: 24px 'Noto Sans', Arial, sans-serif;   outline: none;}
-h4 {   font: 19px 'Noto Sans', Arial, sans-serif;   outline: none;}
-p {   font: 20px 'Noto Sans', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
-li {   font: 20px 'Noto Sans', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
+h1 {   font: 28px 'Noto Sans', Arial, sans-serif;   outline: none;}
+h2 {   font: 24px 'Noto Sans', Arial, sans-serif;   outline: none;}
+h3 {   font: 20px 'Noto Sans', Arial, sans-serif;   outline: none;}
+h4 {   font: 17px 'Noto Sans', Arial, sans-serif;   outline: none;}
+p {   font: 16px 'Noto Sans', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
+li {   font: 16px 'Noto Sans', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
 
 img { 
    border: thin; 
@@ -36,10 +36,6 @@ p, ul, ol, table, pre, dl {
 
 h1, h2, h3 {
    line-height:1.1;
-}
-
-h1 {
-   font-size:28px;
 }
 
 h2 {
