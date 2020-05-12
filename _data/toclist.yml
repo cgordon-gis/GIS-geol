@@ -2,10 +2,10 @@ docs_list_title: Chapter list
 docs:
 
 - title: Welcome
-  url: index.html
+  url: /
 
 - title: Introduction
-  url: introduction.html
+  url: /introduction.html
 
 - title: Exploring ArcGIS Pro
-  url: exploring.html
+  url: /exploring.html
