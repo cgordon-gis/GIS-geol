@@ -107,12 +107,6 @@ header {
    position:fixed;
 }
 
-/* To show current page in sidebar page menu */
-.result li.active a {
-    color: lightgray;
-    cursor: default;
-}
-
 /* header ul { */
 /*   list-style:none; */
 /*   height:40px; */
@@ -265,3 +259,10 @@ footer {
       color:#444;
    }
 }
+
+/* To show current page in sidebar page menu */
+.result li.active a {
+    color: lightgray;
+    cursor: default;
+}
+
