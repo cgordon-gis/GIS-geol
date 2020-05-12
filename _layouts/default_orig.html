@@ -14,15 +14,14 @@
    </head>
    <body>
       <div class="wrapper">
-	 <h1>GIS for geologists</h1>
+	 <header>
+	    <h1><a href="index.html">GIS for geologists</a></h1>
+
 	    <p>
 	       {% for item in site.data.pages.docs %}
 	       : <a href="{{ item.url }}">{{ item.title }}</a> :
 	       {% endfor %}
 	    </p>
-
-	 <header>
-	    <h1><a href="index.html">GIS for geologists</a></h1>
 
 	    <!-- <p class="view"><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View the Project on GitHub <small>cgordon&#45;gis/GIS&#45;geol</small></a></p> -->
 
