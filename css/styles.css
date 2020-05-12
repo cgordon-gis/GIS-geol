@@ -183,10 +183,13 @@ hr {
 }
 
 footer {
-   width:270px;
-   float:left;
-   position:fixed;
-   bottom:50px;
+   /* width:270px; */
+   /* float:left; */
+   /* position:fixed; */
+   /* bottom:50px; */
+   float:none;
+   position:static;
+   width:auto;
 }
 
 @media print, screen and (max-width: 960px) {
@@ -262,7 +265,7 @@ footer {
 
 /* To show current page in sidebar page menu */
 .result li.active a {
-    color: lightgray;
-    cursor: default;
+   color: lightgray;
+   cursor: default;
 }
 
