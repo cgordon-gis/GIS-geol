@@ -22,14 +22,16 @@
 	    <p class="view"><a href="https://github.com/cgordon-gis/GIS-geol">View the Project on GitHub <small>cgordon-gis/GIS-geol</small></a></p>
 
 	    <!-- Include automatic list of pages in site -->
+	    <h2>{{ site.data.toclist.docs_list_title }}</h2>
 	    <ul>
-	       {% for item in site.data.samplelist[page.sidebar] %}
+	       {% for item in site.data.toclist.docs %}
 	       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
 	       {% endfor %}
 	    </ul>
 
 	    <!-- Include automatic table of contents -->
 	    <!-- Code from https://github.com/allejo/jekyll-toc -->
+	    <p>Page sections</p>
 	    {% include toc.html html=content %}
 
 	 </header>
