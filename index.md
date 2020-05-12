@@ -21,6 +21,10 @@ When you have completed this section of the workbook you should be able to:
 
 There will be some text here
 
+#### And another heading
+
+This is to see how far the index will go
+
 ## Introduction
 
 As a GIS specialist you have been asked by the Field Studies Council to produce a geological map of the area around the Malham Tarn National Nature Reserve (NNR).
