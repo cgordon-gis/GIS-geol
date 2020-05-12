@@ -9,8 +9,8 @@ h1 {   font: 30px 'Raleway', Arial, sans-serif;   outline: none;}
 h2 {   font: 28px 'Raleway', Arial, sans-serif;   outline: none;}
 h3 {   font: 24px 'Raleway', Arial, sans-serif;   outline: none;}
 h4 {   font: 19px 'Raleway', Arial, sans-serif;   outline: none;}
-p {   font: 20px 'LinuxLibertineORegular', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
-li {   font: 20px 'LinuxLibertineORegular', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
+p {   font: 18px 'LinuxLibertineORegular', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
+li {   font: 18px 'LinuxLibertineORegular', Times New Roman, serif;   /* font: 18px 'Raleway', Times New Roman, serif; */   outline: none;}
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,7 +45,7 @@ a {
 }
 
 a small {
-   font-size:11px;
+   font-size:12px;
    color:#777;
    margin-top:-0.6em;
    display:block;
