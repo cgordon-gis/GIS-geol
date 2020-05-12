@@ -7,6 +7,8 @@ title: Introduction to GIS for geologists
 
 The background to GIS and an explanation of what it is will be covered in the lecture segment at the beginning of the class and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand why you are doing these exercises.  If you still aren't sure, please ask Clare.
 
+### Welcome to this module
+
 ## Learning outcomes
 
 When you have completed this section of the workbook you should be able to:

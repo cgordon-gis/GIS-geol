@@ -22,12 +22,25 @@
 	    <p class="view"><a href="https://github.com/cgordon-gis/GIS-geol">View the Project on GitHub <small>cgordon-gis/GIS-geol</small></a></p>
 
 	    <!-- Include automatic list of pages in site -->
-	    <p>{{ site.data.toclist.docs_list_title }}</p>
+	    <p>Chapter menu</p>
 	    <ul>
-	       {% for item in site.data.toclist.docs %}
-	       <li class="{% if item.url == page.url %}active{% endif %}">
-		  <a href="{{ item.url }}">{{ item.title }}</a>
+	       {% for p in site.pages %}
+	       <li>
+		  <a href="{{ p.url }}">{{ p.title }}</a>
 	       </li>
+	       {% endfor %}
+	    </ul>
+
+	    <ul>
+	       {% for node in site.pages %}
+	       {% if node.url contains base_url %}
+	       {% assign node_url_parts = node.url | split: '/' %}
+	       {% assign node_url_parts_size = node_url_parts | size %}
+	       {% assign filename = node_url_parts | last %}
+	       {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+	       <li><a href='{{node.url}}'>{{node.title}}</a></li>
+	       {% endif %}
+	       {% endif %}
 	       {% endfor %}
 	    </ul>
 
@@ -41,7 +54,9 @@
 	 <section>  
 	    {{ content }}
 	 </section>
+
 	 <br clear="all" />
+
 	 <footer>
 	    <p><small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />All contents on this site, unless otherwise stated, are copyright 2020 by Clare Gordon, University of Leeds and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</small></p>
 	    <p><small>This project is maintained by <a href="https://github.com/cgordon-gis">Clare Gordon</a></small></p>
