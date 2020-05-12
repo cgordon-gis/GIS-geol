@@ -27,9 +27,9 @@
 	       {% for item in site.data.toclist.docs %}
 	       <li class="{% if item.url == page.url %}active{% endif %}">
 		  <a href="{{ item.url }}">{{ item.title }}</a>
-		  {{% if item.url == page.url %} 
+		  {{% if item.url == page.url %}} 
 		  {% include toc.html html=content h_min=2 %}
-		  {% endif %}}
+		  {{% endif %}}
 	       </li>
 	       {% endfor %}
 	    </ul>
