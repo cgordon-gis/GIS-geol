@@ -25,12 +25,12 @@
 	    <p>{{ site.data.toclist.docs_list_title }}</p>
 	    <ul>
 	       {% for item in site.data.toclist.docs %}
-	       <li class="{% if item.url == page.url %}active{% endif %}">
-		  <p>{{ item.url }}</p>
-		  <p>{{ page.url }}</p>
-		  <a href="{{ item.url }}">{{ item.title }}</a>
+	       <li class="{% if /item.url == page.url %}active{% endif %}">
+		  <!-- <p>{{ item.url }}</p> -->
+		  <!-- <p>{{ page.url }}</p> -->
+		  <a href="{{ /item.url }}">{{ item.title }}</a>
 		  {% if item.url == page.url %} 
-		  {% include toc.html html=content h_min=2 %}
+		  {% include toc.html html=content h_min=2 h_max=3 %}
 		  {% endif %}
 	       </li>
 	       {% endfor %}
