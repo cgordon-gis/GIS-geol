@@ -17,15 +17,11 @@
 	 <header>
 	    <h1><a href="index.html">GIS for geologists</a></h1>
 
-	    {% assign mydocs = site.docs | group_by: 'category' %}
-	    {% for cat in mydocs %}
 	    <p>
-	       {% assign items = cat.items | sort: 'order' %}
-	       {% for item in items %}
+	       {% for item in site.data.samplelist.docs %}
 	       : <a href="{{ item.url }}">{{ item.title }}</a> :
 	       {% endfor %}
 	    </p>
-	    {% endfor %}
 
 	    <!-- <p class="view"><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View the Project on GitHub <small>cgordon&#45;gis/GIS&#45;geol</small></a></p> -->
 

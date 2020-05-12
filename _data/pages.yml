@@ -1,0 +1,14 @@
+docs_list_title: GIS for geologists
+docs:
+
+- title: Welcome
+  url: index.html
+
+- title: Introduction
+  url: introduction.html
+
+- title: Exploring GIS
+  url: exploring.html
+
+- title: Downloading UK data
+  url: digimap.html
