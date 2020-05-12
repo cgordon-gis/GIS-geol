@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Introduction
+category: geology
+order: 1
 ---
 
 # Introduction

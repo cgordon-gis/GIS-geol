@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Exploring ArcGIS
+category: geology
+order: 2
 ---
 
 # Exploring ArcGIS Pro

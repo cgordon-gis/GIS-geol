@@ -10,13 +10,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <!--[if lt IE 9]>
 	 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
+	 <![endif]-->
    </head>
    <body>
       <div class="wrapper">
 	 <header>
 	    <h1><a href="index.html">GIS for geologists</a></h1>
-	    <p></p>
+
+	    <p>
+	       {% for doc in site.docs %}
+	       {% if doc.category == "geology" %}
+	       : <a href="{{ doc.url }}">{{ doc.title }}</a> :
+	       {% endif %}
+	       {% endfor %}
+	    </p>
 
 	    <!-- <p class="view"><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View the Project on GitHub <small>cgordon&#45;gis/GIS&#45;geol</small></a></p> -->
 
