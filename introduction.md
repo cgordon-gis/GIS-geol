@@ -5,18 +5,26 @@ category: geology
 order: 1
 ---
 
-# Introduction
+# Introduction to GIS with ArcGIS Pro
 
-How does this link to the front page?
+The background to GIS and an explanation of what it is will be covered in the lecture segment at the beginning of the class and the presentation and any other supporting materials will be available in [Minerva](https://minerva.leeds.ac.uk).  The lecture segment should help you to understand **why** you are doing these exercises.  If you still aren't sure, please ask Clare.
 
-## Intro content 1
+## Learning outcomes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus nisi quis porttitor euismod. Nullam sollicitudin ornare pulvinar. Vivamus eu nunc elit. Pellentesque sed ante in mauris consequat vestibulum maximus sed nisi. Suspendisse urna elit, laoreet a vehicula non, blandit et massa. Sed non finibus dui. Suspendisse vel erat sagittis, venenatis lectus eget, molestie massa. Sed quis tempor enim. Donec at neque congue, mattis neque quis, cursus massa. Vivamus orci orci, interdum et feugiat vitae, pharetra sit amet arcu. Proin convallis risus felis, non tincidunt felis convallis vel. Nunc ut feugiat elit. Maecenas eget mollis nibh, at facilisis sem. Pellentesque eleifend, sem lobortis commodo egestas, ipsum ligula dapibus diam, eget pellentesque quam ex et mauris. Nam sed eleifend metus, id accumsan orci. Ut euismod lorem eu ante laoreet, ac tincidunt diam maximus.
+When you have completed this section of the course you will be able to
 
-### And heading 3
+* demonstrate how to open a map project in ArcGIS
+* select appropriate tools to navigate in a map document
+* use layers to organise and display information on a map
+* add information to a layout and prepare it for printing or display
+* demonstrate different ways of finding help when using GIS
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse urna diam, condimentum eu congue at, volutpat in odio. Ut accumsan blandit massa sed cursus. Fusce ornare mi nec mattis pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus aliquet bibendum imperdiet. Cras fermentum in nulla id pharetra. Nam bibendum congue sodales. Sed ultrices leo ac ex tempor, non lacinia odio mattis. Sed sagittis quam ipsum, ut ultricies mauris hendrerit a. Maecenas semper, lectus id finibus efficitur, sapien lorem mattis tellus, consectetur finibus quam velit in sapien. Curabitur id justo at justo sodales tristique. Nulla varius dui quis ipsum cursus, vulputate porttitor elit accumsan. Suspendisse sit amet nunc fringilla dolor malesuada gravida ac ac ante. Sed tincidunt, tellus ac scelerisque fermentum, odio orci volutpat sem, sollicitudin pharetra leo nibh eget arcu.
+## Introduction to the exercise
 
-## Intro content 2
+As a GIS specialist you have been asked by the Field Studies Council to produce a geological map of the area around Malham Tarn National Nature Reserve (NNR).
 
-Sed dapibus at arcu non tristique. Curabitur sit amet ex in ligula fermentum tincidunt. Aenean a leo non libero feugiat placerat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum hendrerit velit in enim posuere sollicitudin. Aliquam blandit sem in tellus aliquam interdum. Maecenas sodales elementum tincidunt. Duis imperdiet nec urna et rhoncus. Suspendisse gravida enim vel ligula lacinia, eu finibus lorem pulvinar. In urna ante, tempus sed venenatis et, dignissim et eros. Etiam consectetur purus eu pellentesque auctor. Fusce sed bibendum risus. Nunc non fermentum sem, quis aliquam odio. Integer non ante erat. 
+For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to the basic navigation and functions.  In future sessions you will be preparing the data and setting up the basics for yourself.
+
+## Obtaining and opening the sample map
+
+The sample map is based on [British Geological Survey](https://www.bgs.ac.uk/) data covering Malham Tarn in North Yorkshire and uses data from a number of sources with which you will become familiar during this module.
