@@ -25,14 +25,24 @@
 	       {% endfor %}
 	    </p>
 
+	    {% assign mydocs = site.docs | group_by: 'category' %}
+	    {% for cat in mydocs %}
+	    <p>
+	       {% assign items = cat.items | sort: 'order' %}
+	       {% for item in items %}
+	       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+	       {% endfor %}
+	    </p>
+	    {% endfor %}
+
 	    <!-- <p class="view"><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View the Project on GitHub <small>cgordon&#45;gis/GIS&#45;geol</small></a></p> -->
 
 
 	    <!-- <div class="downloads"> -->
 	    <!--    <ul> -->
-		<!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol/zipball/master">Download <strong>ZIP File</strong></a></li> -->
-		<!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol/tarball/master">Download <strong>TAR Ball</strong></a></li> -->
-		<!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View On <strong>GitHub</strong></a></li> -->
+	    <!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol/zipball/master">Download <strong>ZIP File</strong></a></li> -->
+	    <!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol/tarball/master">Download <strong>TAR Ball</strong></a></li> -->
+	    <!--   <li><a href="https://github.com/cgordon&#45;gis/GIS&#45;geol">View On <strong>GitHub</strong></a></li> -->
 	    <!--    </ul> -->
 	    <!-- </div> -->
 	 </header>
