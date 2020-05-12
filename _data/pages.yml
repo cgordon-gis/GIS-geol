@@ -12,3 +12,9 @@ docs:
 
 - title: Downloading UK data
   url: digimap.html
+
+- title: Coordinate systems and projections
+  url: projections.html
+
+- title: Creating data - digitisation
+  url: digitising.html
