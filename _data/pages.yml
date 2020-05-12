@@ -4,17 +4,23 @@ docs:
 - title: Welcome
   url: index.html
 
-- title: Introduction
+- title: Introduction to GIS with ArcGIS Pro
   url: introduction.html
 
-- title: Exploring GIS
-  url: exploring.html
-
-- title: Downloading UK data
+- title: Downloading UK data from Digimap
   url: digimap.html
 
-- title: Coordinate systems and projections
-  url: projections.html
+- title: Creating a base map
+  url: basemap.html
 
-- title: Creating data - digitisation
+- title: Georeferencing a scanned map
+  url: georeferencing.html
+
+- title: Digitising geological data
   url: digitising.html
+
+- title: Symbolising and labelling data
+  url: symbology.html
+
+- title: Layout and presentation
+  url: layout.html
