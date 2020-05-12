@@ -17,20 +17,12 @@
 	 <header>
 	    <h1><a href="index.html">GIS for geologists</a></h1>
 
-	    <p>
-	       {% for doc in site.docs %}
-	       {% if doc.category == "geology" %}
-	       : <a href="{{ doc.url }}">{{ doc.title }}</a> :
-	       {% endif %}
-	       {% endfor %}
-	    </p>
-
 	    {% assign mydocs = site.docs | group_by: 'category' %}
 	    {% for cat in mydocs %}
 	    <p>
 	       {% assign items = cat.items | sort: 'order' %}
 	       {% for item in items %}
-	       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+	       : <a href="{{ item.url }}">{{ item.title }}</a> :
 	       {% endfor %}
 	    </p>
 	    {% endfor %}
