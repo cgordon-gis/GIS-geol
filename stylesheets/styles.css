@@ -190,10 +190,12 @@ hr {
 }
 
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
+  /* width:270px; */
+  float:none;
+  position:static;
+  width:auto;
+  /* position:fixed; */
+  /* bottom:50px; */
 }
 
 @media print, screen and (max-width: 960px) {
