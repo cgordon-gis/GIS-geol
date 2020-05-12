@@ -107,6 +107,12 @@ header {
    position:fixed;
 }
 
+/* To show current page in sidebar page menu */
+.result li.active a {
+    color: lightgray;
+    cursor: default;
+}
+
 /* header ul { */
 /*   list-style:none; */
 /*   height:40px; */
@@ -172,7 +178,7 @@ section {
 }
 
 small {
-   font-size:11px;
+   font-size:12px;
 }
 
 hr {
