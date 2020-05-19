@@ -28,3 +28,15 @@ img {
 table img {
    margin: 2px auto 2px auto;
 }
+
+blockquote {
+   font-size: 14px;
+}
+
+.wm-page-content blockquote img {
+   margin: 0 auto 0 auto;
+}
+
+blockquote img {
+   margin: 0 auto 0 auto;
+}
