@@ -21,3 +21,10 @@ img {
    margin-right:auto;
 }
 
+.wm-page-content table img {
+   margin: 2px auto 2px auto;
+}
+
+table img {
+   margin: 2px auto 2px auto;
+}
