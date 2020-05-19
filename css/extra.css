@@ -21,16 +21,14 @@ img {
    margin-right:auto;
 }
 
-.wm-page-content table img {
-   margin: 2px auto 2px auto;
-}
-
-table img {
-   margin: 2px auto 2px auto;
-}
+/* tip boxes etc are formatted as blockquotes */
+/* these styles set those up */
 
 blockquote {
    font-size: 14px;
+   border-top: 1px solid #eee;
+   border-right: 1px solid #eee;
+   border-bottom: 1px solid #eee;
 }
 
 .wm-page-content blockquote img {
