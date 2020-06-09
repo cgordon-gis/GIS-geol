@@ -21,6 +21,10 @@ img {
    margin-right:auto;
 }
 
+h2 {
+   margin-top: 14px;
+}
+
 /* tip boxes etc are formatted as blockquotes */
 /* these styles set those up */
 
@@ -33,8 +37,14 @@ blockquote {
 
 .wm-page-content blockquote img {
    margin: 0 auto 0 auto;
+   display: inline;
+}
+
+blockquote p {
+   margin-bottom: 10px;
 }
 
 blockquote img {
    margin: 0 auto 0 auto;
+   display: inline;
 }
