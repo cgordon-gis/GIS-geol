@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Clare Gordon">
+  <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/crs/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Coordinate systems, projections and transformations - GIS for Geologists</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Coordinate systems, projections and transformations";
+    var mkdocs_page_input_path = "crs.md";
+    var mkdocs_page_url = "/GIS-geol/crs/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> GIS for Geologists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding_data/">Finding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adding_data/">Adding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../creating_data/">Creating data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../styles/">Styling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../labels/">Labelling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysis/">Analysis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../layout/">Layout and presentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../three_d/">Viewing maps in 3D</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">GIS for Geologists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Coordinate systems, projections and transformations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/crs.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="coordinate-systems-projections-and-transformations">Coordinate systems, projections and transformations</h1>
+<!-- TODO: does it make sense to include all of this, or is this overkill for this level 1 group? -->
+
+<p>The background to coordinate reference systems and projections and an explanation of what they are will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
+<h2 id="learning-outcomes">Learning outcomes</h2>
+<p>When you have completed this section you should be able to</p>
+<ul>
+<li>describe the main types of data used in GIS</li>
+<li>find spatial data from a wide range of sources</li>
+<li>find out essential information about your data and apply that to your use of data in GIS
+<!-- TODO: check that these are still correct and relevant to the content that follows.  May be better for previous chapter on adding and creating data. --></li>
+</ul>
+<h2 id="experimenting-with-coordinate-systems">Experimenting with coordinate systems</h2>
+<p>In this exercise you will use a map of the World that has already been set up to enable you to experiment with different coordinate systems and projections and investigate the different effects of each on distance and area.</p>
+<ul>
+<li>You should already have downloaded <code>CoordSystems.7z</code> from Minerva and unzipped it.  If not, do so now.</li>
+<li>The folder in the unzipped data should also be called <code>CoordSystems</code>.  This is an ArcGIS Pro project.  Open the <code>CoordSystems</code> map in the same way that you <a href="/introduction/#obtaining-and-opening-the-sample-map">opened the sample map in the first section</a>.</li>
+</ul>
+<p>You should find that you have a map of the World open in Arc that looks something like the image below.</p>
+<p><img alt="The map for the first exercise.  Yours should look very similar." src="../images/crs/ESCoordsysMap.png" title="The map for the first exercise.  Yours should look very similar." /></p>
+<p>The data for this map is taken from <a href="https://www.naturalearthdata.com/">Natural Earth data</a> which is a general dataset made available for download under an open source licence.  It is well worth investigating for future use.</p>
+<h3 id="repairing-broken-file-links">Repairing broken file links</h3>
+<p>If you find that your map doesn&rsquo;t show and that you have the red exclamation marks next to the data as in the image below, follow these instructions to repair the data links.</p>
+<p><img alt="The red exclamation mark showing that the links to the data for these layers is broken." src="../images/crs/TipBrokenLinks_small.png" title="The red exclamation mark showing that the links to the data for these layers is broken." /></p>
+<p>If you use absolute file paths and you have to move the files from one location to another, or if you have a project folder set up by someone else, you may find that the broken links are marked by a red exclamation mark next to the layer name.  This can also happen if you are adding .lyr files for symbology.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Repairing broken file links</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To check the name of the file that  you&rsquo;ll need to locate:</p>
+<ul>
+<li>Open the layer properties and go to the <code>Source</code> tab</li>
+<li>Under <code>Data Source</code> you will see which file Arc is looking for - make a note of this</li>
+</ul>
+<p><img alt="The Layer Properties for the missing layer, showing where Arc is actually looking for the data.  Make a note of the file name - this is what you need to look for in your file system." src="../images/crs/TipBrokenLinksFileSource.png" title="The Layer Properties for the missing layer, showing where Arc is actually looking for the data.  Make a note of the file name - this is what you need to look for in your file system." /></p>
+<ul>
+<li>Look through your file system to find the correct file</li>
+</ul>
+<p>Once you know where the file you need is located, do the following to repair the link:</p>
+<ul>
+<li>from the layer properties source tab <code>Set Data Source...</code></li>
+<li>Navigate to the file that you need then <code>OK &gt; OK</code></li>
+</ul>
+<p>That layer should now appear on your map.  If you&rsquo;re lucky all of the missing layers will appear, but if you&rsquo;re not you&rsquo;ll need to repeat the process for each layer.</p>
+<h3 id="finding-out-the-map-coordinate-system">Finding out the map coordinate system</h3>
+<p>This first step is important.  You need to know what the coordinate system of the current project is.  To do this you need to look in the <code>Map Properties</code>.</p>
+<ul>
+<li>Right-click on the <code>Map</code> subheading in the contents pane</li>
+<li>Select <code>Properties</code></li>
+<li>Click <code>Coordinate Systems</code> on the left of the properties panel</li>
+</ul>
+<p><img alt="The coordinate systems information in the map properties." src="../images/crs/ESMapPropertiesCoords.png" title="The coordinate systems information in the map properties." /></p>
+<p>The Coordinate System tab gives you information about the current setting, including its name.  It also shows the coordinate systems of the layers in the map.</p>
+<p>In this project the layers called <strong>populated_places</strong> and <strong>countries</strong> both have the same coordinate system as the map.</p>
+<p>The layer <strong>Topographic</strong> is in <code>WGS 1984 Web Mercator Auxiliary Sphere</code>. <!-- TODO: Check that this hasn't changed... --></p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>Map coordinate system</strong></p>
+<p>What is the coordinate system of this map?  Make a note of it.</p>
+<p>Do you think that it is a Geographic Coordinate System or Projected Coordinate System, and what makes you think that it is one or the other?</p>
+</blockquote>
+<ul>
+<li>Click <code>OK</code> to close the properties box for now.</li>
+</ul>
+<p>The map is in a coordinate system called &ldquo;GCS WGS 1984&rdquo;.  The GCS indicates that it is a Geographic Coordinate System.</p>
+<h3 id="using-the-measure-tool">Using the Measure tool</h3>
+<p>We&rsquo;ll use the <code>Measure tool</code> to compare the effect of different projections on this map of the World.  You can find it&rsquo;s button in the <code>Inquiry</code> group on the <code>Map</code> tab of the ribbon.</p>
+<p><img alt="The measure tool on the ribbon showing the dropdown choices." src="../images/crs/ESMeasureTool.png" title="The measure tool on the ribbon showing the dropdown choices." /></p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Using the Measure tool in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>The tool gives you a choice between measuring distance, area or a particular feature.  Once you click on the down arrow underneath the tool you get an option box so that you can change the unit measurement, and clear the previous measurement.  This box also shows the results of your measurement.</p>
+<p><img alt="The options in the measure tool box after you've started to measure a line distance." src="../images/crs/ESMeasureOptions.png" title="The options in the measure tool box after you've started to measure a line distance." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Measuring distances</strong></p>
+<p>Zoom in on the map until you can see city names. Use the Measure Distance tool to measure the distance from <code>London</code> to <code>Istanbul</code>, double-clicking to finish your measurement.</p>
+<p>Make a note of the distance that you come up with.  What units have been used for the measurement?  You may need to go into the options to find out.</p>
+</blockquote>
+<p><img alt="London to Istanbul - using the measure tool to find the distance from one to the other." src="../images/crs/ESLondonToIstanbul.png" title="London to Istanbul - using the measure tool to find the distance from one to the other." /></p>
+<ul>
+<li>To clear the measurement click on the <code>Clear results</code> button on the options box.</li>
+</ul>
+<p>Now you can start trying out different coordinate systems and projections and see what effect they have on distances and areas on the map.  Each time you change the coordinate system zoom out to the full extent of the map and have a look at the result.  Then zoom back in and take some measurments.</p>
+<h3 id="changing-the-map-coordinate-system">Changing the map coordinate system</h3>
+<p>To change a coordinate system:</p>
+<ul>
+<li>Right-click on the map title (at the top of the table of contents - it&rsquo;s probably called <code>Map</code>) and select <code>Properties</code></li>
+<li>Select the <code>Coordinate System</code> tab</li>
+<li>Browse to the required coordinate system in the <code>XY Coordinate Systems Available</code> box, for example, browse to:<ul>
+<li>`Projected Coordinate Systems &gt; World &gt; Azimuthal Equidistant (world)</li>
+</ul>
+</li>
+<li>then click <code>OK</code></li>
+<li>Zoom to <code>Full extent</code> (remember it&rsquo;s a button on the Map tab of the ribbon) to have a look at the map</li>
+<li>then zoom back in again to make the suggested measurements</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Comparing coordinate systems</strong></p>
+<p>Set the coordinate system to each of the projected coordinate systems below in turn.</p>
+<p>For each one use the measure tool to measure the <strong>distance</strong> from London to Istanbul</p>
+<p>and the area of the polygon for Algeria in North Africa (select the <code>Measure features</code> tool.</p>
+<p>Make a note of the results, and don&rsquo;t forget to include the units that you are using.  Check the selections in the Measure tool window.</p>
+<blockquote>
+<p><strong>Azimuthal Equidistant (world)</strong> - <code>Projected Coordinate Systems &gt; World</code></p>
+<p><strong>Cassini</strong> - <code>Projected Coordinate Systems &gt; World</code></p>
+<p><strong>Aitoff (sphere)</strong> - <code>Projected Coordinate Systems &gt; World (Sphere-based)</code></p>
+<p><strong>North Pole Stereographic</strong> - <code>Projected Coordinate Systems &gt; Polar</code></p>
+</blockquote>
+</blockquote>
+<p>Try out some more projects for yourself.  Notice that some of the projections cover limited geographic extents - these tend to be specific to an area such as a particular country and are designed to minimize the distortion for that area so look rather odd for other areas, e.g. the British National Grid for Great Britain.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>Thinking about projections</strong></p>
+<p>Looking at the results you have obtained for distance and area, what do these tell you about different projections?  How do distance and area compare in different examples?</p>
+</blockquote>
+<p>I hope this shows you that it is important to be aware of coordinate systems, and to have some idea how to find out which system works best for which part of the world, and for what purpose.  There is a lot of information available.  Have a look at the general GIS books on the module reading list for some ideas to start you off.</p>
+<p>For more specific information try Snyder (1987) or Maher (2010) from the Coordinate Systems and Projections part of the reading list. <!-- TODO: Can I find anything suitable that is online? --></p>
+<p>When you have finished this section close ArcGIS completely.</p>
+<h2 id="using-coordinate-systems-setting-up-your-project">Using coordinate systems: Setting up your project</h2>
+<!-- TODO: What am I planning to do about data for this exercise?  Maybe provide it? -->
+
+<p>For this next exercise you will be using the data that you downloaded before the class and exploring what you need to do when your layers have different projections to each other - a situation that is very likely to occur when you obtain data from different sources.  This exercise should show the importance of understanding coordinate systems and how they work in ArcGIS.</p>
+<h3 id="starting-a-project-from-scratch">Starting a project from scratch</h3>
+<p>For this exercise you&rsquo;ll need to set up the project for yourself from scratch.</p>
+<ul>
+<li>Open ArcGIS Pro by searching for it in the Windows start menu.  Make sure that you open <code>ArcGIS Pro</code>, not any other version of Arc!</li>
+<li>You should get a start screen which looks something like the image below.  Though your recent projects will be different.</li>
+</ul>
+<p><img alt="The start screen when you open ArcGIS Pro." src="../images/crs/ESArcStartScreen.png" title="The start screen when you open ArcGIS Pro." /></p>
+<ul>
+<li>Under <code>Blank Templates</code> click on <code>Map</code></li>
+<li>You&rsquo;ll get a dialog box which you should fill in as follows:<ul>
+<li>For the name enter the name of the project - so in this case something like <code>Projections</code></li>
+<li>For the location navigate to the folder where you want to store the project.  You can use the default setting if you want to or click on the folder icon to navigate to another location</li>
+<li>Check that <code>Create a new folder for this project</code> is ticked</li>
+<li>Click <code>OK</code> to create your new project</li>
+</ul>
+</li>
+</ul>
+<p>ArcGIS Pro creates the new project folder and sets up the component parts automatically.  As you are working on your projects make sure that you save all of your data into the project folder so that it all stays together even if you move the project to another drive, e.g. by backing it up to a USB stick.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>What does a project contain?</strong></p>
+<p>Open out some of the subheadings in the Catalog pane.  You should see that Arc has created some empty content for you.  Most notably a geodatabase for data storage with the same name as your project, e.g. <code>Projections.gdb</code>.  This geodatabase will have a little house icon on it to show that it&rsquo;s the &ldquo;home&rdquo; geodatabase.</p>
+</blockquote>
+<p>You should find yourself with a familiar screen.  Arc will have set up a map view and added a topographic base map, which will show a default area.</p>
+<h3 id="adding-your-downloaded-layers-to-the-map">Adding your downloaded layers to the map</h3>
+<p>Copy the data that you have downloaded into the project folder for this project.</p>
+<p>Add the three layers that you have already prepared to the map that you&rsquo;ve just created by dragging and dropping them from the Catalog pane to the contents pane in the order below.  If the Catalog pane isn&rsquo;t visible remember that you can open it by going to <code>View &gt; Catalog pane</code> on the ribbon to open it.</p>
+<p>You may need to <a href="/introduction/#adding-a-folder-connection-in-the-catalog-pane">Add a Folder Connection</a> to be able to find the files.</p>
+<p>Add the following layers in the order shown below:</p>
+<ol>
+<li>European River Catchments</li>
+<li>SRTM height data for Skye, off the West coast of Scotland</li>
+<li>Ordnance Survey miniscale map of the UK.  This may not show up when you add it, don&rsquo;t worry about that for the moment.</li>
+</ol>
+<h3 id="map-layers-from-the-esri-portal">Map layers from the ESRI Portal</h3>
+<!-- TODO: is this still ESRI Portal, or better to use Living Atlas? -->
+
+<p>ESRI Portal is a fantastic resource of maps and data that you can add to your own maps.  Follow the instructions below to download the additional data that you need for this exercise, but it&rsquo;s also worth having a look at what else is available to you.</p>
+<ul>
+<li>Go to the <code>Catalog</code> pane on the right of the window</li>
+<li>Click on the <code>Portal</code> heading, then click on the button for <code>All Portal</code> - remember there are tool tips if you hover over buttons.</li>
+<li>Search for <code>rivers Europe</code> in the search box.  If you can&rsquo;t find it under All Portal try clicking on <code>Living Atlas</code> and searching again.</li>
+</ul>
+<p>You are looking for a layer with a yellow symbol, as under the mouse pointer in the image below.</p>
+<p><img alt="Searching for data in ESRI Portal." src="../images/crs/ESArcSearch.png" title="Searching for data in ESRI Portal." /></p>
+<p>This symbol shows that this layer is a <code>Layer Package</code> which can be added to your own map, rather than a complete map.  For this exercise use the layer package <code>Rivers and lake centerlines of Europe</code> which should appear a short way down the results.</p>
+<ul>
+<li>You can see more information about the layer and a preview by hovering over it</li>
+<li>Right-click on the title to <code>Add to current map</code>. (If you don&rsquo;t already have a map open you can click to <code>Add to new map</code>.)</li>
+</ul>
+<p>ArcGIS automatically saves the layer package to your default location - on computers in University clusters that is a folder called <code>ArcGIS</code> on your M:/ drive.  From there it is easy to save the data to the location in which you want to store it (i.e. within the project folder) for future use, by <strong>exporting</strong> it.</p>
+<h3 id="export-a-vector-layer-to-your-project-folder">Export a vector layer to your project folder</h3>
+<p>To export a vector layer to a location and format of your choice, so that all of your data is in one place and within the project:</p>
+<ul>
+<li>Right-click on the rivers and lake centerlines layer in the contents pane then <code>Data &gt; Export Features</code> and the <strong>Geoprocessing</strong> pane should open on the right of the window.</li>
+</ul>
+<p><img alt="Exporting or copying features from one feature class to another." src="../images/crs/ESExportFeatures.png" title="Exporting or copying features from one feature class to another." /> </p>
+<ul>
+<li>The input features should be set automatically to the layer that you right-clicked on, or you can select it now using the buttons on the right</li>
+<li>select a location to save the new feature class by clicking on the folder icon next to <code>Output Feature Class</code> and navigating to the geodatabase that has the same name as your project, but an extension of .gdb.</li>
+<li>give your output feature class a name, e.g. <code>RiversEurope</code> - note no spaces or unusual characters</li>
+<li>then click to <code>Run</code></li>
+</ul>
+<p>Arc should add your new layer to your map.  It&rsquo;s good practice to <a href="/introduction/#remove-layers">Remove</a> the original version of the layer to keep your contents tidy.</p>
+<p>Repeat this with the <code>European River Catchments</code> layer.  This and the RiversEurope layer are both <strong>vector</strong> layers and are best stored in a geodatabase.</p>
+<h3 id="export-a-raster-layer-to-your-project-folder">Export a raster layer to your project folder</h3>
+<p>This allows you to export a raster layer to a location and format of your choice, so that all of your data is in one place and within the project.</p>
+<p>The dialogs for the <strong>raster</strong> files are a bit more complex than for the vector.</p>
+<ul>
+<li>Right-click on the SRTM layer in the Contents pane, then <code>Data &gt; Export Raster</code> and the <strong>Geoprocessing</strong> pane should open to the right of the window.</li>
+</ul>
+<p><img alt="The geoprocessing panel for the Export Raster tool." src="../images/crs/ESExportRaster_small.png" title="The geoprocessing panel for the Export Raster tool." /></p>
+<ul>
+<li>select a location to save the new raster by clicking in the folder next to <code>Output Raster Dataset</code>.  This doesn&rsquo;t have to be in the geodatabase but can just be in the project folder.</li>
+<li>check that the other settings match the figure, though the defaults should be fine in this case.  You can check settings like cell size and pixel type by looking at the <code>Properties</code> of the original layer.</li>
+<li>Click to <code>Export</code> the layer</li>
+</ul>
+<p>Arc should add your new layer to your map.  <a href="/introduction/#remove-layers">Remove</a> the original version of the layer to keep your contents tidy.</p>
+<h3 id="copy-a-raster-layer-to-your-project-folder">Copy a raster layer to your project folder</h3>
+<p>The Miniscale layer is basically a coloured background raster rather than a layer used for processing.  In this case the simplest way to get it into your project successfully is to use the Catalog pane to copy and paste the file from the original folder to your project folder then add the copy to your map in the usual way.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Tidying up your data</strong></p>
+<p>Once you are sure that you have all of the data you need safely stored within your project, you can go ahead and delete the original data from the default location, or wherever you saved it to originally.  This will save space on your disk.  Space can become an issue as you do more GIS!</p>
+</blockquote>
+<h2 id="working-with-coordinate-systems-in-arc">Working with coordinate systems in Arc</h2>
+<!-- TODO: Could do with more images in this section? -->
+
+<p>The map is set to the coordinate system of the first layer to be added, which in this case will have been the original <strong>European River Catchments</strong> layer.  If the coordinate systems don&rsquo;t match Arc will try to project the subsequent layers &ldquo;on the fly&rdquo;.  This usually looks fine - your layers should line up - but isn&rsquo;t ideal if you are going to do analysis or measurements.  In this case you&rsquo;ll need to decide what coordinate system you need to work in and change all of your data to that.</p>
+<p>Start by deciding what coordinate system you want your final map to appear in - in this case we&rsquo;ll aim for:</p>
+<blockquote>
+<p><strong>British National Grid</strong></p>
+</blockquote>
+<p>To check the coordinate system for the current map:</p>
+<ul>
+<li>Go to the map <code>Properties</code> by right-clicking on the <code>Map</code> heading in the contents pane</li>
+<li>go to the <code>Coordinate Systems</code> tab and check the <code>Current XY</code> box</li>
+<li>Make a note of the coordinate system that is given there</li>
+</ul>
+<p>Arc sets the map to the coordinate system of the first layer to be added to the map.  So in this case it should be set to <code>ETRS 1989 LAEAS L52 M10</code>, not British National Grid.</p>
+<p>To find the coordinate system in the layer properties:</p>
+<ul>
+<li>right-click on the layer in the contents pane</li>
+<li>go to <code>Properties</code></li>
+<li>click to look at <code>Source</code> and scroll down and expand the <code>Spatial Reference</code> heading</li>
+</ul>
+<p>Check the coordinate system of each of the following layers and make a note of the Projected and Geographic coordinate systems for each layer listed below.</p>
+<ul>
+<li>Miniscale map of the UK</li>
+<li>ArcGIS portal river centerlines layer</li>
+<li>European River Catchments</li>
+<li>SRTM Height layer</li>
+</ul>
+<p>You should find that each layer has a different coordinate system, and that not all are projected, but one layer, the Miniscale layer, has spatial reference as <code>Unknown</code>.</p>
+<p>The layers that have a proper spatial reference should all appear in the correct location with regard to each other - thanks to Arc&rsquo;s &ldquo;on-the-fly&rdquo; reprojection.</p>
+<p>But use <code>Zoom to layer</code> to find the Miniscale layer - because the spatial reference is <strong>unknown</strong> this layer has ended up at latitude <strong>0</strong>, longitude <strong>0</strong>, somewhere close to Africa.</p>
+<p>Given that you need to be able to display all of your layers correctly, <strong>and</strong> in future exercises will need to use data for analysis, the rest of this section will look at how to project and reproject data from one coordinate system to another.</p>
+<h3 id="defining-projections">Defining projections</h3>
+<p>You should have found that the projection of the Miniscale layer is <strong>Undefined</strong>.  To be able to display it and use it with other data you need to use the <code>Define projection</code> tool to attach information about the projection.</p>
+<p>The challenge here is that you need to know what the original projection wasy - you can&rsquo;t just project it to anything.  This can take a bit of detective work.</p>
+<p>The Ordnance Survey data from Digimap is provided in the <strong>British National Grid</strong> projection.  This is an important bit of information, but has to be discovered from the supporting website.</p>
+<p>You&rsquo;ll use one of the <strong>Geoprocessing</strong> tools to define the projection.  Geoprocessing tools give you an opportunity to do a lot of very advanced processing tasks without needing to use a command-line interface.  You&rsquo;ll be using them a lot in the rest of this course.</p>
+<ul>
+<li>Open the toolboxes by clicking on the <code>Analysis</code> tab of the ribbon, and then on <code>Tools</code>.  The toolbox should open in the right-hand panel.  You may need to click on the <code>Toolboxes</code> tab to see the full list.</li>
+</ul>
+<p><img alt="Geoprocessing toolboxes and tools." src="../images/crs/ESGeoprocessingToolboxes_small.png" title="Geoprocessing toolboxes and tools." /></p>
+<ul>
+<li>Go to <code>Data Management Tools &gt; Projections and Transformations &gt; Define Projection</code></li>
+<li>or if you know what tool you want to use you can type it&rsquo;s name into the <code>Find Tools</code> search box instead</li>
+<li>Select the Miniscale file for the <code>Input Dataset</code></li>
+<li>Select British National Grid for the coordinate system by clicking on the button to the right of the <code>Coordinate System</code> field and going to <code>Projected Coordinate System &gt; National Grids &gt; Europe &gt; British National Grid</code></li>
+<li>Click on <code>OK</code></li>
+<li>Then click to <code>Run</code></li>
+</ul>
+<!-- TODO: Include an image of this dialog box? -->
+
+<p>You probably won&rsquo;t see any difference immediately, but remove the Miniscale layer from your map, then add it back in again, and this time it should appear in the right place.  Also check the projection by going to the layer properties.  This time it should say <strong>British National Grid</strong>.</p>
+<h3 id="transforming-projections">Transforming projections</h3>
+<p>It should now be possible to add the rivers layer <!-- TODO: be clearer about which layer this is - the river centerlines? -->, which has a projected coordinate system of <strong>WGS1984, Web Mercator Auxiliary Sphere</strong>, to the map and transform it &ldquo;on the fly&rdquo;.  This will allow you to display the layers together on one layout, but the transformation is only temporary and only affects this map project.</p>
+<p>Transformations work on the underlying datum.  So to change from a projection using the ETRS 1989 datum <!-- TODO: Is this the correct one for this data layer? --> to the British National Grid, which is the OSGB 1936 datum, you&rsquo;ll need to apply a <strong>transformation</strong> such as <code>ETRS_1989_To_OSGB_1936_OSTN15</code>.  Preset transformations do this for you, with lots of underlying complicated maths.</p>
+<p>When you start reprojecting data you will have a choice of <strong>transformation</strong> to apply to it.  In many cases the default will be fine, but be aware that sometimes you will have to choose one for yourself.</p>
+<p>There is more <a href="https://epsg.io/">information about projections and transformations available online</a>.</p>
+<p>The ESRI support website gives more information about <a href="https://support.esri.com/en/technical-article/000004829">how to choose the correct transformation</a>.</p>
+<h3 id="reprojecting-data-vector-data">Reprojecting data: vector data</h3>
+<p>On the fly transformation is fine if you are just looking at the map, but if you need to do any measuring or analysis then you need to reproject the data layers into the same coordinate system as each other and the map.</p>
+<p>To be able to reproject a layer the following is required:</p>
+<ul>
+<li>Your layer must already have a projection.  If it is undefined you first need to <a href="#defining-projections"><strong>define</strong> the projection</a>.</li>
+<li>You need to know whether your data is vector or raster<sup id="fnref:501"><a class="footnote-ref" href="#fn:501">1</a></sup></li>
+<li>You need to know which coordinate system and datum you want your data to be in</li>
+</ul>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Reprojecting a feature class with the geoprocessing toolbox</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>We want to reproject the river centerlines layer to <strong>British National Grid</strong> which uses <strong>OSGB 1936</strong> as its datum.  This is a <strong>vector</strong> layer, so proceed as follows:</p>
+<ul>
+<li><code>Geoprocessing &gt; Data Management Tools &gt; Projections and Transformations &gt; Project</code></li>
+<li>Fill in the dialog box as shown in the image below<ul>
+<li>selecting an appropriate location and name (maybe just add &ldquo;BNG&rdquo; to the end of the existing name) for your projected layer</li>
+<li>and setting the <code>Output Coordinate System</code> as British National Grid</li>
+<li>the <code>Geographic Transformation</code> should be set automatically, accept that for now</li>
+</ul>
+</li>
+<li>then <code>Run</code> the tool</li>
+</ul>
+<p><img alt="Project tool filled in for vector feature layers." src="../images/crs/ESProjectLayer.png" title="Project tool filled in for vector feature layers." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Reproject the European River Catchments</strong></p>
+<p>Follow the same steps for the other vector layer - the European River Catchments.  This time the Geographic Transform may be different - probably something like <code>OSGB_1936_To_ETRS_1989_1</code>, but don&rsquo;t worry if it isn&rsquo;t!</p>
+</blockquote>
+<p>Make sure both new vector layers are now on your map.</p>
+<h3 id="reprojecting-data-raster-data">Reprojecting data: raster data</h3>
+<p>The previous section shows you how to reproject vector data, now let&rsquo;s reproject an example of <strong>raster</strong> data using the SRTM data that you downloaded earlier.</p>
+<h4 id="srtm-data">SRTM data</h4>
+<p>To change an SRTM raster tile to British National Grid you&rsquo;ll also need to <strong>project</strong> it, but using a different tool to the vector layers above.  This time go to:</p>
+<ul>
+<li><code>Tools &gt; Data Management Tools &gt; Projections and Transformations &gt; Raster &gt; Project Raster</code></li>
+</ul>
+<p>The form is very similar to the form for reprojecting vector formats so go ahead and fill it in for the SRTM tile.</p>
+<p><img alt="Project Raster tool for raster layers." src="../images/crs/ESRasterProjection.png" title="Project Raster tool for raster layers." /></p>
+<ul>
+<li>For now leave the other options, e.g. Output cell size, as the default.</li>
+<li><code>Run</code> the process (this may take some time&hellip;)</li>
+</ul>
+<p>It isn&rsquo;t necessary to repeat this for the Miniscale layer as that is already in British National Grid.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Check projections</strong></p>
+<p>At this point check the properties for each of the newly project layers to ensure that they are all in British National Grid.</p>
+<p>If any of the layers are not in British National Grid check the relevant instructions above and carry them out again (asking for help if you need it).</p>
+</blockquote>
+<h3 id="creating-a-new-map-in-british-national-grid">Creating a new map in British National Grid</h3>
+<p>Now that you have all of the layers projected into the same coordinate system it is time to create a new map and add all of the projected layers to that.</p>
+<ul>
+<li>To create a new map within your current project go to the <code>Insert</code> tab of the ribbon and click on <code>New Map</code></li>
+<li>Go to the map properties by right-clicking on the map title, which in this case is probably something like <code>Map 1</code></li>
+<li>Go to the <code>General</code> tab and under <code>Name</code> give the new map an informative name, e.g. <code>Rivers - British National Grid</code></li>
+<li>while you&rsquo;re there it&rsquo;s worth changing the <code>Display units</code> to <code>Meters</code>, which makes more sense than Decimal Degrees for a map in a projected coordinate system</li>
+<li>Click <code>OK</code> to close the properties.  Note that because you have changed the name it is now easy to see which map is which on the tabs at the top of the map.</li>
+<li>Add all four of your reprojected layers, that is the ones in British National Grid, to the map by dragging and dropping them from the Catalog pane.  It shouldn&rsquo;t matter what order you add them in.</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Checking the layers are all correct</strong></p>
+<p>Check that the whole process has worked by going to the map properties again and looking at the <code>Coordinate Systems</code> tab.</p>
+<p>If you look under <code>XY Coordinate Systems Available</code> and drop down the <code>Layers</code> subheading, you should be able to find all four of your layers under <code>British National Grid</code> as shown in the image below</p>
+</blockquote>
+<p><img alt="Checking that all of your layers have been successfully projected to British National Grid.  Your layer names may be different." src="../images/crs/ESAllBNG.png" title="Checking that all of your layers have been successfully projected to British National Grid.  Your layer names may be different." /></p>
+<p>If your properties look like the image above, with all of them in British National Grid, then it has all worked OK.  If any of your layers (except the basemap layer added by Arc by default) are not under the British National Grid heading then you need to look back at the previous instructions and check that you followed them correctly.</p>
+<h2 id="summary-of-defining-projections-and-projecting-data">Summary of defining projections and projecting data</h2>
+<!-- TODO: Would it make sense to have this as a separate downloadable document? -->
+
+<p>This summary of the main points from this chapter should help you to remember what you need to do each time that you obtain a new dataset.  Read it through, and then remember where to find it so that you can refer back to it.</p>
+<blockquote>
+<p><img alt="Warning" src="../images/svg/warning-black-24dp.svg" /> <strong>Warning</strong></p>
+<p>If you don&rsquo;t follow these steps then you can give yourself a major headache when trying to load data for a project.</p>
+</blockquote>
+<p>In addition to the text summary and the link to a video clip, there is a step-by-step diagram at the end of the chapter which you could use as a quick reminder each time that you have data to load into GIS.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Summary of defining projections and projecting data in GIS</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<h3 id="what-is-the-current-coordinate-system">What is the current coordinate system?</h3>
+<p>Always start by checking the current coordinate system / projection of your data and make a note of it.  You won&rsquo;t be able to do much if you don&rsquo;t know what system the data uses.</p>
+<ol>
+<li>Check the file / layer properties or the metadata using the <strong>Catalog</strong>.</li>
+<li>If that doesn&rsquo;t help (e.g. if it&rsquo;s listed as <code>Undefined</code>), look at any documentation that came with the data (e.g. sometimes there is a text file in the same folder or zip file)</li>
+<li>If that still doesn&rsquo;t help, check with whoever or where ever you got the data from, e.g. the web page if you downloaded it from the web.</li>
+<li>If you still haven&rsquo;t found the answer check Maher (2010) and follow her instructions to work it out for yourself.
+<!-- TODO: Check availability of Maher, or find online alternative --></li>
+<li>If all else fails try an informed guess, e.g. if the data is from an official UK source it could well be British National Grid (though not always&hellip;)</li>
+</ol>
+<h3 id="define-projection">Define projection</h3>
+<p>If the coordinate system is <code>Undefined</code> you first need to <a href="#defining-projections">define it to its original coordinate system</a>, which you should have worked out in the previous section.</p>
+<p>You cannot <strong>change</strong> the coordinate system by redefining the projection - <strong>define it first</strong>, <em>then</em> use the vector or raster project tools as appropriate.</p>
+<h3 id="project-layer-and-transform">Project layer and transform</h3>
+<p>If/when your data is projected it is not in the same projection as the rest of your data or your map, then you need to <code>Project</code> the layer.  Remember that you use a different tool depending on whether the data is <a href="#reprojecting-data-raster-data">raster</a> or <a href="#reprojecting-data-vector-data">vector</a>.</p>
+<p>It is possible to transform <strong>on the fly</strong>, but if you are using your data for further analysis it is more reliable to <strong>Project</strong> to a new layer using the appropriate tools.</p>
+<h3 id="projection-all-correct">Projection all correct</h3>
+<p>If your data is projected and is in the same projection as your map or the rest of your data, then there is no problem and you can just use it as it is.</p>
+<h2 id="summary-flow-chart-of-defining-projections-and-projecting-data">Summary flow chart of defining projections and projecting data</h2>
+<p><img alt="Summary showing the decision process and actions necessary to prepare data for GIS" src="../images/crs/CoordinatesActionSummary_small.png" title="Summary showing the decision process and actions necessary to prepare data for GIS" /></p>
+<h2 id="recommended-reading-coordinate-sytems-and-projections">Recommended reading: Coordinate sytems and projections</h2>
+<p>This is a complex subject but it is essential to have a good grasp of the principles and techniques before you start using your own data in GIS.</p>
+<p>For more detailed information than has been given in this chapter have a look at the following references from the module reading list.</p>
+<p>Longley, P.A. (2011) Chapter 5, section 7.</p>
+<p>Maher, M.M. (2010) - the whole book is a practical guide to using coordinate systems and projections.</p>
+<h3 id="links-to-more-information-online">Links to more information online</h3>
+<p>ESRI provide a <a href="http://arcg.is/1iOYEpw">free online course</a> gives a clear overview of Geographic Coordinate Systems and is worth looking through.  You will need an ESRI username and password which you can obtain from IT helpdesk.</p>
+<p>The ESRI article on <a href="http://bit.ly/2Q2ooC6">Projection on the fly and geographic transformations</a> is a useful guide to how and why you need to use transformations.</p>
+<h3 id="videos-online">Videos online</h3>
+<p>The videos below give background information on using coordinate systems in GIS.</p>
+<p>Karl Olsen gives an <a href="http://bit.ly/1NEo0jx">overview of geographic and projected coordinate systems</a> (USA examples).</p>
+<p>Eric Compas has produced a series of four videos which show:</p>
+<ul>
+<li><a href="http://bit.ly/1hMdgW5">Coordinate system basics</a></li>
+<li><a href="http://bit.ly/1J3F1Ah">Defining coordinate systems</a></li>
+<li><a href="http://bit.ly/1Pz9omJ">Coordinate systems - projecting</a></li>
+<li><a href="http://bit.ly/1PlGPZj">Coordinate systems: the biggest mistake!</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:501">
+<p>If you are still unsure about the differences between vector and raster formats remember that you looked them up in a <a href="/introduction/#esri-gis-dictionary">dictionary in the first section</a>.  Remember also that this will come with experience!  You can also check the items in the general section of the reading list for more information or the Ordnance Survey have a useful <a href="https://youtu.be/hbOGp51nYGI">video on vector and raster formats</a>.&#160;<a class="footnote-backref" href="#fnref:501" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>&copy; Clare Gordon, University of Leeds 2020. This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike 4.0 International Licence.  To view a copy of this licence visit <a href="http://creativecommons.org/licences/by-nc-sa/4.0/" >http://creativecommons.org/licenses/by-nc-sa/4.0/</a> <br /> Icons downloaded from <a href="http://google.github.io/material-design-icons/">Materials Icons</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/cgordon-gis/GIS-geol/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

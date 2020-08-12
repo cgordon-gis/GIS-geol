@@ -1,93 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <meta name="author" content="Clare Gordon">
+  <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/introduction/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Introduction - GIS for Geologists</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
   
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="author" content="Clare Gordon">
-    <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/introduction/">
-    <link rel="shortcut icon" href="../img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Introduction - GIS for Geologists</title>
-    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/highlight.css">
-    <link href="../css/extra.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="../js/jquery-3.2.1.min.js"></script>
-    <script src="../js/bootstrap-3.3.7.min.js"></script>
-    <script src="../js/highlight.pack.js"></script>
-    
-    <base target="_top">
-    <script>
-      var base_url = '..';
-      var is_top_frame = false;
-        
-        var pageToc = [
-          {title: "Introduction to GIS with ArcGIS Pro", url: "#_top", children: [
-              {title: "Learning outcomes", url: "#learning-outcomes" },
-              {title: "Introduction to the exercises", url: "#introduction-to-the-exercises" },
-              {title: "Obtaining and opening the sample map", url: "#obtaining-and-opening-the-sample-map" },
-          ]},
-        ];
-
-    </script>
-    <script src="../js/base.js"></script> 
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_input_path = "introduction.md";
+    var mkdocs_page_url = "/GIS-geol/introduction/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="wy-body-for-nav" role="document">
 
-
-
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
+  <div class="wy-grid-for-nav">
 
     
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> GIS for Geologists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction-to-the-exercises">Introduction to the exercises</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-and-opening-the-sample-map">Obtaining and opening the sample map</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#open-the-sample-map">Open the sample map</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-map-ribbon">The map ribbon</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#change-scale">Change scale</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#spatial-bookmarks">Spatial bookmarks</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#catalog-pane">Catalog pane</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#working-with-map-layers">Working with map layers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#viewing-contents-of-layers">Viewing contents of layers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#renaming-layers-in-the-contents-pane">Renaming layers in the contents pane</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#turn-layers-on-and-off">Turn layers on and off</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-new-layers">Add new layers</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#add-data-command">Add data command</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#drag-and-drop">Drag and drop</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-folder-connection-in-the-catalog-pane">Adding a folder connection in the Catalog pane</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-the-order-of-layers">Change the order of layers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#make-layers-transparent">Make layers transparent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#grouping-layers">Grouping layers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remove-layers">Remove layers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-basemaps">Using Basemaps</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#viewing-an-attribute-table">Viewing an attribute table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#selecting-features-in-the-attribute-table">Selecting features in the attribute table</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#finding-help-for-arcgis">Finding help for ArcGIS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#arcgis-pro-help">ArcGIS Pro Help</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esri-gis-dictionary">ESRI GIS Dictionary</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#saving-a-map">Saving a map</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#symbolising-a-layer">Symbolising a layer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#symbolising-a-single-symbol">Symbolising a single symbol</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#symbolising-with-multiple-symbols-unique-values">Symbolising with multiple symbols (Unique Values)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#selecting-and-intersecting-two-different-layers">Selecting and intersecting two different layers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exporting-a-selection-of-a-feature-class">Exporting a selection of a feature class</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#select-by-location">Select by location</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exporting-selected-features-to-a-new-feature-class">Exporting selected features to a new feature class</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#layout-laying-out-a-map-for-print-or-export">Layout - laying out a map for print or export</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-elements-to-the-layout">Adding elements to the layout</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#to-add-text">To add text</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#printing-or-exporting-a-map">Printing or exporting a map</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#printing-a-layout">Printing a layout</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exporting-a-layout">Exporting a layout</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#suggested-layout">Suggested layout</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recommended-reading-introduction-to-gis">Recommended reading: Introduction to GIS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#videos-online">Videos online</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding_data/">Finding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adding_data/">Adding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../creating_data/">Creating data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../styles/">Styling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../labels/">Labelling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysis/">Analysis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../layout/">Layout and presentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../three_d/">Viewing maps in 3D</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">GIS for Geologists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
     
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../digimap/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../digimap/" class="btn btn-xs btn-link">
-        Digimap
-      </a>
-    </div>
-    
-    <div class="wm-article-nav">
-      <a href=".." class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href=".." class="btn btn-xs btn-link">
-        Home
-      </a>
-    </div>
-    
-  </div>
-
-    
-
-    <h1 id="introduction-to-gis-with-arcgis-pro">Introduction to GIS with ArcGIS Pro</h1>
-<p>The background to Geographic Information Systems (GIS) and an explanation of what it is will be covered in the lecture segment at the beginning of the class and the presentation and any other supporting materials will be available in <a href="https://minerva.leeds.ac.uk/">Minerva</a>. The lecture segment should help you to understand why you are doing these exercises.  If you still aren&rsquo;t sure, please ask Clare.</p>
+    <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/introduction.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction-to-gis-with-arcgis-pro">Introduction to GIS with ArcGIS Pro</h1>
+<p>The background to GIS and an explanation of what it is will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
 <h2 id="learning-outcomes">Learning outcomes</h2>
-<p>When you have completed this section of the workbook you will be able to</p>
+<p>When you have completed this section of the workbook you should be able to</p>
 <ul>
 <li>demonstrate how to open a map project in ArcGIS</li>
 <li>select appropriate tools to navigate in a map document</li>
@@ -96,56 +251,624 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>demonstrate different ways of finding help when using GIS</li>
 </ul>
 <h2 id="introduction-to-the-exercises">Introduction to the exercises</h2>
-<p>As a GIS specialist you have been asked by the Field Studies Council to produce a geological map of the area around the Malham Tarn National Nature Reserve (NNR).</p>
-<p>For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to basic navigation and functions.  In future sessions you will be preparing the data and setting up the basics for yourself.</p>
-<p><img alt="Flourite crystals" src="../images/flourite_crystals.jpg" /></p>
+<p>As a GIS specialist you have been asked by the Field Studies Council (FSC) to produce a geological map of the area around the Malham Tarn National Nature Reserve (NNR) where they have a <a href="https://www.field-studies-council.org/locations/malhamtarn/">field centre</a>.</p>
+<p><img alt="View of a boat house over Malham Tarn" src="../images/introduction/MalhamTarn.jpg" title="View of a boat house over Malham Tarn" /></p>
+<p>For this first exercise I have created a basic geological map of Malham Tarn so that you can explore the GIS application and get used to basic navigation and functions.  In future sessions you&rsquo;ll be preparing the data and setting up the basics for yourself.</p>
 <h2 id="obtaining-and-opening-the-sample-map">Obtaining and opening the sample map</h2>
-<p>The sample map is based on British Geological Survey data covering Malham Tarn in North Yorkshire and uses data from a number of sources with which you will become familiar during this module.</p>
-<h3 id="extra-image">Extra image</h3>
-<p>This colourful image should cheer up your day.  I&rsquo;ve added it for &ldquo;fun&rdquo;.</p>
-<p><img alt="Colourful pebbles" src="../images/pebbles.png" /></p>
-<p>And I&rsquo;ll add some text afterwards for good measure</p>
+<p>The sample map is based on British Geological Survey (BGS) data covering Malham Tarn in North Yorkshire and uses data from a number of sources with which you will become familiar during this module.</p>
+<ul>
+<li>download the <code>MalhamMinerva.7z</code> file from Minerva and save it on your M:/ drive.</li>
+<li>Create a new folder called <code>gis</code> on your M:/ drive and unzip the downloaded file to that folder.<ul>
+<li>In <code>My Computer</code> right-click on the 7zip or zip file</li>
+<li><code>7-zip &gt; Extract Files...</code> - select the location to save the files to and click <code>OK</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><img alt="Warning" src="../images/svg/warning-black-24dp.svg" /> <strong>Warning</strong></p>
+<p>Never try to use the contents of a zipped file in Arc without extracting it first - it won&rsquo;t work.  If you are looking for a file in Arc and can&rsquo;t find it, always check via My Computer that the file isn&rsquo;t inside a zip or 7zip archive.</p>
+</blockquote>
+<h3 id="open-the-sample-map">Open the sample map</h3>
+<ul>
+<li>Open Arc by searching for __ArcGIS Pro_ in the start menu of your computer and clicking on it.  Be patient - Arc can open slowly sometimes!</li>
+<li>From the splash screen select to <code>Open another project</code>. If you don&rsquo;t have the splash screen use <code>Project &gt; Open</code></li>
+</ul>
+<p><img alt="The ArcGIS Pro Splash Screen. If you have opened projects previously they will be available here." src="../images/introduction/ESArcSplashScreen.png" title="The ArcGIS Pro Splash Screen" /></p>
+<ul>
+<li>Navigate to the folder in which you unzipped the downloaded file and open <code>Malham.aprx</code></li>
+<li>Alternatively you can navigate in Windows Explorer to the folder to which you unzipped the downloaded data<ul>
+<li>Go into the <code>Malham</code> folder and double-click on the <code>Malham.aprx</code> file - the map should open (slowly&hellip;)</li>
+</ul>
+</li>
+</ul>
+<p>Your ArcGIS window should look similar to the figure below:</p>
+<p><img alt="The ArcGIS Pro map window" src="../images/introduction/GSArcWindowAnno_small.png" title="The ArcGIS Pro map window" /></p>
+<h2 id="the-map-ribbon">The map ribbon</h2>
+<p>The menu ribbon at the top of the window gives you a variety of tools. Hover over the buttons to see the tooltips that explain what each button will do.</p>
+<p><img alt="Part of the map &quot;ribbon&quot; showing some of the tools mentioned below." src="../images/introduction/ESArcMapRibbon.png" title="Part of the map ribbon showing some of the tools mentioned below." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Try out the navigation tools</strong></p>
+<p>Have a look for each of the tools suggested below and try them out to see what they do.  Remember that you can use the tool tips to identify the tools.</p>
+<p>Make notes for yourself so you remember this in future. <!-- TODO: What is best way to have students making notes? --></p>
+</blockquote>
+<ol>
+<li><code>Fixed zoom in</code> - also try using the mouse wheel to zoom in and out</li>
+<li><code>Fixed zoom out</code></li>
+<li><code>Full extent</code></li>
+<li><code>Zoom to layer</code> - this one isn&rsquo;t on the ribbon.  Right-click on the title of the <strong>BedrockGeol</strong> layer in the contents pane then select <code>Zoom To Layer</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></li>
+<li>Click the <code>Select</code> button then click and hold on the map, drag out a rectangle, and let go of the mouse button.  What happens?  Why do you think this is?</li>
+<li>Click on the <code>Clear</code> button in the Selection group.  Now what happens?</li>
+<li>Click on <code>Explore</code>, then click on one of the bedrock geology areas on the map.  Also try some of the options found by clicking on the down arrow under the <code>Explore</code> button.</li>
+<li>Click on <code>Locate</code>.  The locate pane should open on the right of your map.  Type <code>Malham Tarn House</code> in the search box and select one of the results<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup>.</li>
+</ol>
+<h3 id="change-scale">Change scale</h3>
+<p>Instead of zooming in and out with the mouse wheel you can change to a particular scale, e.g. 1:100 000, by simply using the drop down box at the bottom of the window to select the scale you want.  You can also type a scale in this box, particularly if the scale you want isn&rsquo;t in the list, e.g. 1:50 000 (note that you can type it in with no punctuation), and it will change to that when you press <code>return</code>.</p>
+<p><img alt="The scale dropdown - select any of the preset scales, or type in your own." src="../images/introduction/ScaleDropdown.png" title="The scale dropdown showing a selection of preset scales - 1:1,000 etc." /></p>
+<h2 id="spatial-bookmarks">Spatial bookmarks</h2>
+<p>Spatial bookmarks enable you to go back to a view that you have set up earlier.  The map of Malham Tarn has a bookmark set up showing the area of the Malham Tarn National Nature Reserve.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /> <strong>Spatial bookmarks in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To open the bookmark:</p>
+<ul>
+<li><code>Bookmarks &gt; Malham Tarn NNR</code></li>
+</ul>
+<p>To set up your own bookmarks:</p>
+<ul>
+<li>Pan the map to a different location and change the scale if you want to</li>
+<li><code>Bookmarks &gt; New Bookmark...</code> then type a name for your bookmark and click <code>OK</code></li>
+<li>The bookmark should be visible as a thumbnail when you click on <code>Bookmarks</code> again.</li>
+</ul>
+<p><img alt="Selecting the Malham Tarn NNR spatial bookmark." src="../images/introduction/GSBookmark.png" title="The bookmark manager showing the selection of the icon for the Malham Tarn NNR bookmark." /></p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>How does the spatial bookmark affect scale?</strong></p>
+<p>Change the scale of the map and pan to a different view, then go to the bookmark that you have just set and check the scale again.  How has the bookmark affected that?</p>
+</blockquote>
+<p>The <strong>Bookmark Manager</strong> allows you to view all of your spatial bookmarks, sort them, and remove any that you no longer need.</p>
+<ul>
+<li><code>Bookmarks &gt; Manage Bookmarks...</code></li>
+<li>Try <code>creating</code> another bookmark in the manager</li>
+<li>Experiment with the options in the manager, including <code>Zoom To</code> and <code>Pan To</code></li>
+<li><code>Remove</code> the last book mark that you created</li>
+</ul>
+<h2 id="catalog-pane">Catalog pane</h2>
+<p>The Catalog pane allows you to explore and find out more information about your data.</p>
+<ul>
+<li>If the catalog pane isn&rsquo;t visible on the right of the window already, go to <code>View &gt; Catalog Pane</code> on the ribbon to open it.</li>
+<li>Explore the tree in the Catalog pane by opening out all of the subheadings (click on the small arrows).  You should end up with something like the image below.</li>
+</ul>
+<p><img alt="The Catalog pane with subheadings opened out to show the contents of the project." src="../images/introduction/GSCatalogPane.png" title="The Catalog pane with subheadings opened out to show the contents of the project." /></p>
+<p>The view that you have been working in shows a <strong>Map</strong> and this is available under the <code>Maps</code> heading in the Catalog.  If you close your map you can reopen it from here.</p>
+<p>The <code>Layouts</code> heading shows any print layouts that have been set up.  You should already be able to see one, just called &ldquo;Layout&rdquo;.</p>
+<p>The heading for <code>Databases</code> shows the geodatabase which contains most of the information which makes up the map.  If you open out the geodatabase <code>Malham.gdb</code> you can see the data feature classes that are stored within in.</p>
+<p>There is another subheading for <code>Folders</code>.  This has a &ldquo;home&rdquo; folder for this project - <strong>Malham</strong>.  You can also add other folders here so that you can add data from outside of your project.  See the information on <!-- TODO: cross reference here --> for how to do this.</p>
+<h2 id="working-with-map-layers">Working with map layers</h2>
+<p>Layers are an essential part of any GIS.  Each layer is a reference to a particular data source.  In the Malham map project the layers include:</p>
+<ul>
+<li>SuperficialGeol</li>
+<li>LinearGeol</li>
+<li>Contours</li>
+</ul>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>Layers in the Malham map</strong></p>
+<p>What are the names of the other layers in the Malham map?</p>
+</blockquote>
+<p>Layers are controlled from the <code>Contents pane</code> to the left of the map window.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Working with layers in Arc</strong></p>
+<p>Go to the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a> and watch the video clip on working with layers.  If you are working in a cluster you will need your own headphones to avoid disturbing other students.</p>
+<p>Once you have watched the video clip get used to working with layers by following the instructions below.</p>
+</blockquote>
+<h3 id="viewing-contents-of-layers">Viewing contents of layers</h3>
+<p>In the contents pane:</p>
+<ul>
+<li>Click on the small arrow next to a layer to open and close the layer contents</li>
+<li>The contents pane also acts as a key to your map and shows the symbols for map features</li>
+</ul>
+<h3 id="renaming-layers-in-the-contents-pane">Renaming layers in the contents pane</h3>
+<p>You can make the layer names more useful by changing them in the contents pane.  This also means that the names are clearer when you generate legends prior to printing or exporting maps.</p>
+<p>Note that you are not renaming the original data file by doing this, but just changing how the name appears in Arc.  You should get into the habit of doing this as it makes it easier to see what your layers contain.</p>
+<ul>
+<li>Select <code>BedrockGeol</code> in the contents pane and press <code>F2</code> on the keyboard, or double-click slowly on the layer name</li>
+<li>Type the new, more descriptive name, e.g. <code>Bedrock geology</code> (with a space) and then press <code>Enter</code></li>
+</ul>
+<h3 id="turn-layers-on-and-off">Turn layers on and off</h3>
+<p>Once a layer is in the contents pane you can turn the layer on and off to view or work with other data, without needing to remove it completely.</p>
+<ul>
+<li>Click in the box next to the <code>Bedrock geology</code> layer title to turn the bedrock geology off in the map</li>
+<li>Turn other layers on and off and see what the map looks like but finish with all of the current layers visible.</li>
+</ul>
+<h3 id="add-new-layers">Add new layers</h3>
+<p>There are two simple ways to add new layers.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Adding new layers to Arc and Add Folder Connection</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<h4 id="add-data-command">Add data command</h4>
+<p>Try the following:</p>
+<ul>
+<li><code>Map ribbon &gt; Add data...</code> then navigate to the folder in which you unzipped the map - you&rsquo;ll need to start by going into <code>Folders</code> in the browse dialog, then go to the <code>Malham &gt; vml-raster_bwr &gt; sd</code> folder, and add <code>sd86ne.tif</code></li>
+<li>When you add tif or jpg files to Arc for the first time as a layer it sometimes asks you whether you want to create <strong>pyramids</strong>.  It&rsquo;s your choice, but usual advice is to select <code>yes</code> to create them.  Pyramids can save time when you are zooming in and out of your map but take a while to create when you first load the file<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup>.</li>
+<li>If you can&rsquo;t find the folder in order to add the image follow the instructions in the <a href="#adding-a-folder-connection-in-the-catalog-pane">Add Folder Connection</a> section.</li>
+</ul>
+<p>This is an example of a VectorMap Local layer in black and white.  The data is available in colour too, but as a background for a geological map black and white tends to be clearer.  Zoom in closer and you&rsquo;ll be able to see more detail (if you can&rsquo;t see the layer make sure that it is above all the other layers in the contents pane - you can change the order by dragging layers around in the pan).</p>
+<p>There are three other tif files in this folder too so to add those:</p>
+<ul>
+<li>Go to <code>Map ribbon &gt; Add data...</code> and make sure you are in the <code>Malham &gt; vml-raster_bwr &gt; sd</code> folder again</li>
+<li>Click on one of the remaining three files then hold down the <code>Shift</code> key or the <code>Ctrl</code> key and click on the other two to select them too</li>
+<li>Click <code>OK</code></li>
+</ul>
+<p>In this way you can add as many files as you want in one go.</p>
+<h4 id="drag-and-drop">Drag and drop</h4>
+<p>Instead of clicking on add data, the alternative is to simply find the file in the <code>Catalog</code> pane and drag and drop it onto the map area or into the contents pane.</p>
+<ul>
+<li>The Catalog pane should be visible to the right of your map.  If it isn&rsquo;t click the <code>View</code> tab on the ribbon and click on the <code>Catalog pane</code>.  You should see something that looks like the image below.</li>
+</ul>
+<p><img alt="Finding the new layers in the Catalog." src="../images/introduction/GSCatalogPaneNNR.png" title="Finding the new layers in the Catalog." /></p>
+<ul>
+<li>In the Catalog pane go to the <code>Folders</code> section, go into the <code>Malham &gt; Malham.gdb</code> folder and drag and drop <code>National_Nature_Reserves_England</code> on to  your map.  If you drag it over to the contents pane you can choose whereabouts in the layer structure it will appear - add it to the top so that you can see it.</li>
+<li>If you can&rsquo;t find the folder in order to add the image follow the instructions in the <a href="#adding-a-folder-connection-in-the-catalog-pane">Add Folder Connection</a> section.</li>
+<li>If you can&rsquo;t see the new layer try using <code>Zoom to layer</code> to make sure you are in the right place on the map.</li>
+</ul>
+<p>Your map should look similar to the image below.</p>
+<p><img alt="The geological map with the National Nature Reserves layer dropped on as the top layer in the contents pane.  Your new layer will probably be a different colour but should look this shape." src="../images/introduction/MalhamTarnNNR.png" title="The geological map with the National Nature Reserves layer dropped on as the top layer in the contents pane.  Your new layer will probably be a different colour but should look this shape." /></p>
+<p><code>National_Nature_Reserves_England</code>, as it says, shows all of the National Nature Reserves in England, which includes the Malham Tarn National Nature Reserve (NNR).</p>
+<p>You&rsquo;ll need the <code>National_Nature_Reserves_England</code> layer and background layers again, so leave them visible on your map.</p>
+<blockquote>
+<p><img alt="Warning" src="../images/svg/warning-black-24dp.svg" /> <strong>Warning</strong></p>
+<p>While it is possible to add data by dragging and dropping from Windows file explorer it really isn&rsquo;t a good idea to do that.  It might look as if it has worked at first, but things can go horribly wrong&hellip;  Instead use one of the two methods listed above.</p>
+</blockquote>
+<h4 id="adding-a-folder-connection-in-the-catalog-pane">Adding a folder connection in the Catalog pane</h4>
+<p>If you can&rsquo;t see your M:/ drive or USB device in the list of folders when adding data or viewing the catalog you need to <code>Connect to folder</code>.</p>
+<ul>
+<li>Right-click on the <code>Folders</code> subheading in the Catalog panel</li>
+<li><code>Add Folder Connection</code> (see image below) and select your top level gis folder, or your M: drive then click <code>OK</code>.  If you select the drive that you want, rather than navigating right to the file, you&rsquo;ll be able to navigate to any files within it.</li>
+<li>Now select your files from the folder that you can see.</li>
+</ul>
+<p><img alt="Add folder connection - found by right-clicking on the Folders subheading in Catalog." src="../images/introduction/AddFolderConnection.png" title="Add folder connection - found by right-clicking on the Folders subheading in Catalog." /></p>
+<p>On cluster computers you&rsquo;ll probably find that you have to repeat this each time you start work in Arc, unfortunately.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Add folder connection</strong></p>
+<p>Add a folder to the Folders heading using the Add folder connection command now to check that you can do it.</p>
+</blockquote>
+<h3 id="change-the-order-of-layers">Change the order of layers</h3>
+<p>Changing the order of layers is simple once you remember that they &ldquo;stack up&rdquo; in the order in which they appear on the contents pane.  So the layers towards the top will cover up the layers lower down.</p>
+<ul>
+<li>To change the order of layers so that the <code>National_Nature_Reserves_England</code> layer is below one of the <code>Background</code> layers, simply use the mouse to drag the layer down to the bottom of the contents pane and drop it there.</li>
+</ul>
+<p>You should find that the background layers cover up the National Nature Reserve layer so that it is no longer visible.</p>
+<ul>
+<li>Move the <code>National_Nature_Reserves_England</code> layer back up to the top of the contents so that you can see it again.</li>
+<li>Check where the <code>contours</code> layer is in the contents.  If it is below the black and white tif layers that you added, move it so that it is above those.</li>
+</ul>
+<h3 id="make-layers-transparent">Make layers transparent</h3>
+<p>Use the bookmark to go to the Malham Tarn NNR on your map. (<a href="#spatial-bookmarks">Spatial bookmarks</a>.)  You should be able to see that the polygon making up the reserve is symbolised in a solid colour which hides the detail of the base map underneath.  We need to make the layer <code>transparent</code> so that it is still possible to see the detail of the layers below it in the contents pane.</p>
+<ul>
+<li>Start by making sure that you have the National Nature Reserves layer switched on, then select it in the contents pane.  Try to have your contents pane looking something like the image below.</li>
+</ul>
+<p><img alt="Arrange your contents pane so that it looks like this before setting transparency for this exercise." src="../images/introduction/GSContentsPanePreTransparency.png" title="Arrange your contents pane so that it looks like this before setting transparency for this exercise." /></p>
+<ul>
+<li>Click to open the <code>Appearance</code> tab on the ribbon.  The <code>Effects</code> group contains a slider to control transparency and a box showing percentage.</li>
+</ul>
+<p><img alt="The Effects group on the Appearance tab of the ribbon.  The slider and percentage show that the selected layer is set to 45% transparency." src="../images/introduction/ESEffectsGroup.png" title="The Effects group on the Appearance tab of the ribbon.  The slider and percentage show that the selected layer is set to 45% transparency." /></p>
+<ul>
+<li>0% is fully opaque, 100% is fully transparent.  Try several steps between 30 and 60% and see what difference it makes.</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Transparency</strong></p>
+<p>Using the above instructions move the layers around in the contents pane and change transparency for various layers, just to see what the possibilities are.</p>
+</blockquote>
+<h3 id="grouping-layers">Grouping layers</h3>
+<p>The three geological layers are related to each other and could be grouped together to organise the map.  Amongst other advantages this would make it easier to turn all of the geology layers on and off together.</p>
+<ul>
+<li>Right-click on the word <code>Map</code> in the contents pane.  Select <code>New Group Layer</code>, click on the New Group Layer that appears and give it a name such as <code>Geology</code> that tells you what the group is.  New use the mouse to drag the SuperficialGeol; LinearGeol and BedrockGeol layers so that they appear indented underneath the layer name.</li>
+<li>Try turning off the <code>Geology</code> group layer to check that all of your layers are actually together.  Don&rsquo;t forget to turn them back on again!</li>
+</ul>
+<p>You can also select several layers first and then group them as follows:</p>
+<ul>
+<li>Select the <code>contours</code> layer and the four black and white tif background layers using the <code>Shift</code> or <code>Ctrl</code> keys to allow you to select multiple layers</li>
+<li>Right-click on the selected layers and click on <code>Group</code></li>
+<li>New rename the group title to something like <code>Background map</code></li>
+</ul>
+<h3 id="remove-layers">Remove layers</h3>
+<p>You added four black and white background tif maps, but only two of those are actually needed for your final map.  It can be a good idea to keep the amount of data in your project down to what you really need - though it makes more difference for a large area, or a large amount of data.</p>
+<p>To remove the layers you don&rsquo;t need:</p>
+<ul>
+<li>Right-click on the <code>sd96sw.tif</code> layer in the contents pane then <code>Remove</code></li>
+<li>and do the same with the <code>sd86se.tif</code> layer</li>
+</ul>
+<p>Note that this doesn&rsquo;t delete the data from your disk, it just removes the <strong>link</strong> to it from your map.  Check this in the Catalog pane - the layers should still be available if you want to add them back in again.</p>
+<h3 id="using-basemaps">Using Basemaps</h3>
+<p>The lowest layers on your map are probably called something like <code>World Topographic Map</code> and <code>World Hillshade</code>.</p>
+<p>To make sure that you can see these layers turn off the layers above it by unticking the boxes.  If you&rsquo;ve grouped layers you should just be able to turn off the groups.</p>
+<p>If you look at the <code>Source</code> for the World Topographic Map by double-clicking on the layer and choosing the <code>Source</code> heading, you&rsquo;ll see that it&rsquo;s <code>Data Type</code> is listed as <code>Vector Tile Service</code>.</p>
+<p><img alt="The Source information for the World Topographic Map layer - note the Data Type." src="../images/introduction/ESWorldTopoMap.png" title="The Source information for the World Topographic Map layer - note the Data Type." /></p>
+<p>The data type for the <code>World Hillshade</code> will be <code>ArcGIS Map Service</code>.</p>
+<p>When you create a new map in ArcGIS Pro you are automatically given a basemap of this type.  It&rsquo;s useful as it gives you some idea of where you are.  These layers are also very convenient as background maps, and it is possible to change the basemap that your map uses.</p>
+<blockquote>
+<p><img alt="Warning" src="../images/svg/warning-black-24dp.svg" /> <strong>Warning</strong></p>
+<p>You do have to wait a bit sometimes for these layers to load as they are downloading data over the internet, then reprojecting it to appear on your map.  For this reason it is often not a good idea to rely on these maps.</p>
+<p>If you find that your maps are loading very slowly, or that you have to wait a long time for anything to display, turn off the ESRI background layers or, even better, remove them completely from your map.  They can cause maps to become extremely unstable and start to crash.</p>
+</blockquote>
+<ul>
+<li>On the <code>Map</code> tab of the ribbon click on the down arrow under <code>Basemap</code></li>
+<li>From the list of alternatives click on <code>Imagery Hybrid</code> (this has the imagery with labels, roads, borders etc added)</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Trying out ESRI basemaps</strong></p>
+<p>Have a look at the Imagery Hybrid layer, then try out some of the others.  When you&rsquo;ve investigated turn this layer off as you will need to use the background black and white layer instead.  Turn the rest of the layers on your map back on.</p>
+</blockquote>
+<h2 id="viewing-an-attribute-table">Viewing an attribute table</h2>
+<p>Data for GIS is stored in tables as <strong>feature attributes</strong>.  You can view the <strong>attribute table</strong> to get an overview of your data, and to carry out some useful operations.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Working with attribute tables in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>Right-click on the <code>Bedrock geology</code> layer in the contents pane and click on <code>Attribute table</code>.</li>
+</ul>
+<p>A pane that looks similar to the image below should open at the bottom of your map window.</p>
+<p><img alt="The attribute table for the Bedrock geology feature class." src="../images/introduction/ESAttributeTableAnno_small.png" title="The attribute table for the Bedrock geology feature class." /></p>
+<p>Have a look at the structure of the table:</p>
+<ul>
+<li>Each row contains one record - the details for one <strong>feature</strong> on the map.</li>
+<li>Each column is one field - or <strong>attribute</strong>.  That is, related information for each feature, such as Label.</li>
+<li>If you are working with <strong>polygon</strong> features in a geodatabase<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">4</a></sup>, as you are here, the <code>Shape_Length</code> and <code>Shape_Area</code> fields will automatically be created and filled in with the length of the outline and the area of the polygon.  Try scrolling across to see these fields in the Bedrock geology attribute table.</li>
+<li>If you are working with <strong>line</strong> features in a geodatabase the <code>Shape_length</code> field will automatically be created and filled in with the length of the  line.</li>
+</ul>
+<p>The measurements will be in <code>map units</code> - find out what these are set to by right-clicking on <code>Map</code> (the title of the map frame) in the contents pane and going to <code>Properties</code>.  Under <code>General</code> look at <code>Map units</code>.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>Map units</strong></p>
+<p>What are the map units of the current map?  Make a note for yourself.  This information will be useful later.</p>
+</blockquote>
+<h3 id="selecting-features-in-the-attribute-table">Selecting features in the attribute table</h3>
+<!-- TODO: Probably ought to include why this is useful! -->
 
-  <br>
-    
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Selecting features with the attribute table</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>In the attribute table click on the little grey area to the left of one of the records. The feature will be selected in the table, and will also be selected on the map.</li>
+</ul>
+<p><img alt="Selecting a feature in the attribute table - the little grey area and the available options." src="../images/introduction/GSAttributeTableSelect.png" title="Selecting a feature in the attribute table - the little grey area and the available options." /></p>
+<ul>
+<li>You&rsquo;ll probably need to right-click on the little grey area then select <code>Pan to</code>.  The map will move so that the selected feature is in the centre, and the selected feature will flash.  Selected features are marked in a bright turquoise colour in the attribute table and a turquoise outline on the map.</li>
+<li>Use the <code>Select</code> tool from the Map tab of the ribbon to click on a bedrock feature on the map and notice that this selects the same feature in the attribute table.</li>
+<li>In the attribute table click in the grey area next to the first of the features that you can see.  Now hold down the <code>Ctrl</code> key and click on the third feature.  In this way you can select more than one feature at a time.  The up arrow will also work.</li>
+<li>To view only your selections click on the <code>Show selected records</code> button at the bottom left of the attribute table pane.</li>
+<li>To view all records again click on <code>Show all records</code>.  Remember that if you hover over a button you&rsquo;ll see a tooltip telling you what the button does.</li>
+<li>to clear selections click on the <code>Clear</code> button either on the attribute table top bar or in the <code>Selection</code> group on the ribbon.</li>
+</ul>
+<p><img alt="The clear button in the Selection group on the ribbon." src="../images/introduction/ESSelectionClear2.png" title="The clear button in the Selection group on the ribbon." /></p>
+<ul>
+<li>Right-click on the <code>Shape_Length</code> column heading and click on <code>Sort Ascending</code>.  This will reorder the table from low to high by the length of the feature, so the shortest at the top.<!-- TODO: Should this be a polygon rather than a line? --></li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Attribute table selections</strong></p>
+<p>Play around with the attribute table and explore what else you can do.</p>
+<p>When you&rsquo;ve finished, clear all selections by clicking on <code>Clear</code> in the Selection group of the Map ribbon, then <strong>Close</strong> the attribute table pane by clicking on the cross on the tab at the top of it.</p>
+</blockquote>
+<h2 id="finding-help-for-arcgis">Finding help for ArcGIS</h2>
+<p>I&rsquo;ve been throwing a lot of new terms at you here.  Don&rsquo;t worry - most of them will become more familiar as the course goes on.  Don&rsquo;t forget that you will be able to look back at these instructions.  You can search the document if you are looking for specific techniques.</p>
+<p>In addition you can make use of some resources provided by ESRI, the company who produce ArcGIS.</p>
+<h3 id="arcgis-pro-help">ArcGIS Pro Help</h3>
+<p><a href="https://pro.arcgis.com/en/pro-app/help/">ArcGIS Pro Help is available online</a>.  You&rsquo;ll find this useful when you start using more advanced tools in Arc, but if you&rsquo;re not sure of something it is worth searching in the help.
+<!-- TODO: worth suggesting something to look up? --></p>
+<p>In addition, if you want to explore further ways to use GIS there are lots of <a href="https://learn.arcgis.com/en/">tutorials available on the ESRI website</a>.</p>
+<h3 id="esri-gis-dictionary">ESRI GIS Dictionary</h3>
+<p>The Dictionary can be useful if you need to remember what a particular term means.</p>
+<ul>
+<li>Go to the <a href="https://support.esri.com/en/other-resources/gis-dictionary/">ESRI GIS dictionary</a></li>
+<li>Type <code>Attribute table</code> in the search box and press enter</li>
+<li>The answer should match what you&rsquo;ve already learnt in the <a href="#viewing-an-attribute-table">attribute table section</a> of these instructions.</li>
+</ul>
+<p>Practice using the dictionary by completing the exercises below.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Using the GIS dictionary</strong></p>
+<p>&ldquo;Raster&rdquo; and &ldquo;vector&rdquo; are the two main types of data structure used in GIS and you will come across these many times during this course.</p>
+<p>Use the GIS dictionary to find out what <code>raster</code> and <code>vector</code> mean and make a note of the definitions for yourself.  Use diagrams if it will help you to remember the difference.</p>
+</blockquote>
+<h2 id="saving-a-map">Saving a map</h2>
+<p><strong>IMPORTANT:</strong> Develop the habit of saving your map projects at regular intervals.  Arc can crash when carrying out some operations and you don&rsquo;t want to lose all of your work.  Crashes can also corrupt data files, so copy the whole of your gis folder to another location or drive at frequent intervals (i.e. create a <strong>backup</strong> copy).  It can be useful to rename each backup folder with the date of the backup, then you can make sure you keep a couple of copies to go back to if there are problems.</p>
+<p>To save your project:</p>
+<ul>
+<li>Either <code>Project &gt; Save</code> from the menu</li>
+<li>or use the <code>save</code> icon on the quick access toolbar at the top left</li>
+<li>or use <code>Ctrl + S</code> on the keyboard</li>
+</ul>
+<h2 id="symbolising-a-layer">Symbolising a layer</h2>
+<h3 id="symbolising-a-single-symbol">Symbolising a single symbol</h3>
+<p>At the moment the symbol for the National Nature Reserves is a polygon with a thin outline and a transparent fill.  Let&rsquo;s change that so that the outline is thicker and there is no fill at all.</p>
+<ul>
+<li>Right-click on the <code>National Nature Reserves</code> layer and click on <code>Symbology</code></li>
+<li>OR click on <code>Symbology</code> on the Appearance tab of the ribbon</li>
+</ul>
+<p>The <code>Symbology</code> pane should open to the right of the map window.  The layer is symbolised as a single symbol - a single random colour which is used for all polygons in the layer, as shown below.</p>
+<p><img alt="The symbology pane showing single symbology for a polygon layer." src="../images/introduction/GSSingleSymbology.png" title="The symbology pane showing single symbology for a polygon layer." /></p>
+<ul>
+<li>Click on the coloured &ldquo;patch&rdquo; next to <code>Symbol</code></li>
+<li>The <code>Gallery</code> should open, if it doesn&rsquo;t click on the Gallery heading at the top of the panel</li>
+<li>The gallery shows you lots of choices of symbology, try some of them out but finish by clicking on <code>Black Outline (2pts)</code> - you may need to hover over items to see the full names.</li>
+</ul>
+<p><img alt="Formatting a polygon symbol from the Gallery.  Try out some of the styles for yourself." src="../images/introduction/FormatPolygonSymbolGallery.png" title="Formatting a polygon symbol from the Gallery.  Try out some of the styles for yourself." /></p>
+<p>As soon as you click on a new symbol in the gallery the features on your map should change.</p>
+<p>While there are a lot of symbols available, they may not always be quite what you need.  For the NNR outline we&rsquo;ll change the colour of the line.</p>
+<ul>
+<li>Click on the <code>Properties</code> heading at the top of the Symbology panel</li>
+</ul>
+<p><img alt="Formatting a polygon symbol in the Properties dialog.  You will have options to change colour, width and outline, amongst others." src="../images/introduction/FormatPolygonSymbol.png" title="Formatting a polygon symbol in the Properties dialog.  You will have options to change colour, width and outline, amongst others." /></p>
+<ul>
+<li>Change the <code>Outline color</code> to something bright which will stand out against the rest of your map</li>
+<li>Because you selected just an outline in the gallery the <code>Color</code> choice is <code>No Color</code>.  If you want to add a fill colour you can select it here</li>
+<li>Press <code>Apply</code> to change the style of the features on your map</li>
+</ul>
+<h3 id="symbolising-with-multiple-symbols-unique-values">Symbolising with multiple symbols (Unique Values)</h3>
+<p>Make the <code>SuperficialGeol</code> layer in the Malham map visible by clicking the little box next to it so that it is ticked.  At the moment the layer is symbolised as a single colour.  By using multiple colours, or classes, you can make your map much more informative.</p>
+<ul>
+<li>Open the attribute table for the <code>SuperficialGeol</code> layer and have a look at the data that it contains.  The column headed <code>RCS_D</code> contains information on what type of unconsolidated deposits are shown by each feature.  Make a note of the field name.</li>
+<li>Close the attribute table</li>
+<li>Right-click on the <code>SuperficialGeol</code> layer and click on <code>Symbology</code></li>
+</ul>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Symbolising a layer by unique values in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To symbolise the layer as multiple colours by geology type:</p>
+<ul>
+<li>Select <code>Unique Values</code> in the dropdown box at the top of the symbology pane</li>
+<li>In the <code>Field 1</code> box that appears select <code>RCS_D</code> - the field we were looking at earlier</li>
+</ul>
+<p>You should find that you get a list of the values of RCS_D to which Arc will have assigned random colours.</p>
+<p><img alt="Setting symbols for a layer with unique values - or multiple categories.  Note the list of values of the chosen field, symbolised with random colours." src="../images/introduction/GSSymbologyCategories.png" title="Setting symbols for a layer with unique values - or multiple categories.  Note the list of values of the chosen field, symbolised with random colours." /></p>
+<ul>
+<li>You can change the colours and thicknesses of the lines by clicking on each symbol in turn - click on the &ldquo;patch&rdquo; next to <strong>PEAT</strong> now.<ul>
+<li>If you click on the <code>Gallery</code> heading you&rsquo;ll get a choice of preset styles - click on one of them now, e.g. <strong>Cultural</strong>.  You should see the new symbol appear for some of the features on your map.</li>
+<li>As with the <a href="#symbolising-a-single-symbol">single symbology</a>, in the <code>Properties</code> heading you can set up your own styles.  Click on this heading and try making some of the line widths thicker, and change the colour of the symbol.</li>
+</ul>
+</li>
+<li>This time you&rsquo;ll need to click on <code>Apply</code> to see the result on your map</li>
+<li>Click on the back arrow at the top of the pane to go back to the full list and try setting the other symbols too</li>
+</ul>
+<p>You may find it easier to see what you are doing if you turn off all of the other layers in the contents pane.</p>
+<h2 id="selecting-and-intersecting-two-different-layers">Selecting and intersecting two different layers</h2>
+<p>Now that you have your data in a GIS, why not take advantage of its power?  You can use GIS to select features which are within a certain distance of features in another layer.  For example, which bedrock geology features appear within 2 km of, and in Malham Tarn NNR?  We can use <code>Select by location</code> to find out.</p>
+<p>Make sure that both the bedrock geology and the National Nature Reserves layers are visible in your map.</p>
+<h3 id="exporting-a-selection-of-a-feature-class">Exporting a selection of a feature class</h3>
+<p><code>Zoom to layer</code> on the NNR layer and you should be able to see that it covers the whole of England.  To start with here we&rsquo;ll create a feature class which <strong>just</strong> includes the Malham Tarn NNR - this will make the next step simpler and save time as you won&rsquo;t be processing data that you don&rsquo;t need.</p>
+<ul>
+<li>Right-click on the layer containing the data that you want to select - in this case the National Nature Reserves layer</li>
+<li><code>Data &gt; Export features</code> - to bring up a dialog that should look like the image below</li>
+<li>Choose to save the new <strong>Output feature class</strong> in the project geodatabase (Malham.gdb) and give your output a name, e.g. <code>MalhamTarnNNR</code> - note no spaces in the feature class name</li>
+<li>To select just Malham Tarn NNR do the following:</li>
+<li>Click on the <code>New Expression</code> button</li>
+<li>In the three boxes next to <code>Where</code> fill in<ul>
+<li><code>NNR_NAME</code> - using the dropdown box</li>
+<li><code>contains the text</code> - again using the dropdown box</li>
+<li>type in <code>Malham Tarn</code></li>
+</ul>
+</li>
+<li>then click to <code>Run</code></li>
+</ul>
+<p><img alt="Exporting a subset of an existing layer using an expression.  Note that the output location is the project geodatabase, and the expression which uses the field name and the content that you are looking for." src="../images/introduction/GSExportWithSelection.png" title="Exporting a subset of an existing layer using an expression.  Note that the output location is the project geodatabase, and the expression which uses the field name and the content that you are looking for." /></p>
+<p>The new layer should be automatically added to your map.  To check that this has worked properly <code>Zoom to layer</code> on your new layer and check that the outline of the Malham Tarn NNR fills the map area.</p>
+<p>Now <a href="#remove-layers">remove</a> the original national nature reserves layer from the contents list and you should be left with just the Malham Tarn Reserve which you had selected via the expression.  Try <a href="#symbolising-a-single-symbol">symbolising the reserve</a> as a single, green outline symbol with no fill.</p>
+<h3 id="select-by-location">Select by location</h3>
+<!-- TODO: Maybe add a bit of intro to this? -->
 
-    
-    
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Select by location</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>From the Map tab of the ribbon click on the button to <code>Select by Location</code></li>
+</ul>
+<p>The dialog should open in the Geoprocessing pane on the right.  Fill it in as shown below (see the image below too).</p>
+<ul>
+<li><code>Input Features</code> should be the layer which contains the features that you wish to select, in this case the <code>Bedrock geology</code></li>
+<li><code>Relationship</code> should be set to <code>Intersect</code> (but have a look at the other options which are available)</li>
+<li><code>Selecting Features</code> is the layer that indicates the location you want to select against, so the <code>Malham Tarn NNR</code></li>
+<li>We&rsquo;ll also add a small margin so that bedrock areas which have parts within 2 km of the nature reserve will also be selected, so enter the <code>Search distance</code> as <code>2000</code> metres.</li>
+<li><code>Selection type</code> should be <code>New selection</code></li>
+<li>Now click on <code>Run</code> at the bottom of the pane</li>
+</ul>
+<p><img alt="Filling in the Select by location dialog." src="../images/introduction/GSSelectByLocation.png" title="Filling in the Select by location dialog." /></p>
+<p>Now your map should show the bedrock geology features which are within 2 km of the Malham Tarn NNR outlined in the selection colour - probably bright blue/turquoise in this case.  You may need to zoom in a bit to see them properly!</p>
+<h3 id="exporting-selected-features-to-a-new-feature-class">Exporting selected features to a new feature class</h3>
+<p>Once you have selected the features you can make the selection permanent by exporting it to a new feature class.</p>
+<ul>
+<li>Right-click on the layer containing the selection - the bedrock geology layer</li>
+<li><code>Data &gt; Export features</code></li>
+<li>Choose to save the new <code>Output feature class</code> in the project geodatabase (Malham.gdb) and give  your output a name, e.g. <code>MalhamGeology</code></li>
+<li>Then <code>Run</code> the tool</li>
+</ul>
+<p>The new layer should be automatically added to your map.</p>
+<p>Now <a href="#remove-layers">remove</a> the original bedrock geology layer and you should be left with just the features which you had selected and exported.</p>
+<p>Try <a href="#symbolising-with-multiple-symbols-unique-values">symbolising them using Unique Values</a> so that each type of bedrock geology is a different colour.  Use <code>LEX_RCS_I</code> as Field 1.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>How many features?</strong></p>
+<p>How many features are there in the new layer showing only the bedrock geology within 2 km of the Malham Tarn NNR?  You should be able to tell by <a href="#viewing-an-attribute-table">opening the attribute table</a> for the layer.</p>
+</blockquote>
+<!-- TODO: Why did I include a section on symbolising with a layer file at this point?  Is this covered elsewhere if necessary? -->
+
+<h2 id="layout-laying-out-a-map-for-print-or-export">Layout - laying out a map for print or export</h2>
+<p>So far we have been working in the <code>Map</code>.  If you print the map from here you have little control over its appearance.  To produce a professional-looking map you need to use a <code>layout</code>.  The information given here is just a quick introduction, you&rsquo;ll cover layout and presentation in more detail in a later section.</p>
+<ul>
+<li>In the Catalog pane open out the <code>Layouts</code> subheading and double-click on the <code>Layout</code></li>
+</ul>
+<p><img alt="Layout view in ArcGIS Pro showing a layout with a single map frame, the layout contents, and the properties pane." src="../images/introduction/GSLayout.png" title="Layout view in ArcGIS Pro showing a layout with a single map frame, the layout contents, and the properties pane." /></p>
+<p>The layout window looks similar to the map window, but shows the layout as it will appear when printed or exported.  You still have the contents pane on the left of the screen and the ribbon at the top, but the ribbon will offer some different options.</p>
+<ul>
+<li>On the ribbon go to the <code>Layout</code> tab.  Use the buttons in the <code>Navigate</code> group to zoom in and out of the layout and move around it</li>
+<li>Try the tools in the <code>Map</code> group on the <code>Layout</code> tab in this view too.</li>
+<li>In addition you can open out the contents of the Map Frame in the Contents and <a href="#the-map-ribbon">Zoom to Layer</a> on any of the layers, just as you did in Map view.</li>
+<li>To move the actual map, rather than the layout, you need to click on the <code>Activate</code> button in the Map group on the Layout tab.  Once you&rsquo;ve done that you can pan and zoom the area of the map using the mouse.  Once you&rsquo;ve finished click on the back arrow at the top of the Layout window to get back to the usual Layout view.</li>
+</ul>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.svg" /> <strong>Zooming in layout view</strong></p>
+<p>What is the difference between zooming with the tools in the Navigate group of the Layout tab and with the tools in the Map group in layout view?</p>
+</blockquote>
+<p>To get back to the original view use the <a href="#spatial-bookmarks">bookmarks</a> just as you did earlier.  There should be a bookmark called <code>Malham Tarn NNR</code> that  you can click on.</p>
+<h3 id="adding-elements-to-the-layout">Adding elements to the layout</h3>
+<p>Most of the maps that you create will need to be printed out with additional content such as a title, a key or legend, a scale bar and some text. I&rsquo;ve already added a measured grid and a scale bar to this layout. You&rsquo;ll add a title and copyright text to this map but you&rsquo;ll learn more about layout in a later chapter.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Adding a scalebar, title and text to a layout</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<h4 id="to-add-text">To add text</h4>
+<p>To add text to your layout:</p>
+<ul>
+<li>Go to the <code>Insert</code> tab on the ribbon</li>
+<li>In the <code>Text</code> group click on <code>Text</code> then select the top option - <code>Text</code></li>
+<li>Click on the layout somewhere close to where you want the text to appear (you can move it later!)</li>
+<li>Type the text that you want to add - for now type the text below as a title - then click elsewhere on the layout to come out of the text box.</li>
+</ul>
+<p><strong>The geology of Malham Tarn National Nature Reserve</strong></p>
+<h5 id="formatting-text">Formatting text</h5>
+<p>You&rsquo;re likely to want to change the default text option.  There are books about cartography on the reading list <!-- TODO: Add a link here --> which give more information about font choices, but for now use the instructions below to play around with the options.</p>
+<ul>
+<li>If you select the text that you&rsquo;ve just added, you should see a <code>Format Text</code> pane open on the right of the window</li>
+<li>Click on <code>Text symbol</code> to get options to change the text appearance</li>
+<li>As with symbology the <code>Gallery</code> gives you preset choices, or go to <code>Properties</code> to set your own</li>
+<li>You can see what the style will look like at the bottom of the pane.  Once you&rsquo;re happy with it click <code>Apply</code> to change the style of your text.</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Formatting your title</strong></p>
+<p>Investigate the options in the Format Text pane to set the text that you&rsquo;ve just added as a title at the top of the page.</p>
+</blockquote>
+<h5 id="adding-copyright-text">Adding copyright text</h5>
+<p><strong>Copyright acknowledgement is important!</strong></p>
+<p>Always check the terms and conditions for any data that you use.  Most will tell you the wording that you should use - though it can take a bit of finding sometimes!.</p>
+<p>When you sign up to the Digimap service for UK data you&rsquo;ll find out more about the correct acknowledgements you need to use for their data.  For this map, which uses data from Digimap, add the text below to your layout.</p>
+<p>If you are using an ESRI basemap the acknowledgement for that will automatically be added to your map - though it does sometimes cover rather a lot of the map.</p>
+<blockquote>
+<p><img alt="Information" src="../images/svg/info-black-24dp.svg" /> <strong>Digimap OS and BGS copyright acknowledgements</strong></p>
+<p>&copy; Crown copyright and database rights 2020.  Ordnance Survey (100025252)</p>
+<p>Geological Map Data BGS &copy; UKRI 2020</p>
+</blockquote>
+<p>There is more information about <a href="/layout/#title-and-text">adding text and copyright acknowledgements</a> in the layout chapter which you will be working through later.</p>
+<h2 id="printing-or-exporting-a-map">Printing or exporting a map</h2>
+<p>Don&rsquo;t worry about printing your map for now, but try exporting it as both a pdf and an image.</p>
+<h3 id="printing-a-layout">Printing a layout</h3>
+<p>To print your layout:</p>
+<ul>
+<li>If you need to change the paper size and orientation use the tools on the <code>Layout</code> ribbon <code>Page Setup</code> group</li>
+<li>To print go to the <code>Share</code> tab on the ribbon and click on the printer button in the <code>Print</code> group</li>
+<li>Set up the printer as you would usually<sup id="fnref:105"><a class="footnote-ref" href="#fn:105">5</a></sup> then click to <code>Print</code></li>
+</ul>
+<h3 id="exporting-a-layout">Exporting a layout</h3>
+<p>To export a layout to a pdf or an image:</p>
+<ul>
+<li>If you need to change the paper size and orientation use the tools on the <code>Layout</code> ribbon <code>Page Setup</code> group</li>
+<li>To export go to the <code>Share</code> tab on the ribbon and click on the green arrow in the <code>Export</code> group</li>
+<li>Select the format that you wish to export and give your file a name.  Check the other options are correct and change as appropriate (you may find that the defaults are OK) and then <code>Export</code></li>
+</ul>
+<h3 id="suggested-layout">Suggested layout</h3>
+<p>Your final map could look something like the map below.  It is unlikely to look identical as you should make your own decisions about where to place elements and how to display your map.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Getting feedback on your layout</strong></p>
+<p>Export your final layout as a pdf and upload it to&hellip; <!-- TODO: Work out what I'm going to do about providing feedback in a manageable way! -->  I will give you feedback on what you have done so far.  If you have any questions about this chapter please feel free to <a href="mailto:c.e.gordon@leeds.ac.uk">email me</a> to ask or ask during the live sessions.</p>
+</blockquote>
+<p><img alt="A possible layout for the Malham geological map.  Your map probably won't look identical to this as you should make your own decisions about how to lay it out." src="../images/introduction/GSMalhamLayout_small.png" title="A possible layout for the Malham geological map.  Your map probably won't look identical to this as you should make your own decisions about how to lay it out." /></p>
+<!-- TODO: This should also have a legend on it showing at the very least the outline of the Malham NNR, but preferably the geology too! Check what I provide to start them off... -->
+
+<h2 id="recommended-reading-introduction-to-gis">Recommended reading: Introduction to GIS</h2>
+<p>Many of the books in the reading list<sup id="fnref:106"><a class="footnote-ref" href="#fn:106">6</a></sup> have a general introduction to GIS which explain what it is and how it is used.  Suggestions include the following:</p>
+<ul>
+<li>Chapter 1, <em>What is GIS?</em> in Heywood, I., Cornelius, S. and Carver, S. (2011), pp. 2-30</li>
+<li>Chapter 1, <em>Systems, Science and Study</em> in Longley, P.A. et al. (2011), pp. 3-37</li>
+</ul>
+<h3 id="videos-online">Videos online</h3>
+<p>If you find videos helpful then search online for specific tasks in ArcGIS Pro.</p>
+<p>Examples include:</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>YouTube video</strong></p>
+<p><a href="https://youtu.be/WD1UoDXQ_-o">Navigating ArcGIS Pro: The Basics Part 1</a> and other videos in the playlist from the University of Toronto Library</p>
+</blockquote>
+<p>Also:</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>YouTube video from ESRI</strong></p>
+<p><a href="https://youtu.be/soBtBP6aZ60">Quick start tutorials from ESRI</a> which start with the video at the link.</p>
+</blockquote>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:2">
+<p><code>Zoom to layer</code> is a very useful tool.  It can be particularly useful if you have zoomed in or out too far and can no longer see your map properly.  <code>Zoom to layer</code> and you&rsquo;ll usually be able to see enough to find the bit of map that you really want to see.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>If nothing happens when you search, try the following: Click on the <code>Settings</code> tab above the search box.  Click on <code>ArcGIS World Geocoding Service</code> - check it&rsquo;s <code>Enabled</code>, and move it to the top of the list (above XY provider).  Go back to the <code>Locate</code> tab and hopefully the search will work now.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>If you want more information about how pyramids work, search for <strong>raster pyramids</strong> in the Arc Help.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>You&rsquo;ll find out more about geodatabases later so don&rsquo;t worry too much about this for now.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:105">
+<p>Setting up a printer is system specific so I can&rsquo;t give you specific instructions for this.&#160;<a class="footnote-backref" href="#fnref:105" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:106">
+<p>The reading list is available in Minerva and from the <a href="http://lib5.leeds.ac.uk/rlists/index.php">library</a> (search for the number of this module).&#160;<a class="footnote-backref" href="#fnref:106" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-    
+        <a href="../finding_data/" class="btn btn-neutral float-right" title="Finding data">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../software/" class="btn btn-neutral" title="Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
     
-    <div class="wm-article-nav pull-right">
-      <a href="../digimap/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../digimap/" class="btn btn-xs btn-link">
-        Digimap
-      </a>
-    </div>
-    
-    <div class="wm-article-nav">
-      <a href=".." class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href=".." class="btn btn-xs btn-link">
-        Home
-      </a>
-    </div>
+      <p>&copy; Clare Gordon, University of Leeds 2020. This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike 4.0 International Licence.  To view a copy of this licence visit <a href="http://creativecommons.org/licences/by-nc-sa/4.0/" >http://creativecommons.org/licenses/by-nc-sa/4.0/</a> <br /> Icons downloaded from <a href="http://google.github.io/material-design-icons/">Materials Icons</a></p>
     
   </div>
 
-    <br>
-</div>
-
-<footer class="container-fluid wm-page-content">
-      <p>
-        <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/introduction.md"><i class="fa fa-github"></i>
-Edit on GitHub</a>
-      </p><p>&copy; Clare Gordon, University of Leeds 2020. This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike 4.0 International Licence.  To view a copy of this licence visit <a href="http://creativecommons.org/licences/by-nc-sa/4.0/" >http://creativecommons.org/licenses/by-nc-sa/4.0/</a> <br /> Icons downloaded from <a href="http://google.github.io/material-design-icons/">Materials Icons</a></p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/cgordon-gis/GIS-geol/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../software/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../finding_data/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Clare Gordon">
+  <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/finding_data/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Finding data - GIS for Geologists</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Finding data";
+    var mkdocs_page_input_path = "finding_data.md";
+    var mkdocs_page_url = "/GIS-geol/finding_data/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> GIS for Geologists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Finding data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes-for-myself-to-be-deleted">Notes for myself - TO BE DELETED</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#digimap">Digimap</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#logging-in-to-digimap">Logging in to Digimap</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#browsing-maps-on-screen">Browsing maps on screen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#downloading-data-from-digimap">Downloading data from Digimap</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#selecting-an-area">Selecting an area</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adding_data/">Adding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../creating_data/">Creating data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../styles/">Styling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../labels/">Labelling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysis/">Analysis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../layout/">Layout and presentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../three_d/">Viewing maps in 3D</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">GIS for Geologists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Finding data</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/finding_data.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data-for-gis-finding-data">Data for GIS: Finding data</h1>
+<p>The background to finding data for GIS will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
+<h2 id="learning-outcomes">Learning outcomes</h2>
+<p>When you have completed this section of the workbook you should be able to
+<!-- TODO: Need to revisit these learning outcomes --></p>
+<ul>
+<li>find spatial data from a wide range of sources</li>
+</ul>
+<h2 id="notes-for-myself-to-be-deleted">Notes for myself - TO BE DELETED</h2>
+<p>Some of this can probably happen as parts of other exercises, e.g. data from Digimap for background maps, data from data.gov for styling or labelling?</p>
+<p>Don&rsquo;t want to do full Digimap chapter - get them to download stuff to add to Arc in the next part of the exercise?</p>
+<ul>
+<li><em>Digimap</em><ul>
+<li>OS</li>
+<li>BGS - will allow use of lyr etc in styling chapter</li>
+</ul>
+</li>
+<li><em>other web sources</em><ul>
+<li>data.gov?</li>
+<li>Natural Earth Data</li>
+<li>maybe from list on my webpage</li>
+</ul>
+</li>
+<li><em>inc. ESRI data with a warning&hellip;</em> - base maps and Living Atlas.</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Being able to find, download and prepare your own data is an essential part of using GIS.  While the data will be provided for you for many of the exercises in this module, you will find it useful to have some idea of where the data comes from, and what there is available for you to use for your own maps.</p>
+<p>While downloading shouldn&rsquo;t take too long, don&rsquo;t leave it until the last minute before you have to produce a map.  Websites can become unavailable either permanently or temporarily, or computers can crash.</p>
+<h2 id="digimap">Digimap</h2>
+<p>Digimap is a service provided to Higher Education in the U.K. by EDINA at Edinburgh University.  Digimap provides a front end to digital maps and data of Great Britain from the Ordnance Survey and British Geological Survey, amongst others.  The University of Leeds subscribes to the collections and as a student you have access to maps and data for use as part of your studies.</p>
+<h3 id="logging-in-to-digimap">Logging in to Digimap</h3>
+<p>If you have not used Digimap before you will need to register and log in using your University ID, that is the username and password that you use to access University systems such as Minerva.</p>
+<p>Full instructions for logging in are on the <a href="https://digimap.edina.ac.uk/webhelp/digimapsupport/about.htm#access/access_to_digimap.htm">Digimap help pages</a>.</p>
+<ul>
+<li>Go to the Digimap Collections page at <a href="https://digimap.edina.ac.uk">https://digimap.edina.ac.uk</a></li>
+</ul>
+<p><img alt="The Digimap initial page - note the &quot;Log in&quot; button at top right." src="../images/finding_data/login.png" title="The Digimap initial page - note the &quot;Log in&quot; button at top right." /></p>
+<ul>
+<li>Click the <code>Log in</code> button at the top right of the screen</li>
+<li>type <code>Leeds</code> in the box and select <code>University of Leeds</code> from the list of available institutions</li>
+<li>You should get the familiar University of Leeds log in page, so type your <strong>University username and password</strong> into the appropriate boxes and then click the <code>Log in</code> button.  If you are already logged in to Minerva you may find that you don&rsquo;t have to enter your login details again.</li>
+</ul>
+<p>If this is the first time that you&rsquo;ve logged in to Digimap you&rsquo;ll be asked to register for each collection separately, though you can do all at one go.  You won&rsquo;t need to use all of the collections during this module, but it&rsquo;s worth registering for all that are available to you so that you can explore them for yourself.  The University does not subscribe to Marine or Global Digimap.</p>
+<ul>
+<li>Go through the list of collections, read and accept the conditions for each one, selecting <code>Academic Works (coursework, projects, dissertations etc.)</code> in the <code>Purpose</code> dropdown for each.</li>
+</ul>
+<p>Once you submit all of those you should be taken to the Digimap initial page again, as shown below, but this time you should see your name at top right rather than the log in button.</p>
+<p><img alt="The Digimap main page again, this time with your name at the top right.  You can now select a collection from the menu across the top." src="../images/finding_data/ChoosingDataCollection_small.png" title="The Digimap main page again, this time with your name at the top right.  You can now select a collection from the menu across the top." /></p>
+<p>The list includes options for a large number of collections.  In this workbook we&rsquo;ll only be looking at the collections that are the most relevant for creating the maps you&rsquo;ll need during your course, but if you are interested in any of the others feel free to explore them.  EDINA have worked to make all of the tools similar across each collection, so just have a go!</p>
+<h3 id="browsing-maps-on-screen">Browsing maps on screen</h3>
+<p>Each Digimap collection provides a <strong>Roam</strong> and a <strong>Download</strong> interface.  The Roam interface allows you to view the data from that collection on a map on screen.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Using Digimap OS Roam</strong></p>
+<p>As an example click on <code>Ordnance Survey</code> on the menu at the top of the main screen</p>
+<p>Then select <code>Roam</code> under <code>View, annotate &amp; print a map</code> on the right.</p>
+<p>Have a go at zooming in and out and exploring the map at different scales.</p>
+<p>Try searching for a location in the <code>Search</code> box at the top left.</p>
+<p>In this module we&rsquo;ll be making most use of the Download interface, but it&rsquo;s worth knowing what the Roam interface will do too, so have a quick go with a few of the tools on the left before continuing with the next exercise.</p>
+</blockquote>
+<p><img alt="The Digimap Roam interface for Ordnance Survey data." src="../images/finding_data/Roam2.png" title="The Digimap Roam interface for Ordnance Survey data." /></p>
+<p>If you want more information about using the Roam interface have a look at the <a href="https://digimap.edina.ac.uk/webhelp/resources/index.html">Digimap Resource Centre</a> which is linked from <code>Resources</code> on the main page.</p>
+<h3 id="downloading-data-from-digimap">Downloading data from Digimap</h3>
+<p><strong>Data Download</strong> is the tool for downloading data for use in GIS or CAD software.  The format that the data is delivered in will determine whether you will be able to open it directly in a software package or whether you will need to convert it.</p>
+<p>We&rsquo;ll be using data from Digimap in ArcGIS for various exercises in the rest of this module, so you need to know your way around this section.  Instructions for converting, importing and viewing file types that need it will be given later in the workbook.</p>
+<p>As an example of the download interface we&rsquo;ll download some <strong>Ordnance Survey</strong> data.</p>
+<ul>
+<li>Start from the Digimap main page</li>
+<li>click on <code>Ordnance Survey</code> in the menu at the top of the page</li>
+<li>from the Ordnance Survey page choose <code>Data Download</code></li>
+</ul>
+<p><img alt="The Data Download link on the Ordnance Survey page." src="../images/finding_data/DataDownload_small.png" title="The Data Download link on the Ordnance Survey page." /></p>
+<p>Data Download takes you to a map that looks very similar to Digimap Roam, but with some important differences.</p>
+<h4 id="selecting-an-area">Selecting an area</h4>
+<p>On the left there is a menu panel with options for selecting an area, with a search box above it.</p>
+<p><img alt="Digimap Download - search for and select an area." src="../images/finding_data/DownloadSearch.png" title="Digimap Download - search for and select an area." /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../adding_data/" class="btn btn-neutral float-right" title="Adding data">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>&copy; Clare Gordon, University of Leeds 2020. This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike 4.0 International Licence.  To view a copy of this licence visit <a href="http://creativecommons.org/licences/by-nc-sa/4.0/" >http://creativecommons.org/licenses/by-nc-sa/4.0/</a> <br /> Icons downloaded from <a href="http://google.github.io/material-design-icons/">Materials Icons</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/cgordon-gis/GIS-geol/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../adding_data/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

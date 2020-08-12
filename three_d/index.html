@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Clare Gordon">
+  <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/three_d/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Viewing maps in 3D - GIS for Geologists</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Viewing maps in 3D";
+    var mkdocs_page_input_path = "three_d.md";
+    var mkdocs_page_url = "/GIS-geol/three_d/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> GIS for Geologists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding_data/">Finding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adding_data/">Adding data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../creating_data/">Creating data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../styles/">Styling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../labels/">Labelling your data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysis/">Analysis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../layout/">Layout and presentation</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Viewing maps in 3D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-data-for-this-exercise">Obtaining the data for this exercise</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-map-project">Setting up the map project</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#symbolising-the-raster-layers">Symbolising the raster layers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-hillshading">Creating hillshading</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#symbolising-the-hillshade">Symbolising the hillshade</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#area-and-volume-calculations">Area and volume calculations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#profile-graphs">Profile graphs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#viewing-your-map-in-3d">Viewing your map in 3D</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-a-scene">Creating a Scene</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-layers-to-a-scene">Adding layers to a scene</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#navigating-in-a-scene">Navigating in a scene</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changing-the-background-layer">Changing the background layer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controlling-the-elevation-surface">Controlling the elevation surface</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#vertical-exaggeration">Vertical exaggeration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-custom-elevation-surface">Adding a custom elevation surface</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cut-fill-analysis">Cut-fill analysis</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#including-a-scene-in-a-layout">Including a scene in a layout</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exporting-a-3d-view">Exporting a 3D view</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-suggestions-for-analysis">Other suggestions for analysis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-contours">Creating contours</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#viewshed-analysis">Viewshed analysis</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slope-and-aspect">Slope and aspect</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#layout-suggestions">Layout suggestions</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">GIS for Geologists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Viewing maps in 3D</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/three_d.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="viewing-data-in-3d">Viewing data in 3D</h1>
+<!-- TODO: somewhere explain the terminology e.g. dtm; dem; surface; elevation... -->
+
+<!-- TODO: Probably need to include more images towards the end particularly -->
+
+<p>The background to viewing data in 3D will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
+<h2 id="learning-outcomes">Learning outcomes</h2>
+<p>When you have completed this section of the workbook you should be able to</p>
+<ul>
+<li>demonstrate how data can be displayed in 3D with GIS tools</li>
+<li>explore data in 3D</li>
+<li>save a 3D view and add it to a map layout or export for use in other applications</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>On 18th May 1980 the long dormant volcano, Mount St. Helens in the north west United States of America, erupted.  Over the course of several weeks lateral blasts from the eruption destroyed the forested slopes and the volcano covered a large area in lava and ash.</p>
+<p><img alt="The eruption of Mount St. Helens in May 1980 showing the ash cloud." src="../images/three_d/HEruption_small.jpg" title="The eruption of Mount St. Helens in May 1980 showing the ash cloud." /></p>
+<p>The USGS has a <a href="http://on.doi.gov/18jYFfl">downloadable file with more information about the eruption</a>.</p>
+<p>The <a href="http://on.doi.gov/21kULb0">Cascades Volcano Observatory</a> has a lot more information and images of Mount St. Helens, including sections on hazards, monitoring, geology and history.</p>
+<p>In this exercise we&rsquo;ll use the tools in ArcGIS Pro to investigate the changes in the shape of the mountain caused by the eruption.  We&rsquo;ll use USGS (United States Geological Survey) height data measured before and after the eruption, as well as the height data provided by ESRI within ArcGIS Pro.</p>
+<h2 id="obtaining-the-data-for-this-exercise">Obtaining the data for this exercise</h2>
+<p>Download the <code>MtStHelens.7z</code> file from Minerva.  Save it to your file space and unzip it.</p>
+<p>The data for this exercise has been obtained from <a href="http://bit.ly/1DWiPZc">SERC Carlton teaching resources</a>.</p>
+<p>The data can also be found on the webpages of the <a href="http://bit.ly/2grwsLe">Geomorphological Research Group at University of Washington</a></p>
+<p>The exercises are based on worksheets from the above URL and from ESRI Canada.</p>
+<h2 id="setting-up-the-map-project">Setting up the map project</h2>
+<p>The zip file that you have downloaded and unzipped should include a file called <code>MtStHelens.aprx</code>.</p>
+<p>Open this now<sup id="fnref:1001"><a class="footnote-ref" href="#fn:1001">1</a></sup> and you should see that there isn&rsquo;t yet data on the map.  If you check the map properties you should be able to see that the project has already been set up to use the correct coordinate system.  in this case <strong>NAD 1983 UTM Zone 10N</strong>. NAD = North American Datum and UTM = Universal Transverse Mercator<sup id="fnref:1002"><a class="footnote-ref" href="#fn:1002">2</a></sup>. I&rsquo;ve changed the map name to show the coordinate system - this can be a very useful thing to do if you&rsquo;re likely to need to keep track of it throughout your project.</p>
+<ul>
+<li>Add the <code>hbefore</code> and <code>hafter</code> files to the map from <code>Folders &gt; MtStHelens &gt; Data</code> section in the contents pane.</li>
+<li>Switch the layers on and off to have a look at the changes between the before and after shapes as they are visible at the moment.</li>
+</ul>
+<p>These are raster layers where each pixel contains the elevation of the land at that point. <!-- TODO: Cross-reference to introduction --></p>
+<p><img alt="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter." src="../images/three_d/HGridFiles.png" title="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter." /></p>
+<h3 id="symbolising-the-raster-layers">Symbolising the raster layers</h3>
+<p>At the moment the height layers, the rasters that you have just added, will be coloured the default shades of grey.  There are other colour ramps available which will make the elevation clearer.</p>
+<ul>
+<li>Select the <code>hbefore</code> layer in the contents pane</li>
+<li>go to the <code>Appearance</code> tab of the ribbon and click on <code>Symbology</code></li>
+<li>In the symbology dialog check that the <code>Primary Symbology</code> is set to <code>Stretch</code></li>
+<li>drop down the list of choices next to <code>Color scheme</code>, click on <code>Show names</code> at the bottom, then select <code>Elevation #1</code> from the list</li>
+<li>Click on the dropdown next to <code>Stretch type</code> and select <code>Minimum Maximum</code> to use the full range of values in your raster.</li>
+</ul>
+<p>Your settings should look something like the image below.</p>
+<p><img alt="Setting stretched symbology for an elevation raster." src="../images/three_d/HRasterSymbologyStretch.png" title="Setting stretched symbology for an elevation raster." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Set symbology for after</strong></p>
+<p>Repeat the process above to symbolise the hafter elevation raster file.</p>
+</blockquote>
+<p>You have on your map two layers which show similar data and which you may want to compare.  To do this it would be useful to have the symbology, and also the legend later, set to the same scale.  At the moment:</p>
+<ul>
+<li>hbefore = 669 to 2951</li>
+<li>hafter = 682 to 2543</li>
+</ul>
+<p>To put both elevation maps onto the same scale do the following:</p>
+<ul>
+<li>select the <code>hbefore</code> layer in the contents and go to the symbology panel</li>
+<li>below the other settings there is a panel for <code>Statistics</code></li>
+<li>Drop down the <code>Statistics</code> options and choose <code>Custom</code></li>
+<li>The <code>Min</code> and <code>Max</code> boxes below should become editable</li>
+<li>Change the <code>Min</code> to a round number which is less than the minimum of either dataset, e.g. <code>600</code></li>
+<li>Change the <code>Max</code> to a round number which is greater than the maximum of either dataset, e.g. <code>3000</code></li>
+</ul>
+<p><img alt="Changing the minimum and maximum for the symbology so that both layers are on the same scale." src="../images/three_d/HCustomStatistics.png" title="Changing the minimum and maximum for the symbology so that both layers are on the same scale." /></p>
+<p>You should notice a change in the symbology of the layer.  For some reason, the contents list will still give the same min and max, though.  So to update the legend and contents do the following:</p>
+<ul>
+<li>in the <code>Primary Symbology</code> box above change the values in the boxes to your minimum and maximum values.</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Changing the default symbology</strong></p>
+<p>Repeat the above with the <code>habove</code> layer - putting the same minimum and maximum values.</p>
+<p>If you look at both layers on your map now you should be able to see the difference between before and after the eruption more clearly.</p>
+</blockquote>
+<p><img alt="The symbolised grid files with minimum and maximum values altered to a common scale: left: hbefore, right: hafter." src="../images/three_d/HGridFilesSymb_small.png" title="The symbolised grid files with minimum and maximum values altered to a common scale: left: hbefore, right: hafter." /></p>
+<h2 id="creating-hillshading">Creating hillshading</h2>
+<p>It is possible to see from the height files that you have already added to your map some differences in the before and after topography, but they do not give a very clear view.  <strong>Hillshades</strong> can give a much clearer picture of the topography of an area (and incidentally can give a better idea of the quality of your height data).</p>
+<ul>
+<li><code>Geoprocessing &gt; 3D Analyst Tools &gt; Surface &gt; Hillshade</code></li>
+<li>Fill in the dialog with <code>hbefore</code> as the input.</li>
+<li>Select where you want to save the input and give it a name.</li>
+<li>Leave the other fields as they are for now.</li>
+</ul>
+<p><img alt="Creating a hillshade raster layer - fill in the input and output but leave the other fields as they are." src="../images/three_d/HHillShade.png" title="Creating a hillshade raster layer - fill in the input and output but leave the other fields as they are." /></p>
+<ul>
+<li>Click <code>Run</code>.  The tool should run and add a new layer to your map.</li>
+</ul>
+<p>The resulting layer should show the shape of the land more visibly than the original raster layer.</p>
+<p><img alt="The hbefore hillshade layer." src="../images/three_d/HHillshadeBefore.png" title="The hbefore hillshade layer." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Hillshade</strong></p>
+<p>Repeat the hillshade process with the <code>hafter</code> raster file.</p>
+</blockquote>
+<p>Have a look at both hillshade layers.  The difference in the shape of Mount St. Helens before the eruption and after should be becoming clearer.</p>
+<blockquote>
+<p><img alt="Information" src="../images/svg/info-black-24dp.svg" /> <strong>Hillshade light source</strong></p>
+<p>Incidentally, notice that the light source on the hillshade layer comes from the top-left of the image - which is usually the north-west, a direction from which the sun very rarely shines.</p>
+<p>This direction gives the best effect of 3D for an image.  If you try turning a hillshaded map upside down so that the sun comes from the south-east, very often valleys will look like hills and hills will look like valleys.</p>
+</blockquote>
+<h3 id="symbolising-the-hillshade">Symbolising the hillshade</h3>
+<p>You could symbolise the hillshade directly to make a &ldquo;prettier&rdquo; map, but you often get a better result by symbolising the DEM (height data), then putting the hillshade underneath it and making the DEM something like 40% transparent.</p>
+<ul>
+<li>Make the &ldquo;after&rdquo; layers invisible (turn them off in the contents list) and try symbolising the &ldquo;before&rdquo; layers first.</li>
+<li>If you haven&rsquo;t already, symbolise the <code>hbefore</code> height layer with a stretched colour ramp <!-- TODO: cross-reference --> and set it to 40% transparency on the <code>Appearance</code> tab <!-- TODO: cross-reference -->.</li>
+</ul>
+<p>Now try turning the hillshade layer on and off and have a look at how much difference it makes to how you can perceive the landscape.</p>
+<p>If you still have the World Hillshade and Topographic Map layers on your map from the ESRI basemap you&rsquo;ll also see who those interact with your data.  Try turning those off and on too.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Symbolising the hillshade</strong></p>
+<p>Try the same with the &ldquo;after&rdquo; layers to symbolise those with the hillshade.</p>
+<p>As usual - <strong>experiment!</strong></p>
+</blockquote>
+<h2 id="area-and-volume-calculations">Area and volume calculations</h2>
+<p>It&rsquo;s good to be able to look at the differences on a map, but what about actually doing some measurements and getting some figures out of the data?  Arc&rsquo;s toolbox gives us the tools to be able to calculate the volume of Mount St. Helens before and after the eruption.</p>
+<ul>
+<li>If you don&rsquo;t have the toolbox open already find it by going to the <code>Analysis</code> ribbon and clicking on <code>Tools</code></li>
+<li><code>Geoprocessing &gt; 3D Analyst Tools &gt; Functional Surface &gt; Surface Volume</code></li>
+<li>Fill in the dialog with <code>hbefore</code> as the input.  Don&rsquo;t worry about saving the output this time - you&rsquo;ll make a note of it from the results window</li>
+<li>The <code>Reference Plane</code> controls how the volume is measured</li>
+<li>to see more click on the question mark symbol at the top of the tool dialog - the appropriate help page should open in your browser.</li>
+<li>In this case the page shows you the difference between setting the reference plane to either above or below.</li>
+<li>Return to Arc and set the <code>Reference Plane</code> to <code>Above the Plane</code></li>
+<li>Having set this it is also a good idea to set the <code>Plane Height</code>.  In this case set it to <code>669</code>, which is the lowest elevation in the hbefore DEM - check the contents pane to find this.</li>
+<li>Finally click on <code>Run</code></li>
+</ul>
+<p><img alt="Obtaining surface volume and area." src="../images/three_d/HSurfaceVolume.png" title="Obtaining surface volume and area." /></p>
+<ul>
+<li>Don&rsquo;t close the panel when the tool finishes running.  Instead use the output window, which you can find by clicking on <code>View Details</code> at the bottom of the processing tool, to make a note of the results.</li>
+</ul>
+<p><img alt="Result window for surface volume and area.  Yours won't necessarily be the same as the results in this image, but should be similar." src="../images/three_d/HSurfaceVolumeResult.png" title="Result window for surface volume and area.  Yours won't necessarily be the same as the results in this image, but should be similar." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Results of area and volume calculations - Before</strong></p>
+<p>Make a note of the following results for the <code>Before</code> layer</p>
+<p>2D area</p>
+<p>3D area<sup id="fnref:703"><a class="footnote-ref" href="#fn:703">3</a></sup></p>
+<p>Volume</p>
+</blockquote>
+<p>The results will be in <code>map units</code>.  Check the units by going to the map properties and checking the <code>General</code> tab.  In this case it should be metres.</p>
+<p><img alt="Checking the map units in the properties window.  Look under the General subheading." src="../images/three_d/HMapUnits.png" title="Checking the map units in the properties window.  Look under the General subheading." /></p>
+<p>Repeat the process for <code>hafter</code>, leaving the <code>Plane Height</code> as <code>699</code>, and again make a note of the results.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Results of area and volume calculations - After</strong></p>
+<p>Make a note of the following results for the <code>Before</code> layer</p>
+<p>2D area</p>
+<p>3D area</p>
+<p>Volume</p>
+</blockquote>
+<p>Have a look at the two sets of results and compare them.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Looking at your results</strong></p>
+<p>What differences are there?  What can you say about the change in area/volume before and after the eruption?</p>
+</blockquote>
+<h2 id="profile-graphs">Profile graphs</h2>
+<p>Another way to view topography is to draw a profile.  This will allow you to see a profile of the land surface along a line, and in this case allows you to view profiles for before and after the eruption.</p>
+<ul>
+<li>Start by creating a new line feature class in the project geodatabase, making sure that the coordinate system matches the one used for the map, and drawing a line from north to south across the DEM. <!-- TODO: Cross references to relevant sections --></li>
+<li>From the Analysis ribbon click on <code>Tools</code> and go to the <code>Interpolate Shape</code> tool via <code>Geoprocessing &gt; 3D Analyst Tools &gt; Functional Surface &gt; Interpolate Shape</code></li>
+<li>Fill in the dialog as follows:</li>
+<li>The <code>Input surface</code> should be the Before DEM</li>
+<li><code>Input Features</code> is the line across the DEM that you have just drawn</li>
+<li>Give your <code>Output Feature Class</code> a name which reminds you that it is based on the Before layer</li>
+<li>The other defaults are fine so click the <code>Run</code> button</li>
+</ul>
+<p><img alt="Using the Interpolate Shape tool to add height data from the hbefore layer to the Section Line - showing also the line drawn across the DEM." src="../images/three_d/HInterpolateShape.png" title="Using the Interpolate Shape tool to add height data from the hbefore layer to the Section Line - showing also the line drawn across the DEM." /></p>
+<p>You will have created a new line feature class which should be added to your map.  If it isn&rsquo;t, then drag it across from the Catalog to the Contents pane.  At this stage your map won&rsquo;t look much different.</p>
+<p>To create the profile:</p>
+<ul>
+<li>Select the new <code>Before</code> section line in the Contents and right-click on it</li>
+<li><code>Create Chart &gt; Profile Graph</code></li>
+</ul>
+<p>Arc should open a new panel below your map which contains the resulting profile across the Before DEM.</p>
+<p><img alt="The profile graph across the Before DEM." src="../images/three_d/HProfileGraph.png" title="The profile graph across the Before DEM." /></p>
+<p>If you click on <code>Properties</code> at the top of the panel you can change the format and title, as well as other items.</p>
+<p>By clicking on <code>Export</code> you can save the profile graph as a graphics file, e.g. svg (which can then be opened in Inkscape), png or jpg (both of which can be added to Word and Powerpoint documents).</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Profile across the After DEM</strong></p>
+<p>Repeat the process to create a profile graph for the DEM showing the height After the eruption.</p>
+</blockquote>
+<p>Once you have created a graph it is listed in the Contents pane under the layer to which it applies.  If you close it, you can open it again by clicking on the appropriate graph in the Contents.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Comparing the graphs</strong></p>
+<p>Have a look at both of the graphs you have created.  Resize them and use the properties to give them appropriate titles and axis labels.</p>
+</blockquote>
+<h2 id="viewing-your-map-in-3d">Viewing your map in 3D</h2>
+<p>Within Arc it is possible to view your maps in 3D by creating a <code>Scene</code>.  We&rsquo;ll look at this now with the data you have already, but it&rsquo;s something you can do with any data that you create in future too.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.svg" /><strong>Viewing your map in 3D in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<h3 id="creating-a-scene">Creating a Scene</h3>
+<p>To set up an empty scene within your existing Mount St. Helen&rsquo;s project.</p>
+<ul>
+<li>Go to the <code>Insert</code> tab of the ribbon</li>
+<li>Click on the down arrow under the <code>New Map</code> button</li>
+<li>Click on <code>New Local Scene</code></li>
+</ul>
+<p>Arc will create a new screen which currently looks very much like a new map - see the picture below.  Note that the new scene appears under the <code>Maps</code> subheading in the Catalog.  In the Contents pane the Drawing Order view now shows layers divided into <code>3D Layers</code> and <code>2D Layers</code>.</p>
+<p><img alt="The initial view when you create a new local scene." src="../images/three_d/ESSceneMap.png" title="The initial view when you create a new local scene." /></p>
+<h3 id="adding-layers-to-a-scene">Adding layers to a scene</h3>
+<p>You can add layers to a scene in exactly the same way as adding them to a map.</p>
+<ul>
+<li>Find your hillshade layers in your catalog pane and drag and drop them into the scene</li>
+</ul>
+<p>You should find that your scene zooms to the correct location for Mount St Helens and you can view the hillshade layers.</p>
+<h3 id="navigating-in-a-scene">Navigating in a scene</h3>
+<p>ArcGIS Pro Help has full information on <a href="https://bit.ly/32pZWOB">how to navigate in 3D</a>.</p>
+<p>The main difference from navigating in a map is that you can use the mouse wheel to &ldquo;tip up&rdquo; the map and rotate it, or use the navigation tool at the bottom left of the map to move around.</p>
+<ul>
+<li>Try this now. Move around the map and view it from various different angles.</li>
+</ul>
+<p>It should quickly become obvious that the hillshade layers are draped over the landscape as it is now.</p>
+<ul>
+<li>For now, turn off both hillshade layers so that you can see the basemap.</li>
+</ul>
+<h3 id="changing-the-background-layer">Changing the background layer</h3>
+<p>You can also change the <code>Basemap</code> in exactly the same way as you can change it in a map. <!-- TODO: Cross reference? --></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.svg" /> <strong>Changing the basemap</strong></p>
+<p>Change the basemap to <code>Imagery</code> now and use the navigation tools to zoom in to Mount St Helens so that you can view the scene from a lower angle.</p>
+</blockquote>
+<h3 id="controlling-the-elevation-surface">Controlling the elevation surface</h3>
+<p>You&rsquo;ll notice that Arc sets a default <code>elevation surface</code> - i.e. data which controls the terrain or 3D surface.  It is possible to make changes to this, and indeed to set your own elevation surface.</p>
+<p>To change any of the properties of the elevation surface:</p>
+<ul>
+<li>select <code>Ground</code> under the <code>Elevation Surfaces</code> heading at the bottom of the contents panel</li>
+<li>Click on the <code>Appearance</code> tab on the ribbon to get the properties for the elevation surface.</li>
+</ul>
+<p><img alt="The properties for the elevation surface for the current scene." src="../images/three_d/GSSceneElevationSurface.png" title="The properties for the elevation surface for the current scene." /></p>
+<h4 id="vertical-exaggeration">Vertical exaggeration</h4>
+<p>The default vertical exaggeration is <code>1.0</code> - which basically means as is reality.</p>
+<p>Whilst scientifically this is usually the best setting to use, sometimes you need to exaggerate the terrain to make it easier to visualise useful information.</p>
+<ul>
+<li>In the Scene Appearance tab, change <code>Vertical Exaggeration</code> to <code>4.0</code></li>
+</ul>
+<p>You&rsquo;ll probably need to be patient again while the Scene redraws, then zoom outwards so that you can see Mount St Helens again!</p>
+<p>The difference between an exaggeration of <strong>1.0</strong> and an exaggeration of <strong>4.0</strong> should be pretty clear.</p>
+<p><img alt="The view across Windermere in the UK Lake District with a vertical exaggeration of 1.0." src="../images/three_d/ESSceneExaggeration1_small.png" title="The view across Windermere in the UK Lake District with a vertical exaggeration of 1.0." /></p>
+<p><img alt="The same view across Windermere in the UK Lake District with a vertical exaggeration of 4.0." src="../images/three_d/ESSceneExaggeration4_small.png" title="The same view across Windermere in the UK Lake District with a vertical exaggeration of 4.0." /></p>
+<h4 id="adding-a-custom-elevation-surface">Adding a custom elevation surface</h4>
+<p>Sometimes it is more useful to see your own data as the elevation surface.  For example, we can add the DEM showing the shape of Mount St Helens <strong>before</strong> the 1980 eruption.</p>
+<ul>
+<li>right-click on <code>Ground</code> under the <code>Elevation Surfaces</code> heading at the bottom of the contents panel</li>
+<li><code>Add Elevation Source</code> and navigate to the data folder to select the <code>hbefore</code> raster dataset then click <code>OK</code></li>
+</ul>
+<p>This may look a bit odd as you&rsquo;ll still have the ESRI Imagery layer showing the current land surface, but the crater at the top of Mount St Helens should apparently have been filled in.</p>
+<p>Try turning on the hillshade layer showing the <code>before</code> data.</p>
+<p>If you add a custom elevation surface, but leave the World Elevation layer on, then areas ouside of your DEM will still have elevation.</p>
+<p>Turn off the before layers for both hillshade and the elevation surface before continuing with the next section.</p>
+<blockquote>
+<p><img alt="Information" src="../images/svg/info-black-24dp.svg" /> <strong>Alternative elevation surfaces</strong></p>
+<p>The elevation surface doesn&rsquo;t have to be the same as the land surface.  For example, instead you could use a surface showing the top surface of a particular rock unit underground; average annual rainfall; lead pollution in soils.  <!-- TODO: Suggest somewhere to look for other examples. --></p>
+</blockquote>
+<h3 id="cut-fill-analysis">Cut-fill analysis</h3>
+<p>Cut-fill analysis looks at how much material is lost or gained in an area by comparing two surface models - one before the change, and one after.  It could be used to look at deposition in a lake or changes in groundwater over time, for example.  Here we&rsquo;ll use it to visualise the difference in land surface before and after the 1980 eruption of Mount St Helens.</p>
+<ul>
+<li>On the Analysis ribbon click on <code>Tools</code></li>
+<li>in the Geoprocessing toolbox go to <code>3D Analyst Tools &gt; Raster Surface &gt; Cut Fill</code></li>
+<li>Fill in the dialog as follows (see image below):<ul>
+<li>For <code>Input before Raster Surface</code> use the folder button on the right to select the <strong>before</strong> DEM</li>
+<li>For <code>Input after Raster Surface</code> use the folder button on the right to select the <strong>after</strong> DEM</li>
+<li>Give the <code>Output raster</code> a name you&rsquo;ll remember and choose to save it in one of the folders in your project</li>
+</ul>
+</li>
+<li>Click on <code>Run</code></li>
+</ul>
+<p><img alt="Filling in the Cut Fill tool." src="../images/three_d/HCutFill.png" title="Filling in the Cut Fill tool." /></p>
+<p>The results should look something like the image below.  The key underneath shows what the different colours indicate.</p>
+<p><img alt="The result of the cut fill tool draped over the scene." src="../images/three_d/HCutFillResult.png" title="The result of the cut fill tool draped over the scene." /></p>
+<p><img alt="The key to the result of the cut fill tool." src="../images/three_d/HCutFillResult2.png" title="The key to the result of the cut fill tool." /></p>
+<p>The red areas show a net gain, the blue a net loss, any grey areas would be unchanged.  This layer could complement the volume measurements that you gained in the section on <a href="#area-and-volume-calculations">Area and volume calculations</a>.</p>
+<h3 id="including-a-scene-in-a-layout">Including a scene in a layout</h3>
+<p>It is possible to include your scene in a layout in exactly the same way that you can include a map.</p>
+<p>From within a layout:</p>
+<ul>
+<li>Click on the arrow underneath the <code>Map Frame</code> button on the <code>Insert</code> tab of the ribbon</li>
+<li>In the list that appears choose a <code>Scene</code></li>
+<li>then wait a while for it to appear on your layout!</li>
+</ul>
+<p>You can move the scene around and resize it on the layout in exactly the same way that you can <a href="/layout/#resizing-the-map-frame-in-a-layout">move and resize a map frame</a>.</p>
+<ul>
+<li>If you want to change the view then you need to right-click on the <code>Map Frame</code> which contains your scene and <code>Activate</code>, exactly as you would for a flat map</li>
+<li>Once you&rsquo;ve done this you can use the usual 3D navigation tools to move the view around</li>
+<li>When you&rsquo;ve finished, click on <code>Layout</code> at the top left of the layout to return to the layout view</li>
+</ul>
+<p>You can <a href="/layout/#printing-and-exporting-maps-from-arc">export or print the layout</a> in the usual way.</p>
+<h3 id="exporting-a-3d-view">Exporting a 3D view</h3>
+<p>Once you have a useful view in a Scene you can export it as an image to import into other programs, such as Inkscape, Word or Powerpoint, without having to set up a layout to do so.</p>
+<ul>
+<li>Go to the <code>Share</code> tab of the ribbon</li>
+<li>Click on the <code>Map</code> button in the <code>Export</code> group</li>
+<li>choose where you want to save the output, and what format you want (<strong>png</strong> or <strong>jpg</strong> will import into Word or Powerpoint)</li>
+<li>Check the <code>Resolution</code> - higher gives better quality, but a bigger file.  Experiment, but don&rsquo;t go higher than 600 without being very careful.  300 is usually enough.</li>
+<li>Click <code>Export</code></li>
+</ul>
+<h2 id="other-suggestions-for-analysis">Other suggestions for analysis</h2>
+<p>Arc contains a large number of tools for working with data.  Try out some of the following and think about how you could use them with other datasets.</p>
+<p>If you are not sure what information you need to enter in a particular field in a tool dialog click on information symbol which comes up when you hover over a field.  That will give you a brief explanation.  If you are still stuck then try clicking on the question mark at the top of the tool and you should be taken to the full information in online Help.</p>
+<h3 id="creating-contours">Creating contours</h3>
+<p>Try creating height contours for the before and after DEMs of Mount St. Helens</p>
+<p>Hint: <code>Geoprocessing &gt; 3D Analyst Tools &gt; Raster Surface &gt; Contour</code></p>
+<p>This can be very useful if you have a DEM but no contours and want to create a base map for mapping.  You can also use this to create contours for other data surfaces, such as soil samples, rainfall etc.</p>
+<h3 id="viewshed-analysis">Viewshed analysis</h3>
+<p>Viewshed analysis shows which parts of a scene an observer at a particular point would be able to see.  <!-- TODO: could possibly expand this --></p>
+<p>Try creating a point feature class <!-- TODO: cross reference --> and placing a point somewhere on the map of Mount St. Helens.</p>
+<p>Then go to <code>Geoprocessing &gt; 3D Analyst Tools &gt; Visibility &gt; Viewshed</code></p>
+<h3 id="slope-and-aspect">Slope and aspect</h3>
+<!-- TODO: Again, could expand this -->
+
+<p>Both of these tools produce an output raster.</p>
+<p>Slope shows the angle of slope of steepness of each part of the map.  A slope map of Mount St. Helens could indicate which areas are most vulnerable to a landslip.</p>
+<p>Aspect shows in which direction the slope is facing.</p>
+<p>Both are under <code>Geoprocessing &gt; 3D Analyst Tools &gt; Raster Surface</code></p>
+<h2 id="layout-suggestions">Layout suggestions</h2>
+<p>You have created a lot of output in this exercise.  Try and think about ways in which you can create an attractive layout showing the effect of the 1980 eruption on the shape of Mount St. Helens.</p>
+<ul>
+<li>Try putting together a layout that includes the before and after hillshades symbolised with the DEMs.</li>
+<li>Include a 3D view of the scene in your layout</li>
+<li>Include before and after profiles taken across the same line from north to south</li>
+<li>Add an extent rectangle making use of an outline country map from <a href="https://www.naturalearthdata.com/">naturalearthdata.com</a>.  Show the location of Mount St. Helens within the United States.</li>
+</ul>
+<p>Your final map could look something like the map below.  It is unlikely to look identical as you should make your own decisions about where to place elements and how to display the data that you have produced.</p>
+<p><img alt="Example layout for the Mount St Helens exercise." src="../images/three_d/HStHelensMap.png" title="Example layout for the Mount St Helens exercise." /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1001">
+<p>If you double-click on the .aprx file it should open in ArcGIS Pro.&#160;<a class="footnote-backref" href="#fnref:1001" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:1002">
+<p>View a map showing the <a href="http://www.dmap.co.uk/utmworld.htm">UTM zones for the whole world</a>.&#160;<a class="footnote-backref" href="#fnref:1002" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:703">
+<p>3D area takes the height into consideration so should give a greater number than simply measuring the area in 2D.&#160;<a class="footnote-backref" href="#fnref:703" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../layout/" class="btn btn-neutral" title="Layout and presentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>&copy; Clare Gordon, University of Leeds 2020. This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike 4.0 International Licence.  To view a copy of this licence visit <a href="http://creativecommons.org/licences/by-nc-sa/4.0/" >http://creativecommons.org/licenses/by-nc-sa/4.0/</a> <br /> Icons downloaded from <a href="http://google.github.io/material-design-icons/">Materials Icons</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/cgordon-gis/GIS-geol/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../layout/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
