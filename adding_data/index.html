@@ -53,10 +53,6 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
-                    </li>
-                </ul>
-                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
                     </li>
                 </ul>
@@ -69,7 +65,13 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#notes-for-myself-to-be-deleted">Notes for myself - TO BE DELETED</a>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-data">Obtaining the data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#starting-a-new-map-project">Starting a new map project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#checking-data-properties">Checking data properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#esri-living-atlas-and-basemaps">ESRI Living Atlas and Basemaps</a>
     </li>
     </ul>
                     </li>
@@ -136,19 +138,67 @@
                 <h1 id="data-for-gis-adding-data-to-arcgis">Data for GIS: Adding data to ArcGIS</h1>
 <p>The background to data for GIS will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
 <h2 id="learning-outcomes">Learning outcomes</h2>
-<p>When you have completed this section of the workbook you should be able to
-<!-- TODO: Need to revisit these learning outcomes - first 3 are probably same as coordinate systems chapter --></p>
+<!-- TODO: Revisit learning outcomes later! -->
+
+<p>When you have completed this section of the workbook you should be able to</p>
 <ul>
 <li>describe the main types of data used in GIS</li>
 <li>demonstrate different ways to add data to ArcGIS Pro</li>
 <li>find out essential information about the data and apply that to your use of the data in ArcGIS</li>
 </ul>
-<h2 id="notes-for-myself-to-be-deleted">Notes for myself - TO BE DELETED</h2>
+<h2 id="obtaining-the-data">Obtaining the data</h2>
+<p>If you have followed the sections on <a href="/finding_data/#downloading-data-from-digimap">Digimap</a> and <a href="/finding_data/#natural-earth-data">Natural Earth data</a> in the previous chapter you should have downloaded and kept examples of the following data</p>
 <ul>
-<li><em>Raster and vector</em></li>
-<li><em>Layer properties</em></li>
-<li><em>Coordinate systems</em></li>
+<li>Digimap<ul>
+<li>VectorMap Local Raster</li>
+<li>OS Terrain 5 Contours</li>
 </ul>
+</li>
+<li>Natural Earth<ul>
+<li>Countries</li>
+<li>Shaded relief and water</li>
+</ul>
+</li>
+</ul>
+<p>If you haven&rsquo;t downloaded those, or have but can&rsquo;t find them, then please return to the instructions and download them now then come back here.</p>
+<p>You will also need to download the data for this section from Minerva.</p>
+<ul>
+<li>Create a new folder called <code>FindingData</code> in the <code>gis</code> folder on your disk</li>
+<li>Copy or save all of the data you have downloaded into this folder</li>
+<li><code>Unzip</code> all of the zip files, again, into this folder.</li>
+</ul>
+<p>You should end up with a folder structure something like the image below.</p>
+<!-- TODO: Somewhere early on give students instructions to set up gis folder then tell them to save everything there. -->
+
+<p><img alt="The structure of your gis folder once you have unzipped the downloads for this chapter." src="../images/adding_data/DataStructure.png" title="The structure of your gis folder once you have unzipped the downloads for this chapter." /></p>
+<!-- TODO: Check resolution of images in this section - they all look very big on the web version... -->
+
+<!-- TODO: Check the data structure image is correct once I've finished deciding on data for this chapter. -->
+
+<h2 id="starting-a-new-map-project">Starting a new map project</h2>
+<p>In the previous chapter you used an ArcGIS project that I had set up for you.  This time you need to set up your own project from scratch.</p>
+<ul>
+<li>Open ArcGIS Pro by going to the Start Menu and search for it.</li>
+<li>Make sure that you have ArcGIS Pro, not any other version of Arc or ArcGIS and open that program</li>
+</ul>
+<p><img alt="Opening ArcGIS Pro from the Start Menu." src="../images/adding_data/OpenArcGISPro.png" title="Opening ArcGIS Pro from the Start Menu." /></p>
+<ul>
+<li>When the ArcGIS Pro splash screen opens select to open <code>New &gt; Blank Templates &gt; Map</code></li>
+</ul>
+<p><img alt="The splash screen for ArcGIS Pro.  Select to open a new Map." src="../images/adding_data/ArcGISProSplashScreen.png" title="The splash screen for ArcGIS Pro.  Select to open a new Map." /></p>
+<p>You&rsquo;ll get a form to fill in with the project details.</p>
+<ul>
+<li>for <code>Name</code> fill in <code>FindingData</code> - the same as the folder you&rsquo;ve just put your data in</li>
+<li>for <code>Location</code> browse to the <code>FindingData</code> folder, enter it, then click <code>OK</code></li>
+<li>Untick the box next to <code>Create a new folder for this project</code></li>
+<li>Click <code>OK</code></li>
+</ul>
+<p><img alt="Filling in the form to create a new project in an existing folder." src="../images/adding_data/CreateNewProject.png" title="Filling in the form to create a new project in an existing folder." /></p>
+<p>Doing it this way ensures that you are keeping your data in the project folder, which will help you to find it later.</p>
+<p>ArcGIS should open a new map with a view of the World.  You should see several new files and folders appear in the folder in which you have created the project, for example, <code>FindingData.gdb</code>; <code>ImportLog</code>; <code>FindingData.aprx</code>.</p>
+<h2 id="checking-data-properties">Checking data properties</h2>
+<p>The natural inclination once you have the datasets for your project is to add them straight in to a project in ArcGIS.  </p>
+<h2 id="esri-living-atlas-and-basemaps">ESRI Living Atlas and Basemaps</h2>
               
             </div>
           </div>
