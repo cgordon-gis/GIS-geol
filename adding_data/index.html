@@ -65,13 +65,45 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-data">Obtaining the data</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#starting-a-new-map-project">Starting a new map project</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#checking-data-properties">Checking data properties</a>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-downloaded-data-to-your-map">Adding downloaded data to your map</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-vector-data">Adding vector data</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#merging-contour-shapefiles">Merging contour shapefiles</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#esri-living-atlas-and-basemaps">ESRI Living Atlas and Basemaps</a>
+    <li class="toctree-l4"><a class="reference internal" href="#checking-the-coordinate-system-of-your-map">Checking the coordinate system of your map</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-raster-data">Adding raster data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removing-the-esri-background-layers">Removing the ESRI background layers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#symbolising-the-data-on-your-map">Symbolising the data on your map</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-the-reference-scale">Setting the reference scale</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-the-contours">Styling the contours</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#symbolising-as-unique-values">Symbolising as unique values</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#styling-the-contour-lines">Styling the contour lines</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#labelling-the-contours">Labelling the contours</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-a-layout-for-printing">Creating a layout for printing</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -143,9 +175,14 @@
 <p>When you have completed this section of the workbook you should be able to</p>
 <ul>
 <li>describe the main types of data used in GIS</li>
-<li>demonstrate different ways to add data to ArcGIS Pro</li>
+<li>use the tools provided in ArcGIS Pro to prepare data for further use</li>
 <li>find out essential information about the data and apply that to your use of the data in ArcGIS</li>
 </ul>
+<h2 id="introduction">Introduction</h2>
+<p>In this chapter you will be creating a map from scratch using the data that you downloaded in the previous chapter.  You will create a 1:10 000 topographic base map that is suitable to use as a fieldslip for geological field mapping, and later as a basis for digitising geological data.</p>
+<!-- TODO: Add small image showing what the final map for this chapter will look like. -->
+
+<p>By creating this map you will also learn how to find out more about your data and how to use the tools available to process it before adding it to your map.</p>
 <h2 id="obtaining-the-data">Obtaining the data</h2>
 <p>If you have followed the sections on <a href="/finding_data/#downloading-data-from-digimap">Digimap</a> and <a href="/finding_data/#natural-earth-data">Natural Earth data</a> in the previous chapter you should have downloaded and kept examples of the following data</p>
 <ul>
@@ -160,25 +197,24 @@
 </ul>
 </li>
 </ul>
-<p>If you haven&rsquo;t downloaded those, or have but can&rsquo;t find them, then please return to the instructions and download them now then come back here.</p>
-<p>You will also need to download the data for this section from Minerva.</p>
+<p>If you haven&rsquo;t downloaded those, or have but can&rsquo;t find them, then please return to the instructions and download them now, then come back here.</p>
+<p>You should have set up a folder called <code>gis</code> when you <a href="/introduction/#obtaining-and-opening-the-sample-map">worked through the introduction</a>.  If not, go back and follow those instructions now.</p>
 <ul>
 <li>Create a new folder called <code>FindingData</code> in the <code>gis</code> folder on your disk</li>
 <li>Copy or save all of the data you have downloaded into this folder</li>
 <li><code>Unzip</code> all of the zip files, again, into this folder.</li>
 </ul>
 <p>You should end up with a folder structure something like the image below.</p>
-<!-- TODO: Somewhere early on give students instructions to set up gis folder then tell them to save everything there. -->
-
 <p><img alt="The structure of your gis folder once you have unzipped the downloads for this chapter." src="../images/adding_data/DataStructure.png" title="The structure of your gis folder once you have unzipped the downloads for this chapter." /></p>
+<p>Keeping all of your data in the same project folder as the rest of your map data means that it is much easier to find it and you can keep a copy of the whole project as a backup so that you don&rsquo;t lose data.</p>
 <!-- TODO: Check resolution of images in this section - they all look very big on the web version... -->
 
 <!-- TODO: Check the data structure image is correct once I've finished deciding on data for this chapter. -->
 
 <h2 id="starting-a-new-map-project">Starting a new map project</h2>
-<p>In the previous chapter you used an ArcGIS project that I had set up for you.  This time you need to set up your own project from scratch.</p>
+<p>In the previous chapters you used an ArcGIS project that I had set up for you.  This time you need to set up your own project from scratch.</p>
 <ul>
-<li>Open ArcGIS Pro by going to the Start Menu and search for it.</li>
+<li>Open ArcGIS Pro by going to the Start Menu and searching for it.</li>
 <li>Make sure that you have ArcGIS Pro, not any other version of Arc or ArcGIS and open that program</li>
 </ul>
 <p><img alt="Opening ArcGIS Pro from the Start Menu." src="../images/adding_data/OpenArcGISPro.png" title="Opening ArcGIS Pro from the Start Menu." /></p>
@@ -195,10 +231,316 @@
 </ul>
 <p><img alt="Filling in the form to create a new project in an existing folder." src="../images/adding_data/CreateNewProject.png" title="Filling in the form to create a new project in an existing folder." /></p>
 <p>Doing it this way ensures that you are keeping your data in the project folder, which will help you to find it later.</p>
-<p>ArcGIS should open a new map with a view of the World.  You should see several new files and folders appear in the folder in which you have created the project, for example, <code>FindingData.gdb</code>; <code>ImportLog</code>; <code>FindingData.aprx</code>.</p>
-<h2 id="checking-data-properties">Checking data properties</h2>
-<p>The natural inclination once you have the datasets for your project is to add them straight in to a project in ArcGIS.  </p>
-<h2 id="esri-living-atlas-and-basemaps">ESRI Living Atlas and Basemaps</h2>
+<p>ArcGIS should open a new map with a view of the World.  This is the default <a href="/introduction/#using-basemaps">ESRI basemap</a> and is a general layer which is useful as it gives you some idea of where you are when you zoom in.  The section on <a href="/introduction/#using-basemaps">Using basemaps</a> in the first chapter of this workbook shows you how to select alternative basemaps.</p>
+<p>In the <a href="/introduction/#catalog-pane">Catalog pane</a> you should see several new files and folders appear in the folder in which you have created the project, for example, <code>FindingData.gdb</code>; <code>ImportLog</code>; <code>FindingData.aprx</code>.</p>
+<p><img alt="The new ArcGIS Pro Project showing the default map of the World and the subheadings in the Catalog." src="../images/adding_data/NewProject.png" title="The new ArcGIS Pro Project showing the default map of the World and the subheadings in the Catalog." /></p>
+<p>Now go to the <code>Folders</code> subheading in the Catalog and drop down the list of contents.  You should be able to see the folders containing your data, plus some items that ArcGIS Pro has added by default.  If you open up the folders you should be able to see the data too.  If you can&rsquo;t and you are sure that you put your data in that folder, make sure that everything is unzipped.</p>
+<p><img alt="The contents of the Folders subheading of the Catalog for your new project." src="../images/adding_data/CatalogFolders.png" title="The contents of the Folders subheading of the Catalog for your new project." /></p>
+<h2 id="adding-downloaded-data-to-your-map">Adding downloaded data to your map</h2>
+<p>One thing to remember when adding data to a map is that the first layer that you add sets the <strong>spatial reference</strong>, or <strong>coordinate system</strong> for that map.  When downloading data from Digimap the raster layers don&rsquo;t always have coordinate system information, so it makes sense to start by adding the vector layers.</p>
+<p>Start by having a look at your data so that you know more about it.  You are going to be creating a map with the spatial reference of <code>British National Grid</code> so need to check whether all of the layers are set to that.</p>
+<ul>
+<li>In the <code>Catalog</code> pane, look for each of the datasets that you downloaded in turn</li>
+<li>right-click on the data file - which in this case will either have an extension of <code>.tif</code> or <code>.shp</code></li>
+<li>go to <code>Properties</code> and have a look at the information under the subheadings there.</li>
+</ul>
+<p><img alt="An example of the properties for one of the datasets - in this case the VectorMap Local raster file." src="../images/adding_data/DataProperties.png" title="An example of the properties for one of the datasets - in this case the VectorMap Local raster file." /></p>
+<p>Make a note for yourself of the following properties for each dataset</p>
+<ul>
+<li>is the data vector or raster?</li>
+<li>what is the data type?</li>
+<li>what is the Projected Coordinate system?</li>
+<li>what is the Geographic Coordinate system?</li>
+</ul>
+<p>Remember that the lecture segment for this practical covered the differences between vector and raster file formats.  If you are still unsure please go back and have another look at the presentation on that.</p>
+<p>Your notes should show something like the following -</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Vector or raster?</th>
+<th>Data type?</th>
+<th>Projected coordinate system?</th>
+<th>Geographic coordinate system?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS Terrain 5 contours</td>
+<td>vector</td>
+<td>Shapefile feature class</td>
+<td>British National Grid</td>
+<td>GCS OSGB 1936</td>
+</tr>
+<tr>
+<td>OS VectorMap Local raster</td>
+<td>raster</td>
+<td>File system raster</td>
+<td>British National Grid</td>
+<td>GCS OSGB 1936</td>
+</tr>
+<tr>
+<td>Natural Earth shaded relief and water</td>
+<td>raster</td>
+<td>File system raster</td>
+<td>none</td>
+<td>GCS WGS 1984</td>
+</tr>
+<tr>
+<td>Natural Earth Countries</td>
+<td>vector</td>
+<td>Shapefile feature class</td>
+<td>none</td>
+<td>GCS WGS 1984</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adding-vector-data">Adding vector data</h3>
+<p>Now that you have decided which layers are vector, and which have the correct coordinate system for your final map, you can start to think about adding the data to your map.</p>
+<p>We&rsquo;ll start with the <code>OS Terrain 5 contours</code> because they are a vector layer and have the projected coordinate system British National Grid, which is what we want our map to be in.</p>
+<h4 id="merging-contour-shapefiles">Merging contour shapefiles</h4>
+<p>The next thing to check is how many separate shapefiles have you downloaded for this area?</p>
+<ul>
+<li>In the Catalog find the folder containing the Terrain 5 contour layers and drop down so that you can see the contents</li>
+<li>you&rsquo;ll need to drop down the subfolders too, until you can see something like the image below</li>
+</ul>
+<p><img alt="The downloaded files for the Terrain 4 contours.  Note that you have both point and line shapefiles, and also a series of xml files." src="../images/adding_data/Terrain5Contents.png" title="The downloaded files for the Terrain 4 contours.  Note that you have both point and line shapefiles, and also a series of xml files." /></p>
+<p>You should find that you have multiple files, some of which have <code>point</code> as part of the name, some of which have <code>line</code> as part of the name, and a few files with an extension of <code>.xml</code>.</p>
+<p>You can ignore the point files and the xml files.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>How many line shapefiles do you have?</strong></p>
+</blockquote>
+<p>In my folder, shown above, I have four line shapefiles.</p>
+<p>Try adding these files to your map by dragging and dropping them into the top of the Contents.  You can select multiple files to add by holding down the <code>Ctrl</code> key and clicking on each of them.</p>
+<p>You should find that you have something like the image below (though with a different number of tiles).  You have contour lines, but Arc has assigned a different colour to each tile.</p>
+<p><img alt="Multiple tiles of contour data added to Arc.  Each tile has been styled separately, showing they are still separate files." src="../images/adding_data/ContourTiles.png" title="Multiple tiles of contour data added to Arc.  Each tile has been styled separately, showing they are still separate files." /></p>
+<p>At the moment the shapefiles are still four separate files, and if you styled them you would have to style each one in turn.  It makes sense to combine, or <code>merge</code> these files into one.</p>
+<p>If you only have one tile of contour data you don&rsquo;t need to merge it, but you should have a minimum of two for this exercise.</p>
+<ul>
+<li><a href="/introduction/#remove-layers">Remove</a> the contour files from your map</li>
+</ul>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Creating a base map with OS data: 1. Merging contour shapefiles</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>From the Analysis tab of the ribbon find <code>Merge</code> in the Tools group</li>
+<li><strong>OR</strong> go to the Analysis tab of the ribbon, click on <code>Tools</code> to open the toolbox panel on the right, then <code>Toolboxes &gt; Data Management Tools &gt; General &gt; Merge</code></li>
+<li>Add all line contour shapefile tiles as the input by clicking on the folder icon to the right<ul>
+<li>You may need to include files from more than one sub-folder.  Remember that you only need to add the <strong>line</strong> shapefiles, not the <strong>point</strong>.</li>
+<li>to add more than one tile at a time use the <code>Ctrl</code> key and then click on each file</li>
+</ul>
+</li>
+<li>Save the output to the project geodatabase, that is the file with the same name as your project and an extension of <code>.gdb</code>, and give the output feature class a name such as <code>contours</code> that will help you to identify it again later</li>
+<li>leave the rest of the fields as the defaults</li>
+<li><code>Run</code> - Arc should merge your shapefiles, add them to the geodatabase and then zoom in and display them on your map</li>
+</ul>
+<p><img alt="The Merge dialogue ready to merge four contour line files into a geodatabase feature class." src="../images/adding_data/MergeContours.png" title="The Merge dialogue ready to merge four contour line files into a geodatabase feature class." /></p>
+<p>If Arc doesn&rsquo;t take you to the correct location for your data, remember that you can <code>Zoom to Layer</code> by right-clicking on the contours layer in the Contents and selecting <code>Zoom to Layer</code> from the context menu.</p>
+<p>You should end up with something like the image below with a random choice of a single colour for all of your contours.  The ESRI basemap layer still shows behind the contours.</p>
+<p><img alt="The merged contours.  Note that they are styled in single colour and you now have a single layer in the contents." src="../images/adding_data/MergedContours_small.png" title="The merged contours.  Note that they are styled in single colour and you now have a single layer in the contents." /></p>
+<p>If you need to save disk space, or even just want to tidy up your data, you can now delete the folder containing the original contour data.  If you need it again you can either unzip the file that you downloaded from Digimap, or just redo the download.</p>
+<!-- TODO: styling and labelling contours -->
+
+<h4 id="checking-the-coordinate-system-of-your-map">Checking the coordinate system of your map</h4>
+<p>Now that you have added your first layer it is a good idea to check that the coordinate system of your map is correct.</p>
+<p>Remember that we are creating a map which should be in <code>British National Grid</code>.</p>
+<ul>
+<li>In the Contents pane right-click on the <code>Map</code> title at the top of the list</li>
+<li>select <code>Properties</code> from the context menu</li>
+<li>go to the <code>Coordinate Systems</code> subheading and check the <code>Current XY</code></li>
+</ul>
+<p><img alt="Checking the coordinate system in the map properties.  The Current XY should read British National Grid, and in the box below that should match the contours layer that you've just created." src="../images/adding_data/MapCRS.png" title="Checking the coordinate system in the map properties.  The Current XY should read British National Grid, and in the box below that should match the contours layer that you've just created." /></p>
+<p>The <code>Current XY</code> should be <code>British National Grid</code> - but if it isn&rsquo;t don&rsquo;t panic.</p>
+<ul>
+<li>Look in the box below which shows <code>XY Coordinate Systems Available</code></li>
+<li>Find your contours layer and click on it and the <code>Current XY</code> entry should change to match it.</li>
+<li>Once you have the correct coordinate system click <code>OK</code></li>
+</ul>
+<p>If your contours are set correctly, the <code>Current XY</code> should change to <code>British National Grid</code> to match.</p>
+<p>If this doesn&rsquo;t work, or you don&rsquo;t have a layer in British National Grid try the following</p>
+<ul>
+<li>Above the <code>XY Coordinate Systems Available</code> box</li>
+<li>in the <code>search</code> box type <code>British National Grid</code> and press return</li>
+<li>You should see that in an opened out list under Projected coordinate system - click on the entry for <code>British National Grid</code></li>
+<li>Once you have the correct coordinate system click <code>OK</code></li>
+</ul>
+<!-- TODO: Am I doing anything with Natural Earth data? Mentioned it earlier, but not really relevant after that. -->
+
+<h3 id="adding-raster-data">Adding raster data</h3>
+<p>Now we&rsquo;ll move on to the VectorMap Local raster data.  The name rather gives it away for this one, but this is a raster format.</p>
+<p>If you remember, back in the Digimap section, you opened this file to have a look at it.  It should have opened in an image editor, and is basically a picture of a map.  You&rsquo;ll be using this as a detailed background layer for your map as it should show more information than the ESRI basemap layer.  Because of this, if you have more than one tile of data you don&rsquo;t need to merge them.  You can just add multiple files to the map and they will still show as the background.</p>
+<p>Other raster data layers contain data, rather than being a picture.  You can add them in the same way, but they will serve a different purpose.  You&rsquo;ll investigate these sorts of layers later in the course.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Creating a base map with OS data: 2. adding raster background maps</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<!-- TODO: Should I include something about adding a new folder connection somewhere in this chapter?  Check it isn't in the introduction or somewhere else. -->
+
+<p>To add the raster tiles</p>
+<ul>
+<li>Find the file or files<sup id="fnref:301"><a class="footnote-ref" href="#fn:301">1</a></sup> in the <code>Folders</code> subheading of the Catalog Pane.<ul>
+<li>The background files from Digimap should be under a folder called something like <code>vml-raster-bwr</code></li>
+<li>and have names like <code>vml-raster...tif</code></li>
+</ul>
+</li>
+<li>then simply drag and drop the raster file(s) from the Catalog pane to the Contents pane so that they are placed below the contour layer, but above the ESRI background layer.  Don&rsquo;t forget that you may have files in more than one folder</li>
+<li>If you are offered the choice of creating <code>Pyramids</code> say <code>Yes</code><sup id="fnref:302"><a class="footnote-ref" href="#fn:302">2</a></sup></li>
+</ul>
+<p>Your raster maps may appear rather bad quality, this is usually just an onscreen problem.  When you print your map, or zoom in close, it should be fine.</p>
+<p>Check that the VectorMap Local raster background map looks right with your contours, e.g. that the contours don&rsquo;t go straight through the middle of lakes, or that streams don&rsquo;t appear to flow uphill.</p>
+<p>If you have a clipped layer the background map may well not cover the same area as the contours - don&rsquo;t worry about that.</p>
+<p>If you think the black and white background is too dark/strong you can always fade it a bit by using <a href="/introduction/#make-layers-transparent">Transparency</a></p>
+<h3 id="removing-the-esri-background-layers">Removing the ESRI background layers</h3>
+<p>This is a good point at which to <strong>remove</strong> the ESRI base map layers, e.g. World Topographic Map and World Hillshade, so that they don&rsquo;t cause problems later.</p>
+<ul>
+<li>Right-click on each of the basemap layers in turn in the Contents</li>
+<li><code>Remove</code></li>
+</ul>
+<p>Set the scale of your map to 1:10 000.  Your map should look something like the image below, though probably with the contours a different colour.</p>
+<p><img alt="The background map with contours viewed at 1:10 000." src="../images/adding_data/MapContoursVML_small.png" title="The background map with contours viewed at 1:10 000." /></p>
+<h2 id="symbolising-the-data-on-your-map">Symbolising the data on your map</h2>
+<p>Symbolising is the word that ESRI use for the process of making your data look good - this could also be described as styling.</p>
+<p>Your map now shows the required data, but doesn&rsquo;t quite look right.  The VectorMap Local raster data is fine - that is already styled and there isn&rsquo;t anything else you need to do with it.</p>
+<p>The contours also need to be changed to grey, and they are rather thick.  They also need to have labels added showing the height.</p>
+<h3 id="setting-the-reference-scale">Setting the reference scale</h3>
+<p>Before you start symbolising and labelling your layers it is a good idea to set the <strong>reference scale</strong> to the scale at which you are intending to print the map.  In this case you are putting together a fieldslip and you are most likely to need to print it at either 1:10 000 or 1:5 000.  Setting the reference scale will ensure that when you choose styles or the label size they will look the same as they will once your map is printed.</p>
+<ul>
+<li>Start by setting the scale of your map to 1:10 000, using the dropdown below the map view</li>
+<li>In the Contents pane right-click on the title of your map - usually <code>Map</code></li>
+<li>Click to <code>Set Reference Scale</code> and it&rsquo;s done</li>
+</ul>
+<p>You can reset the reference scale just by going to a different scale and doing the same, or you can clear the reference scale completely if you wish to.</p>
+<h3 id="styling-the-contours">Styling the contours</h3>
+<p>Now that the contour lines are in your project you need to symbolise them so that they look professional.  For this take inspiration from the British Geological Survey published maps<sup id="fnref:303"><a class="footnote-ref" href="#fn:303">3</a></sup>.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Symbolising a layer by unique values in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>Select your contours layer in the contents pane then click on the <code>Appearance</code> tab of the ribbon and click on the <code>Symbology</code> button to open the Symbology pane to the right of your map.</li>
+</ul>
+<h4 id="symbolising-as-unique-values">Symbolising as unique values</h4>
+<p>It is good practice to symbolise your contours so that most are of a standard width, but contours at a regular interval are made slightly thicker.  This makes it easier to interpret the heights.</p>
+<p>Check the attribute table for your contour feature class (right-click on the layer in the contents pane and select <code>Attribute table</code>.</p>
+<p>For Ordnance Survey contour data there will be a column which divides the contours into <code>master</code> and <code>ordinary</code>.  If your area is on the coast you may also have high and low water mark.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>What is the name of the column that divides the contours into master and ordinary?</strong></p>
+<p>Make a note of the column name, you&rsquo;ll need that for setting the symbology.</p>
+</blockquote>
+<ul>
+<li>In the symbology pane change the dropdown under <code>Primary Symbology</code> to <code>Unique Values</code></li>
+<li>Dropdown the box next to <code>Field1</code> and change it to the column that you made a note of above</li>
+</ul>
+<p>Arc should automatically classify your data as the number of different sub-types in your feature class and give them a random colour.</p>
+<p>You will also end up with a value labelled <code>all other values</code>.  You don&rsquo;t need it for this map so the next step shows you how to get rid of this.</p>
+<p><img alt="Unique values used to symbolise contours in the Symbology panel.  The colours are still the defaults chosen by Arc." src="../images/adding_data/ContoursRandomSymbology.png" title="Unique values used to symbolise contours in the Symbology panel.  The colours are still the defaults chosen by Arc." /></p>
+<ul>
+<li>To get rid of <code>all other values</code> - on the <code>Classes</code> tab click on the <code>More</code> button which has a little down arrow</li>
+<li>Untick <code>Show all other values</code></li>
+</ul>
+<p>You shouldn&rsquo;t notice any difference on your map, but it will tidy up your contents pane, and if you were going to add this layer to a map legend it would stop it showing there too.</p>
+<h4 id="styling-the-contour-lines">Styling the contour lines</h4>
+<p>Back in the first chapter you <a href="/introduction/#symbolising-a-layer">styled the layers on the Malham map</a>.  This is a similar process so it should seem familiar.</p>
+<p>The automatic / default styling of the contour lines is unlikely to be satisfactory.  To style the two different types of line</p>
+<ul>
+<li>Click on the symbol to the left of one of the line types on the <code>Classes</code> tab</li>
+<li>Check that you are on the <code>Properties</code> tab of the next panel, not the Gallery</li>
+<li>Change the colour and line width as suggested below - you can play around with the settings later when you see what they look like on the map</li>
+<li>Go back to the symbology pane between each value so that you symbolise both the master and the ordinary contours</li>
+</ul>
+<p>For a black and white or greyscale map</p>
+<ul>
+<li>Color = <strong>Grey 40%</strong></li>
+<li>Line width<ul>
+<li>Master / index contour = <strong>0.8 pt</strong></li>
+<li>Standard / ordinary contour = <strong>0.4 pt</strong></li>
+</ul>
+</li>
+<li>Click <code>Apply</code></li>
+</ul>
+<p>For a faded colour map</p>
+<ul>
+<li>Color = <strong>Seville Orange</strong>  (hover over the colour patches to see their names!)</li>
+<li>Line width<ul>
+<li>Master / index contour = <strong>0.8 pt</strong></li>
+<li>Standard / ordinary contour = <strong>0.4 pt</strong></li>
+</ul>
+</li>
+<li>Click <code>Apply</code></li>
+</ul>
+<!-- TODO: Add images to show what the final contours should look like for each colour version -->
+
+<h3 id="labelling-the-contours">Labelling the contours</h3>
+<p>It is essential to add labels to the contour lines to show the height.  Without labels contour lines are basically worthless.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>How to add labels to layers in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>Have a look at the attribute table of the contours feature class again.</p>
+<blockquote>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>What is the name of the column which holds the information about height above sea-level?</strong></p>
+<p>Again, make a note of this, you&rsquo;ll need it for labelling the contours.</p>
+</blockquote>
+<p>To label the contours</p>
+<ul>
+<li>Select the contour layer in the contents panel</li>
+<li>Click on the <code>Labeling</code> tab of the ribbon</li>
+<li>then click on the <code>Label</code> button at the far left of the ribbon</li>
+</ul>
+<p>Labels will appear on your map, but they are unlikely to be the labels that you actually need.</p>
+<p>To change the content of the labels</p>
+<ul>
+<li>In the <code>Label Class</code> group of the labeling tab use the <code>Field</code> dropdown to select the field that you made a note of above - the one which holds the information about the height of the contour</li>
+</ul>
+<p>The labels should change to the height.  But if you have a closer look at the contours you should notice that the labels don&rsquo;t actually appear on top of the lines to which they refer.  You need to change the <code>Label Placement</code>.</p>
+<ul>
+<li>In the <code>Label Placement</code> group of the labeling ribbon use the arrow on the right to find the <code>Contours</code> setting.</li>
+<li>If you click on the little arrow in the bottom right corner of the group you should open the <code>Position</code> tab of the <code>Label Class</code> pane</li>
+<li>Drop down the <code>Placement</code> subheading and you should be able to check the settings there</li>
+</ul>
+<p>The contour placement should set your labels so that they are on top of the lines and curved, which is how contour labels appear on Ordnance Survey maps.  Now you need to change how the text looks.</p>
+<ul>
+<li>Click on the <code>Symbol</code> tab of the Label Class dialog</li>
+<li>Drop down the <code>Appearance</code> subheading</li>
+<li>From there you&rsquo;ll most likely need to set a smaller font size, e.g. 8 pt, and change the colour of the text symbol to match the colour of the contours</li>
+<li>Once you&rsquo;ve changed the settings click <code>Apply</code> to see what they look like.  You may need to wait a bit while Arc applies them - labelling contours can slow things down rather.</li>
+</ul>
+<!-- TODO: Include an image of the labelled contours here so students know what they should look like -->
+
+<p>You can try out alternatives to see what looks best.  Remember that the contours and their labels need to be present and visible so that they can be used in map reading, but not so large that they dominate the map.  If in doubt, check OS or BGS published maps as suggested at the start of this section.</p>
+<h3 id="creating-a-layout-for-printing">Creating a layout for printing</h3>
+<p>You will need to add various map elements to a layout for your field slip.  You will work through a whole chapter on Layout and Presentation later in this module, but for now you&rsquo;ll do a quick version.</p>
+<ul>
+<li>Go to the <code>Insert</code> ribbon and click on <code>New Layout</code></li>
+<li>Select <code>ISO - Portrait &gt; A4</code></li>
+<li>On the ribbon click on the arrow under <code>Map Frame</code> and select your map</li>
+<li>Now click on the page and draw out a &ldquo;box&rdquo; - don&rsquo;t worry too much about the area/size for now</li>
+<li>At the bottom of the screen change the scale to <code>1:10 000</code> to zoom in to your map</li>
+<li>With the map still selected click on <code>Grid</code> on the ribbon then select <code>Measured Grid &gt; Black Vertical Label Grid</code> to add grid references around the outside of your map</li>
+<li>Click on <code>Scale Bar</code> in the <code>Map Surrounds</code> group and select any of the <code>Metric</code> scale bars</li>
+<li>Use the <a href="/introduction/#to-add-text">text tools</a> to add the following copyright text for the Ordnance Survey data that you have used</li>
+</ul>
+<blockquote>
+<p>&copy; Crown copyright and database rights 2020. Ordnance Survey (100025252)</p>
+</blockquote>
+<p>You can play with the settings for the elements you have added, but we will be looking at layout and presentation in more detail later.</p>
+<p>Your final field slip map should look something like the map below:</p>
+<p><img alt="A basemap, or field slip, ready for field mapping or as background for a top copy geological map." src="../images/adding_data/BasemapFinal_small.png" title="A basemap, or field slip, ready for field mapping or as background for a top copy geological map." /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:301">
+<p>If, when you downloaded the data from Digimap, you selected to <code>Clip</code> the data you will probably only have one tile or file of data.  If you selected not to clip, you will probably have multiple tiles or files.&#160;<a class="footnote-backref" href="#fnref:301" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:302">
+<p>Pyramids take a moment to create when you first load the file, but make it much quicker to move around in your map once they are loaded.&#160;<a class="footnote-backref" href="#fnref:302" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:303">
+<p>You can see the <a href="https://www.bgs.ac.uk/data/maps/">scanned geological maps online</a> on the BGS website.  Try to make sure that you look at a recently published example such as the <a href="https://www.bgs.ac.uk/data/maps/maps.cfc?method=viewRecord&amp;mapId=11475">1:25 000 Ardnamurchan Central Complex map</a> published in 2009.  You won&rsquo;t find the BGS 1:10 000 maps online.&#160;<a class="footnote-backref" href="#fnref:303" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
