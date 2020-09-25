@@ -69,6 +69,48 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-background-data">Obtaining the background data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#repairing-broken-file-links">Repairing broken file links</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preparing-to-digitise-data">Preparing to digitise data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-up-a-feature-dataset-within-a-geodatabase">Set up a feature dataset within a geodatabase</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-up-a-feature-class">Set up a feature class</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#digitising-in-arcgis-pro">Digitising in ArcGIS Pro</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#starting-to-digitise">Starting to digitise</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#saving-your-edits">Saving your edits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transparency">Transparency</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stopping-a-digitising-session">Stopping a digitising session</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#potential-issues-with-the-data">Potential issues with the data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modifying-features">Modifying features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#controlling-selections">Controlling selections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modifying-features-continued">Modifying features (continued)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-more-information-to-a-feature-class">Adding more information to a feature class</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-new-fields-to-a-feature-class">Adding new fields to a feature class</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -137,6 +179,228 @@
 <li>Set up storage for GIS data</li>
 <li>Use the tools in GIS to draw (digitise) your own data</li>
 </ul>
+<h2 id="introduction">Introduction</h2>
+<p>Digitising or tracing data manually in Arc involves having a background map which shows the locations that you wish to digitise, and then using the editing tools to draw vector polygons, lines and points.  In this set of exercises you will produce a map of Chancellors Court in the University showing the outlines of the buildings, the paths, and any other features such as seats and signposts.</p>
+<p>Even if you don&rsquo;t actually need to digitise a map it is extremely useful to know how to set up your own feature classes and how to add features by editing.  Sometimes you just need to outline your study area, or add a point to show where something specific is, or as input to one of the tools provided in Arc.</p>
+<p>This is a very brief overview of the tools for digitising in Arc as we are limited for time.  If you need to do anything more complex then you should be able to find plenty more information in the <a href="https://pro.arcgis.com/en/pro-app/help/main/welcome-to-the-arcgis-pro-app-help.htm">ArcGIS Pro Help</a>.  If you are a Geology student you will be getting more information in level two as part of your preparation to produce your dissertation map in ArcGIS Pro.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Vector and raster</strong></p>
+<p>If you feel that you are still not clear about the difference between <strong>raster</strong> and <strong>vector</strong> GIS data it would be worth having a look at the video &ldquo;<a href="https://youtu.be/hbOGp51nYGI">Learn more about raster and vector map data</a>&rdquo; by the Ordnance Survey.</p>
+<p>As you deal with more GIS data you&rsquo;ll start to find it easier to spot which formats are raster and which are vector, but you need to be thinking about it already.</p>
+</blockquote>
+<h2 id="obtaining-the-background-data">Obtaining the background data</h2>
+<p>You will need to</p>
+<!-- TODO: Upload DigitiseData.zip (not 7z) -->
+
+<ul>
+<li>download the <code>DigitiseData.zip</code> file from Minerva</li>
+<li>unzip the file to your GIS working folder</li>
+</ul>
+<p>You should have a folder containing data and an ArcGIS project file.</p>
+<ul>
+<li>Open the <code>.aprx</code> file in ArcGIS Pro by double-clicking on it</li>
+<li>when it finishes opening check that the links in the contents pane are not broken - if you have red exclamation marks next to any layer you need to repair the links following the instructions below.</li>
+</ul>
+<p>Once your file is open and any broken links are repaired you should be able to see an aerial view of the University which uses aerial data from Digimap.</p>
+<h2 id="repairing-broken-file-links">Repairing broken file links</h2>
+<p>If you find that your map doesn&rsquo;t show and that you have the red exclamation marks next to the data as in the image below (note that this isn&rsquo;t the same map project that you are using), follow these instructions to repair the data links.</p>
+<p><img alt="The red exclamation mark showing that the links to the data for these layers is broken." src="../images/crs/TipBrokenLinks_small.png" title="The red exclamation mark showing that the links to the data for these layers is broken." /></p>
+<p>If you use absolute file paths and you have to move the files from one location to another, or if you have a project folder set up by someone else, you may find that the broken links are marked by a red exclamation mark next to the layer name.  This can also happen if you are adding .lyr files for symbology.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Repairing broken file links</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To check the name of the file that  you&rsquo;ll need to locate:</p>
+<ul>
+<li>Open the layer properties and go to the <code>Source</code> tab</li>
+<li>Under <code>Data Source</code> you will see which file Arc is looking for - make a note of this</li>
+</ul>
+<p><img alt="The Layer Properties for the missing layer, showing where Arc is actually looking for the data.  Make a note of the file name - this is what you need to look for in your file system." src="../images/crs/TipBrokenLinksFileSource.png" title="The Layer Properties for the missing layer, showing where Arc is actually looking for the data.  Make a note of the file name - this is what you need to look for in your file system." /></p>
+<ul>
+<li>Look through your file system to find the correct file</li>
+</ul>
+<p>Once you know where the file you need is located, do the following to repair the link:</p>
+<ul>
+<li>from the layer properties source tab <code>Set Data Source...</code></li>
+<li>Navigate to the file that you need then <code>OK &gt; OK</code></li>
+</ul>
+<p>That layer should now appear on your map.  If you&rsquo;re lucky all of the missing layers will appear, but if you&rsquo;re not you&rsquo;ll need to repeat the process for each layer.</p>
+<h2 id="preparing-to-digitise-data">Preparing to digitise data</h2>
+<p>The first thing you need to do when preparing to digitise is to set up the storage for your data.</p>
+<p>When the project was set up Arc automatically included a <code>geodatabase</code> within it.  The geodatabase is the overall container for your data and will store <code>feature datasets</code> and <code>feature classes</code>.</p>
+<p>You&rsquo;ve already worked with feature classes in previous chapters.  These are vector layers which can hold points, lines or polygons.  A feature dataset can contain a range of related feature classes.  The image below shows what your Catalog will look like when it is fully set up (note that the geodatabase name may be different - that doesn&rsquo;t matter.</p>
+<p><img alt="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." src="../images/creating_data/ESDigitiseGDB.png" title="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." /></p>
+<h3 id="set-up-a-feature-dataset-within-a-geodatabase">Set up a feature dataset within a geodatabase</h3>
+<p>To set up the geodatabase contents -</p>
+<ul>
+<li>In the Catalog pane go to the <code>Databases</code> subheading and open it out.  There will be a geodatabase with the same name as the project / folder.</li>
+<li>Right-click on your geodatabase</li>
+<li><code>New &gt; Feature Dataset</code></li>
+<li>Enter a name that describes the information that it will contain, in this example it could be <code>University</code></li>
+<li>Set your projection - in this case it should be British National Grid so select <code>Projected Coordinate Systems &gt; National Grids &gt; Europe &gt; British National Grid</code></li>
+<li>Click <code>Run</code></li>
+</ul>
+<h3 id="set-up-a-feature-class">Set up a feature class</h3>
+<p>Still in the Catalog pane</p>
+<ul>
+<li>Right-click on the feature dataset that you&rsquo;ve just set up (in this example the one called <code>University</code>)</li>
+<li><code>New &gt; Feature Class</code></li>
+<li>Fill in the geoprocessing dialog that opens as shown below<ul>
+<li>give your feature class a name that explains what it shows, with no spaces or punctuation, e.g. in this case <code>Buildings</code></li>
+<li>the <code>Feature Class Alias</code> is the name that will appear in the contents pane - this can include spaces</li>
+<li>Choose the correct <code>Geometry Type</code> - it&rsquo;s important to get this right as it isn&rsquo;t possible to change this once you&rsquo;ve created the feature class.  For the buildings layer select <code>Polygon</code></li>
+<li>If you are storing the feature class in a dataset which already has a spatial reference set you shouldn&rsquo;t need to fill that in again</li>
+</ul>
+</li>
+<li>If you click on <code>Next</code> you&rsquo;ll get an opportunity to add fields and other information, but don&rsquo;t worry about this for now</li>
+<li>Click <code>Finish</code> to create the new feature class</li>
+</ul>
+<p><img alt="The geoprocessing form to create a feature class.  Double check that the __Geometry type__ is filled in correctly each time as you can't change it later!" src="../images/creating_data/ESFeatureClassCreate_small.png" title="The geoprocessing form to create a feature class.  Double check that the Geometry type is filled in correctly each time as you can't change it later!" /></p>
+<p>The feature class should be added to your feature dataset, and also added to the contents pane of the map that is open.  If it isn&rsquo;t automatically added to the contents pane just drag and drop it across.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Setting up further feature classes</strong></p>
+<p>In the same way, inside the feature dataset, create a feature class called <code>Paths</code> with a feature type of <code>Line</code></p>
+<p>Also create a feature class called <code>Trees</code> with a feature type of <code>Point</code></p>
+<p>Note that if you forget to change the feature type when you are creating a feature class it can&rsquo;t be changed later.  All you can do is use the Catalog to delete the feature class and create a new one.</p>
+</blockquote>
+<p>Arc should automatically add the new feature classes to your table of contents.  If it hasn&rsquo;t, add them now.  Your ArcGIS Window should now look something like the image below.</p>
+<p><img alt="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." src="../images/creating_data/ReadyToDigitise_small.png" title="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." /></p>
+<h2 id="digitising-in-arcgis-pro">Digitising in ArcGIS Pro</h2>
+<p>You should already have an aerial view as a background for your map.  For these exercises you&rsquo;ll be <code>digitising</code> polygons, points and lines by tracing over features on this view.</p>
+<h3 id="starting-to-digitise">Starting to digitise</h3>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Digitising in Arc Part 1: Starting and finishing, and creating polygon features</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>To start editing simply click on the <code>Edit</code> tab of the ribbon</li>
+<li>Click on the <code>Create</code> button in the <code>Features</code> group</li>
+<li>A <code>Create Features</code> pane should open on the right-hand side of the window and this should show the editable layers in your map.</li>
+</ul>
+<p><img alt="The create features pane showing editable layers.  You should be able to see Buildings, Paths and Trees here - the layers you created earlier." src="../images/creating_data/ESCreateFeaturesPane.png" title="The create features pane showing editable layers.  You should be able to see Buildings, Paths and Trees here - the layers you created earlier." /></p>
+<ul>
+<li>Click on the <code>Buildings</code> layer in the Create Features pane and select the <code>Polygons</code> tool - the one on the left.  As usual, if you hover over icons you&rsquo;ll get a tooltip.</li>
+</ul>
+<p>Now you&rsquo;re ready to start adding a feature.  We&rsquo;ll start by digitising the School of Earth and Environment (SEE).  So start by zooming in to the building.</p>
+<p>I realise you may not actually have seen the School of Earth and Environment by this point.  To find it use the <code>Go To XY</code> tool from the Map tab of the ribbon.</p>
+<ul>
+<li>When you click on the <code>Go To XY</code> button a small panel will open at the bottom of the map screen.</li>
+</ul>
+<p><img alt="Using the XY Tool to find Chancellors Court.  Note that you may need to change the units to Meter." src="../images/creating_data/XYtool_small.png" title="Using the XY Tool to find Chancellors Court.  Note that you may need to change the units to Meter." /></p>
+<p>You may need to change the final box on the tool so that it reads <code>Meter</code>.  Once you&rsquo;ve done that you should be able to enter the grid reference for Chancellors Court which is:</p>
+<ul>
+<li>429375 434402</li>
+</ul>
+<p>Now click on the hand symbol at the end of the tool to pan to Chancellors Court.</p>
+<p>The School of Earth and Environment is the building along the northern side of Chancellors Court and the building just to the north of it.</p>
+<p><img alt="The School of Earth and Environment (SEE)." src="../images/creating_data/SEE.png" title="The School of Earth and Environment (SEE)." /></p>
+<ul>
+<li>Now you know where the building is, zoom in to it</li>
+<li>To create a polygon left-click along the edges of the building.  Each click creates a <code>Vertex</code>, or corner.</li>
+<li>To finish a polygon double-click on the last point or press the <code>F2</code> key on the keyboard.  The polygon should be outlined by the selection colour, e.g. turquoise, once you&rsquo;ve done this.</li>
+<li>You can continue straight on to digitise another building if you wish to, but remember to save your edits regularly - see the next point</li>
+</ul>
+<h3 id="saving-your-edits">Saving your edits</h3>
+<p>You need to remember to save the features that you&rsquo;ve digitised at regular intervals.  This is also described as saving your edits.</p>
+<ul>
+<li>To save your edits click <code>Save</code> on the Edit tab of the ribbon.  If you don&rsquo;t want to save your edits click <code>Discard</code> instead.</li>
+</ul>
+<blockquote>
+<p><img alt="Warning" src="../images/svg/warning-black-24dp.png" /> <strong>Remember to save your edits</strong></p>
+<p><strong>It is important to remember to save your edits on the Edit toolbar</strong> - they are not being stored in the map, but are being written to the external feature class that you have set up.  If you close Arc without saving the edits, even if you save the map, they won&rsquo;t be there next time you open it.</p>
+</blockquote>
+<p><img alt="The digitised School of Earth and Environment - yours probably won't be the same colour as mine." src="../images/creating_data/ESDigitiseBuilding.png" title="The digitised School of Earth and Environment - yours probably won't be the same colour as mine." /></p>
+<h3 id="transparency">Transparency</h3>
+<p>Don&rsquo;t forget that you can <a href="/introduction/#make-layers-transparent">make layers transparent</a>.  As you draw your building polygons you&rsquo;ll gradually be covering up the layers underneath and it can be useful to see through the top layers.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Continue to digitise</strong></p>
+<p>Continue to digitise buildings so that you have polygons for all of the buildings around Chancellors Court (the open space south of Earth and Environment).  Remember to save all of your new polygons.</p>
+</blockquote>
+<h3 id="stopping-a-digitising-session">Stopping a digitising session</h3>
+<p>Once you&rsquo;ve finished adding items it isn&rsquo;t obvious how to stop!</p>
+<ul>
+<li>Click on the <code>Map</code> tab of the ribbon</li>
+<li>Click on the <code>Explore</code> button from the Navigate group</li>
+</ul>
+<p>If you don&rsquo;t do this you tend to find that you&rsquo;re adding new features by mistake - which is rather irritating!</p>
+<h3 id="potential-issues-with-the-data">Potential issues with the data</h3>
+<p>Stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
+<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<ul>
+<li>What scale did you digitise at?<ul>
+<li>What effect will this have on the amount of detail that you included?</li>
+<li>What recommendation would you make about viewing the data on a map?</li>
+</ul>
+</li>
+<li>How accurate were you when you were placing the vertices (by clicking on the map)?</li>
+<li>How did you decide where to put the features?<ul>
+<li>How clear were the edges of the building that you were digitising?</li>
+<li>What did you do when there were trees overlapping other features?</li>
+<li>What about shadows?  Did they make it hard to see building edges?</li>
+<li>How did you decide where to put points for trees?</li>
+</ul>
+</li>
+<li>Think how this might affect data that you have obtained from other people.  How might they have solved the same problems?</li>
+</ul>
+<h2 id="modifying-features">Modifying features</h2>
+<p>Once you&rsquo;ve created a feature you may need to edit it, either to move it or to reshape it.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Digitising in Arc Part 4: Editing features after creation.</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+<p>Watch Digitising in Arc Part 1 for general information about digitising.</p>
+</blockquote>
+<ul>
+<li>On the ribbon go to the <code>Edit</code> tab and click on the <code>Modify</code></li>
+<li>This should open the <code>Modify Features</code> pane on the right of the map window</li>
+</ul>
+<p><img alt="The Modify Features panel showing the different ways you can modify your existing features." src="../images/creating_data/ESModifyFeatures.png" title="The Modify Features panel showing the different ways you can modify your existing features." /></p>
+<ul>
+<li>Use the <code>Select</code> tool from the Edit tab of the ribbon to click on the feature that you want to modify so that the feature is outlined in turquoise to show that it is selected.</li>
+<li>On the <code>Modify Features</code> pane click on <code>Vertices</code>.  The outline of the feature on the map should change - see the image below.  The vertices will be marked as small boxes - the red one shows the start/end and the green ones are the intermediate vertices.</li>
+</ul>
+<p><img alt="The selected feature once Edit Vertices has been selected in the Modify Features panel.  Notice that the vertices are marked as small boxes and the feature is outlined in the selection colour." src="../images/creating_data/ESEditVertices.png" title="The selected feature once Edit Vertices has been selected in the Modify Features panel.  Notice that the vertices are marked as small boxes and the feature is outlined in the selection colour." /></p>
+<h3 id="controlling-selections">Controlling selections</h3>
+<p>If you have overlapping layers it can be difficult to select just the feature that you want, either to find the details for it, or to edit it.</p>
+<p>When you click on your map to select a feature it is possible to select the correct one from the little dialog which pops up.</p>
+<p><img alt="Choosing a single feature from the overlapping selections pop up." src="../images/creating_data/OverlappingSelections.png" title="Choosing a single feature from the overlapping selections pop up." /></p>
+<p>This isn&rsquo;t always convenient, though, particularly if you need to do a lot of selecting items.</p>
+<p>It can be useful to prevent other layers from being selectable as if more than one feature is selected you won&rsquo;t be able to make the changes.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Selection tools and stopping layers from being selectable</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To control which layers can be selected from, and which can&rsquo;t, try the following:</p>
+<ul>
+<li>From the top of the Contents pane click on the <code>List by Selection</code> button - remember the tool tips appear if you hover over the buttons</li>
+<li>In the view of your layers which appears ensure that<ul>
+<li>the layer or layers that you want to be able to select from are ticked - in this case check that Buildings, Paths and Trees are ticked</li>
+<li>the layer or layers that you <strong>don&rsquo;t</strong> want to be able to select from are <strong>not</strong> ticked.</li>
+</ul>
+</li>
+<li>It&rsquo;s a good idea to go straight back to the <code>List By Drawing Order</code> view of your layers or it&rsquo;s easy to get confused later</li>
+</ul>
+<p><img alt="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." src="../images/creating_data/ContentsSelection.png" title="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." /></p>
+<h3 id="modifying-features-continued">Modifying features (continued)</h3>
+<p>Once you have the feature selected with the <code>Vertices</code> tool it is now a case of using the mouse cursor to move the edges or corners of the feature</p>
+<ul>
+<li>use the vertices editing on the building outline that you&rsquo;ve just created to move some of the vertices - it doesn&rsquo;t matter in this case if the outline isn&rsquo;t quite right, you&rsquo;re just practicing!</li>
+<li>to remove a vertex (corner) just right-click on it and select <code>Delete Vertex</code> from the menu</li>
+<li>To add a vertex (corner) right-click on one of the edges and select <code>Add Vertex</code> from the menu</li>
+<li>Once you&rsquo;re happy with the shape finish editing by pressing the <code>F2</code> key, then <code>Save</code> using the button on the <code>Edit</code> ribbon.</li>
+</ul>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Modify features pane</strong></p>
+<p>Try some of the other tools on the Modify Features pane.  In particular try Move, Rotate and Scale from the Alignment section.</p>
+<p>Once you&rsquo;ve finished trying out the tools delete any polygons which don&rsquo;t match the buildings around Chancellors Court and redraw them in the correct place.</p>
+</blockquote>
+<h2 id="adding-more-information-to-a-feature-class">Adding more information to a feature class</h2>
+<p>Next you&rsquo;ll add some extra information to your new features.  It would be useful to be able to label the buildings with their names, so we&rsquo;ll have to add another field to the Buildings feature class so that we can add <code>Feature attributes</code>.</p>
+<h3 id="adding-new-fields-to-a-feature-class">Adding new fields to a feature class</h3>
+<ul>
+<li>Right-click on the <code>Buildings</code> layer in the Contents pane and open the <code>Attribute Table</code></li>
+<li>To add a new field click on the <code>Add</code> button on the attribute table toolbar</li>
+</ul>
+<p><img alt="The button to add a new field to an attribute table." src="../images/creating_data/ESAttributeTableAddField.png" title="The button to add a new field to an attribute table." /></p>
               
             </div>
           </div>
