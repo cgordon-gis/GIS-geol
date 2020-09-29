@@ -254,15 +254,15 @@
 <p>The sample map is based on British Geological Survey (BGS) data covering Malham Tarn in North Yorkshire and uses data from a number of sources with which you will become familiar during this module.</p>
 <ul>
 <li>download the <code>MalhamMinerva.7z</code> file from Minerva and save it so that you can remember where it is located.</li>
-<li>Create a new folder called <code>gis</code> - look at the box below to see where to create it
-<!-- TODO: short instructions for how to create a folder? --></li>
+<li>Create a new folder called <code>gis</code> - look at the box below to see where to create it</li>
 </ul>
 <blockquote>
-<p><img alt="Information" src="../images/svg/info-black-24dp.svg" /> <strong>Where to save your work</strong></p>
+<p><img alt="Information" src="../images/svg/info-black-24dp.png" /> <strong>Where to save your work</strong></p>
 <ul>
 <li>if you are on your own computer choose a location where you usually save your files - preferably on an internal drive such as c:</li>
 <li>if you are on a University cluster machine create it on your m:/ drive</li>
-<li>if you are using the <strong>University Virtual Windows Desktop</strong> create the new folder on the desktop.  <strong>You will then need to remember to move it to your m:/ drive or One Drive before you log off the VWD</strong> </li>
+<li>if you are using the <strong>University Virtual Windows Desktop</strong> create the new folder on the desktop.  <strong>You will then need to remember to move it to your network m:/ drive or One Drive before you log off the VWD</strong> </li>
+<li>To create the folder once you are in the correct location right-click and choose <code>New folder...</code></li>
 </ul>
 </blockquote>
 <ul>
@@ -531,8 +531,7 @@
 <p>What are the map units of the current map?  Make a note for yourself.  This information will be useful later.</p>
 </blockquote>
 <h3 id="selecting-features-in-the-attribute-table">Selecting features in the attribute table</h3>
-<!-- TODO: Probably ought to include why this is useful! -->
-
+<p>It can be useful to be able to select features directly in the attribute table rather than by having to click on the map, for example, if you can already see the attributes for the feature that you want to select!</p>
 <blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Selecting features with the attribute table</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
@@ -562,9 +561,12 @@
 <p>I&rsquo;ve been throwing a lot of new terms at you here.  Don&rsquo;t worry - most of them will become more familiar as the course goes on.  Don&rsquo;t forget that you will be able to look back at these instructions.  You can search the document if you are looking for specific techniques.</p>
 <p>In addition you can make use of some resources provided by ESRI, the company who produce ArcGIS.</p>
 <h3 id="arcgis-pro-help">ArcGIS Pro Help</h3>
-<p><a href="https://pro.arcgis.com/en/pro-app/help/">ArcGIS Pro Help is available online</a>.  You&rsquo;ll find this useful when you start using more advanced tools in Arc, but if you&rsquo;re not sure of something it is worth searching in the help.
-<!-- TODO: worth suggesting something to look up? --></p>
-<p>In addition, if you want to explore further ways to use GIS there are lots of <a href="https://learn.arcgis.com/en/">tutorials available on the ESRI website</a>.</p>
+<p><a href="https://pro.arcgis.com/en/pro-app/help/">ArcGIS Pro Help is available online</a>.  You&rsquo;ll find this useful when you start using more advanced tools in Arc, but if you&rsquo;re not sure of something it is worth searching in the help.</p>
+<ul>
+<li>As an example go to the <a href="https://pro.arcgis.com/en/pro-app/help/">ArcGIS Pro Help</a> pages and use the search box at the top to search for <code>select feature attribute</code>.</li>
+<li>You&rsquo;ll get a lot of results but the top one should be &ldquo;Select features using attributes&rdquo;, which should be the most relevant.</li>
+</ul>
+<p>In addition, if you want to explore further ways to use GIS there are lots of <a href="https://learn.arcgis.com/en/">tutorials available on the ESRI website</a>.  Do make sure that you look at tutorials that apply to ArcGIS Pro, not to any other version of Arc!</p>
 <h3 id="esri-gis-dictionary">ESRI GIS Dictionary</h3>
 <p>The Dictionary can be useful if you need to remember what a particular term means.</p>
 <ul>
@@ -663,10 +665,9 @@
 <p>The new layer should be automatically added to your map.  To check that this has worked properly <code>Zoom to layer</code> on your new layer and check that the outline of the Malham Tarn NNR fills the map area.</p>
 <p>Now <a href="#remove-layers">remove</a> the original national nature reserves layer from the contents list and you should be left with just the Malham Tarn Reserve which you had selected via the expression.  Try <a href="#symbolising-a-single-symbol">symbolising the reserve</a> as a single, green outline symbol with no fill.</p>
 <h3 id="select-by-location">Select by location</h3>
-<!-- TODO: Maybe add a bit of intro to this? -->
-
+<p>Select by location allows you to select features based on their relationship to another layer, or other features.  This is one of the key tasks in GIS and it is extremely useful to know how to do this, for example, if you want to export a subset of features that match the area that you are studying.</p>
 <blockquote>
-<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Select by location</strong></p>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Select by location</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
 </blockquote>
 <ul>
@@ -698,8 +699,6 @@
 <p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>How many features?</strong></p>
 <p>How many features are there in the new layer showing only the bedrock geology within 2 km of the Malham Tarn NNR?  You should be able to tell by <a href="#viewing-an-attribute-table">opening the attribute table</a> for the layer.</p>
 </blockquote>
-<!-- TODO: Why did I include a section on symbolising with a layer file at this point?  Is this covered elsewhere if necessary? -->
-
 <h2 id="layout-laying-out-a-map-for-print-or-export">Layout - laying out a map for print or export</h2>
 <p>So far we have been working in the <code>Map</code>.  If you print the map from here you have little control over its appearance.  To produce a professional-looking map you need to use a <code>layout</code>.  The information given here is just a quick introduction, you&rsquo;ll cover layout and presentation in more detail in a later section.</p>
 <ul>
@@ -776,11 +775,9 @@
 <p>Your final map could look something like the map below.  It is unlikely to look identical as you should make your own decisions about where to place elements and how to display your map.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Getting feedback on your layout</strong></p>
-<p>Export your final layout as a pdf and upload it to&hellip; <!-- TODO: Work out what I'm going to do about providing feedback in a manageable way! -->  I will give you feedback on what you have done so far.  If you have any questions about this chapter please feel free to <a href="mailto:c.e.gordon@leeds.ac.uk">email me</a> to ask or ask during the live sessions.</p>
+<p>Export your final layout as a pdf.  If you email me your map I will give you feedback on what you have done so far.  If you have any questions about this chapter please feel free to <a href="mailto:c.e.gordon@leeds.ac.uk">email me</a> to ask or ask during the live sessions.</p>
 </blockquote>
 <p><img alt="A possible layout for the Malham geological map.  Your map probably won't look identical to this as you should make your own decisions about how to lay it out." src="../images/introduction/GSMalhamLayout_small.png" title="A possible layout for the Malham geological map.  Your map probably won't look identical to this as you should make your own decisions about how to lay it out." /></p>
-<!-- TODO: This should also have a legend on it showing at the very least the outline of the Malham NNR, but preferably the geology too! Check what I provide to start them off... -->
-
 <h2 id="recommended-reading-introduction-to-gis">Recommended reading: Introduction to GIS</h2>
 <p>Many of the books in the reading list<sup id="fnref:106"><a class="footnote-ref" href="#fn:106">6</a></sup> have a general introduction to GIS which explain what it is and how it is used.  Suggestions include the following:</p>
 <ul>

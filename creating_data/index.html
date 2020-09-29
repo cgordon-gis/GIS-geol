@@ -85,7 +85,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#digitising-in-arcgis-pro">Digitising in ArcGIS Pro</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#starting-to-digitise">Starting to digitise</a>
+    <li class="toctree-l3"><a class="reference internal" href="#starting-to-digitise-polygons">Starting to digitise - polygons</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#saving-your-edits">Saving your edits</a>
     </li>
@@ -109,7 +109,27 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#adding-new-fields-to-a-feature-class">Adding new fields to a feature class</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-attributes-to-a-field">Adding attributes to a field</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#labelling-features-on-the-map">Labelling features on the map</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#digitsing-line-features">Digitsing line features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#potential-issues-with-the-data_1">Potential issues with the data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#digitising-point-features">Digitising point features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#potential-issues-with-the-data_2">Potential issues with the data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#symbolising-your-data">Symbolising your data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#finally">Finally...</a>
     </li>
     </ul>
                     </li>
@@ -267,7 +287,7 @@
 <p><img alt="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." src="../images/creating_data/ReadyToDigitise_small.png" title="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." /></p>
 <h2 id="digitising-in-arcgis-pro">Digitising in ArcGIS Pro</h2>
 <p>You should already have an aerial view as a background for your map.  For these exercises you&rsquo;ll be <code>digitising</code> polygons, points and lines by tracing over features on this view.</p>
-<h3 id="starting-to-digitise">Starting to digitise</h3>
+<h3 id="starting-to-digitise-polygons">Starting to digitise - polygons</h3>
 <blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Digitising in Arc Part 1: Starting and finishing, and creating polygon features</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
@@ -337,7 +357,6 @@
 <li>How clear were the edges of the building that you were digitising?</li>
 <li>What did you do when there were trees overlapping other features?</li>
 <li>What about shadows?  Did they make it hard to see building edges?</li>
-<li>How did you decide where to put points for trees?</li>
 </ul>
 </li>
 <li>Think how this might affect data that you have obtained from other people.  How might they have solved the same problems?</li>
@@ -401,6 +420,117 @@
 <li>To add a new field click on the <code>Add</code> button on the attribute table toolbar</li>
 </ul>
 <p><img alt="The button to add a new field to an attribute table." src="../images/creating_data/ESAttributeTableAddField.png" title="The button to add a new field to an attribute table." /></p>
+<ul>
+<li>The attribute table will change to <code>Field</code> view - showing more information about the data types and formats</li>
+</ul>
+<p><img alt="The Fields view of the attribute table.  Note the information about the data type of each field, the number format and the length.  There will already be several fields set up by default, e.g. OBJECTID, Shape_Length." src="../images/creating_data/ESAttributeTableFields.png" title="The Fields view of the attribute table.  Note the information about the data type of each field, the number format and the length.  There will already be several fields set up by default, e.g. OBJECTID, Shape_Length." /></p>
+<ul>
+<li>Fill in the details in the new field (which will appear at the bottom of the list) to create a new field called <code>Name</code><ul>
+<li>The <code>Field Name</code> should be short and contain no spaces or strange characters</li>
+<li><code>Alias</code> is how the name will be displayed and can include spaces - it&rsquo;s still a good idea to keep it short</li>
+<li>Set the <code>Data Type</code> to <code>Text</code></li>
+<li>Set the <code>Length</code> to <code>120</code> - that&rsquo;s the maximum number of characters you&rsquo;ll be able to use in a name</li>
+</ul>
+</li>
+<li>Once you&rsquo;ve filled in that click on the <code>Save</code> button on the ribbon</li>
+</ul>
+<p>You can add more fields in this view if you want to, but for now close the <code>Fields</code> tab and return to the <code>Buildings</code> attribute table.</p>
+<h3 id="adding-attributes-to-a-field">Adding attributes to a field</h3>
+<p>The first thing you need to do is work out which row in the attribute table belongs to which feature on the map.  The easiest way is to <a href="/introduction/#selecting-features-in-the-attribute-table">select a row in the attribute table</a> and see which feature shows as selected on the map.</p>
+<p>Once you know which feature you are entering the name for, double-click in the space under <code>Building name</code> and type in the name.  See the image below for the names of the buildings around Chancellors Court and enter them all in your attribute table.</p>
+<p><img alt="Buildings around Chancellors Court labelled with their names." src="../images/creating_data/ESBuildingNames.png" title="Buildings around Chancellors Court labelled with their names." /></p>
+<ul>
+<li>Once again, don&rsquo;t forget to <code>Save</code> your edits frequently by clicking on the button on the <code>Edit</code> tab of the ribbon</li>
+<li>When you&rsquo;ve finished adding names to each building and have saved them, just close the attribute table.</li>
+</ul>
+<h2 id="labelling-features-on-the-map">Labelling features on the map</h2>
+<p>Now that you have label text in your attribute table you can label the features on your map.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>How to add labels to layers in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>In the Contents pane select the layer that you want to label - in this case the <strong>Buildings</strong> layer</li>
+<li>On the ribbon click the <code>Labelling</code> tab, then click on the <code>Label</code> button on the left-hand side</li>
+<li>Check that <code>Label Features in this Class</code> is ticked, then use the dropdown next to <code>Field</code> to select the field in which you entered your building names.</li>
+</ul>
+<p><img alt="The labelling ribbon set up to label buildings with their names." src="../images/creating_data/ESLabellingRibbon.png" title="The labelling ribbon set up to label buildings with their names." /></p>
+<p>The labels should appear on top of the features to which they apply and should look something like the image above, with the names visible.</p>
+<p>You can try out some of the options in the <code>Text Symbol</code> and <code>Label Placement</code> groups on the ribbon to see what they look like.  Remember that this is an opportunity to experiment, because it really doesn&rsquo;t matter what the end result looks like!</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Labelling options</strong></p>
+<p>Try changing the font of your labels and maybe making them larger.</p>
+<p>What effect do the options under Label Placement have?  Do any of them look better to you than the default?</p>
+</blockquote>
+<h2 id="digitsing-line-features">Digitsing line features</h2>
+<p>Digitising line features is very similar to digitising polygons, except that you don&rsquo;t have to &ldquo;close&rdquo; a line.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Digitising in Arc Part 2: Creating line features</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+<p>Watch Digitising in Arc Part 1 for general information about digitising.</p>
+</blockquote>
+<p>You should already have the <code>Paths</code> layer added to your map, if you haven&rsquo;t add it now.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Digitise lines</strong></p>
+<p>Follow the instructions given for <a href="/creating_data/#digitising-in-arcgis-pro">digitising buildings</a>, but this time trace the paths across Chancellors Court into the Paths feature class.</p>
+<p>Don&rsquo;t forget to save your edits when you&rsquo;ve finished.</p>
+</blockquote>
+<p>You don&rsquo;t need to add any labels for the lines layers in this case, but if you did it all works in exactly the same way as it did for the buildings.</p>
+<h3 id="potential-issues-with-the-data_1">Potential issues with the data</h3>
+<p>Again, stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
+<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<ul>
+<li>What scale did you digitise at?<ul>
+<li>What effect will this have on the amount of detail that you included?</li>
+<li>What recommendation would you make about viewing the data on a map?</li>
+</ul>
+</li>
+<li>How accurate were you when you were placing the vertices (by clicking on the map)?  How easy is it to be accurate with the tools?</li>
+<li>How did you decide where to put the features?<ul>
+<li>Did you decide to draw the edges of the paths or the centre line?</li>
+<li>How can you be sure of what happens underneath trees or buildings?</li>
+</ul>
+</li>
+<li>Think how this might affect data that you have obtained from other people.  How might they have solved the same problems?</li>
+</ul>
+<h2 id="digitising-point-features">Digitising point features</h2>
+<p>Again, digitising point features is very similar to digitising lines and polygons, except that you only have to click once for each feature.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /><strong>Digitising in Arc Part 3: Creating point features</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+<p>Watch Digitising in Arc Part 1 for general information about digitising.</p>
+</blockquote>
+<p>You should already have the <code>Trees</code> layer added to your map, if you haven&rsquo;t add it now.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Digitise points</strong></p>
+<p>Follow the instructions given for <a href="/creating_data/#digitising-in-arcgis-pro">digitising buildings</a>, but this time place a single point for each tree you can see in Chancellors Court into the <code>Trees</code> feature class.</p>
+<p>Don&rsquo;t forget to save your edits when you&rsquo;ve finished.</p>
+</blockquote>
+<p>You don&rsquo;t need to add any labels for the points layer in this case, but if you did it all works in exactly the same way as it did for the buildings.</p>
+<h3 id="potential-issues-with-the-data_2">Potential issues with the data</h3>
+<p>Again, stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
+<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<ul>
+<li>How easy is it to decide where you should add a point to represent a tree?</li>
+<li>How easy is it to be accurate with the drawing tools?</li>
+<li>Think how this might affect data that you have obtained from other people.  How might they have solved the same problems?</li>
+</ul>
+<h2 id="symbolising-your-data">Symbolising your data</h2>
+<p>In other words, styling it, or making it look better.</p>
+<p>Changing the colour of any of the features on your map is simple -</p>
+<ul>
+<li>Select a layer in the contents pane, e.g. the buildings</li>
+<li>Click on the <code>Appearance</code> tab of the ribbon, and then on <code>Symbology</code></li>
+<li>This should open the symbology pane on the right of the window</li>
+<li>Click on the symbol to change it&rsquo;s colour, either via the <code>Gallery</code> for presets, or via <code>Properties</code> to set your own.</li>
+</ul>
+<p>Try this with the paths and trees too.</p>
+<p>You may not have a tree-like symbol available in ArcGIS Pro, don&rsquo;t worry about this for now.  You&rsquo;ll find out how to add more choices to the Gallery in a future class.</p>
+<h2 id="finally">Finally&hellip;</h2>
+<p>Check that you&rsquo;ve finished digitising the buildings around Chancellors Court and the paths across it.  Check that all of the layers you have created - the points, lines and polygons, have all been symbolised appropriately and are labelled where necessary.</p>
+<p>Once you&rsquo;ve turned off the background imagery layer, and the ESRI base map layer, your data could look something like the map below.  We won&rsquo;t worry about setting up a full layout at the moment as that is covered in another chapter.</p>
+<p><img alt="Possible final map of Chancellors Court.  Yours will probably look different to this one as we will all make our own choices for colours and styles." src="../images/creating_data/gpsFinalLayout2019.png" title="Possible final map of Chancellors Court.  Yours will probably look different to this one as we will all make our own choices for colours and styles." /></p>
+<!-- TODO: Look at the recommended reading for digitising and update in line with new reading list. -->
               
             </div>
           </div>
