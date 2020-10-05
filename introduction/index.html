@@ -121,11 +121,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#saving-a-map">Saving a map</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#symbolising-a-layer">Symbolising a layer</a>
+    <li class="toctree-l2"><a class="reference internal" href="#styling-a-layer">Styling a layer</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#symbolising-a-single-symbol">Symbolising a single symbol</a>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-a-single-symbol">Styling a single symbol</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#symbolising-with-multiple-symbols-unique-values">Symbolising with multiple symbols (Unique Values)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-with-multiple-symbols-unique-values">Styling with multiple symbols (Unique Values)</a>
     </li>
         </ul>
     </li>
@@ -253,7 +253,7 @@
 <h2 id="obtaining-and-opening-the-sample-map">Obtaining and opening the sample map</h2>
 <p>The sample map is based on British Geological Survey (BGS) data covering Malham Tarn in North Yorkshire and uses data from a number of sources with which you will become familiar during this module.</p>
 <ul>
-<li>download the <code>MalhamMinerva.7z</code> file from Minerva and save it so that you can remember where it is located.</li>
+<li>download the <code>MalhamMinerva.zip</code> file from Minerva and save it so that you can remember where it is located.</li>
 <li>Create a new folder called <code>gis</code> - look at the box below to see where to create it</li>
 </ul>
 <blockquote>
@@ -269,6 +269,7 @@
 <li>unzip the downloaded file to your <code>gis</code> folder.<ul>
 <li>In <code>My Computer</code> right-click on the 7zip or zip file</li>
 <li><code>7-zip &gt; Extract Files...</code> - select the location to save the files to and click <code>OK</code></li>
+<li>or, if you don&rsquo;t have 7-zip, right-click, Extract Files&hellip; - select the location to save the files to and click <code>OK</code></li>
 </ul>
 </li>
 </ul>
@@ -320,7 +321,7 @@
 </blockquote>
 <p>To open the bookmark:</p>
 <ul>
-<li><code>Bookmarks &gt; Malham Tarn NNR</code></li>
+<li>Go to <code>Bookmarks</code> on the ribbon and select <code>Malham Tarn NNR</code></li>
 </ul>
 <p>To set up your own bookmarks:</p>
 <ul>
@@ -588,9 +589,13 @@
 <li>or use the <code>save</code> icon on the quick access toolbar at the top left</li>
 <li>or use <code>Ctrl + S</code> on the keyboard</li>
 </ul>
-<h2 id="symbolising-a-layer">Symbolising a layer</h2>
-<h3 id="symbolising-a-single-symbol">Symbolising a single symbol</h3>
+<h2 id="styling-a-layer">Styling a layer</h2>
+<h3 id="styling-a-single-symbol">Styling a single symbol</h3>
 <p>At the moment the symbol for the National Nature Reserves is a polygon with a thin outline and a transparent fill.  Let&rsquo;s change that so that the outline is thicker and there is no fill at all.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Symbolising a layer as a single symbol in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <ul>
 <li>Right-click on the <code>National Nature Reserves</code> layer and click on <code>Symbology</code></li>
 <li>OR click on <code>Symbology</code> on the Appearance tab of the ribbon</li>
@@ -614,7 +619,7 @@
 <li>Because you selected just an outline in the gallery the <code>Color</code> choice is <code>No Color</code>.  If you want to add a fill colour you can select it here</li>
 <li>Press <code>Apply</code> to change the style of the features on your map</li>
 </ul>
-<h3 id="symbolising-with-multiple-symbols-unique-values">Symbolising with multiple symbols (Unique Values)</h3>
+<h3 id="styling-with-multiple-symbols-unique-values">Styling with multiple symbols (Unique Values)</h3>
 <p>Make the <code>SuperficialGeol</code> layer in the Malham map visible by clicking the little box next to it so that it is ticked.  At the moment the layer is symbolised as a single colour.  By using multiple colours, or classes, you can make your map much more informative.</p>
 <ul>
 <li>Open the attribute table for the <code>SuperficialGeol</code> layer and have a look at the data that it contains.  The column headed <code>RCS_D</code> contains information on what type of unconsolidated deposits are shown by each feature.  Make a note of the field name.</li>
