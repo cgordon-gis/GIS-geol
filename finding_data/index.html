@@ -225,7 +225,7 @@
 <p>We&rsquo;ll be using data from Digimap in ArcGIS for various exercises in the rest of this module, so you need to know your way around this section.  Instructions for converting, importing and viewing file types that need it will be given later in the workbook.</p>
 <p>As an example of the download interface we&rsquo;ll download some <strong>Ordnance Survey</strong> data.</p>
 <ul>
-<li>Start from the Digimap main page</li>
+<li>Start from the Digimap main page (you can get back to it by clicking on the icon at the top right of the map - hover over to see a tool tip)</li>
 <li>click on <code>Ordnance Survey</code> in the menu at the top of the page</li>
 <li>from the Ordnance Survey page choose <code>Data Download</code></li>
 </ul>
@@ -237,7 +237,7 @@
 <ul>
 <li>Click in the <code>Search</code> box and type <code>Otley</code>, then press <code>Enter</code> or click on the magnifying glass to search</li>
 <li>When you get the results click on <code>Otley (Leeds)</code> to zoom in, then close the search results</li>
-<li>Under <code>Draw</code> click on the rectangle and use the mouse to draw a box around the area shown by an orange box in the image below, clicking to start and finish the box.</li>
+<li>Under <code>Draw</code> click on the rectangle and use the mouse to draw a box around the area shown by an orange box in the image below, clicking to start and finish the box.  It doesn&rsquo;t matter if the box you draw is a bit bigger, but try not to make it any smaller.</li>
 </ul>
 <p><img alt="The minimum area to select using the rectangle tool." src="../images/finding_data/DownloadArea.png" title="The minimum area to select using the rectangle tool." /></p>
 <blockquote>
@@ -247,7 +247,7 @@
 <h4 id="selecting-data-sets">Selecting data sets</h4>
 <p>Now that you have selected an area you have to select the data that you need.</p>
 <ul>
-<li>Back in the panel on the left, under <code>Select Data Products</code>, drop down each of the headings in turn</li>
+<li>Back in the panel on the left, under <code>Select Data Products</code>, drop down each of the headings, e.g. Backdrop Mapping, in turn by clicking on the arrow next to them.</li>
 </ul>
 <p><img alt="The list of data products - click the arrow next to each subheading to see the full list." src="../images/finding_data/DownloadChoices.png" title="The list of data products - click the arrow next to each subheading to see the full list." /></p>
 <ul>
@@ -257,8 +257,8 @@
 </ul>
 </li>
 </ul>
-<p>You can get more information about the data sets by clicking on the arrow next to them.  This includes information on licences.</p>
-<p>The number on the right in brackets under <code>Order Size</code> shows how many tiles your selected area uses out of the maximum downloadable number.  If you have chosen a slightly different area to me your number may be different.</p>
+<p>You can get more information about the data sets by clicking on the arrow next to them.  This includes information on licences - which you will need to know later.</p>
+<p>The number on the right in brackets under <code>Order Size</code> shows how many tiles your selected area uses out of the maximum downloadable number.  If you have chosen a slightly different area to me your number may be different but you should still be well within the limit.</p>
 <p><img alt="Selecting datasets.  The image shows the information for the VectorMap Local Raster dataset and that I am going to download one tile out of the maximum limit of 400." src="../images/finding_data/DownloadDatasetsInfo.png" title="Selecting datasets.  The image shows the information for the VectorMap Local Raster dataset and that I am going to download one tile out of the maximum limit of 400." /></p>
 <ul>
 <li>When you have selected the data you require click on <code>Add to Basket</code> (Don&rsquo;t worry, despite the Basket and Checkout you won&rsquo;t be charged.  The University has already paid the subscription.)</li>
@@ -269,7 +269,7 @@
 <li>Some datasets will give you an option to change the format.  In this case click on <code>Select Format</code> next to the OS Terrain 5 Contours.  The choices are <strong>Shape, GML3</strong> or <strong>DWG</strong>.  Choose <code>Shape</code> in this case.</li>
 <li>You may also need to select a theme.  For the VectorMap Local Raster there is a choice of themes - pick <code>Black and white</code> for this exercise, though it is worth downloading the others to have a look at them too.</li>
 <li>Some items will have a <code>Clip</code> option.  This means that the data will be sent to you clipped to the area outline that you requested.  If you are short of disk space this is very useful as it restricts the amount of data you need to download, but otherwise it doesn&rsquo;t hurt to have extra data around the outside of your study area.  I prefer to untick this box and download full map tiles.</li>
-<li>Give the order a name, e.g. <code>Otley</code>.  This will be part of the file name of the zip file that you download, so try to make it short but helpful!</li>
+<li>Give the order a name, e.g. <code>OtleyOS</code> (for Ordnance Survey).  This will be part of the file name of the zip file that you download, so try to make it short but helpful!</li>
 <li>Click on <code>Request Download</code></li>
 </ul>
 <h4 id="downloading-your-data">Downloading your data.</h4>
@@ -288,20 +288,22 @@
 </blockquote>
 <p>Now open <code>File Explorer</code> (in Windows) and navigate to the location where you saved the zip file.</p>
 <ul>
-<li>Right-click on the compressed map data file that downloaded and choose <code>7-zip &gt; Extract files...</code></li>
+<li>Right-click on the compressed map data file that downloaded and choose to <code>Extract files...</code> - or <code>7-zip &gt; Extract files...</code> if you have 7-zip available.</li>
 <li>Select where you want to save the extracted files, and make a note of where you save them to
 <!-- TODO: Settle on how I want students to unzip files, and if I go for 7zip, give instructions in the software information on where to download it from. --></li>
 </ul>
-<p>You should end up with a folder for each dataset that you requested.</p>
+<p>You should end up with a folder for each dataset that you requested plus text files showing citations and contents.  The folders will also have the order number as part of their name.</p>
+<p><img alt="The unzipped Ordnance Survey data showing the folder for each dataset and text files containing citations and contents lists." src="../images/finding_data/DownloadUnzipped.png" title="The unzipped Ordnance Survey data showing the folder for each dataset and text files containing citations and contents lists." /></p>
 <h4 id="viewing-your-data">Viewing your data</h4>
 <p>In this case the files that you have downloaded are either tiff graphics files or shapefiles.</p>
 <ul>
-<li>Navigate to the data that you downloaded and find the folder called something like <code>vml-raster_bwr_3612556</code> (your order number will be different).</li>
-<li>Open one of the <code>.tif</code> files by double-clicking on it - the file should open in a graphics program, but that depends what you have set up on your computer.</li>
+<li>Navigate to the data that you downloaded in the file explorer and find the folder called something like <code>vml-raster_bwr_3612556</code> (your order number will be different).</li>
+<li>you&rsquo;ll also need to go into a folder with the OS grid letters - in this case for Otley it should be <code>se</code></li>
+<li>Open one of the <code>.tif</code> files by double-clicking on it - the file should open in a graphics program, but that depends what you have set up on your computer.  Don&rsquo;t worry if it doesn&rsquo;t!</li>
 </ul>
 <p>You should be able to see that this is basically a &ldquo;picture&rdquo; of a map.</p>
 <ul>
-<li>Try opening one of the <code>.shp</code> files from the <code>terrain-5_3612555</code> folder too.  It&rsquo;s unlikely that you&rsquo;ll be able to.</li>
+<li>Try opening one of the <code>.shp</code> files from the <code>terrain-5_3612555</code> folder too.  It&rsquo;s unlikely that you&rsquo;ll be able to.  Just cancel that and don&rsquo;t try finding software that will open it!</li>
 </ul>
 <blockquote>
 <p><img alt="Warning" src="../images/svg/warning-black-24dp.png" /> <strong>Warning</strong></p>
@@ -317,9 +319,11 @@
 <p>When you signed up to use the Digimap collections you agreed to add copyright acknowledgements whenever you created a map with the data.  The wording does change from time to time so it&rsquo;s worth knowing how to check it for yourself.</p>
 <p>To find these copyright acknowledgements:</p>
 <ul>
+<li>go back to the main Digimap home page</li>
 <li>go to the <code>Digimap Resource Centre</code> (<code>Resources</code> at the top of the main Digimap page)</li>
 <li>Look for a link to <code>Digimap Licence Agreements</code> under <strong>Popular Resources</strong> and click on it</li>
-<li>Click on the End User or Sub-licence agreement for the data that you&rsquo;ve used</li>
+<li>Click on the End User or Sub-licence agreement for the data that you&rsquo;ve used - in this case the Ordnance Survey Collection</li>
+<li>You may need to download a pdf file rather than see it on a web page - do so and then open the pdf.</li>
 <li>then look for the information under <code>In return, you must:</code> - that gives you the acknowledgement text.</li>
 </ul>
 <p>For example, as of August 2020 when you use Ordnance Survey data obtained from Digimap you are expected to add the following text to your maps.</p>
@@ -352,6 +356,10 @@
 <h3 id="other-digimap-collections">Other Digimap collections</h3>
 <p>In addition to Ordnance Survey Digimap you will also find that you&rsquo;ll make use of some of the other collections, in particular <strong>Geology Digimap</strong> and <strong>Aerial Digimap</strong>.  The Roam and Download interfaces work in a very similar way to the Ordnance Survey collection so you should find that you already know how to use them.</p>
 <p>You have access to all of these collections so feel free to have a look at what is available and make use of any of the data or maps in your work.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Exploring other Digimap collections</strong></p>
+<p>Go into the <code>Historic Digimap</code> Collection and use <code>Historic Roam</code> to look up either your house or the University using old maps.  Try the <code>2 up</code> view to see how you can compare old and new mapping of the same area.</p>
+</blockquote>
 <h3 id="digimap-collections-online-help">Digimap Collections online help</h3>
 <p>Digimap help is available from each of the collection pages.  Click on the links in the left-hand menu for more information about how to use the services and file formats.</p>
 <p>Alternatively use the Help links from within Roam or Download or use the <a href="http://www.youtube.com/user/EDINADigimap">videos that EDINA have uploaded to YouTube</a></p>
@@ -367,7 +375,7 @@
 <p>The front page gives an overview of the principles behind the data and an idea of the scales at which it is available.  You can find more information under the <code>Features</code> tab, including the file formats and the coordinate system - both important for using the data within GIS.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Natural Earth data</strong></p>
-<p>Make a note of the file types of both the raster and vector data provided by Natural Earth, and of the coordinate system that the data comes in.</p>
+<p>Go to the <code>Features</code> page and make a note of the file types of both the raster and vector data provided by Natural Earth<sup id="fnref:201"><a class="footnote-ref" href="#fn:201">1</a></sup>, and of the coordinate system that the data comes in.</p>
 </blockquote>
 <p>To download data either</p>
 <ul>
@@ -384,7 +392,7 @@
 <p><code>Medium scale data, 1:50m &gt; Raster &gt; Natural Earth 1</code> - click the <code>Download small size</code> button under <code>Natural Earth 1 with Shaded Relief and Water</code>.  Again, make a note of where the zip file is saved.</p>
 </li>
 </ul>
-<p>Keep these data layers for later exercises.  If you are working on a University computer you will need to make sure that the files are within your own disk space, either on your M: drive, or a USB drive.</p>
+<p>Keep these data layers for later exercises.  If you are working on a University computer you will need to make sure that the files are within your own disk space, either on your M: drive, or a USB drive.  If you are working on the VWD make sure that you save the data to your network (M:/ drive).</p>
 <p>Have a look at the summary of the data on the <code>Features</code> page. If you wish try downloading other datasets.  You can try adding them to ArcGIS Pro in the next section.</p>
 <h4 id="natural-earth-data-copyright">Natural Earth data copyright</h4>
 <p>Finding and acknowledging the copyright of data is very important.</p>
@@ -428,19 +436,32 @@
 <li>In this case there is only one layer - <code>Significant_Volcanic_Eruption</code></li>
 <li>Right-click on the heading for the layer and <code>Add to current map</code></li>
 </ul>
-<p>The data should appear on your map, with a key in the Contents pane on the left.</p>
+<p>The data should appear on your map (it can be slow to appear), with a key in the Contents pane on the left.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Feature layers</strong></p>
-<p>Try using the Explore tool to click on some of the little volcano symbols that should have been added to your map.  You should get more information about significant eruptions.</p>
+<p>Zoom in and pan around.</p>
+<p>Try using the <a href="/introduction/#the-map-ribbon">Explore tool</a> to click on some of the little volcano symbols that should have been added to your map.  You should get more information about significant eruptions.</p>
 <p>Also right-click on the layer and open the <code>Attribute table</code> - have a look at the data that has been included for each eruption.</p>
 </blockquote>
 <p>Return to the search box on the Living Atlas panel and try some other searches, for example search for <code>geology</code>.</p>
-<p>Look at the information for some of the entries that appear then try adding some of the other layers to your map by right-clicking and either adding to the current map, or to a new map.  In some cases, they will open as a new map, in others they should be added to your existing map.</p>
+<p>Look at the information for some of the entries that appear then try adding some of the other layers in your search results to your map by right-clicking and either adding to the current map, or to a new map.  In some cases, they will open as a new map, in others they should be added to your existing map.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Exploring the Living Atlas</strong></p>
 <p>Try some of your own searches to see what else is available, e.g. a particular country.</p>
+</blockquote>
 <p>You can experiment at this stage.  It doesn&rsquo;t matter if something goes wrong or ArcGIS crashes.  You don&rsquo;t need to keep this map and you can easily open a new copy.</p>
 <h3 id="finding-other-data-online">Finding other data online</h3>
 <p>These are just a few examples of finding useful data for GIS.  Through out the rest of the workbook you&rsquo;ll be downloading your own data from Digimap.  If you need data from elsewhere I&rsquo;ll either give full instructions or provide the data for you, but tell you where I got it from.</p>
-<p>If you are looking for data for a particular project it is well worth searching online.  I have put together a short <a href="https://cgordon-gis.github.io/links.htm">list of possible data sources</a> which you are welcome to use too.</p>
+<p>If you are looking for data for a particular project it is well worth searching online using your favourite search engine (e.g. Google).  Put the words &ldquo;gis&rdquo; and &ldquo;data&rdquo; into your searches and it should help you to find relevant data.</p>
+<p>I have put together a short <a href="https://cgordon-gis.github.io/links.htm">list of possible data sources</a> which you are welcome to use to find data and maps.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:201">
+<p>Remember that you looked up <a href="/introduction/#esri-gis-dictionary">definitions of raster and vector in ArcHelp</a> in the introduction.  Refresh your memory now if you need to.&#160;<a class="footnote-backref" href="#fnref:201" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
