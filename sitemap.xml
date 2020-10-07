@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/introduction/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/finding_data/</loc>
-     <lastmod>2020-10-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://cgordon-gis.github.io/GIS-geol/adding_data/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/creating_data/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/styles/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/labels/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/analysis/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/layout/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://cgordon-gis.github.io/GIS-geol/three_d/</loc>
-     <lastmod>2020-10-06</lastmod>
+     <lastmod>2020-10-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
