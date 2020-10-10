@@ -9,7 +9,7 @@
   <meta name="author" content="Clare Gordon">
   <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/styles/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Styling your data - GIS for Geologists</title>
+  <title>Styling &amp; labelling your data - GIS for Geologists</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Styling your data";
+    var mkdocs_page_name = "Styling &amp; labelling your data";
     var mkdocs_page_input_path = "styles.md";
     var mkdocs_page_url = "/GIS-geol/styles/";
   </script>
@@ -65,7 +65,7 @@
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Styling your data</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Styling &amp; labelling your data</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
     </li>
@@ -73,13 +73,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#downloading-data">Downloading data</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#styling-polygon-features">Styling polygon features</a>
+    <li class="toctree-l2"><a class="reference internal" href="#styling-your-data">Styling your data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-polygon-features">Styling polygon features</a>
+    </li>
+        </ul>
     </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../labels/">Labelling your data</a>
                     </li>
                 </ul>
                 <ul>
@@ -115,7 +115,7 @@
     
       
     
-    <li>Styling your data</li>
+    <li>Styling &amp; labelling your data</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/styles.md"
@@ -129,23 +129,28 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="styling-your-data">Styling your data</h1>
-<p>The background to styling data in GIS will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
+                <h1 id="styling-and-labelling-your-data">Styling and labelling your data</h1>
+<p>The background to styling and labelling data in GIS will be covered in the lecture segment at the beginning of the class, and the presentation and any other supporting materials will be available in Minerva.  The lecture segment should help you to understand <strong>why</strong> you are doing these exercises.  If you still aren&rsquo;t sure, please ask <a href="mailto:c.e.gordon@leeds.ac.uk">Clare</a>.</p>
 <h2 id="learning-outcomes">Learning outcomes</h2>
 <p>When you have completed this section of the workbook you should be able to</p>
 <ul>
-<li>explain how to symbolise data on a map so that it displays clearly and informatively to your audience
-<!-- TODO: worth revisiting learning outcomes for styles --></li>
+<li>explain how to symbolise data on a map so that it displays clearly and informatively to your audience</li>
+<li>demonstrate how to add appropriately located labels to the vector features on your map
+<!-- TODO: worth revisiting learning outcomes for styles and labelling --></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
-<p>In the previous chapters you have created data and added data from other sources.  Now you&rsquo;ll see how to style, or symbolise, that data to make a more informative map.  The following chapter will take you through labelling the data on the map.</p>
+<p>In the previous chapters you have created data and added data from other sources.  Now you&rsquo;ll see how to style, or symbolise, that data and label it appropriately to make a more informative map.</p>
+<!-- TODO: Add a bit more to styling and labelling introduction? -->
+
+<h2 id="downloading-data">Downloading data</h2>
+<p><em>More info to come</em></p>
+<!-- TODO: Set up a project with layers for styling and labelling then upload for students. -->
+
+<h2 id="styling-your-data">Styling your data</h2>
 <p>When you first add a vector feature class to a map, Arc symbolises it with a single, random colour and doesn&rsquo;t add any automatic information about what the features show.  You need to apply styles to your data to differentiate features.</p>
 <p>The sections below show the general techniques to change colours, line styles, point symbols etc, but you have to decide for yourself how best to style your data so that your audience can interpret and understand your map.</p>
 <p>If you add a key to your map (you&rsquo;ll be shown how to do this in the Layout chapter), it will show the colours and styles that you have set in this section.</p>
-<h2 id="downloading-data">Downloading data</h2>
-<!-- TODO: Set up a project with layers for styling and labelling then upload for students. -->
-
-<h2 id="styling-polygon-features">Styling polygon features</h2>
+<h3 id="styling-polygon-features">Styling polygon features</h3>
 <p>We&rsquo;ll start with polygon features as they are often the simplest to style, then we&rsquo;ll move on to lines and points.</p>
 <ul>
 <li>In the contents pane</li>
@@ -157,7 +162,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../labels/" class="btn btn-neutral float-right" title="Labelling your data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../analysis/" class="btn btn-neutral float-right" title="Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../creating_data/" class="btn btn-neutral" title="Creating data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -193,7 +198,7 @@
         <span><a href="../creating_data/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../labels/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../analysis/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
