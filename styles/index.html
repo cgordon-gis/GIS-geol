@@ -97,6 +97,26 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-point-features">Styling point features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#styling-layers-with-a-layer-file">Styling layers with a layer file</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#add-the-data-layer-first">Add the data layer first</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-the-layer-file-first">Add the layer file first</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#making-the-layer-transparent">Making the layer transparent</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#labelling-your-data">Labelling your data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-simple-labels">Adding simple labels</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -187,7 +207,7 @@
 <li><code>Request Download</code></li>
 </ul>
 <p>As in Ordnance Survey download you will need to wait for an email to tell you that the data is ready to download.</p>
-<p>Once you have downloaded the data, unzip it to the <code>FindingData</code> folder, then add the following layers to the map so that they appear at the top of the Contents list.</p>
+<p>Once you have downloaded the data, unzip it to the <code>FindingData</code> folder, then add the following layers to the map so that they appear at the top of the Contents list.  Note that these are the <code>.shp</code> files, not the .lyr.</p>
 <ul>
 <li><code>ew069_bradford_linear.shp</code></li>
 <li><code>ew069_bradford_bedrock.shp</code></li>
@@ -198,8 +218,8 @@
 
 <h2 id="styling-your-data">Styling your data</h2>
 <p>When you first add a vector feature class to a map, Arc symbolises it with a single, random colour and doesn&rsquo;t add any automatic information about what the features show.  You need to apply styles to your data to differentiate features.</p>
-<p>In this chapter we&rsquo;ll symbolise the data that you&rsquo;ve downloaded so that it becomes an informative 1:50 000 geological map.</p>
 <p><img alt="The initial view of the &quot;FindingData&quot; project when you have added the geology data to it.  Note that all of the data is symbolised in random colours, and only one colour per feature class." src="../images/styles/InitialProjectView.png" title="The initial view of the &quot;FindingData&quot; project when you have added the geology data to it.  Note that all of the data is symbolised in random colours, and only one colour per feature class." /></p>
+<p>In this chapter we&rsquo;ll symbolise the data that you&rsquo;ve downloaded so that it becomes an informative 1:50 000 geological map.</p>
 <p>The sections below show the general techniques to change colours, line styles, point symbols etc, but you have to decide for yourself how best to <strong>symbolise</strong> (or style) your data so that your audience can interpret and understand your map.</p>
 <p>If you add a key to your map (you&rsquo;ll be shown how to do this in the Layout chapter), it will show the colours and styles that you have set in this section.</p>
 <h3 id="styling-polygon-features">Styling polygon features</h3>
@@ -259,7 +279,7 @@
 </ul>
 <p><img alt="The symbology pane showing Unique Values - note the choice of field to categorise the data." src="../images/styles/UniqueValues_small.png" title="The symbology pane showing Unique Values - note the choice of field to categorise the data." /></p>
 <ul>
-<li>Arc will usually use the first field in your feature class to categorise the data, which is unlikely to be the right one, so change <code>Field 1</code> to the field you decided above you should use for the unique values - I would suggest <code>LEX_D</code>.</li>
+<li>Arc will usually use the first field in your feature class to categorise the data, which is unlikely to be the right one, so change <code>Field 1</code> to the field you decided above you should use for the unique values - I would suggest <code>LEX_D</code> as it gives Formation names in plain English.</li>
 </ul>
 <p>Arc should automatically set a colour scheme and give a colour to each category.  In the case of the bedrock layer there are a lot of categories!</p>
 <p>To change the colours and symbols:</p>
@@ -282,11 +302,9 @@
 <p>Note that if you are going to be making a layer transparent then you will probably find that it is best to choose strong colours, such as <code>Steel Blue</code>, for your polygons.  They will fade when you apply transparency.</p>
 </blockquote>
 <h5 id="removing-feature-categories-that-are-not-required">Removing feature categories that are not required</h5>
-<p>There are a lot of other feature types available.  If you don&rsquo;t need these for your map it is possible to remove them</p>
-<!-- TODO: Need to continue updating from here... -->
-
+<p>There are a lot of other feature types available.  If you don&rsquo;t need these for your map it is possible to remove them.</p>
 <ul>
-<li>Use the control key to click on multiple feature categories - in this case click on <code>industrial, landfill, military</code></li>
+<li>Use the control key to click on multiple feature categories - in this case click on <code>MARCHUP GRIT, MIDDLETON GRIT, NESFIELD SANDSTONE</code></li>
 <li>then right-click and select <code>Remove</code>.</li>
 </ul>
 <p>Those feature types will be removed from the list and from the key in the Contents pane.</p>
@@ -301,41 +319,226 @@
 <p>There are a lot of settings that you can use and you should investigate them for yourself, but one of the most useful is the <code>Color Editor</code>.</p>
 <p>If you set <a href="/introduction/#make-layers-transparent">transparency for a layer</a>, as you&rsquo;ve been shown previously, then everything in that layer is transparent - the outlines as well as the fill.  Using the Color Editor you can make just the fill transparent.</p>
 <ul>
-<li>Click to edit the symbol for the <code>forest</code> again</li>
-<li>Click on the patch next to <code>Color</code> then instead of selecting a preset colour click on <code>Color properties</code></li>
+<li>Click to edit the symbol for the <code>MILLSTONE GRIT GROUP</code></li>
+<li>Click on the patch next to <code>Color</code> and select <code>Dark Olivenite</code> as the fill colour</li>
+<li>then click on <code>Color properties</code></li>
 </ul>
 <p>You should find that the <code>Color Editor</code> opens.</p>
 <p><img alt="The Color Editor - complete control over the choice of colours for your features." src="../images/styles/ColorEditor.png" title="The Color Editor - complete control over the choice of colours for your features." /></p>
-<!-- TODO: Do I really need to include transparency with the Color Editor? Or where is best place to have it? -->
-
 <ul>
-<li>There you can alter the <code>Transparency</code>, e.g. set it to <code>40%</code> and see what difference that makes when you click <code>OK &gt; Apply</code>.  If there is no layer behind this one you may not see much difference, but if there is you should be able to see it now.</li>
+<li>There you can alter the <code>Transparency</code> using the lowest colour bar, e.g. set it to <code>40%</code> and see what difference that makes when you click <code>OK &gt; Apply</code>.</li>
 </ul>
+<p>If there is no layer behind this one you may not see much difference, but if there is you should be able to see it now - you may need to <a href="/introduction/#working-with-map-layers">Zoom to Layer</a> on the contours layer to see the background.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Change the colour of some other bedrock polygons</strong></p>
+<p>Use the instructions above to colour the following layers, using your own choice of colours and setting transparency for the fills</p>
+<p>ADDINGHAM EDGE GRIT; LONG RIDGE SANDSTONE; EAST CARLTON GRIT; GUISELEY GRIT.</p>
+</blockquote>
+<p>Don&rsquo;t worry about doing all of them at the moment - I&rsquo;ll be showing you another way to do the whole lot at once later.</p>
+<p>Remember to save your project at regular intervals.</p>
 <h3 id="styling-line-features">Styling line features</h3>
 <p>Symbolising or styling line features is basically the same as <a href="#styling-polygon-features">symbolising polygon features</a> so refer back to the instructions for those too, but there are some extra things to think about in addition to choosing colours for fill and outline.</p>
+<ul>
+<li>start by turning off all of the layers in the contents and turning on the <code>ew_069_bradford_linear</code> layer so that you can see what you are doing.</li>
+<li>You may also want to <a href="/finding_data/#setting-the-reference-scale">clear the reference scale</a> so that you can see the lines at any scale for now</li>
+<li>If you have a look in the attribute table there is a field called <code>FEATURE_D</code> which contains the type of feature.</li>
+<li>Use the <code>FEATURE_D</code> field to create Unique Values for this layer to set random colours.</li>
+</ul>
 <h4 id="symbolising-dashed-lines">Symbolising dashed lines</h4>
-<p>You may well need to set dashed lines on a map, for example if you are creating a geological map you may need to add inferred boundaries.</p>
+<p>You may well need to set dashed lines on a map, for example if you are creating a geological map you may need to add inferred boundaries.  The data you are using here includes the categories <code>Coal seam, inferred</code>, <code>Fault, inferred</code> and `Mineral vein, inferred&rsquo;.  These will all be symbolised as dashed lines.</p>
 <p>The simplest way to add a dashed line is as follows:</p>
 <ul>
-<li>start by turning off all of the layers in the contents and turning on the <code>Footpath</code> layer</li>
-<li>If you have a look in the attribute table there is a field called <code>highway</code> which only contains the value <code>path</code> - so there is no need to symbolise this layer by Unique values</li>
+<li>Open the symbology pane and check the <code>ew069_bradford_bedrock</code> layer is selected </li>
+<li>Click on the line symbol next to <code>Coal seam, inferred</code></li>
+<li>Go to the <strong>Gallery</strong> and scroll down to look for <code>Dashed 4:4</code> and click on it<sup id="fnref:401"><a class="footnote-ref" href="#fn:401">1</a></sup></li>
+<li>Coal seams will usually be symbolised as a black line, so if the colour isn&rsquo;t black change it to that in the Properties now </li>
+<li>Using the gallery will also have changed the line width to <code>0.4 pt</code>.  It is usually a good idea to keep geological lines relatively thin, but for now change this to <code>1 pt</code>.</li>
+<li>Click <code>Apply</code></li>
 </ul>
-<p>Footpaths are often shown on maps as a dashed line - remember that it is usually a good idea to stay with the expected styles.</p>
-<p>To symbolise the paths as dashed lines</p>
+<p><img alt="Using the gallery to change a line to dashes." src="../images/styles/DashedLinesGallery.png" title="Using the gallery to change a line to dashes." /></p>
+<p>You can also set up the dashes manually.  This also allows you to edit the style that you&rsquo;ve set from the gallery if it doesn&rsquo;t do quite what you want it to.</p>
 <ul>
-<li>Open the symbology pane and check the <code>Footpath</code> layer is selected </li>
-<li></li>
+<li>Click on the line symbol next to the <code>Mineral vein, inferred</code> in the list of classes.</li>
+<li>In the <code>Format symbol</code> dialog go to the <code>Properties</code> tab</li>
+<li>click on the <code>Layers</code> button - you&rsquo;ll probably need to use the tooltips to find this</li>
+<li>select a colour such as <code>Raw Umber</code> under <code>Appearance</code></li>
+<li>drop down <code>Dash effect</code> to see the options, and select a <code>Dash type</code> from the drop down list.</li>
+<li>Now you can change the numbers in the <code>Dash template</code> to alter the spaces and dashes for your lines - the first number applies to the length of the dash, the second to the spaces - try setting it to <code>2 10</code> and use the <code>tab</code> key to move out of the box to see what it looks like.  Then change it to <code>6 6</code> to see the difference</li>
+</ul>
+<p><img alt="Setting the properties for a dashed line manually." src="../images/styles/DashedLinesManual_small.png" title="Setting the properties for a dashed line manually." /></p>
+<ul>
+<li>When you are happy with the line click on <code>Apply</code>.  There are only a couple of these on the map so you might not see much difference.</li>
 </ul>
 <h4 id="symbolising-lines-with-decoration">Symbolising lines with &ldquo;decoration&rdquo;</h4>
-<ul>
-<li>start by turning off all of the layers in the contents and turning on the <code>Railway</code> layer</li>
-<li>If you have a look in the attribute table there is a field called <code>railway</code>, but most of the entries are for <code>rail</code>.  In this case we won&rsquo;t worry about Unique Values but will symbolise all of the features in the class the same way.</li>
-</ul>
-<p>Decorations on lines can include</p>
+<p>Some lines need extra symbols to show more information.  Decorations on lines can include but are not limited to</p>
 <ul>
 <li>the &ldquo;ticks&rdquo; to show downthrow on faults</li>
+<li>little triangles or &ldquo;barbs&rdquo; which show thrust faults</li>
+<li>crosses or arrows to show fold axes</li>
 </ul>
+<p>For this example we&rsquo;ll symbolise the <code>Fault, inferred</code> with ticks, as well as dashes.</p>
+<p>The simplest way to apply symbols on lines is to check for existing line styles in the gallery.  If you can&rsquo;t find what you want try <a href="#finding-and-using-additional-arcgis-pro-styles">downloading extra styles
+ from ESRI</a> and see if that helps.  You&rsquo;ll see how to do this in a later section.</p>
+<p>If you can&rsquo;t find the symbol you need then you&rsquo;ll need to set it up for yourself.</p>
+<ul>
+<li>Click on the line symbol next to <code>Fault, inferred</code> in the list of classes.</li>
+<li>Open the <code>Format line symbol</code> pane and go to the <code>Properties</code></li>
+<li>Click on the spanner symbol - if you hover over it you&rsquo;ll see that it&rsquo;s <code>Structure</code></li>
+<li>Click to <code>Add symbol layer &gt; Marker layer</code> - this adds a symbol on top of your line</li>
+<li>To change the symbol click on the <code>Layers</code> button (use tooltips!) and check that the <code>Shape marker</code> is selected at the top.</li>
+<li>For this example click on the small button next to Form which has 3 coloured shapes on it then select the vertical line - as shown in the picture below.  You could also select a symbol from Style or Font instead.</li>
+</ul>
+<p><img alt="Click on the button with 2 coloured shapes, then select the vertical line." src="../images/styles/SelectingShape.png" title="Click on the button with 2 coloured shapes, then select the vertical line." /></p>
+<p>Now you can experiment with the settings until the line looks as you require in the window below.</p>
+<ul>
+<li>make the vertical line width so that it looks the same as the main line - e.g. <code>2 pt</code> and a bit shorter, e.g. <code>4 pt</code></li>
+<li>try changing the <code>Offset Distance &gt; Offset Y</code> until the vertical line sits on top of the horizontal line</li>
+<li>Change the colour of both the vertical line and the main line to the same dark green, e.g. <code>Fir Green</code></li>
+<li>To change the spacing of the vertical lines on the line<ul>
+<li>drop down the <code>Marker placement</code> subheading</li>
+<li>change the <code>Placement template</code> number, e.g. make it <code>50</code> to spread the symbols out</li>
+</ul>
+</li>
+<li>Once you are happy with your symbol click <code>Apply</code> and have a look at it on the main map.  You may want to make more changes before you are happy with it.</li>
+</ul>
+<p>Once you have symbolised these lines turn the other layers back on on your map and save the project.</p>
+<p>You should reset the <a href="/finding_data/#setting-the-reference-scale">reference scale</a> to 1:50 000 as this is the scale of the data that you are using.</p>
+<h3 id="styling-point-features">Styling point features</h3>
+<p>The BGS geological data doesn&rsquo;t include any point data so I have created a layer from <a href="https://www.openstreetmap.org/">OpenStreetMap data</a> that we can use instead for this exercise.</p>
+<ul>
+<li>You can download the shapefile from Minerva as <code>PointData.zip</code> and unzip it to your project folder.</li>
+<li>Add the <code>Place</code> shapefile to the top of the Contents of your map and have a look at the attribute table.</li>
+<li>In particular have a look at the contents of the <code>place</code> column.  This contains data on the types of place that are included.</li>
+<li>Use <code>Unique Values</code> for the symbology and set it so that each type of place has a different colour symbol.  <a href="#removing-the-all-other-values-heading">Stop All other values from showing</a>.</li>
+</ul>
+<p>Your places will be symbolised as a series of spots of different colours.</p>
+<p><img alt="The Place layer symbolised as the initial random coloured unique values." src="../images/styles/PlacesUniqueValues.png" title="The Place layer symbolised as the initial random coloured unique values." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Styling point features</strong></p>
+<p>In the same way that you symbolised the polygons and lines click on the points next to the entries in the <code>Classes</code> list and try out the options both from the Gallery and the Properties.  There are no detailed instructions here because it is so similar to previous sections.</p>
+</blockquote>
+<h3 id="finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</h3>
+<p>There are only a relatively limited range of symbols available in ArcGIS Pro when you first install it and sometimes you&rsquo;ll need more.</p>
+<p>ESRI provide <a href="https://esri-styles.maps.arcgis.com/home/gallery.html">further styles via a gallery</a>.  Unfortunately it doesn&rsquo;t seem to be possible to preview the symbols, but there are symbol sets such as <code>Ordnance Survey</code> and <code>Geology 24k</code> which should be helpful.</p>
+<p>To install more geological symbols in your project:</p>
+<ul>
+<li>Download the <code>Geology 24k</code> style from the <a href="https://esri-styles.maps.arcgis.com/home/gallery.html">Gallery</a> by clicking on it in the list to go to the individual page, then clicking on the <code>Download</code> button.  You should end up with a <code>.stylx</code> file</li>
+<li>Move or copy the stylx file into your map project folder, e.g. <code>FindingData</code></li>
+<li>Go to the <code>Insert</code> tab of the ribbon</li>
+<li>Click on <code>Add</code> in the <code>Styles</code> group and select to <code>Add Style</code></li>
+<li>Navigate to where you saved the <code>.stylx</code> file and select it.  You may get a message about the style not being the correct version, if you do click to allow it to update</li>
+</ul>
+<p>Once you&rsquo;ve done this you should find that you have a lot more styles available to you in the Gallery.</p>
+<ul>
+<li>Open the symbology panel for the <code>ew069_bradford_linear</code> layer</li>
+<li>click on the line symbol next to <code>Axial plane trace of major anticline</code></li>
+<li>Go to the Gallery and scroll down to look for the section of <code>Geology_24K_en</code> styles</li>
+<li>Under that look for <code>Anticline - Approximately located</code> and click on it.  You can also use the search box at the top to search for <code>Anticline</code></li>
+</ul>
+<p>The end result should be a line with small arrows pointing outwards at intervals.</p>
+<p><img alt="The Anticline symbol from the Geology 25K symbol set." src="../images/styles/AnticlineSymbol.png" title="The Anticline symbol from the Geology 25K symbol set." /></p>
+<p>These symbols are those used as standard by the United States Geological Survey rather than those used by the British Geological Survey so you may not always find what you need.  It is possible to create your own symbols, but you&rsquo;ll find out more about that in level 2.</p>
+<h3 id="styling-layers-with-a-layer-file">Styling layers with a layer file</h3>
+<p>When you added the geology layers to your project you may have noticed that in addition to the shapefiles (.shp) there were also files that ended with the extension <code>.lyr</code> but had the same names as the shapefiles.  These are <code>Layer files</code> and can be used to style the data layers which are in the shapefiles.</p>
+<p>There are two possible ways to use layer files to symbolise the shapefiles and it is your choice which one you use.  Both will give the same final result.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Symbolising a layer with a layer file (.lyr)</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<h4 id="add-the-data-layer-first">Add the data layer first</h4>
+<p>You already have the data layers in your map so we&rsquo;ll start with this method.</p>
+<ul>
+<li>Select the <code>ew069_bradford_bedrock</code> layer in the Contents</li>
+<li>then click on the <code>Symbology</code> button on the <code>Appearance</code> tab of the ribbon</li>
+<li>Click on the menu icon (three horizontal lines) at the top right of the Symbology panel and select <code>Import symbology...</code> to open the geoprocessing tool</li>
+</ul>
+<p><img alt="The geoprocessing tool to Apply Symbology From Layer." src="../images/styles/ApplySymbologyFromLayer_small.png" title="The geoprocessing tool to Apply Symbology From Layer." /></p>
+<ul>
+<li>Your current layer should already be entered under <code>Input Layer</code></li>
+<li>Click on the folder button next to the <code>Symbology Layer</code> drop down and navigate to the location of the layer files.  There should be a layer file that matches your shapefile - <code>ew069_bradford_bedrock.lyr</code></li>
+<li>Click on the layer file, then <code>OK</code></li>
+<li>It&rsquo;s a good idea to set <code>Update Symbology Ranges by Data</code> to <code>Update Ranges</code> so that only the symbology you actually need is used.  This will make creating a legend much simpler!</li>
+<li>Then <code>Run</code> the tool.</li>
+</ul>
+<p>The data should now be symbolised according to BGS categories as shown below.</p>
+<p>Repeat the steps above to symbolise the linear geology layer.</p>
+<p><img alt="The BGS linear and bedrock layers styled with the layer file." src="../images/styles/BGSGeologyStyled.png" title="The BGS linear and bedrock layers styled with the layer file." /></p>
+<h4 id="add-the-layer-file-first">Add the layer file first</h4>
+<ul>
+<li>If you already have the bedrock and linear layers in your project turn them off in the contents pane</li>
+<li>Go into the Catalog and this time instead of adding the .shp files to your map add the <code>.lyr</code> files</li>
+</ul>
+<p>If it works immediately and you can see a fully symbolised geological map then that&rsquo;s a bonus and you don&rsquo;t need to repair the data source.</p>
+<p>If, however, you get the dreaded red exclamation marks next to your layers in the contents and nothing new on the map then you need to tell the layer file where to find the data on <strong>your</strong> computer.  It doesn&rsquo;t mean you&rsquo;ve done anything wrong, you just need to know how to solve it.</p>
+<p><img alt="The red exclamation marks showing that the layer can't find the data source." src="../images/styles/MissingDataSource.png" title="The red exclamation marks showing that the layer can't find the data source." /></p>
+<h5 id="repairing-broken-file-links">Repairing broken file links</h5>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Repairing broken file links</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>To check the name of the file that you&rsquo;ll need to locate:</p>
+<ul>
+<li>open the layer properties in the contents by right-clicking on the broken layer and go to the <code>Source</code> tab</li>
+<li>under <code>Data source</code> you will see which file Arc is looking for</li>
+</ul>
+<p><img alt="Finding the expected data source." src="../images/styles/DataSource.png" title="Finding the expected data source." /></p>
+<p>Once you know the name of the file you need, and where Arc thinks it will be located, do the following to repair the link:</p>
+<ul>
+<li>from the same properties tab <code>Set Data Source</code></li>
+<li>Navigate to the file that you need then <code>OK &gt; OK</code></li>
+</ul>
+<p>If you&rsquo;re lucky all of the missing layers will appear and your map will look like the map above, but if you&rsquo;re not you&rsquo;ll need to repeat the process for each layer.</p>
+<p>If you can&rsquo;t find the data then you may need to try downloading it and unzipping it again.  It may mean that you deleted or moved the source file.</p>
+<h4 id="making-the-layer-transparent">Making the layer transparent</h4>
+<p>Once you&rsquo;ve applied the layer file to your shapefile you can see the geology, but it isn&rsquo;t transparent so you can&rsquo;t see the base map through it.  To do that you need to make the bedrock layer <a href="/introduction/#make-layers-transparent">transparent, following the instructions you were given in the first chapter</a>.</p>
+<p>Your final map should look something like the map below when you zoom in.  The background map is rather pixellated - you can download a 1:50 000 background map such as <strong>VectorMap District Raster</strong> from Digimap to replace the VectorMap Local Raster and that will look better at this scale.</p>
+<p><img alt="The final map with transparency applied to the geology layers so that the background map shows through." src="../images/styles/BGSGeologyTransparent.png" title="The final map with transparency applied to the geology layers so that the background map shows through." /></p>
+<p>Save this map - you&rsquo;ll be using it again in the section below on labelling your data.</p>
+<h2 id="labelling-your-data">Labelling your data</h2>
+<p>If you look at any map you&rsquo;ll be able to see that attributes from the attribute table have been used to add <strong>labels</strong> which are essential to the understanding of the map.</p>
+<p>Once you have information in your attribute tables it is really easy to add labels to your features.  You may not need to add them to all layers, but they can really help interpretation.  For example, if you look at <a href="https://www.bgs.ac.uk/information-hub/bgs-maps-portal/">British Geological Survey maps</a> they add symbols or letters to each rock polygon which are then included in the key and make it easier to spot which symbol is which.  Points can be labelled to show location names, or dip angle and names can be added to lines, such as &ldquo;Moine Thrust&rdquo; on the appropriate thrust fault.</p>
+<h3 id="adding-simple-labels">Adding simple labels</h3>
+<p>You should have a bedrock geology layer in your <code>FindingData</code> map which you symbolised with the BGS layer styles.  You&rsquo;ll use that to try out labelling polygons.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>How to add labels to layers in Arc</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>Select the <code>ew069_bradford_bedrock</code> layer in the Contents</li>
+<li>Start by looking at the attribute table.  You need a short abbreviation with which to label each bedrock polygon on your map.  Which attribute contains a short abbreviation for the rock formation name?</li>
+<li>With the correct layer selected click on the <code>Labeling</code> tab of the ribbon</li>
+</ul>
+<p><img alt="The Labeling tab of the ribbon showing the tools available." src="../images/styles/LabellingTab.png" title="The Labeling tab of the ribbon showing the tools available." /></p>
+<ul>
+<li>Click on the <code>Label</code> button on the far left of the ribbon</li>
+</ul>
+<p>Arc will add labels to your map but they will be from the first field in your feature class, which is unlikely to be the correct one and could be a load of apparently random numbers!</p>
+<p>To select the correct field:</p>
+<ul>
+<li>Use the dropdown next to <code>Field</code> on the left of the ribbon to select the field that contains the labels you wish to use - in this case I suggest you use the <code>LEX</code> field.</li>
+</ul>
+<p>You should find that the labels from the field you&rsquo;ve chosen appear on your map - be patient it can take Arc a while to draw them.</p>
+<p><img alt="Labels from the LEX field on the Bedrock polygons on the map." src="../images/styles/GeologyLabels.png" title="Labels from the LEX field on the Bedrock polygons on the map." /></p>
+<p>Once you have the basic labels you can use the other tools on the Labeling ribbon to change the font, size, colour or placement.</p>
+<p>Alternatively you can use the Label Class panel</p>
+<ul>
+<li>on the Labelling ribbon click on the small downwards arrow at the lower right of either the Text Symbol or the Label Placement group.</li>
+</ul>
+<p><img alt="The Label Class panel.  Drop down the subheadings to find lots of options for placing and formatting your labels." src="../images/styles/LabelClassPanel.png" title="The Label Class panel.  Drop down the subheadings to find lots of options for placing and formatting your labels." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Label options</strong></p>
+<p>Try out some of the options on the <code>Symbol</code> and <code>Position</code> tabs to see what they do.</p>
+</blockquote>
 <!-- TODO: Finish with further reading etc -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:401">
+<p>If you don&rsquo;t find the dashed lines then the styles may not be installed for you.  <a href="#finding-and-using-additional-arcgis-pro-styles">Instructions for adding additional ArcGIS Pro Styles</a> are in a separate section.&#160;<a class="footnote-backref" href="#fnref:401" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
