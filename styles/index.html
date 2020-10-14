@@ -116,6 +116,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#labelling-your-data">Labelling your data</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#adding-simple-labels">Adding simple labels</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#label-placement">Label placement</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-label-classes">Using label classes</a>
     </li>
         </ul>
     </li>
@@ -180,9 +186,8 @@
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>In the previous chapters you have created data and added data from other sources.  Now you&rsquo;ll see how to style, or symbolise, that data and label it appropriately to make a more informative map.</p>
-<p>You have symbolised and labelled data in previous chapters, but this chapter goes through the options in more detail so that you have a wider range of techniques to choose from.</p>
-<!-- TODO: Add a bit more to styling and labelling introduction? -->
-
+<p>You have symbolised and labelled data in previous chapters, but this chapter goes through the options in more detail so that you have a wider range of techniques to choose from.  You&rsquo;ll also learn more about this when you start to prepare to create a map for your dissertation.</p>
+<p>Labelling is a subjective process.  Although there are general &ldquo;rules&rdquo;, sometimes it comes down to what do you think looks best?  Some of the books on the reading list, such as Darkes and Spence (2017) and Brewer (2016), will give you more information about this.</p>
 <h2 id="downloading-data">Downloading data</h2>
 <p>You should have kept the final project from the chapter on Finding data and adding it to GIS.  If you haven&rsquo;t, don&rsquo;t worry - just download the file called <code>FindingData.zip</code> from Minerva and unzip it to your GIS folder (or the desktop if you are on the Virtual Windows Desktop).</p>
 <p>You should have a folder called <code>FindingData</code> which contains a file called <code>FindingData.aprx</code>.  Open that file in ArcGIS Pro by double-clicking on it and you should see a greyscale map of the Otley Chevin area.</p>
@@ -215,6 +220,10 @@
 <!-- TODO: What labelling will it be possible to do with this data - polygons fine, but lines? -->
 
 <!-- TODO: What point data can I add for students to symbolise and label? -->
+
+<!-- TODO: If I create a downloadable project I can include the point and line shapefiles as layers in the gdb... -->
+
+<!-- TODO: Could I tidy this up so it's the OSM layers that are used for the exercises rather than using the BGS maps, or is it a good idea to use the geology maps? -->
 
 <h2 id="styling-your-data">Styling your data</h2>
 <p>When you first add a vector feature class to a map, Arc symbolises it with a single, random colour and doesn&rsquo;t add any automatic information about what the features show.  You need to apply styles to your data to differentiate features.</p>
@@ -406,8 +415,8 @@
 <h3 id="styling-point-features">Styling point features</h3>
 <p>The BGS geological data doesn&rsquo;t include any point data so I have created a layer from <a href="https://www.openstreetmap.org/">OpenStreetMap data</a> that we can use instead for this exercise.</p>
 <ul>
-<li>You can download the shapefile from Minerva as <code>PointData.zip</code> and unzip it to your project folder.</li>
-<li>Add the <code>Place</code> shapefile to the top of the Contents of your map and have a look at the attribute table.</li>
+<li>You can download the shapefile from Minerva as <code>OSM_Data.zip</code> and unzip it to your project folder.</li>
+<li>Add the <code>Place</code> shapefile from the folder to the top of the Contents of your map and have a look at the attribute table.</li>
 <li>In particular have a look at the contents of the <code>place</code> column.  This contains data on the types of place that are included.</li>
 <li>Use <code>Unique Values</code> for the symbology and set it so that each type of place has a different colour symbol.  <a href="#removing-the-all-other-values-heading">Stop All other values from showing</a>.</li>
 </ul>
@@ -469,26 +478,8 @@
 <li>Go into the Catalog and this time instead of adding the .shp files to your map add the <code>.lyr</code> files</li>
 </ul>
 <p>If it works immediately and you can see a fully symbolised geological map then that&rsquo;s a bonus and you don&rsquo;t need to repair the data source.</p>
-<p>If, however, you get the dreaded red exclamation marks next to your layers in the contents and nothing new on the map then you need to tell the layer file where to find the data on <strong>your</strong> computer.  It doesn&rsquo;t mean you&rsquo;ve done anything wrong, you just need to know how to solve it.</p>
-<p><img alt="The red exclamation marks showing that the layer can't find the data source." src="../images/styles/MissingDataSource.png" title="The red exclamation marks showing that the layer can't find the data source." /></p>
-<h5 id="repairing-broken-file-links">Repairing broken file links</h5>
-<blockquote>
-<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Repairing broken file links</strong></p>
-<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
-</blockquote>
-<p>To check the name of the file that you&rsquo;ll need to locate:</p>
-<ul>
-<li>open the layer properties in the contents by right-clicking on the broken layer and go to the <code>Source</code> tab</li>
-<li>under <code>Data source</code> you will see which file Arc is looking for</li>
-</ul>
-<p><img alt="Finding the expected data source." src="../images/styles/DataSource.png" title="Finding the expected data source." /></p>
-<p>Once you know the name of the file you need, and where Arc thinks it will be located, do the following to repair the link:</p>
-<ul>
-<li>from the same properties tab <code>Set Data Source</code></li>
-<li>Navigate to the file that you need then <code>OK &gt; OK</code></li>
-</ul>
-<p>If you&rsquo;re lucky all of the missing layers will appear and your map will look like the map above, but if you&rsquo;re not you&rsquo;ll need to repeat the process for each layer.</p>
-<p>If you can&rsquo;t find the data then you may need to try downloading it and unzipping it again.  It may mean that you deleted or moved the source file.</p>
+<p>If, however, you get the dreaded red exclamation marks next to your layers in the contents and nothing new on the map then you need to tell the layer file where to find the data on <strong>your</strong> computer.  It doesn&rsquo;t mean you&rsquo;ve done anything wrong, you just need to know how to solve it by <a href="/creating_data/#repairing-broken-file-links">repairing the broken file links</a> as shown in the previous chapter.</p>
+<p><img alt="The red exclamation marks showing that Arc can't find the data source for the layer." src="../images/styles/MissingDataSource.png" title="The red exclamation marks showing that Arc can't find the data source for the layer." /></p>
 <h4 id="making-the-layer-transparent">Making the layer transparent</h4>
 <p>Once you&rsquo;ve applied the layer file to your shapefile you can see the geology, but it isn&rsquo;t transparent so you can&rsquo;t see the base map through it.  To do that you need to make the bedrock layer <a href="/introduction/#make-layers-transparent">transparent, following the instructions you were given in the first chapter</a>.</p>
 <p>Your final map should look something like the map below when you zoom in.  The background map is rather pixellated - you can download a 1:50 000 background map such as <strong>VectorMap District Raster</strong> from Digimap to replace the VectorMap Local Raster and that will look better at this scale.</p>
@@ -520,6 +511,11 @@
 <p>You should find that the labels from the field you&rsquo;ve chosen appear on your map - be patient it can take Arc a while to draw them.</p>
 <p><img alt="Labels from the LEX field on the Bedrock polygons on the map." src="../images/styles/GeologyLabels.png" title="Labels from the LEX field on the Bedrock polygons on the map." /></p>
 <p>Once you have the basic labels you can use the other tools on the Labeling ribbon to change the font, size, colour or placement.</p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Changing label properties</strong></p>
+<p>Try changing the font of your labels and making them smaller or larger.  Change the colour to a dark grey instead of black.</p>
+</blockquote>
+<p>You can try out various fonts for your labels, but note that the final one you choose should be something which is clear for your audience to read.  Also note that while your labels should be big enough to be read, they don&rsquo;t need to be large unless they are <strong>really</strong> important.</p>
 <p>Alternatively you can use the Label Class panel</p>
 <ul>
 <li>on the Labelling ribbon click on the small downwards arrow at the lower right of either the Text Symbol or the Label Placement group.</li>
@@ -528,8 +524,71 @@
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Label options</strong></p>
 <p>Try out some of the options on the <code>Symbol</code> and <code>Position</code> tabs to see what they do.</p>
+<p>Try adding a Halo or Shadow to your labels.  Does it make them clearer?</p>
+</blockquote>
+<p>It&rsquo;s usually best to keep label styles simple - you&rsquo;re aiming for readability not fancy - but a narrow <strong>halo</strong> or a <strong>callout</strong> can be useful techniques for making labels clearer if used in moderation.</p>
+<h4 id="label-placement">Label placement</h4>
+<!-- TODO: Do I really need to include so much on label placement? -->
+
+<p>The most complex part of labelling is ensuring that the labels are in the best place with regard to the feature they apply to, without getting in the way of other labels.</p>
+<h5 id="placing-labels-for-points">Placing labels for points</h5>
+<p>The placement of labels for polygons can be relatively straightforward, though it&rsquo;s a good idea to experiment, but placing points can be more complex.</p>
+<ul>
+<li>Make sure that you have the <code>Place</code> shapefile on your map and that it is visible.</li>
+<li>Make the other layers invisible</li>
+<li>Turn labels on for the Place layer and use the <code>name</code> field for the labels</li>
+</ul>
+<p><img alt="The default locations for the names from the Places feature class." src="../images/styles/LabellingPoints.png" title="The default locations for the names from the Places feature class." /></p>
+<ul>
+<li>Look at the <code>Position</code> tab and the <code>Placement</code> options in the Label Class dialog</li>
+</ul>
+<p><img alt="The position tab for positioning labels on point features." src="../images/styles/LabelPosition.png" title="The position tab for positioning labels on point features." /></p>
+<p>The dialog is automatically set to <code>Best position</code> - you can see above that most of the labels are placed at top right, but if they are likely to overlap other labels then they are moved according to the preference in the zones shown on the dialog.</p>
+<p>The simplest way to change placement is to use the drop down at the top of the dialog.  Change that now to one of the other settings, e.g. <code>Top of point</code>.  You should see all of your labels jump to that location.</p>
+<p>Sometimes the point marks where the label should actually occur.</p>
+<ul>
+<li>Set the Placement to <code>Centered on point</code></li>
+<li>This will look odd because you can still see the point, but it&rsquo;s underneath the labels.</li>
+<li>to prevent that you need to symbolise the points so that the fill and outline have <code>No color</code></li>
+</ul>
+<h5 id="placing-labels-for-lines">Placing labels for lines</h5>
+<p>Labelling lines creates another set of challenges.  Do you need your labels above the line, or on top of it?  Does it need to follow the line exactly or can it be straight?</p>
+<ul>
+<li>You should already have downloaded <code>OSM_Data.zip</code> from Minerva and unzipped it.</li>
+<li>Add the shapefiles for <code>Waterway</code> and <code>Highway</code> to your map now.</li>
+<li>Make Waterway invisible for now - we&rsquo;ll come back to that.</li>
+<li>Have a look at the attribute table for the Highway layer.  You should be able to see that the <code>name</code> column contains street names.</li>
+<li>Start by symbolising the Highway layer using a single symbol, and the symbol <code>Minor Road</code> from the Gallery - it will look a bit odd, but is fine for our purposes at the moment.</li>
+<li>Set the reference scale to 1:10 000 then zoom in to about 1:5 000 so that the roads look quite wide.</li>
+<li>Now go to the Labeling tab of the ribbon and select to label the Highway layer with the <code>name</code> field.</li>
+<li>Set the font size to <code>4</code> by typing in the box</li>
+</ul>
+<p>If you think about the road maps you are used to the name of the street is usually <strong>on top of</strong> the street it applies to, so we&rsquo;ll set that now.</p>
+<ul>
+<li>In the <code>Label Placement</code> group of the ribbon scroll down the selection box until you find <code>European Streets</code> and click on that</li>
+</ul>
+<p>You may need to wait a short while for your labels to move but they should now appear within the lines of the road symbol and should be curved to follow the roads where appropriate.</p>
+<p><img alt="Street names set using the European Road Placement." src="../images/styles/LabelsRoadPlacement.png" title="Street names set using the European Road Placement." /></p>
+<p>Now go to the <code>Position</code> tab of the <code>Label Class</code> dialog.  You&rsquo;ll see that there are a different set of options to the dialog for the points feature class.</p>
+<ul>
+<li>Now make the <code>Waterway</code> layer visible.</li>
+<li>Again, the <code>name</code> field contains the data we want to use to label the waterways.</li>
+<li>Symbolise the waterway layer as a single symbol, medium blue line, e.g. <code>Yogo Blue</code></li>
+<li>Now go to the Labeling tab of the ribbon and select to label the Highway layer with the <code>name</code> field and set the font size to <code>8</code>.  You may have to pan and zoom around the map to find labelled waterways.</li>
+<li>Waterways are often labelled on maps in the same blue as the features, so on the ribbon set the colour to <code>Yogo Blue</code></li>
+<li>In the <code>Label Placement</code> group of the ribbon scroll down the selection box until you find <code>European Streets</code> and click on that</li>
+</ul>
+<p>This time you should find that the labels are either above or below the line, but not right on it, and are again curved to match the line.</p>
+<p>Now go to the <code>Position</code> tab of the <code>Label Class</code> dialog and have a look at the settings - this time the labels are <code>Offset curved</code>.  Try changing some of the settings to see how it affects your labels.</p>
+<h3 id="using-label-classes">Using label classes</h3>
+<p>Label classes refer to the ability to add labels to a subset of features in your feature class, or different labels for different features.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Using label classes to label subsets of features</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
 </blockquote>
 <!-- TODO: Finish with further reading etc -->
+
+<!-- TODO: Obvious choice is the Darkes and Spence book -->
 
 <div class="footnote">
 <hr />

@@ -67,7 +67,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-background-data">Obtaining the background data</a>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-the-data">Obtaining the data</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#repairing-broken-file-links">Repairing broken file links</a>
     </li>
@@ -82,6 +82,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#digitising-in-arcgis-pro">Digitising in ArcGIS Pro</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#starting-to-digitise-polygons">Starting to digitise - polygons</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#finding-a-location-with-the-go-to-xy-tool">Finding a location with the Go To XY tool</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#digitising-the-see-building">Digitising the SEE building</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#saving-your-edits">Saving your edits</a>
     </li>
@@ -212,10 +218,8 @@
 <p>If you feel that you are still not clear about the difference between <strong>raster</strong> and <strong>vector</strong> GIS data it would be worth having a look at the video &ldquo;<a href="https://youtu.be/hbOGp51nYGI">Learn more about raster and vector map data</a>&rdquo; by the Ordnance Survey.</p>
 <p>As you deal with more GIS data you&rsquo;ll start to find it easier to spot which formats are raster and which are vector, but you need to be thinking about it already.</p>
 </blockquote>
-<h2 id="obtaining-the-background-data">Obtaining the background data</h2>
+<h2 id="obtaining-the-data">Obtaining the data</h2>
 <p>You will need to</p>
-<!-- TODO: Upload DigitiseData.zip (not 7z) -->
-
 <ul>
 <li>download the <code>DigitiseData.zip</code> file from Minerva</li>
 <li>unzip the file to your GIS working folder</li>
@@ -252,8 +256,8 @@
 <h2 id="preparing-to-digitise-data">Preparing to digitise data</h2>
 <p>The first thing you need to do when preparing to digitise is to set up the storage for your data.</p>
 <p>When the project was set up Arc automatically included a <code>geodatabase</code> within it.  The geodatabase is the overall container for your data and will store <code>feature datasets</code> and <code>feature classes</code>.</p>
-<p>You&rsquo;ve already worked with feature classes in previous chapters.  These are vector layers which can hold points, lines or polygons.  A feature dataset can contain a range of related feature classes.  The image below shows what your Catalog will look like when it is fully set up (note that the geodatabase name may be different - that doesn&rsquo;t matter.</p>
-<p><img alt="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." src="../images/creating_data/ESDigitiseGDB.png" title="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." /></p>
+<p>You have already worked with feature classes in previous chapters.  These are vector layers which can hold points, lines or polygons.  A feature dataset can contain a range of related feature classes.  The image below shows what your Catalog will look like when it is fully set up (note that the geodatabase name may be different - that doesn&rsquo;t matter).</p>
+<p><img alt="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." src="../images/creating_data/DigitiseGDB.png" title="The fully set up geodatabase in the Catalog pane showing the feature dataset inside the geodatabase and the feature classes within that." /></p>
 <h3 id="set-up-a-feature-dataset-within-a-geodatabase">Set up a feature dataset within a geodatabase</h3>
 <p>To set up the geodatabase contents -</p>
 <ul>
@@ -287,7 +291,7 @@
 <p>Also create a feature class called <code>Trees</code> with a feature type of <code>Point</code></p>
 <p>Note that if you forget to change the feature type when you are creating a feature class it can&rsquo;t be changed later.  All you can do is use the Catalog to delete the feature class and create a new one.</p>
 </blockquote>
-<p>Arc should automatically add the new feature classes to your table of contents.  If it hasn&rsquo;t, add them now.  Your ArcGIS Window should now look something like the image below.</p>
+<p>Arc should automatically add the new feature classes to your table of contents.  If it hasn&rsquo;t, add them now.  Your ArcGIS Window should now look something like the image below.  In particular note the icons next to the layer names in the Catalog - they show you whether a feature class will hold points, lines or polygons.</p>
 <p><img alt="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." src="../images/creating_data/ReadyToDigitise_small.png" title="ArcGIS project showing the new feature classes in the Catalog which are also added as layers to the Contents pane." /></p>
 <h2 id="digitising-in-arcgis-pro">Digitising in ArcGIS Pro</h2>
 <p>You should already have an aerial view as a background for your map.  For these exercises you&rsquo;ll be <code>digitising</code> polygons, points and lines by tracing over features on this view.</p>
@@ -306,7 +310,8 @@
 <li>Click on the <code>Buildings</code> layer in the Create Features pane and select the <code>Polygons</code> tool - the one on the left.  As usual, if you hover over icons you&rsquo;ll get a tooltip.</li>
 </ul>
 <p>Now you&rsquo;re ready to start adding a feature.  We&rsquo;ll start by digitising the School of Earth and Environment (SEE).  So start by zooming in to the building.</p>
-<p>I realise you may not actually have seen the School of Earth and Environment by this point.  To find it use the <code>Go To XY</code> tool from the Map tab of the ribbon.</p>
+<h4 id="finding-a-location-with-the-go-to-xy-tool">Finding a location with the Go To XY tool</h4>
+<p>I realise you may not actually have seen the School of Earth and Environment yet.  To find it use the <code>Go To XY</code> tool from the Map tab of the ribbon.</p>
 <ul>
 <li>When you click on the <code>Go To XY</code> button a small panel will open at the bottom of the map screen.</li>
 </ul>
@@ -318,6 +323,7 @@
 <p>Now click on the hand symbol at the end of the tool to pan to Chancellors Court.</p>
 <p>The School of Earth and Environment is the building along the northern side of Chancellors Court and the building just to the north of it.</p>
 <p><img alt="The School of Earth and Environment (SEE)." src="../images/creating_data/SEE.png" title="The School of Earth and Environment (SEE)." /></p>
+<h4 id="digitising-the-see-building">Digitising the SEE building</h4>
 <ul>
 <li>Now you know where the building is, zoom in to it</li>
 <li>To create a polygon left-click along the edges of the building.  Each click creates a <code>Vertex</code>, or corner.</li>
@@ -338,7 +344,7 @@
 <p>Don&rsquo;t forget that you can <a href="/introduction/#make-layers-transparent">make layers transparent</a>.  As you draw your building polygons you&rsquo;ll gradually be covering up the layers underneath and it can be useful to see through the top layers.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Continue to digitise</strong></p>
-<p>Continue to digitise buildings so that you have polygons for all of the buildings around Chancellors Court (the open space south of Earth and Environment).  Remember to save all of your new polygons.</p>
+<p>Continue to digitise buildings so that you have polygons for all of the buildings around Chancellors Court (the open space south of Earth and Environment).  Remember to <a href="#saving-your-edits">save all of your new polygons</a>.</p>
 </blockquote>
 <h3 id="stopping-a-digitising-session">Stopping a digitising session</h3>
 <p>Once you&rsquo;ve finished adding items it isn&rsquo;t obvious how to stop!</p>
@@ -349,7 +355,7 @@
 <p>If you don&rsquo;t do this you tend to find that you&rsquo;re adding new features by mistake - which is rather irritating!</p>
 <h3 id="potential-issues-with-the-data">Potential issues with the data</h3>
 <p>Stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
-<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<p>Make some notes for yourself in your individual area in the Class Notebook on the issues that you identify.  Use the questions below as a starting point.</p>
 <ul>
 <li>What scale did you digitise at?<ul>
 <li>What effect will this have on the amount of detail that you included?</li>
@@ -402,7 +408,7 @@
 </li>
 <li>It&rsquo;s a good idea to go straight back to the <code>List By Drawing Order</code> view of your layers or it&rsquo;s easy to get confused later</li>
 </ul>
-<p><img alt="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." src="../images/creating_data/ContentsSelection.png" title="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." /></p>
+<p><img alt="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." src="../images/creating_data/ContentsSelection2.png" title="The Contents pane showing List By Selection view.  Layers with no ticks can't be selected, layers with ticks are still selectable." /></p>
 <h3 id="modifying-features-continued">Modifying features (continued)</h3>
 <p>Once you have the feature selected with the <code>Vertices</code> tool it is now a case of using the mouse cursor to move the edges or corners of the feature</p>
 <ul>
@@ -482,7 +488,7 @@
 <p>You don&rsquo;t need to add any labels for the lines layers in this case, but if you did it all works in exactly the same way as it did for the buildings.</p>
 <h3 id="potential-issues-with-the-data_1">Potential issues with the data</h3>
 <p>Again, stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
-<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<p>Make some notes for yourself in your individual area in the Class Notebook on the issues that you identify.  Use the questions below as a starting point.</p>
 <ul>
 <li>What scale did you digitise at?<ul>
 <li>What effect will this have on the amount of detail that you included?</li>
@@ -513,7 +519,7 @@
 <p>You don&rsquo;t need to add any labels for the points layer in this case, but if you did it all works in exactly the same way as it did for the buildings.</p>
 <h3 id="potential-issues-with-the-data_2">Potential issues with the data</h3>
 <p>Again, stop and think about the digitising that you have just done.  Can you think of any potential issues with the data that you have created in this way?</p>
-<p>Make some notes for yourself on the issues that you identify.  Use the questions below as a starting point.</p>
+<p>Make some notes for yourself in your individual area in the Class Notebook on the issues that you identify.  Use the questions below as a starting point.</p>
 <ul>
 <li>How easy is it to decide where you should add a point to represent a tree?</li>
 <li>How easy is it to be accurate with the drawing tools?</li>
@@ -532,11 +538,10 @@
 <p>You may not have a tree-like symbol available in ArcGIS Pro, don&rsquo;t worry about this for now.  You&rsquo;ll find out how to add more choices to the Gallery in a future class.</p>
 <h2 id="finally">Finally&hellip;</h2>
 <p>Check that you&rsquo;ve finished digitising the buildings around Chancellors Court and the paths across it.  Check that all of the layers you have created - the points, lines and polygons, have all been symbolised appropriately and are labelled where necessary.</p>
-<p>Once you&rsquo;ve turned off the background imagery layer, and the ESRI base map layer, your data could look something like the map below.  We won&rsquo;t worry about setting up a full layout at the moment as that is covered in another chapter.</p>
+<p>Once you&rsquo;ve turned off the background imagery layer, and the ESRI base map layer, your data could look something like the map below - hopefully rather better!  We won&rsquo;t worry about setting up a full layout at the moment as that is covered in another chapter.</p>
 <p><img alt="Possible final map of Chancellors Court.  Yours will probably look different to this one as we will all make our own choices for colours and styles." src="../images/creating_data/gpsFinalLayout2019.png" title="Possible final map of Chancellors Court.  Yours will probably look different to this one as we will all make our own choices for colours and styles." /></p>
+<p>Upload a screenshot of your map to your individual area of the Class Notebook as a record of what you have done.  If you upload it during the week after the class you will get brief feedback on what you have done.</p>
 <h2 id="recommended-reading-creating-data-and-data-quality">Recommended reading: Creating data and data quality</h2>
-<!-- TODO: Look at the recommended reading for digitising and update in line with new reading list. -->
-
 <p>For more detailed information have a look at the following references from the <a href="http://lib5.leeds.ac.uk/rlists/broker/?bbModuleId=202021_37122_SOEE1630&amp;bbListId=_8079361_1&amp;arc=host_minerva&amp;bbLastListId=_8079361_1">module GIS reading list</a>.</p>
 <p>Heywood (2011). Chapter 5 covers &ldquo;Data input and editing&rdquo;.  In particular have a look at the section on describing &ldquo;some of the problems that may be faced with encoding spatial data&rdquo;.  Chapter 10 goes into more detail about &ldquo;Data quality issues&rdquo;.</p>
 <p>Longley (2015).  Chapter 8 covers data collection and includes data capture.</p>
