@@ -87,15 +87,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#styling-line-features">Styling line features</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#as-a-single-colour">As a single colour</a>
+    <li class="toctree-l4"><a class="reference internal" href="#as-a-single-symbol">As a single symbol</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#symbolising-dashed-lines">Symbolising dashed lines</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#symbolising-lines-with-decoration">Symbolising lines with "decoration"</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-unique-values-for-a-layer_1">Setting unique values for a layer</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#styling-point-features">Styling point features</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#styling-point-features-as-a-single-symbol">Styling point features as a single symbol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#styling-points-as-unique-values">Styling points as Unique Values</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#other-ways-of-styling-point-layers">Other ways of styling point layers</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</a>
     </li>
@@ -120,6 +130,16 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#using-label-classes">Using label classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#converting-labels-to-annotation">Converting labels to annotation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#final-map">Final map</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recommended-reading-styling-and-labelling-your-maps">Recommended reading: Styling and labelling your maps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#more-information">More information</a>
     </li>
         </ul>
     </li>
@@ -341,7 +361,7 @@
 <p>Remember to save your project at regular intervals.</p>
 <h3 id="styling-line-features">Styling line features</h3>
 <p>Symbolising or styling line features is basically the same as <a href="#styling-polygon-features">symbolising polygon features</a> so refer back to the instructions for those too, but there are some extra things to think about in addition to choosing colours for fill and outline.</p>
-<h4 id="as-a-single-colour">As a single colour</h4>
+<h4 id="as-a-single-symbol">As a single symbol</h4>
 <p>This is very similar to styling polygons</p>
 <ul>
 <li>select the <code>Waterway</code> layer and go to the symbology panel</li>
@@ -407,57 +427,179 @@
 <p><img alt="Click on the button with 2 coloured shapes, then select the vertical line." src="../images/styles/SelectingShape.png" title="Click on the button with 2 coloured shapes, then select the vertical line." /></p>
 <p>Now you can experiment with the settings until the line looks as you require in the window below.</p>
 <ul>
-<li>make the vertical line width so that it looks the same as the main line - e.g. <code>2 pt</code> and a bit shorter, e.g. <code>4 pt</code></li>
-<li>try changing the <code>Offset Distance &gt; Offset Y</code> until the vertical line sits on top of the horizontal line</li>
-<li>Change the colour of both the vertical line and the main line to the same dark green, e.g. <code>Fir Green</code></li>
+<li>make the vertical line width so that it looks the same as the main line - e.g. <code>1 pt</code> and a bit shorter, e.g. <code>6 pt</code></li>
+<li>try changing the <code>Marker Placement &gt; Perpendicular offset</code> until the vertical line sits on top of the horizontal line - though for a railway line it will look better if it is centred so move it back again!</li>
+<li>Change the colour of both the vertical line and the main line to the same dark grey, e.g. <code>Grey 80%</code></li>
 <li>To change the spacing of the vertical lines on the line<ul>
 <li>drop down the <code>Marker placement</code> subheading</li>
-<li>change the <code>Placement template</code> number, e.g. make it <code>50</code> to spread the symbols out</li>
+<li>change the <code>Placement template</code> number, e.g. make it <code>5</code> to make the symbols closer (this may look a bit odd and uneven as the railway layer has been digitised as lots of very short features, rather than one long line)</li>
 </ul>
 </li>
 <li>Once you are happy with your symbol click <code>Apply</code> and have a look at it on the main map.  You may want to make more changes before you are happy with it.</li>
 </ul>
-<p>Once you have symbolised these lines turn the other layers back on on your map and save the project.</p>
-<p>You should reset the <a href="/finding_data/#setting-the-reference-scale">reference scale</a> to 1:50 000 if it isn&rsquo;t already as this is the scale of the data that you are using.</p>
-<h3 id="styling-point-features">Styling point features</h3>
-<!-- TODO: Start editing again from here -->
-
-<p>The BGS geological data doesn&rsquo;t include any point data so I have created a layer from <a href="https://www.openstreetmap.org/">OpenStreetMap data</a> that we can use instead for this exercise.</p>
+<p><img alt="The symbolised railway line showing the line decorations." src="../images/styles/RailwaySymbol.png" title="The symbolised railway line showing the line decorations." /></p>
+<h4 id="setting-unique-values-for-a-layer_1">Setting unique values for a layer</h4>
+<p>Again, this is very similar to symbolising polygons.</p>
 <ul>
-<li>You can download the shapefile from Minerva as <code>OSM_Data.zip</code> and unzip it to your project folder.</li>
-<li>Add the <code>Place</code> shapefile from the folder to the top of the Contents of your map and have a look at the attribute table.</li>
-<li>In particular have a look at the contents of the <code>place</code> column.  This contains data on the types of place that are included.</li>
+<li>Turn on and select the <code>SE_Road</code> layer in the contents and have a look at the attribute table.</li>
+<li>Note the field called <code>CLASSIFICA</code> - for Classification.  This contains information on the <strong>type</strong> of road and this is the field we&rsquo;ll use to create the Unique values.</li>
+<li>Go to the Symbology pane for the road layer and select <code>Unique Values</code></li>
+<li>Set <code>Field 1</code> to the <code>CLASSIFICA</code> field - you should end up with about 11 values.</li>
+<li>Select the line symbol next to <code>A Road</code> and go to the Gallery</li>
+<li>From the Gallery select the symbol for <code>Major Road</code></li>
+</ul>
+<p>Remember that these symbols are the symbols usually used on maps in the USA, rather than the OS maps that we&rsquo;re more used to in Britain.  When you apply this to your map you&rsquo;ll also notice that there are a lot of lines across the roads - we can get rid of those.</p>
+<ul>
+<li>Go to the <code>Properties</code> tab of the Symbology pane</li>
+<li>Then go to the <code>Layers</code> tab - remember you can use tooltips to find it</li>
+</ul>
+<p>Note that this apparently single line is actually made up of two lines, the lower being thicker than the upper so that it looks as if it is the outline.  This is how you can outline an outline!</p>
+<ul>
+<li>Select the top layer - the paler <code>Solid stroke</code><ul>
+<li>Under appearance change the colour of that to <code>Pointsettia Red</code></li>
+<li>and under <code>Caps &amp;amp; Join</code> change the <code>Cap type</code> to <code>Butt</code></li>
+</ul>
+</li>
+<li>Now select the other layer, which is also a <code>Solid stroke</code><ul>
+<li>Change the colour of that to <code>Gray 60%</code></li>
+<li>Change the Cap type to <code>Butt</code></li>
+<li>and change the <code>Width</code> to <code>3.2</code> to make the outline appear a bit thinner</li>
+</ul>
+</li>
+<li>Click on <code>Apply</code> to see the effect on your map</li>
+</ul>
+<p><img alt="The symbolised A roads." src="../images/styles/RoadSymbols.png" title="The symbolised A roads." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Symbolising roads</strong></p>
+<p>Use the instructions above to also symbolise the following categories</p>
+<p><code>Primary Road</code> - try the symbol for <code>Highway</code> as it&rsquo;s wider than A roads</p>
+<p><code>B Road</code> - these are usually orange</p>
+<p><code>Minor Road</code> - try yellow for these</p>
+<p><code>Local Street</code> - make these grey outlines around white roads</p>
+<p>Feel free to symbolise the other categories too, or just remove them.</p>
+</blockquote>
+<p>Once you have symbolised these lines turn the other layers that you&rsquo;ve already symbolised back on on your map and save the project.</p>
+<p>Set the map to 1:50 000 scale then you should reset the <a href="/finding_data/#setting-the-reference-scale">reference scale</a> to 1:50 000 if it isn&rsquo;t already as this is the scale of the data that you are using.</p>
+<p><img alt="Your map should be starting to look something like this by now." src="../images/styles/InterimView3.png" title="Your map should be starting to look something like this by now." /></p>
+<h3 id="styling-point-features">Styling point features</h3>
+<p>Again, basic point styling is very similar to styling lines and polygons.</p>
+<p>In the project you downloaded look in the Contents under the <code>Vector data</code> group.  You should be able to find a feature class called <code>Postcodes</code>.</p>
+<ul>
+<li>If the <code>Postcodes</code> layer isn&rsquo;t already visible, tick in the box next to it so that it appears on your map.</li>
+</ul>
+<h4 id="styling-point-features-as-a-single-symbol">Styling point features as a single symbol</h4>
+<p>As usual, Arc will have given the layer default symbology when it was added to the map.</p>
+<ul>
+<li>Select the <code>Postcodes</code> layer in the contents and open the Symbology panel</li>
+<li>Click on the point symbol and from the Gallery select <code>Tear Pin 1 (40%)</code> - you may need to search or go down the list quite a way to find this.</li>
+</ul>
+<p><img alt="The Postcodes point layer symbolised as a single symbol." src="../images/styles/SinglePointSymbols.png" title="The Postcodes point layer symbolised as a single symbol." /></p>
+<h4 id="styling-points-as-unique-values">Styling points as Unique Values</h4>
+<p>For this part, turn on the <code>SE_FunctionalSite</code> layer in the Contents</p>
+<ul>
+<li>Have a look at the attribute table and make a note of the column that contains the classification</li>
 <li>Use <code>Unique Values</code> for the symbology and set it so that each type of place has a different colour symbol.  <a href="#removing-the-all-other-values-heading">Stop All other values from showing</a>.</li>
 </ul>
-<p>Your places will be symbolised as a series of spots of different colours.</p>
-<p><img alt="The Place layer symbolised as the initial random coloured unique values." src="../images/styles/PlacesUniqueValues.png" title="The Place layer symbolised as the initial random coloured unique values." /></p>
+<p>Your &ldquo;functional sites&rdquo; will be symbolised as a series of spots of different colours.</p>
+<p><img alt="The Functional Sites layer symbolised as the initial random coloured unique values." src="../images/styles/PlacesUniqueValues.png" title="The Functional Sites layer symbolised as the initial random coloured unique values." /></p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Styling point features</strong></p>
 <p>In the same way that you symbolised the polygons and lines click on the points next to the entries in the <code>Classes</code> list and try out the options both from the Gallery and the Properties.  There are no detailed instructions here because it is so similar to previous sections.</p>
 </blockquote>
+<h4 id="other-ways-of-styling-point-layers">Other ways of styling point layers</h4>
+<!-- TODO: Is this section too long if I include these?  Cover this in the analysis chapter? -->
+
+<p>In addition to Single symbol and Unique values there are other choices for ways to style point layers.</p>
+<ul>
+<li>Return to the <code>Postcodes</code> layer and have a look at the attribute table.</li>
+</ul>
+<p>You should see that there is a field called <code>Total_number_of_delivery_points</code>.  We&rsquo;ll use this to try out different ways of displaying the data.</p>
+<h5 id="graduated-colours">Graduated colours</h5>
+<ul>
+<li>Turn off all of the other layers in the Contents so that you can see what is happening to this layer.</li>
+<li>In the symbology panel change the <code>Primary symbology</code> to <code>Graduated Colors</code></li>
+<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
+<li>Change the <code>Method</code> to <code>Defined Interval</code></li>
+<li>Change <code>Interval size</code> to read <code>20</code></li>
+</ul>
+<p>Your map should show a lot of dots coloured in 5 classes depending on how many delivery points there are in the postcode area for which that dot indicates the centre.</p>
+<p><img alt="The Postcode layer symbolised by the Graduated Colors method." src="../images/styles/GraduatedColor.png" title="The Postcode layer symbolised by the Graduated Colors method." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Graduated Colors</strong></p>
+<p>Try out some of the other choices in the Graduated Colors settings.</p>
+</blockquote>
+<h5 id="graduated-symbols">Graduated symbols</h5>
+<ul>
+<li>In the symbology panel change the <code>Primary symbology</code> to <code>Graduated Symbols</code></li>
+<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
+<li>Change the <code>Method</code> to <code>Defined Interval</code></li>
+<li>Change <code>Interval size</code> to read <code>20</code></li>
+</ul>
+<p>Once again your map should show a lot of dots, but this time the size gives an indication of how many delivery points there are in the postcode area.</p>
+<p><img alt="The Postcode layer symbolised by the Graduated Symbols method." src="../images/styles/GraduatedSymbols.png" title="The Postcode layer symbolised by the Graduated Symbols method." /></p>
+<p>Again you can try out the choices available and see what difference it makes to your map.</p>
+<h5 id="proportional-symbols">Proportional symbols</h5>
+<ul>
+<li>In the symbology panel change the <code>Primary symbology</code> to <code>Proportional Symbols</code></li>
+<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
+</ul>
+<p>This time the dots should vary continuously in size from the points with a value of 1 to those with the top value.</p>
+<p><img alt="The Postcode layer symbolised by the Proportional Symbols method." src="../images/styles/ProportionalSymbols.png" title="The Postcode layer symbolised by the Proportional Symbols method." /></p>
+<p>Again you can try out the choices available and see what difference it makes to your map.  This time you also have a histogram which shows the spread of your data.</p>
+<p>These options are all possibilities for displaying your data and in each case you&rsquo;ll need to decide for yourself which one is best based on your statistical knowledge and knowledge of your data.</p>
+<p>We won&rsquo;t need this layer again so</p>
+<ul>
+<li>either <code>Remove</code> the <code>Postcodes</code> layer completely from your Contents, or untick so that it doesn&rsquo;t show.</li>
+<li>Ensure that the other layers that you&rsquo;ve symbolised are all visible.</li>
+</ul>
+<!-- TODO: Find some references for choosing how to symbolise the point data -->
+
 <h3 id="finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</h3>
 <p>There are only a relatively limited range of symbols available in ArcGIS Pro when you first install it and sometimes you&rsquo;ll need more.</p>
 <p>ESRI provide <a href="https://esri-styles.maps.arcgis.com/home/gallery.html">further styles via a gallery</a>.  Unfortunately it doesn&rsquo;t seem to be possible to preview the symbols, but there are symbol sets such as <code>Ordnance Survey</code> and <code>Geology 24k</code> which should be helpful.</p>
-<p>To install more geological symbols in your project:</p>
+<p>To install more symbols in your project:</p>
 <ul>
-<li>Download the <code>Geology 24k</code> style from the <a href="https://esri-styles.maps.arcgis.com/home/gallery.html">Gallery</a> by clicking on it in the list to go to the individual page, then clicking on the <code>Download</code> button.  You should end up with a <code>.stylx</code> file</li>
-<li>Move or copy the stylx file into your map project folder, e.g. <code>FindingData</code></li>
+<li>Download the <code>Public_Signs_en.stylx</code> style from the <a href="https://esri-styles.maps.arcgis.com/home/gallery.html">Gallery</a> by clicking on it in the list (it&rsquo;s quite a long way down) to go to the individual page, then clicking on the <code>Download</code> button.  You should end up with a <code>.stylx</code> file</li>
+<li>Move or copy the stylx file into your map project folder, e.g. <code>Styling</code></li>
 <li>Go to the <code>Insert</code> tab of the ribbon</li>
 <li>Click on <code>Add</code> in the <code>Styles</code> group and select to <code>Add Style</code></li>
 <li>Navigate to where you saved the <code>.stylx</code> file and select it.  You may get a message about the style not being the correct version, if you do click to allow it to update</li>
 </ul>
-<p>Once you&rsquo;ve done this you should find that you have a lot more styles available to you in the Gallery.</p>
+<p>Once you&rsquo;ve done this you won&rsquo;t get any messages to say it&rsquo;s done, but you should find that you have a lot more styles available to you in the Gallery.</p>
 <ul>
-<li>Open the symbology panel for the <code>ew069_bradford_linear</code> layer</li>
-<li>click on the line symbol next to <code>Axial plane trace of major anticline</code></li>
-<li>Go to the Gallery and scroll down to look for the section of <code>Geology_24K_en</code> styles</li>
-<li>Under that look for <code>Anticline - Approximately located</code> and click on it.  You can also use the search box at the top to search for <code>Anticline</code></li>
+<li>Open the symbology panel for the <code>SE_FunctionalSite</code> layer</li>
+<li>click on the point symbol next to <code>Air Transport</code></li>
+<li>Go to the Gallery and scroll down to look for the section of <code>Public_Signs_en</code> styles</li>
+<li>Under that look for <code>Air Transportation</code> and click on one of the symbols that comes up.  You can also use the search box at the top to search for <code>Air</code></li>
 </ul>
-<p>The end result should be a line with small arrows pointing outwards at intervals.</p>
-<p><img alt="The Anticline symbol from the Geology 25K symbol set." src="../images/styles/AnticlineSymbol.png" title="The Anticline symbol from the Geology 25K symbol set." /></p>
-<p>These symbols are those used as standard by the United States Geological Survey rather than those used by the British Geological Survey so you may not always find what you need.  It is possible to create your own symbols, but you&rsquo;ll find out more about that in level 2.</p>
+<p>The end result should be a square symbol showing an airplane on a blue background.</p>
+<p><img alt="The Air Transport symbols from the Public Signs symbol set - choose one of these." src="../images/styles/AirTransportSymbol.png" title="The Air Transport symbols from the Public Signs symbol set - choose one of these." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Functional site symbols</strong></p>
+<p>You can continue to symbolise the rest of the Functional Site symbols by searching for the appropriate symbol from either the Public Signs symbol set or the ArcGIS 2D set.</p>
+</blockquote>
+<p>Don&rsquo;t forget to <strong>save your work</strong> from time to time.</p>
+<p>To finish the map</p>
+<ul>
+<li>Turn the <code>ContoursT50</code> layer back on to provide height data.</li>
+</ul>
+<p>Your map should now look something like the picture below.</p>
+<p><img alt="The map with layers symbolised and contours turned back on." src="../images/styles/InterimView4_small.png" title="The map with layers symbolised and contours turned back on." /></p>
+<p>In the next step we&rsquo;ll be creating a geological map.  The</p>
 <h3 id="styling-layers-with-a-layer-file">Styling layers with a layer file</h3>
-<p>When you added the geology layers to your project you may have noticed that in addition to the shapefiles (.shp) there were also files that ended with the extension <code>.lyr</code> but had the same names as the shapefiles.  These are <code>Layer files</code> and can be used to style the data layers which are in the shapefiles.</p>
+<p>Have a look in the Catalog for the <code>Styling</code> project.  You should find a folder called <code>bgs-50k</code>.  This contains BGS geological data downloaded from Digimap.</p>
+<ul>
+<li>Go into the <code>bgs-50k</code> folder in the Catalog and then in to the <code>ew069</code> folder.</li>
+<li>Add the following layers to your map - make sure you add the <code>.shp</code> files and that you add them to the top of the Contents list.<ul>
+<li><code>ew069_bradford_bedrock.shp</code></li>
+<li><code>ew069_bradford_linear.shp</code></li>
+</ul>
+</li>
+</ul>
+<p>These layers will cover up your existing map and will be given a single, random colour. </p>
+<p><img alt="The bedrock and linear geology layers with random styles." src="../images/styles/GeologyAdded.png" title="The bedrock and linear geology layers with random styles." /></p>
+<p>When you added the geology layers to your project you may have noticed that in addition to the shapefiles (.shp) there were also files that ended with the extension <code>.lyr</code> but had the same names as the shapefiles.</p>
+<p>These are <code>Layer files</code> and can be used to style the data layers which are in the shapefiles.</p>
 <p>There are two possible ways to use layer files to symbolise the shapefiles and it is your choice which one you use.  Both will give the same final result.</p>
 <blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Symbolising a layer with a layer file (.lyr)</strong></p>
@@ -491,6 +633,7 @@
 <p><img alt="The red exclamation marks showing that Arc can't find the data source for the layer." src="../images/styles/MissingDataSource.png" title="The red exclamation marks showing that Arc can't find the data source for the layer." /></p>
 <h4 id="making-the-layer-transparent">Making the layer transparent</h4>
 <p>Once you&rsquo;ve applied the layer file to your shapefile you can see the geology, but it isn&rsquo;t transparent so you can&rsquo;t see the base map through it.  To do that you need to make the bedrock layer <a href="/introduction/#make-layers-transparent">transparent, following the instructions you were given in the first chapter</a>.</p>
+<p>You may find that your map looks better if you turn off the <code>Vector data</code> group which contains the layers you styled in the previous sections, and instead turn on the <code>vmd-raster_3681591.tif</code> background layer.</p>
 <p>Your final map should look something like the map below when you zoom in.  The background map is rather pixellated - you can download a 1:50 000 background map such as <strong>VectorMap District Raster</strong> from Digimap to replace the VectorMap Local Raster and that will look better at this scale.</p>
 <p><img alt="The final map with transparency applied to the geology layers so that the background map shows through." src="../images/styles/BGSGeologyTransparent.png" title="The final map with transparency applied to the geology layers so that the background map shows through." /></p>
 <p>Save this map - you&rsquo;ll be using it again in the section below on labelling your data.</p>
@@ -543,12 +686,13 @@
 <h5 id="placing-labels-for-points">Placing labels for points</h5>
 <p>The placement of labels for polygons can be relatively straightforward, though it&rsquo;s a good idea to experiment, but placing points can be more complex.</p>
 <ul>
-<li>Make sure that you have the <code>Place</code> shapefile on your map and that it is visible.</li>
+<li>Make sure that you have the <code>SE_NamedPlace</code> layer on your map and that it is visible.  If you&rsquo;ve turned of the vector layers you&rsquo;ll need to drag and drop it out of the <code>Vector data</code> layer so that you can see it.</li>
 <li>Make the other layers invisible</li>
-<li>Turn labels on for the Place layer and use the <code>name</code> field for the labels</li>
+<li>Turn labels on for the Place layer by clicking the <code>Label</code> button on the far left of the Labeling ribbon and select <code>DISTNAME</code> in the field dropdown as the label content.</li>
 </ul>
 <p><img alt="The default locations for the names from the Places feature class." src="../images/styles/LabellingPoints.png" title="The default locations for the names from the Places feature class." /></p>
 <ul>
+<li>You&rsquo;ll probably need to start by making the font smaller, e.g. <code>6</code>, as there are a lot of names on this map</li>
 <li>Look at the <code>Position</code> tab and the <code>Placement</code> options in the Label Class dialog</li>
 </ul>
 <p><img alt="The position tab for positioning labels on point features." src="../images/styles/LabelPosition.png" title="The position tab for positioning labels on point features." /></p>
@@ -560,19 +704,17 @@
 <li>This will look odd because you can still see the point, but it&rsquo;s underneath the labels.</li>
 <li>to prevent that you need to symbolise the points so that the fill and outline have <code>No color</code></li>
 </ul>
+<p>These are all settings that you can play with to make your map as clear as possible.</p>
 <h5 id="placing-labels-for-lines">Placing labels for lines</h5>
 <p>Labelling lines creates another set of challenges.  Do you need your labels above the line, or on top of it?  Does it need to follow the line exactly or can it be straight?</p>
 <ul>
-<li>You should already have downloaded <code>OSM_Data.zip</code> from Minerva and unzipped it.</li>
-<li>Add the shapefiles for <code>Waterway</code> and <code>Highway</code> to your map now.</li>
-<li>Make Waterway invisible for now - we&rsquo;ll come back to that.</li>
-<li>Have a look at the attribute table for the Highway layer.  You should be able to see that the <code>name</code> column contains street names.</li>
-<li>Start by symbolising the Highway layer using a single symbol, and the symbol <code>Minor Road</code> from the Gallery - it will look a bit odd, but is fine for our purposes at the moment.</li>
-<li>Set the reference scale to 1:10 000 then zoom in to about 1:5 000 so that the roads look quite wide.</li>
-<li>Now go to the Labeling tab of the ribbon and select to label the Highway layer with the <code>name</code> field.</li>
-<li>Set the font size to <code>4</code> by typing in the box</li>
+<li>Turn off the <code>SE_NamedPlace</code> layer and turn on <code>SE_Road</code></li>
+<li>Have a look at the attribute table for the <code>SE_Road</code> layer.  You should be able to see that the <code>DISTNAME</code> column contains street names.</li>
+<li>Zoom in to about 1:20 000 on an area of the map which has quite a lot of roads, so that the roads look quite wide.</li>
+<li>Now go to the Labeling tab of the ribbon and select to label the road layer with the <code>DISTNAME</code> field.</li>
+<li>Set the font size to <code>3</code> by typing in the box</li>
 </ul>
-<p>If you think about the road maps you are used to the name of the street is usually <strong>on top of</strong> the street it applies to, so we&rsquo;ll set that now.</p>
+<p>If you think about the road maps you are used to, the name of the street is usually <strong>on top of</strong> the street it applies to, so we&rsquo;ll set that now.</p>
 <ul>
 <li>In the <code>Label Placement</code> group of the ribbon scroll down the selection box until you find <code>European Streets</code> and click on that</li>
 </ul>
@@ -581,29 +723,146 @@
 <p>Now go to the <code>Position</code> tab of the <code>Label Class</code> dialog.  You&rsquo;ll see that there are a different set of options to the dialog for the points feature class.</p>
 <ul>
 <li>Now make the <code>Waterway</code> layer visible.</li>
-<li>Again, the <code>name</code> field contains the data we want to use to label the waterways.</li>
-<li>Symbolise the waterway layer as a single symbol, medium blue line, e.g. <code>Yogo Blue</code></li>
-<li>Now go to the Labeling tab of the ribbon and select to label the Highway layer with the <code>name</code> field and set the font size to <code>8</code>.  You may have to pan and zoom around the map to find labelled waterways.</li>
+<li>This time the <code>name</code> field contains the data we want to use to label the waterways.</li>
+<li>Your Waterway layer should already be symbolised as a single symbol and a blue line.</li>
+<li>Now go to the Labeling tab of the ribbon and select to label the <code>Waterway</code> layer with the <code>name</code> field and set the font size to <code>5</code>.  You may have to pan and zoom around the map to find labelled waterways.</li>
 <li>Waterways are often labelled on maps in the same blue as the features, so on the ribbon set the colour to <code>Yogo Blue</code></li>
 <li>In the <code>Label Placement</code> group of the ribbon scroll down the selection box until you find <code>European Streets</code> and click on that</li>
 </ul>
 <p>This time you should find that the labels are either above or below the line, but not right on it, and are again curved to match the line.</p>
+<p><img alt="Labelled streams - the labels are either above or below the line and follow the shape of the stream." src="../images/styles/WaterwayLabels.png" title="Labelled streams - the labels are either above or below the line and follow the shape of the stream." /></p>
 <p>Now go to the <code>Position</code> tab of the <code>Label Class</code> dialog and have a look at the settings - this time the labels are <code>Offset curved</code>.  Try changing some of the settings to see how it affects your labels.</p>
 <h3 id="using-label-classes">Using label classes</h3>
 <p>Label classes refer to the ability to add labels to a subset of features in your feature class, or different labels for different features.</p>
 <blockquote>
+<p><img alt="Information" src="../images/svg/info-black-24dp.png" /> <strong>Let your map refresh</strong></p>
+<p>Note that you&rsquo;ll need to be patient while your map refreshes after each step.  Labelling the map is processor intensive and can take a while.</p>
+</blockquote>
+<p>In this case it would be good to be able to set the <code>SE_NamePlace</code> layer so that different categories of named place have different label styles.</p>
+<blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Using label classes to label subsets of features</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
 </blockquote>
-<!-- TODO: Finish with further reading etc -->
+<ul>
+<li>Have a look at the attribute table for the <code>SE_NamedPlace</code> layer, in particular the <code>CLASSIFICA</code> column.</li>
+</ul>
+<p>You should see a range of classifications which include <code>Populated Place</code> - we&rsquo;ll set this as a class and label just the populated places.</p>
+<ul>
+<li>On the Labeling ribbon look in the <code>Label Class</code> group.  This is where you set the Field name to label all of the features.</li>
+<li>The <code>Class</code> field should say <code>Class 1</code> at the moment<ul>
+<li>Untick the box next to <code>Label Features In This Class</code> - your labels should disappear.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Turning off the Named Place labels in the Label Class group of the ribbon.  Label Features in this Class is no longer ticked." src="../images/styles/LabelClass1.png" title="Turning off the Named Place labels in the Label Class group of the ribbon.  Label Features in this Class is no longer ticked." /></p>
+<ul>
+<li>Drop down the <code>Class</code> choices and select <code>Create new label class</code></li>
+<li>Put a class name, such as <code>Populated Place</code> in the dialog that pops up and click <code>OK</code></li>
+</ul>
+<p>You&rsquo;ll probably find that Arc adds back in all of the Name Place labels without the formatting that you&rsquo;ve already done.  At this stage you need to tell Arc that you only want to label certain features.</p>
+<ul>
+<li>Click on the SQL<sup id="fnref:402"><a class="footnote-ref" href="#fn:402">2</a></sup> button to the right of the Class drop down - see image below</li>
+</ul>
+<p><img alt="The Label Class group set up to label populated places - click on the indicated button to choose the features to label." src="../images/styles/LabelClassPopPlace1.png" title="The Label Class group set up to label populated places - click on the indicated button to choose the features to label." /></p>
+<p>This brings up the Label Class pane to the right of the map window.</p>
+<ul>
+<li>In the Label Class pane click on the button for <code>New expression</code></li>
+<li>Use the dropdown boxes that appear to select the statement</li>
+</ul>
+<pre><code class="sql">Where CLASSIFICA is equal to Populated Place
+</code></pre>
 
-<!-- TODO: Obvious choice is the Darkes and Spence book -->
+<ul>
+<li>Then click <code>Apply</code></li>
+</ul>
+<p><img alt="Creating the SQL query to display only the populated place labels." src="../images/styles/LabelClassPopPlaceSQL.png" title="Creating the SQL query to display only the populated place labels." /></p>
+<p>The number of labels on your map should immediately decrease and now all you need to do is style the labels so that they look better</p>
+<ul>
+<li>decrease the size of the font so that the labels don&rsquo;t dominate your map - remember that the labels need to be visible, but not too large.</li>
+<li>change the label position so that it looks good to you</li>
+<li>maybe change the colour to something less &ldquo;stark&rdquo; than black, e.g. Grey 80%</li>
+<li>Sometimes applying a <code>halo</code> can help a label to stand out against a background<ul>
+<li>go to the Symbol tab of the Label pane and drop down the <code>Halo</code> subheading</li>
+<li>set the <code>Halo symbol</code> to white</li>
+<li>choose a <code>Halo size</code> - it&rsquo;s usually best to keep this narrow, e.g. max of 1 pt, but 0.4 pt can be very effective without being too obvious.</li>
+<li>Check the symbol in the pane below then click <code>Apply</code> when you are happy with it</li>
+</ul>
+</li>
+</ul>
+<p><img alt="The styled and labelled Vector layers now looking like a &quot;proper&quot; map.  You can play with the settings until you are happy with the map." src="../images/styles/InterimView5_small.png" title="The styled and labelled Vector layers now looking like a &quot;proper&quot; map.  You can play with the settings until you are happy with the map." /></p>
+<h3 id="converting-labels-to-annotation">Converting labels to annotation</h3>
+<p>Now we&rsquo;ll finish building up the 1:50 000 geological map.</p>
+<ul>
+<li>Turn the geological layers back on and have a look at your map</li>
+</ul>
+<p>The first thing you may notice is that the place and contour labels &ldquo;float above&rdquo; the bedrock geology polygons.  Particularly with halos set this looks a bit odd and in this case the labels only need to be in the background.</p>
+<p><img alt="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." src="../images/styles/LabelsFloating.png" title="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." /></p>
+<p>The best way of dealing with this is to <strong>convert the labels to annotation</strong>.</p>
+<blockquote>
+<p><img alt="" src="../images/svg/warning-black-24dp.png" /> <strong>Warning</strong></p>
+<p>Before you convert your labels to annotation make sure that they are as you want them to look.  Once you have converted them it will be harder to make changes.</p>
+</blockquote>
+<!-- This comment is here to keep these two boxes apart. -->
 
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Converting labels to annotation</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<ul>
+<li>Select the <code>SE_NamedPlace</code> layer in the Contents and right-click</li>
+<li><code>Convert Labels &gt; Convert Labels to Annotation</code></li>
+</ul>
+<p>This will open the Geoprocessing pane to the right of your map.</p>
+<ul>
+<li>Check that the <code>Conversion Scale</code> is the scale you will be printing your map - in this case <code>1:50,000</code></li>
+<li>Check that the <code>Feature Layer</code> is correct</li>
+<li>Select the <code>Output Geodatabase</code> as your project geodatabase (i.e. the same one that the original layer is stored in)</li>
+<li>Drop down the <code>Extent</code> field and select <code>Default</code></li>
+<li>Then click to <code>Run</code></li>
+</ul>
+<p><img alt="The dialog to convert labels to annotation." src="../images/styles/LabelsAnnotation.png" title="The dialog to convert labels to annotation." /></p>
+<p>Once you&rsquo;ve run the tool a new group should appear in your contents.  In this case mine is called <code>GroupAnno</code> and inside it is a layer called <code>SE_NamedPlaceAnno</code> - the same name as the original layer with <code>Anno</code> on the end.</p>
+<ul>
+<li>You can now drag and drop this group further down the Contents list so that it appears below the bedrock layer</li>
+</ul>
+<p>Once you&rsquo;ve done that you should be able to see that the Populated place labels are now in the background of the geological map.</p>
+<p><img alt="The Populated Place labels have been converted to annotation and moved down the Contents list.  They now appear in the background rather than on top of the bedrock geology." src="../images/styles/LabelsAnnotationMoved.png" title="The Populated Place labels have been converted to annotation and moved down the Contents list.  They now appear in the background rather than on top of the bedrock geology." /></p>
+<blockquote>
+<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Converting layers to annotation</strong></p>
+<p>To finish the map also convert the labels for the following layers to annotation and move those down the contents list.  You&rsquo;ll need to change the name of the <code>Output Layer</code> each time or you&rsquo;ll overwrite your existing annotations.</p>
+<p>SE_Road</p>
+<p>Waterway</p>
+<p>ContoursT50</p>
+</blockquote>
+<p>When Arc creates annotations it automatically turns off the automatic labelling on the layers.  If you need to bring this back all you need to do is go back to the Labeling ribbon and click the <code>Label</code> button on the left again.</p>
+<h2 id="final-map">Final map</h2>
+<p>Once you&rsquo;ve finished your map</p>
+<ul>
+<li>set the scale to 1:50 000</li>
+<li>set the background map as the <code>Vector data</code> group and turn off the <code>vmd-raster_3681591</code> layer - I want to be able to give feedback on your work, not the work of the Ordnance Survey!</li>
+<li>go to the <code>Share</code> tab of the ribbon and select to Export <code>Map</code></li>
+<li>Export as either <code>PNG</code> or <code>PDF</code> and upload the map to your individual area of the Class Notebook as a record of what you have done.</li>
+</ul>
+<p>If you upload your map during the week after the class you will get brief feedback on what you have done.</p>
+<p>Your map could look something like the map below - hopefully rather better!  We won&rsquo;t worry about setting up a full layout at the moment as that is covered in another chapter.</p>
+<p><img alt="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." src="../images/styles/FinalMap.png" title="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." /></p>
+<h2 id="recommended-reading-styling-and-labelling-your-maps">Recommended reading: Styling and labelling your maps</h2>
+<p>For more information have a look at the Layout and Presentation section of the <a href="http://lib5.leeds.ac.uk/rlists/broker/?bbModuleId=202021_37122_SOEE1630&amp;bbListId=_8079361_1&amp;arc=host_minerva&amp;bbLastListId=_8079361_1">module GIS reading list</a>.</p>
+<p>For a quick guide go for Darkes and Spence (2017).  The section on &ldquo;Symbolisation&rdquo; on pages 17-18, and &ldquo;Text on maps&rdquo; on pages 23-25 are particularly relevant.</p>
+<p>Remember the first edition of Darkes and Spence is available for download from the <a href="https://www.cartography.org.uk/thematic-mapping/">British Cartographic Society webpages</a>.</p>
+<h3 id="more-information">More information</h3>
+<!-- TODO: Videos etc? -->
+
+<p>If you want to make some fun maps whilst learning more about symbology and labelling try the videos by <a href="https://www.esri.com/arcgis-blog/author/j_nelson/">John Nelson from ESRI</a>.</p>
+<p>Examples include <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/illuminated-labels-style/">illuminated labels</a>, <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/please-steal-this-pen-and-ink-style/">a pen and ink stipple effect</a> and <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/adding-a-scientific-color-scheme-to-your-arcgis-pro-project/">adding scientific colour schemes to your projects</a>.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:401">
 <p>If you don&rsquo;t find the dashed lines then the styles may not be installed for you.  <a href="#finding-and-using-additional-arcgis-pro-styles">Instructions for adding additional ArcGIS Pro Styles</a> are in a separate section.&#160;<a class="footnote-backref" href="#fnref:401" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:402">
+<p>SQL stands for <code>Structured Query Language</code> and is a common way of querying databases.  Luckily dialogs in Arc make it relatively simple to use where you need it.&#160;<a class="footnote-backref" href="#fnref:402" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
