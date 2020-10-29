@@ -103,8 +103,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#styling-points-as-unique-values">Styling points as Unique Values</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#other-ways-of-styling-point-layers">Other ways of styling point layers</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</a>
@@ -219,17 +217,17 @@
 <li>You should have a folder called <code>Styling</code> go in to that folder and open the file called <code>Styling.aprx</code> in ArcGIS Pro</li>
 </ul>
 <p><img alt="The initial project for this chapter.  You should be able to see a map of the Otley area with a lightly coloured background and contours. The rest of the data is available for you in the Catalog." src="../images/styles/StylesProject.png" title="The initial project for this chapter.  You should be able to see a map of the Otley area with a lightly coloured background and contours. The rest of the data is available for you in the Catalog." /></p>
-<p>The map includes a VectorMap District Raster background map and Terrain 50 contours from Digimap.  You also have some BGS geological data and some other vector layers available to you in the Catalog.</p>
+<p>The map includes a VectorMap District Raster background map and Terrain 50 contours.  Both layers were downloaded from the Digimap Ordnance Survey collection.  You also have some BGS geological data and some other vector layers available to you in the Catalog.</p>
 <ul>
-<li>The geology is 1:50 000 BGS data downloaded from Digimap.</li>
-<li>The other vector layers are mainly VectorMap District Vector layers from OS Digimap, but the water layers are from OpenStreetMap.</li>
+<li>The geology is 1:50 000 BGS data downloaded from Geology Digimap.</li>
+<li>The other vector layers are mainly VectorMap District Vector layers from OS Digimap, but the water layers are from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>.</li>
 </ul>
-<p>We&rsquo;ll start by symbolising the vector layers to make a plainer background map, then we&rsquo;ll move on to add the geology data to the map and symbolise that.  Finally we&rsquo;ll create labels for the data to make the map more informative.</p>
+<p>We&rsquo;ll start by symbolising the vector layers to make a background map to replace the raster map, then we&rsquo;ll move on to add the geology data to the map and symbolise that.  Finally we&rsquo;ll create labels for the data to make the map more informative.</p>
 <h2 id="styling-your-data">Styling your data</h2>
 <p>Start by making the layers that you are about to symbolise visible and turning off the other layers so that you can see what you are doing more clearly</p>
 <ul>
 <li>The vector layers are all in a <strong>group</strong> in the Contents which is called <code>Vector data</code>.  Click the little box next to that subheading to make all the layers visible.</li>
-<li>Untick the little box next to <code>ContoursT50</code> and <code>vmd-raster_3681591.tif</code> to make them invisible.</li>
+<li>Untick the little box next to <code>ContoursT50</code> and <code>vmd-raster_3681591.tif</code> to make them invisible - this makes it easier to see what you are doing with the other layers.</li>
 </ul>
 <p>Your map should look more like the picture below now.</p>
 <p><img alt="The initial view of the &quot;FindingData&quot; project when you have made the vector layers visible and turned off the contour and raster layers.  Note that all of the data is symbolised in random colours, and only one colour per feature class." src="../images/styles/InitialProjectView.png" title="The initial view of the &quot;FindingData&quot; project when you have made the vector layers visible and turned off the contour and raster layers.  Note that all of the data is symbolised in random colours, and only one colour per feature class." /></p>
@@ -240,7 +238,7 @@
 <h3 id="styling-polygon-features">Styling polygon features</h3>
 <p>We&rsquo;ll start with polygon features as they are often the simplest to style, then we&rsquo;ll move on to lines and points.</p>
 <ul>
-<li>In the contents pane select the layer that you want to symbolise, in this case the <code>WaterArea</code> layer</li>
+<li>In the contents pane select the layer that you want to symbolise, in this case we&rsquo;ll start with the <code>WaterArea</code> layer</li>
 <li>Go to the <code>Appearance</code> tab of the ribbon and click on <code>Symbology</code></li>
 </ul>
 <p>The Symbology panel should open on the right and will show the current settings - a single symbol with the colour of the layer as it is now.</p>
@@ -265,7 +263,7 @@
 <p><img alt="The Properties dialog.  Here you can build your own styles." src="../images/styles/Properties_small.png" title="The Properties dialog.  Here you can build your own styles." /></p>
 <ul>
 <li>In the Properties dialog try changing the colour of your feature to a different colour, such as a paler blue, e.g. <code>Sodalite blue</code>, and change the outline colour to a darker shade of the same colour, e.g. <code>Lapis Lazuli</code>, with a narrow width.</li>
-<li>This time the colour won&rsquo;t change automatically on your map you&rsquo;ll need to click on <code>Apply</code> at the bottom of the pane.</li>
+<li>This time the colour won&rsquo;t change automatically on your map.  You&rsquo;ll need to click on <code>Apply</code> at the bottom of the pane.</li>
 </ul>
 <p>All of the water area polygons on your map (lakes, ponds, rivers etc) should now be the same colour and outline.</p>
 <blockquote>
@@ -286,8 +284,7 @@
 </blockquote>
 <p>If you haven&rsquo;t already checked the contents of your data then it&rsquo;s a good idea to do that now so that you know which field you need to use to symbolise it on.</p>
 <ul>
-<li>zoom to layer so that you can see the whole of the layer</li>
-<li>go to the attribute table of the <code>NaturalFeature</code> layer (right-click on it in the Contents and select <code>Attribute table</code></li>
+<li>go to the attribute table of the <code>NaturalFeature</code> layer (right-click on it in the Contents and select <code>Attribute table</code>)</li>
 </ul>
 <blockquote>
 <p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>Which field will you symbolise on?</strong></p>
@@ -300,7 +297,7 @@
 </ul>
 <p><img alt="The symbology pane showing Unique Values - note the choice of field to categorise the data." src="../images/styles/UniqueValues_small.png" title="The symbology pane showing Unique Values - note the choice of field to categorise the data." /></p>
 <ul>
-<li>Arc will usually use the first field in your feature class to categorise the data, which is unlikely to be the right one, so change <code>Field 1</code> to the field you decided above you should use for the unique values - I would suggest <code>natural</code>.</li>
+<li>By default Arc will usually use the first field in your feature class to categorise the data, which is unlikely to be the right one, so change <code>Field 1</code> to the field you decided above you should use for the unique values - I would suggest <code>natural</code>.</li>
 </ul>
 <p>Arc should automatically set a colour scheme and give a colour to each category.  In the case of the layer I&rsquo;ve given you there are 10 values.</p>
 <p>To change the colours and symbols:</p>
@@ -329,7 +326,7 @@
 <li>then right-click and select <code>Remove</code>.</li>
 </ul>
 <p>Those feature types will be removed from the list and from the key in the Contents pane.</p>
-<p>You will notice that they aren&rsquo;t actually removed from your map, though.  Instead of an individual colour any feature which doesn&rsquo;t belong to a category in your symbology will be coloured with the symbol next to <code>&lt;all other values&gt;</code> in the Contents.</p>
+<p>You will notice that they aren&rsquo;t actually removed from your map, though.  Instead of an individual colour any feature which doesn&rsquo;t belong to a category in your symbology will be coloured with the symbol that appears next to <code>&lt;all other values&gt;</code> in the Contents.</p>
 <h5 id="removing-the-all-other-values-heading">Removing  the All other values heading</h5>
 <p>If you have feature categories that aren&rsquo;t individually symbolised but show as <code>&lt;all other values&gt;</code>, or if you just want to tidy up your key by removing the All other values heading, do the following</p>
 <ul>
@@ -345,9 +342,9 @@
 <li>then click on <code>Color properties</code></li>
 </ul>
 <p>You should find that the <code>Color Editor</code> opens.</p>
-<p><img alt="The Color Editor - complete control over the choice of colours for your features." src="../images/styles/ColorEditor.png" title="The Color Editor - complete control over the choice of colours for your features." /></p>
+<p><img alt="The Color Editor - complete control over the choice of colours for your features." src="../images/styles/ColorEditor_small.png" title="The Color Editor - complete control over the choice of colours for your features." /></p>
 <ul>
-<li>There you can alter the <code>Transparency</code> using the lowest colour bar, e.g. set it to <code>40%</code> and see what difference that makes when you click <code>OK &gt; Apply</code>.</li>
+<li>There you can alter the <code>Transparency</code> using the lowest of the four colour bars (assuming <code>Color Model</code> is set to <code>RGB</code>), e.g. set it to <code>40%</code> and see what difference that makes when you click <code>OK &gt; Apply</code>.</li>
 </ul>
 <p>If there is no layer behind this one you may not see much difference, but if there is you should be able to see it now - depending on the order of your layers in the contents you should find that features covered up by the wood polygon now become visible.</p>
 <blockquote>
@@ -356,7 +353,7 @@
 <p><code>wetland</code> - try looking for the <code>Swamp</code> style in the gallery</p>
 <p><code>heath</code> - probably a shade of purple for heather</p>
 <p><code>scrub</code> - maybe pale green</p>
-<p>Feel free to <strong>remove</strong> the other categories - there are hardly any of those on this particular map.</p>
+<p>Feel free to <strong>remove</strong> the other categories - there are hardly any features which match those on this particular map.</p>
 </blockquote>
 <p>Remember to save your project at regular intervals.</p>
 <h3 id="styling-line-features">Styling line features</h3>
@@ -383,7 +380,7 @@
 <li>Click on the line symbol next to <code>Symbol</code></li>
 <li>Go to the <strong>Gallery</strong> and scroll down to look for <code>Dashed 4:4</code> and click on it<sup id="fnref:401"><a class="footnote-ref" href="#fn:401">1</a></sup></li>
 <li>Railways will usually be symbolised as a black line, so if the colour isn&rsquo;t black change it to that in the Properties now </li>
-<li>Using the gallery will also have changed the line width to <code>0.4 pt</code>.  You can chose your own line width but for now change this to <code>1 pt</code>.</li>
+<li>Using the gallery will also have changed the line width to <code>0.4 pt</code>.  You can chose your own line width but for now change this to <code>1 pt</code> so that it is more visible.</li>
 <li>Click <code>Apply</code></li>
 </ul>
 <p><img alt="Using the gallery to change a line to dashes." src="../images/styles/DashedLinesGallery.png" title="Using the gallery to change a line to dashes." /></p>
@@ -424,7 +421,7 @@
 <li>To change the symbol click on the <code>Layers</code> button at the top (use tooltips!) and check that the <code>Shape marker</code> is selected at the top.</li>
 <li>For this example click on the small button next to Form which has 3 coloured shapes on it then select the vertical line - as shown in the picture below.  You could also select a symbol from Style or Font instead.</li>
 </ul>
-<p><img alt="Click on the button with 2 coloured shapes, then select the vertical line." src="../images/styles/SelectingShape.png" title="Click on the button with 2 coloured shapes, then select the vertical line." /></p>
+<p><img alt="Click on the button with coloured shapes, then select the vertical line." src="../images/styles/SelectingShape_small.png" title="Click on the button with coloured shapes, then select the vertical line." /></p>
 <p>Now you can experiment with the settings until the line looks as you require in the window below.</p>
 <ul>
 <li>make the vertical line width so that it looks the same as the main line - e.g. <code>1 pt</code> and a bit shorter, e.g. <code>6 pt</code></li>
@@ -506,53 +503,113 @@
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Styling point features</strong></p>
 <p>In the same way that you symbolised the polygons and lines click on the points next to the entries in the <code>Classes</code> list and try out the options both from the Gallery and the Properties.  There are no detailed instructions here because it is so similar to previous sections.</p>
 </blockquote>
-<h4 id="other-ways-of-styling-point-layers">Other ways of styling point layers</h4>
-<!-- TODO: Is this section too long if I include these?  Cover this in the analysis chapter? -->
+<!-- #### Other ways of styling point layers -->
 
-<p>In addition to Single symbol and Unique values there are other choices for ways to style point layers.</p>
-<ul>
-<li>Return to the <code>Postcodes</code> layer and have a look at the attribute table.</li>
-</ul>
-<p>You should see that there is a field called <code>Total_number_of_delivery_points</code>.  We&rsquo;ll use this to try out different ways of displaying the data.</p>
-<h5 id="graduated-colours">Graduated colours</h5>
-<ul>
-<li>Turn off all of the other layers in the Contents so that you can see what is happening to this layer.</li>
-<li>In the symbology panel change the <code>Primary symbology</code> to <code>Graduated Colors</code></li>
-<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
-<li>Change the <code>Method</code> to <code>Defined Interval</code></li>
-<li>Change <code>Interval size</code> to read <code>20</code></li>
-</ul>
-<p>Your map should show a lot of dots coloured in 5 classes depending on how many delivery points there are in the postcode area for which that dot indicates the centre.</p>
-<p><img alt="The Postcode layer symbolised by the Graduated Colors method." src="../images/styles/GraduatedColor.png" title="The Postcode layer symbolised by the Graduated Colors method." /></p>
-<blockquote>
-<p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Graduated Colors</strong></p>
-<p>Try out some of the other choices in the Graduated Colors settings.</p>
-</blockquote>
-<h5 id="graduated-symbols">Graduated symbols</h5>
-<ul>
-<li>In the symbology panel change the <code>Primary symbology</code> to <code>Graduated Symbols</code></li>
-<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
-<li>Change the <code>Method</code> to <code>Defined Interval</code></li>
-<li>Change <code>Interval size</code> to read <code>20</code></li>
-</ul>
-<p>Once again your map should show a lot of dots, but this time the size gives an indication of how many delivery points there are in the postcode area.</p>
-<p><img alt="The Postcode layer symbolised by the Graduated Symbols method." src="../images/styles/GraduatedSymbols.png" title="The Postcode layer symbolised by the Graduated Symbols method." /></p>
-<p>Again you can try out the choices available and see what difference it makes to your map.</p>
-<h5 id="proportional-symbols">Proportional symbols</h5>
-<ul>
-<li>In the symbology panel change the <code>Primary symbology</code> to <code>Proportional Symbols</code></li>
-<li>Change the <code>Field</code> to <code>Total_number_of_delivery_points</code></li>
-</ul>
-<p>This time the dots should vary continuously in size from the points with a value of 1 to those with the top value.</p>
-<p><img alt="The Postcode layer symbolised by the Proportional Symbols method." src="../images/styles/ProportionalSymbols.png" title="The Postcode layer symbolised by the Proportional Symbols method." /></p>
-<p>Again you can try out the choices available and see what difference it makes to your map.  This time you also have a histogram which shows the spread of your data.</p>
-<p>These options are all possibilities for displaying your data and in each case you&rsquo;ll need to decide for yourself which one is best based on your statistical knowledge and knowledge of your data.</p>
-<p>We won&rsquo;t need this layer again so</p>
-<ul>
-<li>either <code>Remove</code> the <code>Postcodes</code> layer completely from your Contents, or untick so that it doesn&rsquo;t show.</li>
-<li>Ensure that the other layers that you&rsquo;ve symbolised are all visible.</li>
-</ul>
-<!-- TODO: Find some references for choosing how to symbolise the point data -->
+<!--  -->
+
+<!-- In addition to Single symbol and Unique values there are other choices for ways to style point layers. -->
+
+<!--  -->
+
+<!-- * Return to the `Postcodes` layer and have a look at the attribute table. -->
+
+<!--  -->
+
+<!-- You should see that there is a field called `Total_number_of_delivery_points`.  We'll use this to try out different ways of displaying the data. -->
+
+<!--  -->
+
+<!-- ##### Graduated colours -->
+
+<!--  -->
+
+<!-- * Turn off all of the other layers in the Contents so that you can see what is happening to this layer. -->
+
+<!-- * In the symbology panel change the `Primary symbology` to `Graduated Colors` -->
+
+<!-- * Change the `Field` to `Total_number_of_delivery_points` -->
+
+<!-- * Change the `Method` to `Defined Interval` -->
+
+<!-- * Change `Interval size` to read `20` -->
+
+<!--  -->
+
+<!-- Your map should show a lot of dots coloured in 5 classes depending on how many delivery points there are in the postcode area for which that dot indicates the centre. -->
+
+<!--  -->
+
+<!-- ![The Postcode layer symbolised by the Graduated Colors method.](images/styles/GraduatedColor.png "The Postcode layer symbolised by the Graduated Colors method.") -->
+
+<!--  -->
+
+<!-- > ![Instruction](images/svg/create-black-24dp.png) __Graduated Colors__ -->
+
+<!--  -->
+
+<!-- > Try out some of the other choices in the Graduated Colors settings. -->
+
+<!--  -->
+
+<!-- ##### Graduated symbols -->
+
+<!--  -->
+
+<!-- * In the symbology panel change the `Primary symbology` to `Graduated Symbols` -->
+
+<!-- * Change the `Field` to `Total_number_of_delivery_points` -->
+
+<!-- * Change the `Method` to `Defined Interval` -->
+
+<!-- * Change `Interval size` to read `20` -->
+
+<!--  -->
+
+<!-- Once again your map should show a lot of dots, but this time the size gives an indication of how many delivery points there are in the postcode area. -->
+
+<!--  -->
+
+<!-- ![The Postcode layer symbolised by the Graduated Symbols method.](images/styles/GraduatedSymbols.png "The Postcode layer symbolised by the Graduated Symbols method.") -->
+
+<!--  -->
+
+<!-- Again you can try out the choices available and see what difference it makes to your map. -->
+
+<!--  -->
+
+<!-- ##### Proportional symbols -->
+
+<!--  -->
+
+<!-- * In the symbology panel change the `Primary symbology` to `Proportional Symbols` -->
+
+<!-- * Change the `Field` to `Total_number_of_delivery_points` -->
+
+<!--  -->
+
+<!-- This time the dots should vary continuously in size from the points with a value of 1 to those with the top value. -->
+
+<!--  -->
+
+<!-- ![The Postcode layer symbolised by the Proportional Symbols method.](images/styles/ProportionalSymbols.png "The Postcode layer symbolised by the Proportional Symbols method.") -->
+
+<!--  -->
+
+<!-- Again you can try out the choices available and see what difference it makes to your map.  This time you also have a histogram which shows the spread of your data. -->
+
+<!--  -->
+
+<!-- These options are all possibilities for displaying your data and in each case you'll need to decide for yourself which one is best based on your statistical knowledge and knowledge of your data. -->
+
+<!--  -->
+
+<!-- We won't need this layer again so -->
+
+<!--  -->
+
+<!-- * either `Remove` the `Postcodes` layer completely from your Contents, or untick so that it doesn't show. -->
+
+<!-- * Ensure that the other layers that you've symbolised are all visible. -->
 
 <h3 id="finding-and-using-additional-arcgis-pro-styles">Finding and using additional ArcGIS Pro styles</h3>
 <p>There are only a relatively limited range of symbols available in ArcGIS Pro when you first install it and sometimes you&rsquo;ll need more.</p>
@@ -585,8 +642,8 @@
 </ul>
 <p>Your map should now look something like the picture below.</p>
 <p><img alt="The map with layers symbolised and contours turned back on." src="../images/styles/InterimView4_small.png" title="The map with layers symbolised and contours turned back on." /></p>
-<p>In the next step we&rsquo;ll be creating a geological map.  The</p>
 <h3 id="styling-layers-with-a-layer-file">Styling layers with a layer file</h3>
+<p>In this section we&rsquo;ll add geological data from the BGS to our maps and symbolise it using BGS styles.</p>
 <p>Have a look in the Catalog for the <code>Styling</code> project.  You should find a folder called <code>bgs-50k</code>.  This contains BGS geological data downloaded from Digimap.</p>
 <ul>
 <li>Go into the <code>bgs-50k</code> folder in the Catalog and then in to the <code>ew069</code> folder.</li>
@@ -632,16 +689,17 @@
 <p>If, however, you get the dreaded red exclamation marks next to your layers in the contents and nothing new on the map then you need to tell the layer file where to find the data on <strong>your</strong> computer.  It doesn&rsquo;t mean you&rsquo;ve done anything wrong, you just need to know how to solve it by <a href="/creating_data/#repairing-broken-file-links">repairing the broken file links</a> as shown in the previous chapter.</p>
 <p><img alt="The red exclamation marks showing that Arc can't find the data source for the layer." src="../images/styles/MissingDataSource.png" title="The red exclamation marks showing that Arc can't find the data source for the layer." /></p>
 <h4 id="making-the-layer-transparent">Making the layer transparent</h4>
-<p>Once you&rsquo;ve applied the layer file to your shapefile you can see the geology, but it isn&rsquo;t transparent so you can&rsquo;t see the base map through it.  To do that you need to make the bedrock layer <a href="/introduction/#make-layers-transparent">transparent, following the instructions you were given in the first chapter</a>.</p>
+<p>Once you&rsquo;ve applied the layer file to your shapefile you can see the geology, but it isn&rsquo;t transparent so you can&rsquo;t see the base map through it.  Your audience need to be able to identify <strong>where</strong> the geology is.</p>
+<p>To allow the base map to show through you need to make the bedrock layer <a href="/introduction/#make-layers-transparent">transparent, following the instructions you were given in the first chapter</a>.</p>
 <p>You may find that your map looks better if you turn off the <code>Vector data</code> group which contains the layers you styled in the previous sections, and instead turn on the <code>vmd-raster_3681591.tif</code> background layer.</p>
-<p>Your final map should look something like the map below when you zoom in.  The background map is rather pixellated - you can download a 1:50 000 background map such as <strong>VectorMap District Raster</strong> from Digimap to replace the VectorMap Local Raster and that will look better at this scale.</p>
+<p>Your final map should look something like the map below when you zoom in.</p>
 <p><img alt="The final map with transparency applied to the geology layers so that the background map shows through." src="../images/styles/BGSGeologyTransparent.png" title="The final map with transparency applied to the geology layers so that the background map shows through." /></p>
 <p>Save this map - you&rsquo;ll be using it again in the section below on labelling your data.</p>
 <h2 id="labelling-your-data">Labelling your data</h2>
-<p>If you look at any map you&rsquo;ll be able to see that attributes from the attribute table have been used to add <strong>labels</strong> which are essential to the understanding of the map.</p>
-<p>Once you have information in your attribute tables it is really easy to add labels to your features.  You may not need to add them to all layers, but they can really help interpretation.  For example, if you look at <a href="https://www.bgs.ac.uk/information-hub/bgs-maps-portal/">British Geological Survey maps</a> they add symbols or letters to each rock polygon which are then included in the key and make it easier to spot which symbol is which.  Points can be labelled to show location names, or dip angle and names can be added to lines, such as &ldquo;Moine Thrust&rdquo; on the appropriate thrust fault.</p>
+<p>If you look at any map you&rsquo;ll be able to see that attributes from the attribute table have been used to add <strong>labels</strong>.  Labels on your data are essential to the understanding of the map.</p>
+<p>When you have information in your attribute tables it is really easy to add labels to your features.  You may not need to add them to all layers, but they can really help interpretation.  For example, if you look at <a href="https://www.bgs.ac.uk/information-hub/bgs-maps-portal/">British Geological Survey maps</a> they add symbols or letters to each rock polygon which are then included in the key and make it easier to spot which symbol is which.  Points can be labelled to show location names, or dip angle and names can be added to lines, such as &ldquo;Moine Thrust&rdquo; on the appropriate thrust fault.</p>
 <h3 id="adding-simple-labels">Adding simple labels</h3>
-<p>You should have a bedrock geology layer in your <code>FindingData</code> map which you symbolised with the BGS layer styles.  You&rsquo;ll use that to try out labelling polygons.</p>
+<p>You should have a bedrock geology layer in your <code>FindingData</code> map which you symbolised with the BGS layer styles.  You&rsquo;ll use that to try out labelling polygons by adding a code for each rock formation.</p>
 <blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>How to add labels to layers in Arc</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
@@ -668,7 +726,7 @@
 <p>Try changing the font of your labels and making them smaller or larger.  Change the colour to a dark grey instead of black.</p>
 </blockquote>
 <p>You can try out various fonts for your labels, but note that the final one you choose should be something which is clear for your audience to read.  Also note that while your labels should be big enough to be read, they don&rsquo;t need to be large unless they are <strong>really</strong> important.</p>
-<p>Alternatively you can use the Label Class panel</p>
+<p>Alternatively you can use the <strong>Label Class panel</strong>.</p>
 <ul>
 <li>on the Labelling ribbon click on the small downwards arrow at the lower right of either the Text Symbol or the Label Placement group.</li>
 </ul>
@@ -775,7 +833,7 @@
 <ul>
 <li>Then click <code>Apply</code></li>
 </ul>
-<p><img alt="Creating the SQL query to display only the populated place labels." src="../images/styles/LabelClassPopPlaceSQL.png" title="Creating the SQL query to display only the populated place labels." /></p>
+<p><img alt="Creating the SQL query to display only the populated place labels." src="../images/styles/LabelClassPopPlaceSQL_small.png" title="Creating the SQL query to display only the populated place labels." /></p>
 <p>The number of labels on your map should immediately decrease and now all you need to do is style the labels so that they look better</p>
 <ul>
 <li>decrease the size of the font so that the labels don&rsquo;t dominate your map - remember that the labels need to be visible, but not too large.</li>
@@ -796,7 +854,7 @@
 <li>Turn the geological layers back on and have a look at your map</li>
 </ul>
 <p>The first thing you may notice is that the place and contour labels &ldquo;float above&rdquo; the bedrock geology polygons.  Particularly with halos set this looks a bit odd and in this case the labels only need to be in the background.</p>
-<p><img alt="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." src="../images/styles/LabelsFloating.png" title="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." /></p>
+<p><img alt="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." src="../images/styles/LabelsFloating_small.png" title="Labels &quot;floating&quot; above the bedrock geology - it's particularly clear with the halos." /></p>
 <p>The best way of dealing with this is to <strong>convert the labels to annotation</strong>.</p>
 <blockquote>
 <p><img alt="" src="../images/svg/warning-black-24dp.png" /> <strong>Warning</strong></p>
@@ -845,7 +903,7 @@
 </ul>
 <p>If you upload your map during the week after the class you will get brief feedback on what you have done.</p>
 <p>Your map could look something like the map below - hopefully rather better!  We won&rsquo;t worry about setting up a full layout at the moment as that is covered in another chapter.</p>
-<p><img alt="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." src="../images/styles/FinalMap.png" title="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." /></p>
+<p><img alt="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." src="../images/styles/FinalMap_small.png" title="Possible final map of the geology of the Otley area.  Yours will probably look different to this one as we will all make our own choices for colours and styles." /></p>
 <h2 id="recommended-reading-styling-and-labelling-your-maps">Recommended reading: Styling and labelling your maps</h2>
 <p>For more information have a look at the Layout and Presentation section of the <a href="http://lib5.leeds.ac.uk/rlists/broker/?bbModuleId=202021_37122_SOEE1630&amp;bbListId=_8079361_1&amp;arc=host_minerva&amp;bbLastListId=_8079361_1">module GIS reading list</a>.</p>
 <p>For a quick guide go for Darkes and Spence (2017).  The section on &ldquo;Symbolisation&rdquo; on pages 17-18, and &ldquo;Text on maps&rdquo; on pages 23-25 are particularly relevant.</p>
