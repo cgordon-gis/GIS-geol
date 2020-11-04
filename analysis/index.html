@@ -303,10 +303,10 @@
 </ul>
 </li>
 </ul>
-<p>If you add the file to Arc as it is, you won&rsquo;t be able to view it on a map.  Though <strong>you</strong> can see the grid references these don&rsquo;t mean anything to Arc at the moment.  To be able to view the data on a map you need to convert the table to a feature class.  As part of this process  you&rsquo;ll be telling Arc where to find the grid reference of each point so that it can place it on the map.</p>
+<p>If you add the file to Arc as it is, you won&rsquo;t be able to view it on a map.  Though <strong>you</strong> can see the grid references when you open the file in Excel, these don&rsquo;t mean anything to Arc at the moment.  To be able to view the data on a map you need to convert the table to a feature class.  As part of this process you&rsquo;ll be telling Arc where to find the grid reference of each point so that it can place it on the map.</p>
 <ul>
 <li>in the Catalog pane right-click on the data sheet to be imported and go to <code>Export &gt; Table to point feature class...</code></li>
-<li>This will open the geoprocessing pane, fill it in as follows, and as shown in the following image<ul>
+<li>This will open the geoprocessing pane, fill it in as follows, and as shown in the image below.<ul>
 <li>check that the correct data sheet is selected, if it isn&rsquo;t click on the folder icon next to <code>Input table</code> to find it</li>
 <li>choose a location and name for the <code>Output Feature Class</code> - the best place is inside the project geodatabase.  Give the output a name that will remind you what it contains.</li>
 <li>Fill in the <code>X</code> and <code>Y</code> fields using the spreadsheet columns which show the coordinates in British National Grid, this is usually either <code>Eastings</code> and <code>Northings</code> or <code>X</code> and <code>Y</code>.  If you&rsquo;re not sure, check your spreadsheet.  You don&rsquo;t need to worry about the Z field.</li>
@@ -321,8 +321,8 @@
 <h3 id="reviewing-the-data">Reviewing the data</h3>
 <p>As usual it is important to look at the data to see what it contains and check your attribute table against the spreadsheet.</p>
 <ul>
-<li>Zoom in on the new layer with <code>Zoom to Layer</code> and look at the area it covers.  Each point is the location of a sample reading.  Do they look as you&rsquo;d expect from the image above?  If not, you might have entered the wrong x and y fields, or got them the wrong way round.</li>
-<li>Zoom in further and have a look at the 1:25 000 map that you added first, particularly noting the locations of mines.</li>
+<li>Zoom in on the new layer with <code>Zoom to Layer</code> and look at the area it covers.  Each point is the location of a sample reading.  Do they look as you&rsquo;d expect from the image above?  If not, you might have entered the wrong x and y fields, or got the x and y the wrong way round.</li>
+<li>Zoom in further and have a look at the 1:25 000 map that you added first, particularly noting the locations of any mines you can see on the map.</li>
 <li>Open the attribute table and have a look at it.  How does it compare to the original Excel spreadsheet?</li>
 </ul>
 <blockquote>
@@ -339,6 +339,8 @@
 <li>The symbology pane should open to the right of your map</li>
 <li>set the <code>Field</code> to <code>concentration</code></li>
 </ul>
+<!-- TODO: Worth doing a video for graduated symbols etc? -->
+
 <p>The resulting symbols should vary in size depending on the lead concentration at that sample point.</p>
 <p><img alt="Lead concentrations at sample points symbolised as graduated sizes." src="../images/analysis/GraduatedSymbols.png" title="Lead concentrations at sample points symbolised as graduated sizes." /></p>
 <ul>
@@ -357,13 +359,15 @@
 <h3 id="processing-environments">Processing environments</h3>
 <p>We&rsquo;ll perform interpolation on a section of the data defined by a polygon layer.  Otherwise the 3D Analyst extension in ArcGIS interpolates an area based on the extent of the point layer.  This can be a useful way to keep processing power, time and storage down if you have a lot of data.</p>
 <ul>
-<li>The Cononish zip file should have included a shapefile called <code>CononishArea.shp</code> - add that to your map now and symbolise it so that the outline is visible, but the polygon has no colour fill.</li>
+<li>The CononishData zip file should have included a folder called <code>CononishArea</code> which contains the multiple files which makes a <strong>shapefile</strong>.</li>
+<li>Add the <code>CononishArea.shp</code> shapefile to your map using the Catalog</li>
+<li>and symbolise it so that the outline is visible, but the polygon has no colour fill.</li>
 </ul>
 <p><img alt="The symbolised outline of the study area." src="../images/analysis/CononishArea.png" title="The symbolised outline of the study area." /></p>
 <p>Tell Arc that you only want to process data for the area within the polygon by going to</p>
 <ul>
 <li>the <code>Analysis</code> tab of the ribbon</li>
-<li><code>Environments &gt; Processing Extent &gt; Same as Layer &gt; CononishArea</code></li>
+<li>Click on the <code>Environments</code> button then go to <code>Processing Extent &gt; Same as Layer &gt; CononishArea</code></li>
 </ul>
 <p>You can also set other useful environments here, such as the spatial reference (coordinate system) for all of your output.</p>
 <ul>
@@ -375,15 +379,15 @@
 <p>The feature class you&rsquo;ve been working with shows the lead concentration at each sample point.  What do you do if you want to know the potential concentration at any other point between these points, or over an area?</p>
 <p>Arc gives you tools to <strong>interpolate</strong> point data and calculate z values, or <strong>totals</strong>, for the spaces between the points.</p>
 <p>Inevitably the accuracy of the surface will increase if you have more data points in a particular area, but it can still work if your points are widely spaced.</p>
-<p>There are different methods of interpolation available in Arc.  The instructions below use Inverse Distance Weighted (IDW) as that works well for this geochemical data, but try Spline, Natural Neighbour and Kriging too and have a look at the differences.  Different methods work better for different data.</p>
-<p>There is more information in ArcGIS Help - search for <code>Raster Interpolation</code>.</p>
+<p>There are different methods of interpolation available in Arc.  The instructions below use Inverse Distance Weighted (IDW) as that works well for this geochemical data, but try Spline, Natural Neighbour and Kriging too and have a look at the differences.  Different methods work better for different data and it is up to you as a scientist to make an informed choice.</p>
+<p>There is more information in <a href="https://pro.arcgis.com/en/pro-app/help/main/welcome-to-the-arcgis-pro-app-help.htm">ArcGIS Help</a> - search for <code>Raster Interpolation</code>.</p>
 <p>Also see ArcUser for a useful article on <a href="http://www.esri.com/news/arcuser/0704/files/interpolating.pdf">Interpolating surfaces in ArcGIS Spatial Analyst</a> which is freely available online.</p>
 <blockquote>
 <p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Interpolating surfaces from point data</strong></p>
 <p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
 </blockquote>
 <h4 id="running-a-geoprocessing-tool">Running a geoprocessing tool</h4>
-<p>Now run the tool to carry out the interpolation.</p>
+<p>Now let&rsquo;s run the tool to carry out the interpolation.</p>
 <ul>
 <li>On the <code>Analysis</code> tab of the ribbon click on the <code>Tools</code> button</li>
 <li>Go to the <code>Toolboxes</code> tab then to <code>3D Analyst Tools &gt; Raster &gt; Interpolation &gt; IDW</code></li>
@@ -402,7 +406,7 @@
 <p><img alt="The interpolated layer when it is first added to your map.  The outline is the CononishArea shapefile." src="../images/analysis/IDWoutput_small.png" title="The interpolated layer when it is first added to your map.  The outline is the CononishArea shapefile." /></p>
 <ul>
 <li>Open the Symbology pane - this is a raster layer so the settings will be a bit different to the vector settings</li>
-<li>Arc may have automatically set the symbology to <code>Stretch</code> - if not, select that now</li>
+<li>Arc may have automatically set the symbology to <code>Stretch</code> - if not, select that now.</li>
 <li>Click on the <code>Color scheme</code> and put a tick in the little box next to <code>Show names</code> then choose <code>Slope</code> or <code>Yellow to Red</code> from the list.  Try some other colour ramps too.</li>
 <li>Try playing around with some of the other symbology settings and see what difference they make to the raster layer (also known as a <strong>surface</strong>).  For example, increase the number of <code>classes</code> or try different <code>Stretch types</code></li>
 </ul>
