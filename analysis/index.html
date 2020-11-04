@@ -9,7 +9,7 @@
   <meta name="author" content="Clare Gordon">
   <link rel="canonical" href="https://cgordon-gis.github.io/GIS-geol/analysis/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Analysis - GIS for Geologists</title>
+  <title>Using GIS for analysis - GIS for Geologists</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Analysis";
+    var mkdocs_page_name = "Using GIS for analysis";
     var mkdocs_page_input_path = "analysis.md";
     var mkdocs_page_url = "/GIS-geol/analysis/";
   </script>
@@ -69,7 +69,7 @@
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Analysis</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Using GIS for analysis</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#learning-outcomes">Learning outcomes</a>
     </li>
@@ -161,7 +161,7 @@
     
       
     
-    <li>Analysis</li>
+    <li>Using GIS for analysis</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/cgordon-gis/GIS-geol/edit/master/docs/analysis.md"
@@ -186,39 +186,48 @@
 <!-- TODO: Learning outcomes for analysis chapter -->
 
 <h2 id="introduction">Introduction</h2>
-<p>The glen of the River Cononish near Tyndrum in Scotland has historically been a lead and gold mining area. Using data from stream and soil samples we will look at ways of processing and displaying point sampled data in ArcGIS to investigate possible lead contamination.  The techniques in this chapter will give you an introduction to carrying out analysis in GIS and can be used for a wide variety of data, not just the geochemical data that we use here.</p>
+<p>The glen of the River Cononish near Tyndrum in Scotland has historically been a lead and gold mining area. Using data from stream and soil samples we will look at ways of processing and displaying point sampled data in ArcGIS to investigate possible lead contamination.</p>
+<!-- TODO: could I add a link to info about Cononish mining? -->
+
 <p><img alt="River Cononish.  Ben Lui dominates the view ahead." src="../images/analysis/Cononish_small.jpg" title="River Cononish.  Ben Lui dominates the view ahead." /></p>
 <!-- TODO: any other examples of analysis? -->
 
+<p>The techniques in this chapter will give you an introduction to carrying out analysis in GIS and can be used for a wide variety of data, not just the geochemical data that we use here.</p>
 <h2 id="data-to-download">Data to download</h2>
 <h3 id="geochemical-data">Geochemical data</h3>
 <p>You will create the map yourself, but the data, which consists of a spreadsheet and a shapefile which outlines the study area, can be downloaded from Minerva.</p>
 <ul>
-<li>Download <code>Cononish.zip</code> from Minerva.</li>
+<li>Download <code>CononishData.zip</code> from Minerva.</li>
 </ul>
 <p>The data was collected as part of a student project in 2009 and is presented as an Excel spreadsheet which gives you details of the locations of the stream and soil samples and the lead concentration (in parts per million - ppm) in each sample.  The spreadsheet has been cleaned up to make it possible to import it into GIS.</p>
 <h3 id="map-data-from-digimap">Map data from Digimap</h3>
-<p>Using <strong>Digimap OS Download</strong> download the following data:</p>
+<p>Using <strong><a href="/finding_data/#downloading-data-from-digimap">Digimap OS Download</a></strong> download the following data:</p>
 <ul>
-<li>OS 1:25 000 Raster for the area of <code>Cononish</code> as shown in the image below.</li>
+<li>OS 1:25 000 Raster for at least the area shown in the image below.  You should search for <code>Cononish</code>.</li>
 </ul>
 <p><img alt="The minimum area for which to download data from Digimap OS Download." src="../images/analysis/ConProfileArea1.png" title="The minimum area for which to download data from Digimap OS Download." /></p>
 <h2 id="setting-up-your-map">Setting up your map</h2>
 <p>You will set up this map from scratch.  If you can&rsquo;t remember how to do this refer back to the <a href="/finding_data/#starting-a-new-map-project">instructions in the chapter on Finding data and adding it to Arc</a>.</p>
 <ul>
 <li>Open ArcGIS Pro and create a new project called <code>Cononish</code></li>
-<li>Unzip the files that you downloaded from Digimap into the project folder</li>
-<li>Add the <code>1:25 000 raster</code> tile(s) to your map.</li>
-<li>Remember that it is a good idea to <strong>remove</strong> the default ESRI base map layers, which in a new project are usually the World Topographic Map and the World Hillshade.  These can cause your map to slow down and/or crash.</li>
+<li>Move the files that you downloaded from Minerva into the project folder and make sure that you have unzipped them.</li>
+<li>Move the files that you downloaded from Digimap into the project folder and make sure that you have unzipped them.</li>
+<li>Add the <code>1:25 000 raster</code> tile(s) from Digimap to your map.</li>
+<li>It is a good idea to <a href="">check that the coordinate system of your map has been set to British National Grid</a>.  If it hasn&rsquo;t, set that now.</li>
+<li>Use the ESRI base map to check that the 1:25 000 raster layer is in the correct place</li>
+<li>Then it is also a good idea to <a href="/introduction/#remove-layers">remove</a> the default ESRI base map layers, which in a new project are usually the World Topographic Map and the World Hillshade.  These can cause your map to slow down and/or crash.</li>
 </ul>
 <h2 id="importing-xy-data">Importing xy data</h2>
-<p>If you haven&rsquo;t already download the <code>Cononish.zip</code> file from Minerva, unzip it into the project folder and open the Excel spreadsheet, <code>XYZ_Pb.xls</code>, to have a look at the data.</p>
+<p>If you haven&rsquo;t already download the <code>CononishData.zip</code> file from Minerva, unzip it into the project folder</p>
+<ul>
+<li>Open the Excel spreadsheet, <code>XYZ_Pb.xls</code>, to have a look at the data.</li>
+</ul>
 <h3 id="preparing-the-spreadsheet">Preparing the spreadsheet</h3>
-<p>You have a file which includes grid references for the British National Grid (these are the columns headed <code>Gridref</code>, <code>eastings</code> and <code>northings</code>) and lead concentrations from soil and stream samples in parts per million (ppm).</p>
+<p>You have a file which includes grid references for the British National Grid (these are the columns headed <code>Gridref</code>, <code>eastings</code> and <code>northings</code>) and lead concentrations from soil and stream samples in parts per million (ppm) (the column headed <code>Pb_conc</code>).</p>
 <p><img alt="The first few rows of the spreadsheet showing the location and concentration of the samples." src="../images/analysis/XYZpbSpreadsheetOrig_small.png" title="The first few rows of the spreadsheet showing the location and concentration of the samples." /></p>
 <blockquote>
 <p><img alt="" src="../images/svg/warning-black-24dp.png" /> <strong>Warning</strong></p>
-<p>Note that column headings must be short and contain no spaces or non-standard characters.  So text and numbers only.  Have a look at your table and edit it before importing to check that this is the case.</p>
+<p>Note that column headings must be short and contain no spaces or non-standard characters if you want to import a spreadsheet into Arc.  So text, numbers and underscore characters only.  Have a look at your table and edit it before importing to check that this is the case.</p>
 </blockquote>
 <p>Notice the <code>eastings</code> and <code>northings</code> columns which show the grid reference.  These are in <strong>British National Grid 1 m coordinates</strong>.</p>
 <p>We&rsquo;ll need to do some work to make these suitable for importing into Arc.  If you import the spreadsheet as it is these coordinates will leave your data somewhere in the sea south west of Cornwall.</p>
