@@ -213,12 +213,19 @@
 <li>Move the files that you downloaded from Minerva into the project folder and make sure that you have unzipped them.</li>
 <li>Move the files that you downloaded from Digimap into the project folder and make sure that you have unzipped them.</li>
 <li>Add the <code>1:25 000 raster</code> tile(s) from Digimap to your map.</li>
-<li>It is a good idea to <a href="">check that the coordinate system of your map has been set to British National Grid</a>.  If it hasn&rsquo;t, set that now.</li>
+<li>It is a good idea to <a href="/finding_data/#checking-the-coordinate-system-of-your-map">check that the coordinate system of your map has been set to British National Grid</a>.<ul>
+<li>It probably won&rsquo;t have been set as the 1:25 000 raster data doesn&rsquo;t have the coordinate system set, so adding this layer to the map first doesn&rsquo;t change it to British National Grid.</li>
+<li>So set the coordinate system of the map to <code>British National Grid</code> now.</li>
+</ul>
+</li>
 <li>Use the ESRI base map to check that the 1:25 000 raster layer is in the correct place</li>
 <li>Then it is also a good idea to <a href="/introduction/#remove-layers">remove</a> the default ESRI base map layers, which in a new project are usually the World Topographic Map and the World Hillshade.  These can cause your map to slow down and/or crash.</li>
 </ul>
 <h2 id="importing-xy-data">Importing xy data</h2>
-<p>If you haven&rsquo;t already download the <code>CononishData.zip</code> file from Minerva, unzip it into the project folder</p>
+<!-- TODO: Do I already have a video clip for importing Excel data? -->
+
+<p>The next thing we will do is to add the data from the Excel file to Arc.  This is a form of what can be called <strong>xy data</strong> because the file contains the <em>x</em> and <em>y</em> coordinates for locations as well as other data.</p>
+<p>If you haven&rsquo;t already, download the <code>CononishData.zip</code> file from Minerva, unzip it into the project folder</p>
 <ul>
 <li>Open the Excel spreadsheet, <code>XYZ_Pb.xls</code>, to have a look at the data.</li>
 </ul>
@@ -227,9 +234,9 @@
 <p><img alt="The first few rows of the spreadsheet showing the location and concentration of the samples." src="../images/analysis/XYZpbSpreadsheetOrig_small.png" title="The first few rows of the spreadsheet showing the location and concentration of the samples." /></p>
 <blockquote>
 <p><img alt="" src="../images/svg/warning-black-24dp.png" /> <strong>Warning</strong></p>
-<p>Note that column headings must be short and contain no spaces or non-standard characters if you want to import a spreadsheet into Arc.  So text, numbers and underscore characters only.  Have a look at your table and edit it before importing to check that this is the case.</p>
+<p>Note that column headings must be short and contain no spaces or non-standard characters if you want to import a spreadsheet into Arc.  So text, numbers and underscore characters only.  Have a look at your table and edit it before importing into Arc to check that this is the case.</p>
 </blockquote>
-<p>Notice the <code>eastings</code> and <code>northings</code> columns which show the grid reference.  These are in <strong>British National Grid 1 m coordinates</strong>.</p>
+<p>In particular notice the <code>eastings</code> and <code>northings</code> columns which show the grid reference.  These are in <strong>British National Grid 1 m coordinates</strong>.</p>
 <p>We&rsquo;ll need to do some work to make these suitable for importing into Arc.  If you import the spreadsheet as it is these coordinates will leave your data somewhere in the sea south west of Cornwall.</p>
 <p>Note the column <code>Gridref</code> - that tells you which 100 km grid square the references are in, <code>NN</code> in this case.  Unfortunately Arc won&rsquo;t read these so you need to convert the references.</p>
 <h4 id="british-national-grid-100-km-squares">British National Grid 100 km squares</h4>
@@ -260,14 +267,14 @@
 <p>If you look at the corners of a published hardcopy Ordnance Survey map such as the Landranger (Pink covers) or Explorer (Orange covers) series you&rsquo;ll be able to see these numbers as small figures on the labels of the grid lines - only at the corners, though, not right around the edges.  The grid letters will appear in the corner of the published maps too.</p>
 <h5 id="replacing-the-numbers-in-your-spreadsheet">Replacing the numbers in your spreadsheet</h5>
 <p>If you don&rsquo;t have many locations that you need to change then you can edit each one manually, but if you have many sample points this rapidly becomes a big job.  Try using the power of the spreadsheet to do this more efficiently.</p>
-<p>Start by working out what numbers you need to replace the grid letters.</p>
+<p>Start by working out what numbers you need to replace the grid letters using the instructions above.</p>
 <ul>
 <li>Open your spreadsheet in Excel or similar</li>
 <li>Give headings to two more columns to the right of the rest of the data - call them <code>x</code> and <code>y</code></li>
 <li>Click in the first cell in the x column then go up to the Formula Bar at the top</li>
-<li>Type <code>=</code> then click on the first cell in the <code>easting</code> column, the reference of that cell should appear, e.g. <code>C2</code></li>
-<li>Now type in the formula bar - <code>+200000</code> (that&rsquo;s 5 zeros if you are converting 5 figure numbers, it will be different if your references only have 4 figures, then you may need to add zeros to the reference with multiplication).  The first figure should be the first number that you found when converting the grid letters</li>
-<li>and press <code>Return</code></li>
+<li>Type <code>=(</code> in the Formula Bar then click on the first cell in the <code>easting</code> column, the reference of that cell should appear, e.g. <code>C2</code></li>
+<li>Now type in the formula bar - <code>*10)+200000</code> (that&rsquo;s 5 zeros after the 2).  The first figure should be the number before the 5 zeros should be the one that you found when converting the grid letters</li>
+<li>and press <code>Return</code>.</li>
 </ul>
 <p><img alt="Typing the function in the first cell." src="../images/analysis/ExcelFunctionBar_small.png" title="Typing the function in the first cell." /></p>
 <p>The six figure reference for the x coordinate should appear in the cell. </p>
