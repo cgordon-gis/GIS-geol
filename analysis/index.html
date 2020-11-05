@@ -180,15 +180,13 @@
 <h2 id="learning-outcomes">Learning outcomes</h2>
 <p>When you have completed this section of the workbook you should be able to</p>
 <ul>
-<li>demonstrate how to select and analyse point sampled spatial data</li>
-<li>select appropriate tools to carry out geoprocessing tasks</li>
+<li>demonstrate how to select and display point sampled spatial data</li>
+<li>demonstrate the use of symbology to analyse and display data on a map</li>
+<li>select appropriate tools to carry out geoprocessing tasks in ArcGIS Pro in order to answer specific questions</li>
 </ul>
-<!-- TODO: Learning outcomes for analysis chapter -->
-
 <h2 id="introduction">Introduction</h2>
-<p>The glen of the River Cononish near Tyndrum in Scotland has historically been a lead and gold mining area. Using data from stream and soil samples we will look at ways of processing and displaying point sampled data in ArcGIS to investigate possible lead contamination.</p>
-<!-- TODO: could I add a link to info about Cononish mining? -->
-
+<p>The glen of the River Cononish near Tyndrum in Scotland has historically been a lead mining area.  In 2012, after further exploration, planning permission was granted for <a href="https://www.scotgoldresources.com/projects/cononish-project/">Scotgold Resources to mine gold in Cononish mine</a>.</p>
+<p>Using data from stream and soil samples we will look at ways of processing and displaying point sampled data in ArcGIS to investigate possible lead contamination.</p>
 <p><img alt="River Cononish.  Ben Lui dominates the view ahead." src="../images/analysis/Cononish_small.jpg" title="River Cononish.  Ben Lui dominates the view ahead." /></p>
 <!-- TODO: any other examples of analysis? -->
 
@@ -436,7 +434,7 @@
 <p>The contours can be symbolised and labelled in the usual manner - though preferably not in the same colours and styles as the existing topographic contours!</p>
 <p><img alt="Contours generated from the IDW surface at 50 unit intervals.  The units in this case are parts per million (ppm)." src="../images/analysis/Contours50.png" title="Contours generated from the IDW surface at 50 unit intervals.  The units in this case are parts per million (ppm)." /></p>
 <h3 id="buffering-to-display-distance-from-mines">Buffering to display distance from mines</h3>
-<p>One particular use of GIS is to show proximity - that is how close one geographic feature is to another.  Longley (2015), p. 34 (Details are on the <a href="http://lib5.leeds.ac.uk/rlists/broker/?bbModuleId=202021_37122_SOEE1630&amp;bbListId=_8079361_1&amp;s=l">module reading list</a>) quotes Tobler&rsquo;s First Law of Geography:</p>
+<p>One frequent use of GIS analysis is to show proximity - that is how close one geographic feature is to another.  Longley (2015), p. 34 (Details are on the <a href="http://lib5.leeds.ac.uk/rlists/broker/?bbModuleId=202021_37122_SOEE1630&amp;bbListId=_8079361_1&amp;s=l">module reading list</a>) quotes Tobler&rsquo;s First Law of Geography:</p>
 <blockquote>
 <p>Everything is related to everything else, but near things are more related than distant things.</p>
 </blockquote>
@@ -444,8 +442,8 @@
 <p>It is possible to see some of the sites of former mines on the topographic base map.  We&rsquo;ll set up a feature class and digitise these points, then it will be possible to create <strong>buffers</strong> around the points that show the distances from the main mining activity.  Once you&rsquo;ve done this it should be possible to look at your map and see how far from the possible source contamination has travelled.</p>
 <p>If you need to remind yourself how to create a feature class and create features within it refer back to <a href="/creating_data/">the chapter on creating data</a>.</p>
 <ul>
-<li>Create a new <strong>point</strong> feature class in the project geodatabase and call it <code>Mines</code>.</li>
-<li>Add the feature class to your map and edit it to add points at the locations of any mines or related sites that you can find within the outlined area on the map.  There are only a few.  Note that the buildings at Cononish itself are also mine-related.</li>
+<li><a href="/creating_data/#set-up-a-feature-dataset-within-a-geodatabase">Create a new <strong>point</strong> feature class in the project geodatabase</a> and call it <code>Mines</code>.</li>
+<li>Add the feature class to your map and <a href="/creating_data/#digitising-point-features">edit it to add points</a> at the locations of any mines or related sites that you can find within the outlined area on the map.  There are only a few.  Note that the buildings at Cononish itself are also mine-related.</li>
 <li>Remember to <code>Save</code> your edits</li>
 <li><code>Clear</code> any selections</li>
 <li>Open the geoprocessing panel (Analysis tab of the ribbon and click on Tools)</li>
@@ -564,6 +562,7 @@
 <p>I suggest that at this stage you set up your layout so that the main map shows the point symbols and mines and maybe includes the outline of the study area.  You can then add a small map showing one of the other data sets, e.g. the mean concentrations in the bands.</p>
 <p>The example below shows a possible layout.  Your layout should look different.  You will have made your own decisions about what to include and how to symbolise and label your data.</p>
 <p><img alt="Example layout for the Cononish geochemistry map." src="../images/analysis/SuggestedLayout_small.png" title="Example layout for the Cononish geochemistry map." /></p>
+<p>Keep this project so that you can try out the more advanced layout and presentation techniques on it in the next chapter.</p>
 <h2 id="more-information-analysis-in-gis">More information: Analysis in GIS</h2>
 <p>There is more about data analysis in GIS in the module reading list<sup id="fnref:510"><a class="footnote-ref" href="#fn:510">6</a></sup>.  In particular have a look at the following:</p>
 <p><a href="https://leeds.primo.exlibrisgroup.com/discovery/search?query=any,contains,991012676609705181&amp;tab=AlmostEverything&amp;search_scope=My_Inst_CI_not_ebsco&amp;vid=44LEE_INST:VU1&amp;offset=0">Heywood, Cornelius and Carver</a> (2011) chapter 6 on page 174 and following.</p>
