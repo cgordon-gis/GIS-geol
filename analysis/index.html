@@ -103,7 +103,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#tools-and-analysis">Tools and analysis</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#processing-environments">Processing environments</a>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-global-geoprocessing-environments">Setting Global Geoprocessing environments</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#interpolating-a-surface">Interpolating a surface</a>
         <ul>
@@ -188,9 +188,8 @@
 <p>The glen of the River Cononish near Tyndrum in Scotland has historically been a lead mining area.  In 2012, after further exploration, planning permission was granted for <a href="https://www.scotgoldresources.com/projects/cononish-project/">Scotgold Resources to mine gold in Cononish mine</a>.</p>
 <p>Using data from stream and soil samples we will look at ways of processing and displaying point sampled data in ArcGIS to investigate possible lead contamination.</p>
 <p><img alt="River Cononish.  Ben Lui dominates the view ahead." src="../images/analysis/Cononish_small.jpg" title="River Cononish.  Ben Lui dominates the view ahead." /></p>
-<!-- TODO: any other examples of analysis? -->
-
 <p>The techniques in this chapter will give you an introduction to carrying out analysis in GIS and can be used for a wide variety of data, not just the geochemical data that we use here.</p>
+<p>Have another look at some of the examples that were on the <a href="https://www.gisforscience.com/">GIS for Science website</a> or in the <a href="https://www.esriuk.com/en-gb/what-is-gis/showcase">ESRI GIS Showcase</a>.  These may give you some inspiration for your own maps and data.</p>
 <h2 id="data-to-download">Data to download</h2>
 <h3 id="geochemical-data">Geochemical data</h3>
 <p>You will create the map yourself, but the data, which consists of a spreadsheet and a shapefile which outlines the study area, can be downloaded from Minerva.</p>
@@ -220,9 +219,11 @@
 <li>Then it is also a good idea to <a href="/introduction/#remove-layers">remove</a> the default ESRI base map layers, which in a new project are usually the World Topographic Map and the World Hillshade.  These can cause your map to slow down and/or crash.</li>
 </ul>
 <h2 id="importing-xy-data">Importing xy data</h2>
-<!-- TODO: Do I already have a video clip for importing Excel data? -->
-
 <p>The next thing we will do is to add the data from the Excel file to Arc.  This is a form of what can be called <strong>xy data</strong> because the file contains the <em>x</em> and <em>y</em> coordinates for locations as well as other data.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Importing points from Excel or csv to ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <p>If you haven&rsquo;t already, download the <code>CononishData.zip</code> file from Minerva, unzip it into the project folder</p>
 <ul>
 <li>Open the Excel spreadsheet, <code>XYZ_Pb.xls</code>, to have a look at the data.</li>
@@ -352,10 +353,13 @@
 <p>At a quick look, do these ways of symbolising your data show any correlation between lead concentrations and mine locations?</p>
 </blockquote>
 <h2 id="tools-and-analysis">Tools and analysis</h2>
-<p>You&rsquo;ll have shown useful information about your data by symbolising it.  Now you can run some tools to generate alternative methods of looking at your data and produce new layers.
-<!-- TODO: What am I really trying to say here?  Can I put it more clearly? --></p>
-<h3 id="processing-environments">Processing environments</h3>
+<p>You&rsquo;ll have shown useful information about your data by symbolising it in a certain way.  Now you can run some <strong>geoprocessing tools</strong> to generate alternative methods of looking at your data and produce new layers and data.</p>
+<h3 id="setting-global-geoprocessing-environments">Setting Global Geoprocessing environments</h3>
 <p>We&rsquo;ll perform interpolation on a section of the data defined by a polygon layer.  Otherwise the 3D Analyst extension in ArcGIS interpolates an area based on the extent of the point layer.  This can be a useful way to keep processing power, time and storage down if you have a lot of data.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Setting global geoprocessing environments in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <ul>
 <li>The CononishData zip file should have included a folder called <code>CononishArea</code> which contains the multiple files which makes a <strong>shapefile</strong>.</li>
 <li>Add the <code>CononishArea.shp</code> shapefile to your map using the Catalog</li>
@@ -416,8 +420,6 @@
 <p>Having looked at the interpolated layers select the one that you feel is most representative of the data you started with.  Make sure that you make that layer <a href="/introduction/#make-layers-transparent">transparent</a> so that the base map is visible, and then <a href="/introduction/#remove-layers">remove</a> the other three interpolated layers from your map.</p>
 <p>You&rsquo;ll use your chosen layer to carry out the rest of the tasks in this chapter.</p>
 </blockquote>
-<!-- TODO: Some way of saying to the students that the styling of the data is their choice based on their scientific education and experience?  Then some other ways of finding help/suggestions from reading list etc. -->
-
 <h3 id="deriving-contours-from-a-surface">Deriving contours from a surface</h3>
 <p>Once you have created a raster surface you can use tools in Arc to derive vector contours to display the surface on a 2D map.</p>
 <ul>
@@ -443,18 +445,18 @@
 <p>If you need to remind yourself how to create a feature class and create features within it refer back to <a href="/creating_data/">the chapter on creating data</a>.</p>
 <ul>
 <li><a href="/creating_data/#set-up-a-feature-dataset-within-a-geodatabase">Create a new <strong>point</strong> feature class in the project geodatabase</a> and call it <code>Mines</code>.</li>
-<li>Add the feature class to your map and <a href="/creating_data/#digitising-point-features">edit it to add points</a> at the locations of any mines or related sites that you can find within the outlined area on the map.  There are only a few.  Note that the buildings at Cononish itself are also mine-related.</li>
+<li>Add the feature class to your map and <a href="/creating_data/#digitising-point-features">edit it to add points</a> at the locations of any mines or related sites that you can find within the outlined area on the map.<sup id="fnref:507"><a class="footnote-ref" href="#fn:507">4</a></sup>  There are only a few.  Note that the buildings at Cononish itself are also mine-related.</li>
 <li>Remember to <code>Save</code> your edits</li>
 <li><code>Clear</code> any selections</li>
 <li>Open the geoprocessing panel (Analysis tab of the ribbon and click on Tools)</li>
-<li>then use the <code>Find Tools</code> box to find the <code>Multiple Ring Buffer</code> tool<sup id="fnref:503"><a class="footnote-ref" href="#fn:503">4</a></sup>.  When it appears in the list click on it to open the tool.</li>
+<li>then use the <code>Find Tools</code> box to find the <code>Multiple Ring Buffer</code> tool<sup id="fnref:503"><a class="footnote-ref" href="#fn:503">5</a></sup>.  When it appears in the list click on it to open the tool.</li>
 </ul>
 <p><img alt="Finding the Multple Ring Buffer tool in the toolbox." src="../images/analysis/FindingToolbox_small.png" title="Finding the Multple Ring Buffer tool in the toolbox." /></p>
 <ul>
 <li>Fill in the tool as shown below:<ul>
 <li>The <code>Input features</code> are the <strong>Mines</strong> layer</li>
 <li>Choose a location to save the <code>Output feature class</code>, preferably the project geodatabase, and give the output a name that makes sense to you, e.g. <code>MinesBuffer</code></li>
-<li>You&rsquo;ll need to add the distances for the width of each ring by typing each one in the <code>Distances</code> box.  Add widths at <code>100 m</code> intervals from <code>100 to 1000</code>.</li>
+<li>You&rsquo;ll need to add the distances for the width of each ring by typing each one in the <code>Distances</code> box.  Add widths at <code>200 m</code> intervals from <code>200 to 2000</code>.</li>
 <li>with <code>Buffer Unit</code> set to <code>default</code> the units should be the same as the map: if your project is in British National Grid this should be metres.  If you want to be sure you can set this in the dialog, though.</li>
 <li>Change <code>Dissolve Option</code> to <code>Non-overlapping (rings)</code> so that each buffer is a ring around buffers of a lower value.</li>
 </ul>
@@ -463,8 +465,8 @@
 </ul>
 <p><img alt="Filling in the Multiple Ring Buffer tool." src="../images/analysis/MultipleRingBuffer200_small.png" title="Filling in the Multiple Ring Buffer tool." /></p>
 <p>You should end up with a new layer in the Contents and concentric shapes covering your map.</p>
-<p>Change the symbology so that each distance buffer is a different colour.  Set the transparency of this layer to something like <code>40%</code>.</p>
-<p>Feel free to run the tool again and change the distance and number of rings to settings that you feel are more useful.  Experiment!  You should interpret your data and display as you feel is best.</p>
+<p>Change the symbology so that each distance buffer is a different colour (Unique Values with the field as <code>distance</code>).  Set the transparency of this layer to something like <code>40%</code>.</p>
+<p>Feel free to run the tool again and change the distance and number of rings to settings that you feel are more useful.  Experiment!  You should interpret your data and display as you feel is best using your expertise as a geologist.</p>
 <p><img alt="The multiple ring buffers on your map overlain by the symbolised lead concentrations point layer." src="../images/analysis/RingBuffersLead2.png" title="The multiple ring buffers on your map overlain by the symbolised lead concentrations point layer." /></p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Look at your map</strong></p>
@@ -476,7 +478,7 @@
 <p>It&rsquo;s also worth looking at how you can extract numbers to help you to show how far the lead contamination has travelled.</p>
 <p>For example:</p>
 <blockquote>
-<p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>What is the average concentration of lead in each buffer?</strong></p>
+<p><img alt="Question" src="../images/svg/help_outline-black-24dp.png" /> <strong>What is the average concentration of lead in each buffer zone?</strong></p>
 </blockquote>
 <p>There are a lot of tools within ArcGIS and it can be difficult to know where to find the one that you want.  The <a href="https://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm">ArcGIS Pro Help tool reference</a> can help.</p>
 <ul>
@@ -491,12 +493,12 @@
 <li>Return to the Cononish project in ArcGIS Pro.</li>
 <li>Open the toolbox panel, if it isn&rsquo;t already open, by going to the Analysis tab of the ribbon and clicking on <code>Tools</code></li>
 <li>Search for <code>Summarize Within</code> in the toolbox</li>
-<li>From the list select <code>Summarize Within (GeoAnalytics Desktop Tools)</code></li>
+<li>From the list select <code>Summarize Within (GeoAnalytics Desktop Tools)</code> and open the tool</li>
 <li>Fill in the form as follows<ul>
 <li>The <code>Summarized Layer</code> is the lead concentration layer</li>
 <li>Choose where to save the <code>Output Feature Class</code> and give it a name that will help you to find it again</li>
 <li>The <code>Summary Polygons</code> are your Mines Buffers layer</li>
-<li>Under <code>Standard Summary Fields</code> choose the <code>concentration</code> field and then choose the type of <code>Statistics</code> that you want to generate, e.g. <code>Mean</code>, <code>Minimum</code> and <code>Maximum</code>.</li>
+<li>Under <code>Standard Summary Fields</code> choose the <code>concentration</code> field and then choose the type of <code>Statistics</code> that you want to generate, e.g. <code>Mean</code>, <code>Minimum</code> and <code>Maximum</code>.  You can choose more than one set of statistics at a time so add all three for this run.</li>
 </ul>
 </li>
 <li>Click on <code>Run</code></li>
@@ -506,11 +508,14 @@
 <p>Make the original buffers layer invisible and have a look at the new layer.</p>
 <ul>
 <li>Open the Attribute Table and have a look at the fields in the new feature class</li>
+<li>The <code>distance</code> field shows the buffer, so the row containing the distance of <code>200</code> refers to the mean concentration between 0 and 200 m from the mines.</li>
+</ul>
+<p><img alt="The attribute table of the new layer showing the calculated statistics for each buffer zone.  Note that if your results aren't the same as mine it doesn't matter - your mine points may be in slighly different locations." src="../images/analysis/SummaryAttributeTable_small.png" title="The attribute table of the new layer showing the calculated statistics for each buffer zone.  Note that if your results aren't the same as mine it doesn't matter - your mine points may be in slighly different locations." /></p>
+<ul>
 <li>Arc has automatically symbolised the layer on the <code>COUNT</code> field, but for our purposes it would be more useful to symbolise on the field containing the <code>MEAN</code> values, so make a note of the name of that field and close the attribute table.</li>
 <li>In the Symbology pane set the <code>Field</code> for Graduated Colours to the <code>MEAN</code> field.</li>
-<li>Use the settings to display your data in the most informative way</li>
-<li>Check that your colours are appropriate for the value bands.
-<!-- TODO: The last 2 are rather vague, can I improve this? --></li>
+<li>Use the settings to display your data in the most informative way based on your experience as a scientist and with your audience in mind</li>
+<li>Check that your colours are appropriate for the value bands.  That is, it is clear which are the higher values and which are lower.</li>
 </ul>
 <p><img alt="The Summary layer symbolised by the mean concentration." src="../images/analysis/SummaryRings.png" title="The Summary layer symbolised by the mean concentration." /></p>
 <blockquote>
@@ -542,10 +547,14 @@
 <p>Now it&rsquo;s really up to you to think about how best to display your data.  Which layers do you need to include?  How many maps can you put on a sheet?</p>
 <p>Set up a minimum of three different maps with different layers.  Make sure that any layers that you don&rsquo;t want to display on a particular map are not visible.</p>
 </blockquote>
-<p>You can rename the maps in the <code>Map Properties</code><sup id="fnref:508"><a class="footnote-ref" href="#fn:508">5</a></sup> if you want to keep track of which is which.</p>
+<p>You can rename the maps in the <code>Map Properties</code><sup id="fnref:508"><a class="footnote-ref" href="#fn:508">6</a></sup> if you want to keep track of which is which.</p>
 <p>Feel free to use a different background layer from the Ordnance Survey Digimap Download if you think it is more suitable.</p>
 <p>If you feel it is relevant you could also <a href="http://localhost:8000/styles/#styling-layers-with-a-layer-file">add a geological map using BGS data downloaded from Digimap</a> in the way you did in the previous chapter.  There is 1:25 000 data available for this area. (The layer files are in a separate folder.  You have to unzip them and move them into the folder with the data files.)  Hint: If you <strong>merge</strong> the similar layers before you apply the layer styles, and if you have the Geoprocessing extent set, you will be dealing with a lot fewer features, which makes it a lot easier to add a key.</p>
 <h3 id="creating-a-layout-with-multiple-maps">Creating a layout with multiple maps</h3>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Adding extra map frames to a layout in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <ul>
 <li>Go to the <code>Insert</code> tab of the ribbon and click on <code>New Layout</code></li>
 <li>Choose the paper size (preferably an ISO size, either portrait or landscape)</li>
@@ -564,7 +573,7 @@
 <p><img alt="Example layout for the Cononish geochemistry map." src="../images/analysis/SuggestedLayout_small.png" title="Example layout for the Cononish geochemistry map." /></p>
 <p>Keep this project so that you can try out the more advanced layout and presentation techniques on it in the next chapter.</p>
 <h2 id="more-information-analysis-in-gis">More information: Analysis in GIS</h2>
-<p>There is more about data analysis in GIS in the module reading list<sup id="fnref:510"><a class="footnote-ref" href="#fn:510">6</a></sup>.  In particular have a look at the following:</p>
+<p>There is more about data analysis in GIS in the module reading list<sup id="fnref:510"><a class="footnote-ref" href="#fn:510">7</a></sup>.  In particular have a look at the following:</p>
 <p><a href="https://leeds.primo.exlibrisgroup.com/discovery/search?query=any,contains,991012676609705181&amp;tab=AlmostEverything&amp;search_scope=My_Inst_CI_not_ebsco&amp;vid=44LEE_INST:VU1&amp;offset=0">Heywood, Cornelius and Carver</a> (2011) chapter 6 on page 174 and following.</p>
 <p><a href="https://leeds.primo.exlibrisgroup.com/discovery/search?query=any,contains,991019433304805181&amp;tab=AlmostEverything&amp;search_scope=My_Inst_CI_not_ebsco&amp;vid=44LEE_INST:VU1&amp;offset=0">Longley et al.</a> (2015) Part III is all about analysis, but in particular have a look at chapter 13 on page 290 and following.</p>
 <p>As usual, use <a href="https://pro.arcgis.com/en/pro-app/help/analysis/introduction/spatial-analysis-in-arcgis-pro.htm">ArcGIS Pro Help on Spatial Analysis</a> to find out more about analysis in general and about individual tools - you saw an example in these exercises.</p>
@@ -584,14 +593,17 @@
 <li id="fn:502">
 <p>Save from Excel to csv as follows: <code>File &gt; Save As</code>, choose a location, then under <code>Save as type:</code> choose <code>CSV (Comma delimited) (*.csv)</code>.&#160;<a class="footnote-backref" href="#fnref:502" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
+<li id="fn:507">
+<p>If you&rsquo;re wondering what the &ldquo;Old Shielings&rdquo; are that appear on the map, they were summer grazings for cattle in the Scottish Highlands.  Now you can often find <a href="https://www.geograph.org.uk/photo/6176359">ruined stone structures in remote locations which are all that is left of them</a>.&#160;<a class="footnote-backref" href="#fnref:507" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
 <li id="fn:503">
-<p>This is usually a simpler way to find a tool that you know the name of than trying to remember how to browse your way to it through the various toolboxes.&#160;<a class="footnote-backref" href="#fnref:503" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>This is usually a simpler way to find a tool that you know the name of than trying to remember how to browse your way to it through the various toolboxes.&#160;<a class="footnote-backref" href="#fnref:503" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:508">
-<p>Double-click on the Map heading in the Contents pane and change the name in the <code>General</code> tab.&#160;<a class="footnote-backref" href="#fnref:508" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Double-click on the Map heading in the Contents pane and change the name in the <code>General</code> tab.&#160;<a class="footnote-backref" href="#fnref:508" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:510">
-<p>Reading list available from Minerva and from the module catalogue.&#160;<a class="footnote-backref" href="#fnref:510" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Reading list available from Minerva and from the module catalogue.&#160;<a class="footnote-backref" href="#fnref:510" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
