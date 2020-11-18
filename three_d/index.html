@@ -87,6 +87,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-map-project">Setting up the map project</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-the-height-data-to-your-map">Adding the height data to your map</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#symbolising-the-raster-layers">Symbolising the raster layers</a>
     </li>
         </ul>
@@ -138,6 +140,10 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#layout-suggestions">Layout suggestions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recommended-reading-layout-and-presentation">Recommended reading: layout and presentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#further-information">Further information</a>
     </li>
     </ul>
                     </li>
@@ -197,22 +203,27 @@
 <p>The <a href="http://on.doi.gov/21kULb0">Cascades Volcano Observatory</a> has a lot more information and images of Mount St. Helens, including sections on hazards, monitoring, geology and history.</p>
 <p>In this exercise we&rsquo;ll use the tools in ArcGIS Pro to investigate the changes in the shape of the mountain caused by the eruption.  We&rsquo;ll use USGS (United States Geological Survey) height data measured before and after the eruption, as well as the height data provided by ESRI within ArcGIS Pro.</p>
 <h2 id="obtaining-the-data-for-this-exercise">Obtaining the data for this exercise</h2>
-<p>Download the <code>MtStHelens.7z</code> file from Minerva.  Save it to your file space and unzip it.</p>
+<p>Download the <code>MtStHelens.zip</code> file from Minerva.  Save it to your file space and unzip it.</p>
 <p>The data for this exercise has been obtained from <a href="http://bit.ly/1DWiPZc">SERC Carlton teaching resources</a>.</p>
 <p>The data can also be found on the webpages of the <a href="http://bit.ly/2grwsLe">Geomorphological Research Group at University of Washington</a></p>
 <p>The exercises are based on worksheets from the above URL and from ESRI Canada.</p>
 <h2 id="setting-up-the-map-project">Setting up the map project</h2>
 <p>The zip file that you have downloaded and unzipped should include a file called <code>MtStHelens.aprx</code>.</p>
-<p>Open this now<sup id="fnref:1001"><a class="footnote-ref" href="#fn:1001">1</a></sup> and you should see that there isn&rsquo;t yet data on the map.  If you check the map properties you should be able to see that the project has already been set up to use the correct coordinate system.  in this case <strong>NAD 1983 UTM Zone 10N</strong>. NAD = North American Datum and UTM = Universal Transverse Mercator<sup id="fnref:1002"><a class="footnote-ref" href="#fn:1002">2</a></sup>. I&rsquo;ve changed the map name to show the coordinate system - this can be a very useful thing to do if you&rsquo;re likely to need to keep track of it throughout your project.</p>
+<p>Open this now<sup id="fnref:1001"><a class="footnote-ref" href="#fn:1001">1</a></sup> and you should see that there isn&rsquo;t yet data on the map, just an ESRI basemap.  If you check the map properties you should be able to see that the project has already been set up to use the correct coordinate system.  in this case <strong>NAD 1983 UTM Zone 10N</strong>. NAD = North American Datum and UTM = Universal Transverse Mercator<sup id="fnref:1002"><a class="footnote-ref" href="#fn:1002">2</a></sup>. I&rsquo;ve changed the map name to show the coordinate system - this can be a very useful thing to do if you&rsquo;re likely to need to keep track of it throughout your project.</p>
+<p><img alt="Your map should look something like this when you first open it from the project folder. Note the CRS as the name of the map." src="../images/three_d/InitialMap.png" title="Your map should look something like this when you first open it from the project folder. Note the CRS as the name of the map." /></p>
+<h3 id="adding-the-height-data-to-your-map">Adding the height data to your map</h3>
+<p>Start by adding the layers which give the height data for this area.</p>
 <ul>
 <li>Add the <code>hbefore</code> and <code>hafter</code> files to the map from <code>Folders &gt; MtStHelens &gt; Data</code> section in the contents pane.</li>
+<li>Make sure that these layers are above the ESRI basemap layers in the Contents pane</li>
 <li>Switch the layers on and off to have a look at the changes between the before and after shapes as they are visible at the moment.</li>
 </ul>
-<p>These are raster layers where each pixel contains the elevation of the land at that point. <!-- TODO: Cross-reference to introduction --></p>
-<p><img alt="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter." src="../images/three_d/HGridFiles.png" title="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter." /></p>
+<p>These are raster layers where each pixel contains the elevation of the land at that point. </p>
+<p><img alt="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter.  Note that you will see them one at a time as they should be in the same location." src="../images/three_d/HGridFiles.png" title="The original grid files as you should see them at the moment.  Left is hbefore, right is hafter.  Note that you will see them one at a time as they should be in the same location." /></p>
 <h3 id="symbolising-the-raster-layers">Symbolising the raster layers</h3>
 <p>At the moment the height layers, the rasters that you have just added, will be coloured the default shades of grey.  There are other colour ramps available which will make the elevation clearer.</p>
 <ul>
+<li>Switch off the <code>hafter</code> layer in the contents pane</li>
 <li>Select the <code>hbefore</code> layer in the contents pane</li>
 <li>go to the <code>Appearance</code> tab of the ribbon and click on <code>Symbology</code></li>
 <li>In the symbology dialog check that the <code>Primary Symbology</code> is set to <code>Stretch</code></li>
@@ -223,7 +234,7 @@
 <p><img alt="Setting stretched symbology for an elevation raster." src="../images/three_d/HRasterSymbologyStretch.png" title="Setting stretched symbology for an elevation raster." /></p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Set symbology for after</strong></p>
-<p>Repeat the process above to symbolise the hafter elevation raster file.</p>
+<p>Repeat the process above to symbolise the <code>hafter</code> elevation raster file with the same colour ramp.</p>
 </blockquote>
 <p>You have on your map two layers which show similar data and which you may want to compare.  To do this it would be useful to have the symbology, and also the legend later, set to the same scale.  At the moment:</p>
 <ul>
@@ -247,16 +258,21 @@
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Changing the default symbology</strong></p>
 <p>Repeat the above with the <code>habove</code> layer - putting the same minimum and maximum values.</p>
-<p>If you look at both layers on your map now you should be able to see the difference between before and after the eruption more clearly.</p>
+<p>If you look at both layers on your map now by switching the uppermost on and off, you should be able to see the difference between before and after the eruption more clearly.</p>
 </blockquote>
 <p><img alt="The symbolised grid files with minimum and maximum values altered to a common scale: left: hbefore, right: hafter." src="../images/three_d/HGridFilesSymb_small.png" title="The symbolised grid files with minimum and maximum values altered to a common scale: left: hbefore, right: hafter." /></p>
 <h2 id="creating-hillshading">Creating hillshading</h2>
-<p>It is possible to see from the height files that you have already added to your map some differences in the before and after topography, but they do not give a very clear view.  <strong>Hillshades</strong> can give a much clearer picture of the topography of an area (and incidentally can give a better idea of the quality of your height data).</p>
+<p>It is possible to see from the height files that you have already added to your map, some differences in the before and after topography, but they do not give a very clear view.  <strong>Hillshades</strong> can give a much clearer picture of the topography of an area (and incidentally can give a better idea of the quality of your height data).</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>3D Analyst: hillshade, slope and aspect in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <ul>
-<li><code>Geoprocessing &gt; 3D Analyst Tools &gt; Surface &gt; Hillshade</code></li>
+<li><code>Analysis &gt; Tools</code> and search for <code>Hillshade</code>.</li>
+<li>Select either the 3D Analyst Tools version, or the Spatial Analyst Tools version - they both do the same thing.</li>
 <li>Fill in the dialog with <code>hbefore</code> as the input.</li>
-<li>Select where you want to save the input and give it a name.</li>
-<li>Leave the other fields as they are for now.</li>
+<li>Select where you want to save the input<sup id="fnref:1005"><a class="footnote-ref" href="#fn:1005">3</a></sup> and give it a name, e.g. <code>hshbefore</code>.</li>
+<li>Leave the other fields as they are.</li>
 </ul>
 <p><img alt="Creating a hillshade raster layer - fill in the input and output but leave the other fields as they are." src="../images/three_d/HHillShade.png" title="Creating a hillshade raster layer - fill in the input and output but leave the other fields as they are." /></p>
 <ul>
@@ -269,6 +285,7 @@
 <p>Repeat the hillshade process with the <code>hafter</code> raster file.</p>
 </blockquote>
 <p>Have a look at both hillshade layers.  The difference in the shape of Mount St. Helens before the eruption and after should be becoming clearer.</p>
+<p>The lines across the hillshades are down to the way the data will have been collected and processed.  In this case there isn&rsquo;t much that we can do about that.</p>
 <blockquote>
 <p><img alt="Information" src="../images/svg/info-black-24dp.png" /> <strong>Hillshade light source</strong></p>
 <p>Incidentally, notice that the light source on the hillshade layer comes from the top-left of the image - which is usually the north-west, a direction from which the sun very rarely shines.</p>
@@ -278,10 +295,11 @@
 <p>You could symbolise the hillshade directly to make a &ldquo;prettier&rdquo; map, but you often get a better result by symbolising the DEM (height data), then putting the hillshade underneath it and making the DEM something like 40% transparent.</p>
 <ul>
 <li>Make the &ldquo;after&rdquo; layers invisible (turn them off in the contents list) and try symbolising the &ldquo;before&rdquo; layers first.</li>
-<li>If you haven&rsquo;t already, symbolise the <code>hbefore</code> height layer with a stretched colour ramp <!-- TODO: cross-reference --> and set it to 40% transparency on the <code>Appearance</code> tab <!-- TODO: cross-reference -->.</li>
+<li>If you haven&rsquo;t already, symbolise the <code>hbefore</code> height layer with a stretched colour ramp and <a href="/introduction/#make-layers-transparent">set it to 40% transparency</a> on the <code>Appearance</code> tab </li>
+<li>Move the hbefore hillshade layer to beneath the height layer.</li>
 </ul>
 <p>Now try turning the hillshade layer on and off and have a look at how much difference it makes to how you can perceive the landscape.</p>
-<p>If you still have the World Hillshade and Topographic Map layers on your map from the ESRI basemap you&rsquo;ll also see who those interact with your data.  Try turning those off and on too.</p>
+<p>If you still have the World Hillshade and Topographic Map layers on your map from the ESRI basemap you&rsquo;ll also see how those interact with your data.  Try turning those off and on too.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Symbolising the hillshade</strong></p>
 <p>Try the same with the &ldquo;after&rdquo; layers to symbolise those with the hillshade.</p>
@@ -289,12 +307,14 @@
 </blockquote>
 <h2 id="area-and-volume-calculations">Area and volume calculations</h2>
 <p>It&rsquo;s good to be able to look at the differences on a map, but what about actually doing some measurements and getting some figures out of the data?  Arc&rsquo;s toolbox gives us the tools to be able to calculate the volume of Mount St. Helens before and after the eruption.</p>
+<!-- TODO: Create a videoclip for Area and volume calculations? -->
+
 <ul>
 <li>If you don&rsquo;t have the toolbox open already find it by going to the <code>Analysis</code> ribbon and clicking on <code>Tools</code></li>
-<li><code>Geoprocessing &gt; 3D Analyst Tools &gt; Functional Surface &gt; Surface Volume</code></li>
-<li>Fill in the dialog with <code>hbefore</code> as the input.  Don&rsquo;t worry about saving the output this time - you&rsquo;ll make a note of it from the results window</li>
+<li>Search for <code>Surface Volume</code> from the 3D Analyst Tools.</li>
+<li>Fill in the dialog with <code>hbefore</code> as the input.  Don&rsquo;t worry about saving the output this time - you&rsquo;ll make a note of the output from the results window</li>
 <li>The <code>Reference Plane</code> controls how the volume is measured</li>
-<li>to see more click on the question mark symbol at the top of the tool dialog - the appropriate help page should open in your browser.</li>
+<li>to see more click on the question mark symbol at the top of the tool dialog - the appropriate help page should open in your browser. (The tooltip that pops up doesn&rsquo;t give you the full information.)</li>
 <li>In this case the page shows you the difference between setting the reference plane to either above or below.</li>
 <li>Return to Arc and set the <code>Reference Plane</code> to <code>Above the Plane</code></li>
 <li>Having set this it is also a good idea to set the <code>Plane Height</code>.  In this case set it to <code>669</code>, which is the lowest elevation in the hbefore DEM - check the contents pane to find this.</li>
@@ -309,7 +329,7 @@
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Results of area and volume calculations - Before</strong></p>
 <p>Make a note of the following results for the <code>Before</code> layer</p>
 <p>2D area</p>
-<p>3D area<sup id="fnref:703"><a class="footnote-ref" href="#fn:703">3</a></sup></p>
+<p>3D area<sup id="fnref:703"><a class="footnote-ref" href="#fn:703">4</a></sup></p>
 <p>Volume</p>
 </blockquote>
 <p>The results will be in <code>map units</code>.  Check the units by going to the map properties and checking the <code>General</code> tab.  In this case it should be metres.</p>
@@ -328,18 +348,25 @@
 <p>What differences are there?  What can you say about the change in area/volume before and after the eruption?</p>
 </blockquote>
 <h2 id="profile-graphs">Profile graphs</h2>
-<p>Another way to view topography is to draw a profile.  This will allow you to see a profile of the land surface along a line, and in this case allows you to view profiles for before and after the eruption.</p>
+<p>Another way to view topography is to draw a profile.  This will allow you to see a profile of the land surface along a line, and in this case allows you to view profiles for before and after the eruption to visualise the effect.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Profile graphs with ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <ul>
-<li>Start by creating a new line feature class in the project geodatabase, making sure that the coordinate system matches the one used for the map, and drawing a line from north to south across the DEM. <!-- TODO: Cross references to relevant sections --></li>
-<li>From the Analysis ribbon click on <code>Tools</code> and go to the <code>Interpolate Shape</code> tool via <code>Geoprocessing &gt; 3D Analyst Tools &gt; Functional Surface &gt; Interpolate Shape</code></li>
+<li>Start by <a href="/creating_data/#set-up-a-feature-dataset-within-a-geodatabase">creating a new line feature class</a> in the project geodatabase, making sure that the <a href="/finding_data/#checking-the-coordinate-system-of-your-map">coordinate system matches</a> the one used for the map, and <a href="/creating_data/#digitsing-line-features">drawing a line</a> from north to south across the DEM. </li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>From the Analysis ribbon click on <code>Tools</code> and search for the <code>Interpolate Shape</code> tool</li>
 <li>Fill in the dialog as follows:</li>
-<li>The <code>Input surface</code> should be the Before DEM</li>
+<li>The <code>Input surface</code> should be the Before DEM (<code>hbefore</code>)</li>
 <li><code>Input Features</code> is the line across the DEM that you have just drawn</li>
-<li>Give your <code>Output Feature Class</code> a name which reminds you that it is based on the Before layer</li>
+<li>Give your <code>Output Feature Class</code> a name which reminds you that it is based on the Before layer e.g. <code>hbefore_shape</code></li>
 <li>The other defaults are fine so click the <code>Run</code> button</li>
 </ul>
 <p><img alt="Using the Interpolate Shape tool to add height data from the hbefore layer to the Section Line - showing also the line drawn across the DEM." src="../images/three_d/HInterpolateShape.png" title="Using the Interpolate Shape tool to add height data from the hbefore layer to the Section Line - showing also the line drawn across the DEM." /></p>
-<p>You will have created a new line feature class which should be added to your map.  If it isn&rsquo;t, then drag it across from the Catalog to the Contents pane.  At this stage your map won&rsquo;t look much different.</p>
+<p>You will have created a new line feature class which should be added to your map.  If it isn&rsquo;t, then drag it across from the Catalog to the Contents pane.  At this stage your map won&rsquo;t look much different but the new layer will contain <code>z values</code>, which are the heights taken from the original DEM.</p>
 <p>To create the profile:</p>
 <ul>
 <li>Select the new <code>Before</code> section line in the Contents and right-click on it</li>
@@ -351,13 +378,14 @@
 <p>By clicking on <code>Export</code> you can save the profile graph as a graphics file, e.g. svg (which can then be opened in Inkscape), png or jpg (both of which can be added to Word and Powerpoint documents).</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Profile across the After DEM</strong></p>
-<p>Repeat the process to create a profile graph for the DEM showing the height After the eruption.</p>
+<p>Repeat the process to create a profile graph for the DEM showing the height After the eruption.  You can use the same digitised line, but will need to create another interpolated shape.</p>
 </blockquote>
 <p>Once you have created a graph it is listed in the Contents pane under the layer to which it applies.  If you close it, you can open it again by clicking on the appropriate graph in the Contents.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Comparing the graphs</strong></p>
-<p>Have a look at both of the graphs you have created.  Resize them and use the properties to give them appropriate titles and axis labels.</p>
+<p>Have a look at both of the graphs you have created.  Resize them and use the properties to give them appropriate titles and axis labels.  You should also change the <code>Y-axis Bounds</code> so that the Minimum and Maximum are the same for each profile.</p>
 </blockquote>
+<p>Once you are happy with your profile graphs close them both.</p>
 <h2 id="viewing-your-map-in-3d">Viewing your map in 3D</h2>
 <p>Within Arc it is possible to view your maps in 3D by creating a <code>Scene</code>.  We&rsquo;ll look at this now with the data you have already, but it&rsquo;s something you can do with any data that you create in future too.</p>
 <blockquote>
@@ -377,8 +405,10 @@
 <p>You can add layers to a scene in exactly the same way as adding them to a map.</p>
 <ul>
 <li>Find your hillshade layers in your catalog pane and drag and drop them into the scene</li>
+<li>They will automatically be added to the <code>2D Layers</code> section</li>
 </ul>
 <p>You should find that your scene zooms to the correct location for Mount St Helens and you can view the hillshade layers.</p>
+<p><img alt="Adding the hillshade layers to a Scene.  They will both appear in the 2D Layers section in the Contents." src="../images/three_d/SceneAddingLayers.png" title="Adding the hillshade layers to a Scene.  They will both appear in the 2D Layers section in the Contents." /></p>
 <h3 id="navigating-in-a-scene">Navigating in a scene</h3>
 <p>ArcGIS Pro Help has full information on <a href="https://bit.ly/32pZWOB">how to navigate in 3D</a>.</p>
 <p>The main difference from navigating in a map is that you can use the mouse wheel to &ldquo;tip up&rdquo; the map and rotate it, or use the navigation tool at the bottom left of the map to move around.</p>
@@ -390,11 +420,12 @@
 <li>For now, turn off both hillshade layers so that you can see the basemap.</li>
 </ul>
 <h3 id="changing-the-background-layer">Changing the background layer</h3>
-<p>You can also change the <code>Basemap</code> in exactly the same way as you can change it in a map. <!-- TODO: Cross reference? --></p>
+<p>You can also <a href="/introduction/#using-basemaps">change the <code>Basemap</code></a> in exactly the same way as you can change it in a map.</p>
 <blockquote>
 <p><img alt="Instruction" src="../images/svg/create-black-24dp.png" /> <strong>Changing the basemap</strong></p>
 <p>Change the basemap to <code>Imagery</code> now and use the navigation tools to zoom in to Mount St Helens so that you can view the scene from a lower angle.</p>
 </blockquote>
+<p><img alt="A 3D scene of Mount St. Helens." src="../images/three_d/SceneImagery_small.png" title="A 3D scene of Mount St. Helens." /></p>
 <h3 id="controlling-the-elevation-surface">Controlling the elevation surface</h3>
 <p>You&rsquo;ll notice that Arc sets a default <code>elevation surface</code> - i.e. data which controls the terrain or 3D surface.  It is possible to make changes to this, and indeed to set your own elevation surface.</p>
 <p>To change any of the properties of the elevation surface:</p>
@@ -404,15 +435,18 @@
 </ul>
 <p><img alt="The properties for the elevation surface for the current scene." src="../images/three_d/GSSceneElevationSurface.png" title="The properties for the elevation surface for the current scene." /></p>
 <h4 id="vertical-exaggeration">Vertical exaggeration</h4>
-<p>The default vertical exaggeration is <code>1.0</code> - which basically means as is reality.</p>
-<p>Whilst scientifically this is usually the best setting to use, sometimes you need to exaggerate the terrain to make it easier to visualise useful information.</p>
+<p>The default vertical exaggeration is <code>1.0</code> - which basically means as in reality.</p>
+<p>Whilst scientifically this is usually the best setting to use, sometimes you need to exaggerate the terrain to make it easier to visualise useful information, e.g. in a flat area.</p>
 <ul>
 <li>In the Scene Appearance tab, change <code>Vertical Exaggeration</code> to <code>4.0</code></li>
 </ul>
-<p>You&rsquo;ll probably need to be patient again while the Scene redraws, then zoom outwards so that you can see Mount St Helens again!</p>
-<p>The difference between an exaggeration of <strong>1.0</strong> and an exaggeration of <strong>4.0</strong> should be pretty clear.</p>
+<p>You&rsquo;ll probably need to be patient again while the Scene redraws, then zoom outwards so that you can see the whole of Mount St Helens again!</p>
+<p>The difference between an exaggeration of <strong>1.0</strong> and an exaggeration of <strong>4.0</strong> should be pretty clear.  The pictures below show a comparison of an area in the Lake District in the UK.</p>
 <p><img alt="The view across Windermere in the UK Lake District with a vertical exaggeration of 1.0." src="../images/three_d/ESSceneExaggeration1_small.png" title="The view across Windermere in the UK Lake District with a vertical exaggeration of 1.0." /></p>
 <p><img alt="The same view across Windermere in the UK Lake District with a vertical exaggeration of 4.0." src="../images/three_d/ESSceneExaggeration4_small.png" title="The same view across Windermere in the UK Lake District with a vertical exaggeration of 4.0." /></p>
+<ul>
+<li>Return the Vertical Exaggeration to <code>1.00</code> and zoom back in.</li>
+</ul>
 <h4 id="adding-a-custom-elevation-surface">Adding a custom elevation surface</h4>
 <p>Sometimes it is more useful to see your own data as the elevation surface.  For example, we can add the DEM showing the shape of Mount St Helens <strong>before</strong> the 1980 eruption.</p>
 <ul>
@@ -420,22 +454,26 @@
 <li><code>Add Elevation Source</code> and navigate to the data folder to select the <code>hbefore</code> raster dataset then click <code>OK</code></li>
 </ul>
 <p>This may look a bit odd as you&rsquo;ll still have the ESRI Imagery layer showing the current land surface, but the crater at the top of Mount St Helens should apparently have been filled in.</p>
-<p>Try turning on the hillshade layer showing the <code>before</code> data.</p>
+<ul>
+<li>Try turning on the hillshade layer showing the <code>before</code> data.  This should &ldquo;make sense&rdquo; now as the custom elevation surface and the hillshade should match.</li>
+</ul>
+<p><img alt="The hbefore hillshade layer draped over the hbefore custom elevation surface.  The 1980 crater is now filled in." src="../images/three_d/CustomElevationSurface_small.png" title="The hbefore hillshade layer draped over the hbefore custom elevation surface.  The 1980 crater is now filled in." /></p>
 <p>If you add a custom elevation surface, but leave the World Elevation layer on, then areas ouside of your DEM will still have elevation.</p>
 <p>Turn off the before layers for both hillshade and the elevation surface before continuing with the next section.</p>
 <blockquote>
 <p><img alt="Information" src="../images/svg/info-black-24dp.png" /> <strong>Alternative elevation surfaces</strong></p>
-<p>The elevation surface doesn&rsquo;t have to be the same as the land surface.  For example, instead you could use a surface showing the top surface of a particular rock unit underground; average annual rainfall; lead pollution in soils.  <!-- TODO: Suggest somewhere to look for other examples. --></p>
+<p>The elevation surface doesn&rsquo;t have to be the same as the land surface.  For example, instead you could use a surface showing the top surface of a particular rock unit underground; average annual rainfall or lead pollution in soils.</p>
 </blockquote>
 <h3 id="cut-fill-analysis">Cut-fill analysis</h3>
+<!-- TODO: Create a video clip for cut-fill analysis? -->
+
 <p>Cut-fill analysis looks at how much material is lost or gained in an area by comparing two surface models - one before the change, and one after.  It could be used to look at deposition in a lake or changes in groundwater over time, for example.  Here we&rsquo;ll use it to visualise the difference in land surface before and after the 1980 eruption of Mount St Helens.</p>
 <ul>
-<li>On the Analysis ribbon click on <code>Tools</code></li>
-<li>in the Geoprocessing toolbox go to <code>3D Analyst Tools &gt; Raster Surface &gt; Cut Fill</code></li>
+<li>On the Analysis ribbon click on <code>Tools</code> and in the Geoprocessing panel search for <code>Cut Fill</code></li>
 <li>Fill in the dialog as follows (see image below):<ul>
-<li>For <code>Input before Raster Surface</code> use the folder button on the right to select the <strong>before</strong> DEM</li>
-<li>For <code>Input after Raster Surface</code> use the folder button on the right to select the <strong>after</strong> DEM</li>
-<li>Give the <code>Output raster</code> a name you&rsquo;ll remember and choose to save it in one of the folders in your project</li>
+<li>For <code>Input before Raster Surface</code> use the folder button on the right to select the <strong>before</strong> DEM (note, not the hillshade)</li>
+<li>For <code>Input after Raster Surface</code> use the folder button on the right to select the <strong>after</strong> DEM (note, not the hillshade)</li>
+<li>Give the <code>Output raster</code> a name you&rsquo;ll remember, e.g. <code>CutFill</code> and choose to save it in one of the folders in your project</li>
 </ul>
 </li>
 <li>Click on <code>Run</code></li>
@@ -477,16 +515,22 @@
 <p>Hint: <code>Geoprocessing &gt; 3D Analyst Tools &gt; Raster Surface &gt; Contour</code></p>
 <p>This can be very useful if you have a DEM but no contours and want to create a base map for mapping.  You can also use this to create contours for other data surfaces, such as soil samples, rainfall etc.</p>
 <h3 id="viewshed-analysis">Viewshed analysis</h3>
-<p>Viewshed analysis shows which parts of a scene an observer at a particular point would be able to see.  <!-- TODO: could possibly expand this --></p>
-<p>Try creating a point feature class <!-- TODO: cross reference --> and placing a point somewhere on the map of Mount St. Helens.</p>
+<p>Viewshed analysis shows which parts of a scene an observer at a particular point would be able to see.</p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>Viewshed analysis in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
+<p>Try <a href="/creating_data/#set-up-a-feature-dataset-within-a-geodatabase">creating a point feature class</a> and placing a point somewhere on the map of Mount St. Helens.</p>
 <p>Then go to <code>Geoprocessing &gt; 3D Analyst Tools &gt; Visibility &gt; Viewshed</code></p>
 <h3 id="slope-and-aspect">Slope and aspect</h3>
-<!-- TODO: Again, could expand this -->
-
 <p>Both of these tools produce an output raster.</p>
 <p>Slope shows the angle of slope of steepness of each part of the map.  A slope map of Mount St. Helens could indicate which areas are most vulnerable to a landslip.</p>
 <p>Aspect shows in which direction the slope is facing.</p>
 <p>Both are under <code>Geoprocessing &gt; 3D Analyst Tools &gt; Raster Surface</code></p>
+<blockquote>
+<p><img alt="Video clip" src="../images/svg/videocam-black-24dp.png" /> <strong>3D Analyst: hillshade, slope and aspect in ArcGIS Pro</strong></p>
+<p>This video clip can be found in the module area of <a href="https://minerva.leeds.ac.uk">Minerva</a> or in the <a href="https://cgordon-gis.github.io/videoclips.htm">full list of video clips</a>.</p>
+</blockquote>
 <h2 id="layout-suggestions">Layout suggestions</h2>
 <p>You have created a lot of output in this exercise.  Try and think about ways in which you can create an attractive layout showing the effect of the 1980 eruption on the shape of Mount St. Helens.</p>
 <ul>
@@ -497,6 +541,15 @@
 </ul>
 <p>Your final map could look something like the map below.  It is unlikely to look identical as you should make your own decisions about where to place elements and how to display the data that you have produced.</p>
 <p><img alt="Example layout for the Mount St Helens exercise." src="../images/three_d/HStHelensMap.png" title="Example layout for the Mount St Helens exercise." /></p>
+<h2 id="recommended-reading-layout-and-presentation">Recommended reading: layout and presentation</h2>
+<p>The general books in the module reading list<sup id="fnref:1010"><a class="footnote-ref" href="#fn:1010">5</a></sup> include sections on elevation and 3D mapping.</p>
+<ul>
+<li>For a quick overview look at Darkes (2017) - pages 46-47 look at Relief.</li>
+<li>Heywood (2011) has a section on Modelling the Third Dimension on pages 99-100.</li>
+<li>Longley (2015) covers User Interation and Representation in 2.5-D and 3-D on pages 282-284.</li>
+</ul>
+<h2 id="further-information">Further information</h2>
+<p>If you want to find out more about how you can use 3D mapping in ArcGIS have a look at the ESRI Lesson Gallery.  They have some <a href="https://learn.arcgis.com/en/gallery/#?p=arcgispro&amp;c=3d">lessons based on 3D Visualization</a>. </p>
 <div class="footnote">
 <hr />
 <ol>
@@ -506,8 +559,14 @@
 <li id="fn:1002">
 <p>View a map showing the <a href="http://www.dmap.co.uk/utmworld.htm">UTM zones for the whole world</a>.&#160;<a class="footnote-backref" href="#fnref:1002" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
+<li id="fn:1005">
+<p>I usually set up a folder called <code>output</code> and save anything that I create with the tools to that folder.  It keeps your disk a bit tidier and makes it easier to find the files.&#160;<a class="footnote-backref" href="#fnref:1005" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
 <li id="fn:703">
-<p>3D area takes the height into consideration so should give a greater number than simply measuring the area in 2D.&#160;<a class="footnote-backref" href="#fnref:703" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>3D area takes the height into consideration so should give a greater number than simply measuring the area in 2D.&#160;<a class="footnote-backref" href="#fnref:703" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:1010">
+<p>Reading list available from Minerva and from the module catalogue.&#160;<a class="footnote-backref" href="#fnref:1010" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
